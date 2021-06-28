@@ -20,6 +20,14 @@
 
 
 * Nombre: Santiago Bassi
-* Edad: 17
-* Cursando 6to año en la Escuela Municipal de Chascomús
-* Conocimientos:basicos de HTML y CSS .
+* Edad: 17.
+* Cursando 6to año en la Escuela Municipal de Chascomús.
+* Conocimientos:basicos de HTML y CSS.
+
+# Paginas de Inspiracion :
+
+ * https://compragamer.com/?listado_prod=1-10916
+ * https://www.mercadolibre.com.ar/
+ * https://www.amazon.com/-/es/ref=nav_logo
+ * https://arrichetta.com.ar/
+ * https://www.maximus.com.ar/HOME/MAXIMUS/maximus.aspx
