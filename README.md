@@ -1,4 +1,4 @@
- # grupo_8_gamercave
+ #grupo_8_gamercave
 
 
 * Descripcion : Venta de componentes de alta gama: Motherborads, memorias RAM, procesadores, Fuentes, Perifericos, etc.
@@ -19,5 +19,7 @@
  * Conocimientos : JavaScript, componentes, redes
 
 
-
-   
+*nombre: Santiago Bassi
+*Edad: 17
+* Cursando 6to año en la Escuela Municipal de Chascomús
+* Conocimientos:basicos de HTML y CSS .
