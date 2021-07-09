@@ -15,8 +15,8 @@
  * #E5E5E5
  ![Captura web_9-7-2021_20481_www google com](https://user-images.githubusercontent.com/70907846/125145257-f6ac5d80-e0f6-11eb-8e10-fe68efd18cf7.jpeg)
  
-  * #7F7F7F  
-  ![Captura web_9-7-2021_204828_www google com](https://user-images.githubusercontent.com/70907846/125145281-088e0080-e0f7-11eb-9344-23828de16d31.jpeg)
+ * #7F7F7F  
+ ![Captura web_9-7-2021_204828_www google com](https://user-images.githubusercontent.com/70907846/125145281-088e0080-e0f7-11eb-9344-23828de16d31.jpeg)
  
  
 
