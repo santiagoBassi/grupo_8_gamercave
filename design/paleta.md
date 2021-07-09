@@ -5,8 +5,10 @@
  
  * #A239CA   
  ![Captura web_9-7-2021_204332_www google com](https://user-images.githubusercontent.com/70907846/125145071-62da9180-e0f6-11eb-8fee-93f81a13229f.jpeg)
- * #A239CA   
- ![Captura web_9-7-2021_204332_www google com](https://user-images.githubusercontent.com/70907846/125145071-62da9180-e0f6-11eb-8fee-93f81a13229f.jpeg)
+ 
+ * #4717F6
+ ![Captura web_9-7-2021_204511_www google com](https://user-images.githubusercontent.com/70907846/125145117-93223000-e0f6-11eb-96ad-4fcc38666cc0.jpeg)
+ 
  * #A239CA   
  ![Captura web_9-7-2021_204332_www google com](https://user-images.githubusercontent.com/70907846/125145071-62da9180-e0f6-11eb-8fee-93f81a13229f.jpeg)
  * #A239CA   
@@ -14,8 +16,8 @@
  * #A239CA   
  ![Captura web_9-7-2021_204332_www google com](https://user-images.githubusercontent.com/70907846/125145071-62da9180-e0f6-11eb-8fee-93f81a13229f.jpeg)
  
- * #4717F6
- ![Captura web_9-7-2021_204511_www google com](https://user-images.githubusercontent.com/70907846/125145117-93223000-e0f6-11eb-96ad-4fcc38666cc0.jpeg)
+ * 
+ 
 
  * #E7DFTD
  ![Captura web_9-7-2021_204634_www google com](https://user-images.githubusercontent.com/70907846/125145189-c49afb80-e0f6-11eb-9964-168029e9c842.jpeg)
