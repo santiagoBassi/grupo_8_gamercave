@@ -24,6 +24,7 @@
 * Edad: 17.
 * Cursando 6to año en la Escuela Municipal de Chascomús.
 * Conocimientos:basicos de HTML y CSS.
+###
 
 ## Paginas de Inspiracion :
 
