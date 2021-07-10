@@ -4,10 +4,11 @@
  ### * Descripcion : 
     Venta de componentes de alta gama: Motherborads, memorias RAM, procesadores, Fuentes, Perifericos, etc.
 
-### * Publico objetivo: Gamers o personas que requieran componentes de alta gama a un excelente precio, y recomendado por los más expertos en arquitectura de computadoras. Ideal para minar criptomonedas y jugar juegos a un alto rendimiento.
+### * 
+    Publico objetivo: Gamers o personas que requieran componentes de alta gama a un excelente precio, y recomendado por los más expertos en arquitectura de computadoras. Ideal para minar criptomonedas y jugar juegos a un alto rendimiento.
 #### * Sponsor oficial de G2 Esports y el Vaticano.
 
-# integrantes:
+## integrantes:
 
  * Nombre: Agustín Carmona
  * Edad: 19
@@ -24,7 +25,7 @@
 * Cursando 6to año en la Escuela Municipal de Chascomús.
 * Conocimientos:basicos de HTML y CSS.
 
-# Paginas de Inspiracion :
+## Paginas de Inspiracion :
 
  * https://compragamer.com/?listado_prod=1-10916
  * https://www.mercadolibre.com.ar/
@@ -33,5 +34,5 @@
  * https://www.maximus.com.ar/HOME/MAXIMUS/maximus.aspx
  * https://www.andreani.com/
 
-# Link Wireframes
+## Link Wireframes
 * https://marvelapp.com/prototype/gh3e9e0
