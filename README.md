@@ -1,10 +1,10 @@
  # grupo_8_gamercave
 
 
-* Descripcion : Venta de componentes de alta gama: Motherborads, memorias RAM, procesadores, Fuentes, Perifericos, etc.
+### * Descripcion : Venta de componentes de alta gama: Motherborads, memorias RAM, procesadores, Fuentes, Perifericos, etc.
 
-* Publico objetivo: Gamers o personas que requieran componentes de alta gama a un excelente precio, y recomendado por los más expertos en arquitectura de computadoras. Ideal para minar criptomonedas y jugar juegos a un alto rendimiento.
-* Sponsor oficial de G2 Esports y el Vaticano.
+### * Publico objetivo: Gamers o personas que requieran componentes de alta gama a un excelente precio, y recomendado por los más expertos en arquitectura de computadoras. Ideal para minar criptomonedas y jugar juegos a un alto rendimiento.
+#### * Sponsor oficial de G2 Esports y el Vaticano.
 
 # integrantes:
 
