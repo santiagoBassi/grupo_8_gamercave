@@ -1,7 +1,8 @@
- # grupo_8_gamercave
+ # Nombre:
+    GamerCave
 
 
- ### Descripcion : 
+ ### Descripcion: 
     Venta de componentes de alta gama: Motherborads, memorias RAM, procesadores, Fuentes, Perifericos, etc.
 
 ### Publico objetivo:
@@ -24,7 +25,6 @@
 * Edad: 17.
 * Cursando 6to año en la Escuela Municipal de Chascomús.
 * Conocimientos:basicos de HTML y CSS.
-###
 
 ## Paginas de Inspiracion :
 
