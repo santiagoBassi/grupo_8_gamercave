@@ -13,8 +13,8 @@
  * Graduado en la Escuela de Educacion Tecnica N°1
  * Conocimientos: CSS, HTML, Redes, Componentes
 
-
-* Nombre : Dante Bairatti
+###
+ * Nombre : Dante Bairatti
  * Edad : 17
  * Cursando 6to año en el Instituto Corazón de María
  * Conocimientos : JavaScript, componentes, redes
