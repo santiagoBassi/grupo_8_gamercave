@@ -27,6 +27,8 @@
 
 ## Paginas de Inspiracion :
 
+### Cada una de estas paginas han sido elegidas por algun punto en especifico de sus diseño. tomando por ejemplo "compragamer.com" esta fue utilizada como inspiración para poder realizar el Wireframe del producto especifico 
+
  * https://compragamer.com/?listado_prod=1-10916
  * https://www.mercadolibre.com.ar/
  * https://www.amazon.com/-/es/ref=nav_logo
