@@ -8,10 +8,76 @@
     <title>Gamer Cave</title>
     <link rel="icon" href="/images/logoGamerCave-icono.png">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-register.css">
+    <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
+    <link href="https: //fonts.googleapis.com/css2? family = Roboto: wght @ 100 & family = Source + Sans + Pro: wght @ 200 & display = swap " rel=" stylesheet ">
 </head>
 
 <body>
+    <header class="container-logo">
+        <img src="/images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo">
+    </header>
+    <main>
+        <div class="container-form">
+            <form action="">
+                <h4>Registrate</h4>
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input class="input" type="text" id="name" placeholder="Ej: Juan" required>
+                </div><br>
 
+                <div>
+                    <label for="lastname">Apellido:</label>
+                    <input class="input" type="text" id="lastname" placeholder="Ej: Pérez" required>
+                </div><br>
+
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input class="input" type="email" id="email" placeholder="Ej: Juanperez22@gmail.com" required>
+                </div><br>
+
+                <div>
+                    <label for="phone">Teléfono:</label>
+                    <input class="input" type="tel" id="phone" placeholder="Ej: +54 9 11 4545-4545" required>
+                </div><br>
+
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input class="input" type="password" id="countri" placeholder="Password" required>
+                </div><br>
+
+                <div>
+                    <label for="confirmPassword">Confirme su contraseña:</label>
+                    <input class="input" type="password" id="confirmPassword" placeholder="Confirm your Password" required>
+                </div><br>
+
+                <button class="boton" type="submit">Enviar</button>
+
+                <p>Ya tenes una cuenta?<a href="/login">Iniciar Seción</a></p>
+            </form>
+        </div>
+
+        <div class="divisor">
+            <hr class="linea">
+            <strong class="o">o</strong>
+            <hr class="linea">
+        </div>
+
+
+        <section class="container-inicio-google-facebook">
+
+            <article class="container-google">
+                <button class="google"><i class="fab fa-google icono-google"></i> Iniciá sesión con Google</button>
+            </article>
+
+            <article class="container-facebook">
+                <button class="facebook"><i class="fab fa-facebook-f icono-facebook"></i> Iniciá sesión con Facebook</button>
+            </article>
+
+        </section>
+
+
+    </main>
 </body>
 
 </html>
