@@ -8,11 +8,66 @@
     <title>Gamer Cave</title>
     <link rel="icon" href="/images/logoGamerCave-icono.png">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-login.css">
     <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Source+Sans+Pro:wght@200&display=swap" rel=" stylesheet ">
 </head>
 
 <body>
-    hola
+    <header class="container-logo">
+        <img src="/images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo">
+    </header>
+    <main>
+        <div class="container-form">
+            <form action="">
+                <h4>Inicir sesión</h4>
+
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input class="input" type="email" id="email" placeholder="Ej: Juanperez22@gmail.com" required>
+                </div><br>
+
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input class="input" type="password" id="countri" placeholder="Password" required>
+                </div><br>
+
+                <div class="container-mantener-sesion">
+                    <input class="checkbox" type="checkbox" data-testid="keepLoggedInCheckbox" value="false">
+                    <span class="mantener-sesion">Mantener sesión</span>
+                </div>
+
+                <div class="container-olvidaste-contrasena">
+                    <a href="" class="olvidaste-contrasena">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button class="boton" type="submit">Enviar</button>
+
+                <p>No tenés una cuenta?<a href="/register">Registrate</a></p>
+            </form>
+        </div>
+
+        <div class="divisor">
+            <hr class="linea">
+            <strong class="o">o</strong>
+            <hr class="linea">
+        </div>
+
+
+        <section class="container-inicio-google-facebook">
+
+            <article class="container-google">
+                <button class="google"><i class="fab fa-google icono-google"></i> Iniciá sesión con Google</button>
+            </article>
+
+            <article class="container-facebook">
+                <button class="facebook"><i class="fab fa-facebook-f icono-facebook"></i> Iniciá sesión con Facebook</button>
+            </article>
+
+        </section>
+
+
+    </main>
 </body>
 
 </html>
