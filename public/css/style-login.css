@@ -25,6 +25,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1250px;
+    margin: auto;
 }
 
 .container-form {
@@ -220,12 +222,10 @@ form p a {
 }
 
 @media (min-width: 769px) {
-    body {
-        height: 100vh;
-    }
     main {
         flex-direction: row-reverse;
         justify-content: space-around;
+        margin-top: 100px;
     }
     .divisor {
         flex-direction: column;
@@ -238,7 +238,7 @@ form p a {
     }
     .linea {
         width: 1px;
-        height: 15.5vh;
+        height: 15vh;
     }
     .o {
         margin-top: 40px;
@@ -250,5 +250,18 @@ form p a {
     }
     form h4 {
         font-size: 28px;
+    }
+    body {
+        height: 100vh;
+        background-image: url('/images/background-account.webp');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center center;
+    }
+}
+
+@media (min-width: 1955px) {
+    body {
+        background-size: 100% auto;
     }
 }
