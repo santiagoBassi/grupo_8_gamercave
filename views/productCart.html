@@ -8,11 +8,89 @@
     <title>Gamer Cave</title>
     <link rel="icon" href="/images/logoGamerCave-icono.png">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-carrito.css">
     <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header class="container-logo">
+        <img src="images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo">
+    </header><br>
 
+    <main>
+        <div id="container">
+            <span>
+
+                <img src="images\ram-muestra.jpg" alt="">
+                <span>Memoria RAM DDR 8 GB HyperX FURY</span>
+
+                <form>
+                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                    <input type="number" id="number" value="1" />
+                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                </form>
+                <div>$6.699</div>
+                <button type="button" onclick="borrar()">BORRAR</button>
+            </span>
+        </div><br>
+
+        <div id="container">
+            <span>
+
+                <img src="images\ram-muestra.jpg" alt="">
+                <span>Memoria RAM DDR 8 GB HyperX FURY</span>
+
+                <form>
+                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                    <input type="number" id="number" value="0" />
+                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                </form>
+                <div>$6.699</div>
+                <button type="button" onclick="borrar()">BORRAR</button>
+            </span>
+        </div><br>
+
+        <div id="container">
+            <span>
+
+                <img src="images\ram-muestra.jpg" alt="">
+                <span>Memoria RAM DDR 8 GB HyperX FURY</span>
+
+                <form>
+                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                    <input type="number" id="number" value="0" />
+                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                </form>
+                <div>$6.699</div>
+                <button type="button" onclick="borrar()">BORRAR</button>
+            </span>
+        </div><br>
+
+
+        <div class="papa">
+            <br>
+            <div>
+                <div>Tipo de Envio:</div><br>
+                <label><input type="radio" name="envio"> Retiro al correo</label>
+                <label><input type="radio" name="envio"> Envio a domicilio domicilio</label><br><br>
+            </div>
+            <div>Metodo de pago:</div><br>
+            <label><input type="radio" name="pago"> Transferencia bancaria</label>
+            <label><input type="radio" name="pago"> Tarjeta de Credito/Debito</label>
+            <label><input type="radio" name="pago"> Mercado Pago</label>
+            <label><input type="radio" name="pago"> Bitcoin</label><br><br>
+
+            <div>Precio total:</div><br>
+
+            <button type="submit" type="button" class="boton2">Comprar</button>
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="/grupo_8_gamercave/public/js/carrito.js"></script>
 </body>
-
 </html>
