@@ -13,7 +13,7 @@ header {
     width: 100%;
 }
 
-.menu {
+.menu-top {
     width: 100%;
     display: flex;
     align-items: center;
@@ -76,7 +76,6 @@ header {
     text-align: center;
     transition: all 0.4s;
     margin-right: 60px;
-    overflow: scroll;
 }
 
 .menu-items li {
@@ -114,8 +113,7 @@ header {
     top: 80px;
 }
 
-
-/*@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .btn-menu {
         display: none;
     }
@@ -125,20 +123,24 @@ header {
     .menu-items {
         flex-direction: row;
         text-align: center;
-        justify-content: space-between;
-        padding: 0px;
-        margin: 0px;
+        justify-content: center;
         top: initial;
         width: 40%;
         position: initial;
         background: none;
+        height: 100%;
     }
     .menu-items li {
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: #E5E5E5;
+        height: 70%;
+        margin-left: 10px;
+        border-left: 1px solid #E5E5E5;
     }
     .menu-items li a {
         padding: 0px;
+        color: #0e0b16;
     }
 }
