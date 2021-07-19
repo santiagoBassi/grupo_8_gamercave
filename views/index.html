@@ -7,11 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer Cave</title>
     <link rel="icon" href="/images/logoGamerCave-icono.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-index.css">
     <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
+    <script src="/js/index.js" defer></script>
 </head>
 
 <body>
+    <header>
+        <nav class="menu">
+            <div class="container-logo">
+                <a href="/"><img src="/images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo"></a>
+            </div>
+            <div class="container-search">
+                <form action="" class="container-input-i">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <input type="text" placeholder="Buscar">
+                </form>
+            </div>
+            <ul class="menu-items" id="otro-modo">
+                <li class="active"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="/productCart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Seción</a></li>
+                <li><a href="/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
+            </ul>
+            <span class="btn-menu" onclick="showmenu()">
+                <i class="fa fa-bars"></i>
+            </span>
+
+        </nav>
+
+    </header>
+
 </body>
 
 </html>
