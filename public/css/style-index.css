@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+header {
+    background-color: #0e0b16;
+    width: 100%;
+}
+
+.menu-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.container-logo {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    max-width: 220px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 150px;
+}
+
+.container-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.container-input-i {
+    display: flex;
+    text-align: left;
+    justify-content: flex-end;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.container-input-i input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+}
+
+.container-input-i button {
+    border: none;
+    background-color: #E5E5E5;
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 4px;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    background-color: #7F7F7F;
+    top: -100vh;
+    text-align: center;
+    transition: all 0.4s;
+    margin-right: 60px;
+}
+
+.menu-items li {
+    width: 100%;
+    text-align: center;
+    border-top: solid 1px #0e0b16;
+}
+
+.menu-items li a {
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #E5E5E5;
+    padding: 30px;
+}
+
+.menu-items li a:hover {
+    color: #4717F6;
+    transition-duration: 0.5s;
+}
+
+.btn-menu {
+    justify-content: center;
+    cursor: pointer;
+    display: inline-flex;
+    color: #E5E5E5;
+    font-size: 20px;
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.show {
+    top: 80px;
+}
+
+@media (min-width: 1025px) {
+    .btn-menu {
+        display: none;
+    }
+    .container-search {
+        width: 40%;
+    }
+    .menu-items {
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        top: initial;
+        width: 40%;
+        position: initial;
+        background: none;
+        height: 100%;
+    }
+    .menu-items li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #E5E5E5;
+        height: 70%;
+        margin-left: 10px;
+        border-left: 1px solid #E5E5E5;
+    }
+    .menu-items li a {
+        padding: 0px;
+        color: #0e0b16;
+    }
+}
