@@ -30,52 +30,191 @@
                 <li><a href="/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
             </ul>
             <span class="btn-menu" onclick="showmenu()">
-                <i class="fa fa-bars"></i>
+                <i id="otro-modo" class="fa fa-bars"></i>
             </span>
         </nav>
     </header>
 
     <main>
-        <section>
+
+        <!--<section class="container-slide">
             <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <img src="/images/teclado-mouse.webp" style="width:100%">
+                <div class="mySlides container-banner">
+                    <h3>Sponsor oficial de G2 Esports y el Vaticano</h3>
                 </div>
 
-                <div class="mySlides fade">
-                    <img src="/images/teclado-mouse.webp" style="width:100%">
+                <div class="mySlides container-banner">
+                    <h3>Las granjas de minería de criptomonedas más grandes de América compran en Gamer Cave, que esperas vos?</h3>
                 </div>
 
-                <div class="mySlides fade">
-                    <img src="/images/teclado-mouse.webp" style="width:100%">
-                </div>
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
             <br>
 
-            <div class="container-dot">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-        </section>
 
-        <section class="container-productos">
-            <h4>Productos Destacados</h4>
-            <div class="container-article-destacados">
-                <a href="#">
-                    <article class="article">
-                        <img src="/images/placa-video.jpg" alt="">
-                        <div class="container-info">
-                            <p class="nombre-producto">Placa de video</p>
-                            <p class="precio-producto">$10.000</p>
-                        </div>
-                    </article>
-                </a>
-            </div>
-        </section>
+        </section>-->
+
+
+        <div class="container-productos-filtro">
+            <aside>
+                <span class="btn-filtro" onclick="showfiltro(), rotateflecha()">
+                    <p>Categorias</p><i id="girar-flecha" class="fas fa-angle-right"></i>
+                </span>
+                <div class="filtro" id="mostrar-filtro">
+                    <ul class="list-filter">
+                        <div class="ocultar-close"><i onclick="showfiltro()" class="close fas fa-times"></i></div>
+                        <li><a href="#">Placas de video</a></li>
+                        <li><a href="#">Memorias Ram</a></li>
+                        <li><a href="#">Monitores</a></li>
+                        <li><a href="#">Coolers</a></li>
+                        <li><a href="#">Fuentes</a></li>
+                        <li><a href="#">Mhoters</a></li>
+                        <li><a href="#">Procesadores</a></li>
+                        <li><a href="#">Discos Rigidos</a></li>
+                        <li><a href="#">Mouses</a></li>
+                        <li><a href="#">Teclados</a></li>
+                        <li><a href="#">Auriculares</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="container-productos">
+                <h4 class="titulares-productos">Productos Destacados</h4>
+                <div class="container-article">
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+
+                </div>
+
+
+
+                <h4 class="titulares-productos">Especiales para minar criptomonedas</h4>
+                <div class="container-article">
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="article">
+                            <p>categoria</p>
+                            <img src="/images/placa-video.jpg" alt="">
+                            <div class="container-info">
+                                <p class="nombre-producto">Nombre</p>
+                                <p class="precio-producto">$10.000</p>
+                            </div>
+                        </article>
+                    </a>
+
+                </div>
+            </section>
+
+        </div>
+
     </main>
 
 </body>

@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100vh;
+}
+
 body {
     background-image: url('/images/background-account.webp');
     background-repeat: no-repeat;
@@ -88,6 +92,7 @@ form div label {
     background-color: #E5E5E5;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 
 .boton:hover {
@@ -156,14 +161,15 @@ form p a {
     width: 100%;
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
-}
-
-.icono-google {
-    color: #db4a39;
+    transition: background-color .5s;
 }
 
 .google:hover {
     background-color: #7F7F7F;
+}
+
+.icono-google {
+    color: #db4a39;
 }
 
 .container-facebook {
@@ -182,6 +188,7 @@ form p a {
     width: 100%;
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
+    transition: background-color .5s;
 }
 
 .facebook:hover {
@@ -222,11 +229,3 @@ form p a {
         font-size: 28px;
     }
 }
-
-
-/*
-@media (min-width: 1500px) {
-    body {
-        background-size: 100% auto;
-    }
-}*/

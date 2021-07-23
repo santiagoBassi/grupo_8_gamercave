@@ -2,8 +2,21 @@
 function showmenu() {
     document.getElementById("otro-modo").classList.toggle("show");
 }
-/*termina show header*/
+/*termina header*/
 
+/*comienza aside*/
+function showfiltro() {
+    document.getElementById("mostrar-filtro").classList.toggle("show-filtro");
+}
+
+
+/*termina aside*/
+
+/*comienza girar flecha categorias*/
+function rotateflecha() {
+    document.getElementById("girar-flecha").classList.toggle("rotate-flecha");
+}
+/*termina girar flecha gategoria*/
 
 
 /*comienza slider*/
@@ -13,11 +26,6 @@ showSlides(slideIndex);
 // Next/previous controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
@@ -33,19 +41,7 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 9000);
 }
 
 /*termina slider*/
