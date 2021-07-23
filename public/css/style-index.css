@@ -233,6 +233,46 @@ main {
     font-size: 18px;
 }
 
+footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+.contenedorFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: #0e0b16;
+    color: #E5E5E5;
+    padding: 20px;
+}
+
+.contenedorInfoL {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.contenedorContacto {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.lista-contactanos {
+    list-style: none;
+}
+
+.icono-contacto {
+    margin-top: 10px;
+}
+
+.icono-contacto a {
+    text-decoration: none;
+    color: #E5E5E5;
+}
+
 @media (min-width: 769px) {
     /*comienza el header*/
     .menu-top {
@@ -268,5 +308,9 @@ main {
     }
     .container-dot {
         display: block;
+    }
+    .contenedorFooter {
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
