@@ -1,8 +1,6 @@
 * {
-    
     box-sizing: border-box;
     font-family: "roboto", sans-serif;
-   
 }
 
 body {
@@ -16,28 +14,32 @@ body {
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
 .logo {
-    width: 40%;
+    width: 100%;
     max-width: 150px;
     border-radius: 10px;
     margin-left: 20px;
 }
+
 .img-reducida {
-  width: 100px; height: 100px;
-  border: solid 3px #4717F6;
+    width: 100px;
+    height: 100px;
+    border: solid 3px #4717F6;
 }
+
 .img-grande {
-    width: 350px; height: 350px;
+    width: 350px;
+    height: 350px;
     border: solid 3px #4717F6;
 }
 
 .pepe {
     display: flex;
-    justify-content:space-around;
-   
+    justify-content: space-around;
 }
 
-.pupu{
+.pupu {
     color: #E7DFDD;
     background-color: #A239CA;
     border: solid 3px #4717F6;
@@ -45,7 +47,8 @@ body {
     height: 60px;
     width: auto;
 }
-.papa{
+
+.papa {
     color: #0E0B16;
     background-color: #E5E5E5;
     border: solid 3px #4717F6;
@@ -55,22 +58,23 @@ body {
     text-align: center;
     text-underline-position: below;
 }
+
 span {
-  display: flex;
-  justify-content: space-around;
-  color: #0E0B16;
-  background-color: #E5E5E5;
-  padding: 0 auto;
-  height: 100px;
-  width: auto;
+    display: flex;
+    justify-content: space-around;
+    color: #0E0B16;
+    background-color: #E5E5E5;
+    padding: 0 auto;
+    height: 100px;
+    width: auto;
 }
 
-.boton{
+.boton {
     background-color: #A239CA;
     height: 100px;
     width: 300px;
-
 }
+
 .boton2 {
     padding: 14px 24px;
     border-radius: 5px;
@@ -81,6 +85,7 @@ span {
     height: 100px;
     width: 300px;
 }
+
 .boton2:hover {
     background-color: #4717F6;
     color: #E5E5E5;
@@ -94,20 +99,21 @@ span {
     width: 100%;
     position: relative;
     max-width: 600px;
-  }
+}
 
-  img {
-      width: 100px;
-      height: 100px;
-  }
-  form {
+img {
+    width: 100px;
+    height: 100px;
+}
+
+form {
     width: 300px;
     margin: 0 auto;
     text-align: center;
     padding-top: 50px;
-  }
-  
-  .value-button {
+}
+
+.value-button {
     display: inline-block;
     border: 1px solid #ddd;
     margin: 0px;
@@ -123,28 +129,29 @@ span {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  .value-button:hover {
+}
+
+.value-button:hover {
     cursor: pointer;
-  }
-  
-  form #decrease {
+}
+
+form #decrease {
     margin-right: -4px;
     border-radius: 8px 0 0 8px;
-  }
-  
-  form #increase {
+}
+
+form #increase {
     margin-left: -4px;
     border-radius: 0 8px 8px 0;
-  }
-  
-  /* form #input-wrap {
+}
+
+
+/* form #input-wrap {
     margin: 0px;
     padding: 0px;
   } */
-  
-  input#number {
+
+input#number {
     text-align: center;
     border: none;
     border-top: 1px solid #ddd;
@@ -152,10 +159,57 @@ span {
     margin: 0px;
     width: 40px;
     height: 40px;
-  }
-  
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+.contenedorFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #0e0b16;
+    color: #E5E5E5;
+    padding: 20px;
+}
+
+.contenedorInfoL {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.contenedorContacto {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.lista-contactanos {
+    list-style: none;
+}
+
+.icono-contacto {
+    margin-top: 10px;
+}
+
+.icono-contacto a {
+    text-decoration: none;
+    color: #E5E5E5;
+}
+
+@media (min-width: 769px) {
+    .contenedorFooter {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

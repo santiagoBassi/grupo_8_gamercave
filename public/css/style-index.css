@@ -335,6 +335,7 @@ footer {
     position: relative;
     bottom: 0px;
     width: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .contenedorFooter {
