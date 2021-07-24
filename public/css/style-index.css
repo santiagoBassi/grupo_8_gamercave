@@ -24,7 +24,6 @@ header {
 }
 
 .container-logo {
-    /*width: 180px;*/
     display: flex;
     align-items: center;
     margin-left: 10px;
@@ -146,10 +145,6 @@ main {
     border-radius: 10px;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
-    animation-name: cambia-color;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
     text-align: center;
     height: 200px;
 }
@@ -336,18 +331,47 @@ aside {
     font-size: 18px;
 }
 
-@keyframes cambia-color {
-    0% {
-        background-image: linear-gradient(to right, #4717F6, #A239CA);
-        color: #0e0b16;
-    }
-    100% {
-        background-image: linear-gradient(to right, #A239CA, #4717F6);
-        color: #0e0b16;
-    }
+footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
 }
 
-@media (min-width: 768px) {
+.contenedorFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #0e0b16;
+    color: #E5E5E5;
+    padding: 20px;
+}
+
+.contenedorInfoL {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.contenedorContacto {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.lista-contactanos {
+    list-style: none;
+}
+
+.icono-contacto {
+    margin-top: 10px;
+}
+
+.icono-contacto a {
+    text-decoration: none;
+    color: #E5E5E5;
+}
+
+@media (min-width: 769px) {
     /*comienza el header*/
     .menu-top {
         justify-content: space-around;
@@ -410,7 +434,7 @@ aside {
         height: 100%;
         width: 70%;
         margin-top: 10px;
-        border-radius: 5px;
+        border-radius: 3px;
         background-color: white;
         border: solid 2px #0e0b16;
     }
@@ -425,5 +449,9 @@ aside {
     }
     .ocultar-close {
         display: none;
+    }
+    .contenedorFooter {
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
