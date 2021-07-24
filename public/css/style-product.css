@@ -1,7 +1,6 @@
 * {
-    
     box-sizing: border-box;
-    font-family: "roboto", sans-serif;  
+    font-family: "roboto", sans-serif;
 }
 
 body {
@@ -15,28 +14,32 @@ body {
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
 .logo {
-    width: 40%;
+    width: 100%;
     max-width: 150px;
     border-radius: 10px;
     margin-left: 20px;
 }
+
 .img-reducida {
-  width: 100px; height: 100px;
-  border: solid 3px #4717F6;
+    width: 100px;
+    height: 100px;
+    border: solid 3px #4717F6;
 }
+
 .img-grande {
-    width: 350px; height: 350px;
+    width: 350px;
+    height: 350px;
     border: solid 3px #4717F6;
 }
 
 .pepe {
     display: flex;
-    justify-content:space-around;
-   
+    justify-content: space-around;
 }
 
-.pupu{
+.pupu {
     color: #E7DFDD;
     background-color: #A239CA;
     border: solid 3px #4717F6;
@@ -44,7 +47,8 @@ body {
     height: 60px;
     width: auto;
 }
-.papa{
+
+.papa {
     color: #0E0B16;
     background-color: #E5E5E5;
     border: solid 3px #4717F6;
@@ -54,6 +58,7 @@ body {
     text-align: center;
     text-underline-position: below;
 }
+
 span {
     display: flex;
     justify-content: space-evenly;
@@ -64,12 +69,12 @@ span {
     width: auto;
 }
 
-.boton{
+.boton {
     background-color: #A239CA;
     height: 50px;
     width: 100px;
-
 }
+
 .boton2 {
     padding: 14px 24px;
     border-radius: 5px;
@@ -78,6 +83,7 @@ span {
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
 }
+
 .boton2:hover {
     background-color: #4717F6;
     color: #E5E5E5;
@@ -91,14 +97,19 @@ span {
     width: 100%;
     position: relative;
     max-width: 600px;
-  }
-  
-  /* (B) HIDE CHECKBOX */
-  .tab input { display: none; }
-  
-  /* (C) TAB LABEL */
-  .tab label {
+}
 
+
+/* (B) HIDE CHECKBOX */
+
+.tab input {
+    display: none;
+}
+
+
+/* (C) TAB LABEL */
+
+.tab label {
     display: block;
     margin-top: 10px;
     padding: 10px;
@@ -106,31 +117,91 @@ span {
     border: solid 3px #4717F6;
     background: #A239CA;
     cursor: pointer;
-  }
-  
-  /* (D) TAB CONTENT */
-  .tab .tab-content {
+}
+
+
+/* (D) TAB CONTENT */
+
+.tab .tab-content {
     /* CSS ANIMATION WILL NOT WORK WITH AUTO HEIGHT */
     /* THIS IS WHY WE USE MAX-HEIGHT INSTEAD */
     border: solid 1px #4717F6;
     color: #E5E5E5;
     overflow: hidden;
-    transition: min-height 0.3 ,max-height 0.3s;
+    transition: min-height 0.3, max-height 0.3s;
     max-height: 0;
-  }
-  .tab .tab-content p { padding: 10px; }
-  
-  /* (E) OPEN TAB ON CHECKED */
-  .tab input:checked ~ .tab-content { max-height: 100vh; }
-  
-  /* (F) EXTRA - ADD ARROW INDICATOR */
-  .tab label::after {
+}
+
+.tab .tab-content p {
+    padding: 10px;
+}
+
+
+/* (E) OPEN TAB ON CHECKED */
+
+.tab input:checked~.tab-content {
+    max-height: 100vh;
+}
+
+
+/* (F) EXTRA - ADD ARROW INDICATOR */
+
+.tab label::after {
     content: "\25b6";
     position: absolute;
     right: 10px;
     top: 10px;
     display: block;
     transition: all 0.4s;
-  }
-  .tab input:checked ~ label::after { transform: rotate(90deg); }
-  
+}
+
+.tab input:checked~label::after {
+    transform: rotate(90deg);
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+.contenedorFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: #0e0b16;
+    color: #E5E5E5;
+    padding: 20px;
+}
+
+.contenedorInfoL {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.contenedorContacto {
+    text-decoration: none;
+    font-style: normal;
+}
+
+.lista-contactanos {
+    list-style: none;
+}
+
+.icono-contacto {
+    margin-top: 10px;
+}
+
+.icono-contacto a {
+    text-decoration: none;
+    color: #E5E5E5;
+}
+
+@media (min-width: 769px) {
+    .contenedorFooter {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
