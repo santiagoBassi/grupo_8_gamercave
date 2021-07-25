@@ -10,37 +10,69 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style-product.css">
     <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
+    <script src="/public/js/index.js" defer></script>
+    
 </head>
 
 <body>
-    <header class="container-logo">
-        <img src="/images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo">
-    </header><br>
+    <header>
+        <nav class="menu-top">
+            <div class="container-logo">
+                <a href="/"><img src="/images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo"></a>
+            </div>
+            <div class="container-search">
+                <form action="" class="container-input-i">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <input type="text" placeholder="Buscar">
+                </form>
+            </div>
+            <ul class="menu-items" id="otro-modo">
+                <li class="active"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="/productCart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Seción</a></li>
+                <li><a href="/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
+            </ul>
+            <span class="btn-menu" onclick="showmenu()">
+                <i class="fa fa-bars"></i>
+            </span>
+        </nav>
 
+
+    </header><br>
+    
     <main>
-        <div>
-            <div class="pepe">
-                <article><img src="\images\ram-muestra.jpg" alt="Imagen grande"
-                        class="img-grande"></article>
+        
+            <div class="product-img">
                 <div>
-                    <h1 class="pupu">Memoria RAM DDR 8 GB HyperX FURY</h1>
-                    <div class="papa">
+                    <article class="articulo">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen grande" class="img-grande">
+                    </article><br> 
+                    <div class="display-lateral">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida display-reducida">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida display-reducida">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida display-reducida"> 
+                    </div>                    
+                </div>
+                <div class="todo">
+                    <h1 class="titulo-producto">Memoria RAM DDR 8 GB HyperX FURY</h1><br>
+                    <div class="product-caract"><br>
                         <div>Memorias/DDR4/HyperX FURY</div><br>
                         <div>Hay Stock/Envió gratis/Garantía de 6 meses</div><br>
                         <div>$6.669/Hasta 6 Cuotas sin interes</div><br>
-                        <span>
+                        <div class="span">
                              <button type="submit" type="button"class="boton2">Comprar</button> 
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-shopping-cart carrito"></i>
 
-                        </span>
+                        </div>
                     </div>
                 </div>
 
 
             </div>
 
+            
 
-        </div>
+       
 
         <!-- Boton acordeon -->
         <div class="tab">
@@ -62,5 +94,6 @@
 
     <footer>
     </footer>
+   
 </body>
 </html>
