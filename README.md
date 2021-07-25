@@ -38,3 +38,6 @@
 
 ## Link Wireframes
 * https://marvelapp.com/prototype/gh3e9e0
+
+## Link Tablero de Trabajo
+*https://trello.com/b/h2XOrfLR/trabajo-integrador-gamercave
