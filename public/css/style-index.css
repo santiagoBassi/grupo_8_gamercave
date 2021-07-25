@@ -129,7 +129,7 @@ main {
 /*aca arranca el slider*/
 
 .slideshow-container {
-    width: 90%;
+    max-width: 1000px;
     position: relative;
     margin: auto;
     margin-top: 20px;
@@ -137,16 +137,6 @@ main {
 
 .mySlides {
     display: none;
-}
-
-.container-banner {
-    margin: 40px 0px;
-    padding: 30px;
-    border-radius: 10px;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    height: 200px;
 }
 
 .prev,
@@ -158,6 +148,7 @@ main {
     margin-top: -22px;
     padding: 16px;
     color: #E5E5E5;
+    background-color: #4717F6;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -172,7 +163,78 @@ main {
 
 .prev:hover,
 .next:hover {
-    background-color: #0e0b1630;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
 
 
@@ -192,7 +254,11 @@ aside {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 40px;
+    /*height: 100vh;*/
+}
+
+.container-filter-sponsor {
+    width: 100%;
 }
 
 .btn-filtro {
@@ -228,6 +294,7 @@ aside {
     transition: all .5s;
     z-index: 1;
     overflow: scroll;
+    margin: auto;
 }
 
 .list-filter {
@@ -267,6 +334,41 @@ aside {
 
 
 /*aca termina el filtro para productos*/
+
+.container-sponsor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    position: relative;
+    display: none;
+}
+
+.container-sponsor img {
+    width: 80%;
+    margin-top: 10px;
+    background-color: white;
+    position: absolute;
+    top: 20px;
+}
+
+.vaticanoimg {
+    animation-name: sponsor;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes sponsor {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 
 /*aca empieza la seccion de productos*/
@@ -426,7 +528,7 @@ footer {
     aside {
         width: 20%;
         flex-direction: column;
-        height: 50%;
+        height: 100%;
         margin-top: 20px;
     }
     .filtro {
@@ -436,14 +538,16 @@ footer {
         width: 70%;
         margin-top: 10px;
         border-radius: 3px;
-        background-color: white;
-        border: solid 2px #0e0b16;
+        background-color: #0e0b16;
     }
     .filtro li {
-        border-top: #0e0b16 solid 1px;
+        border-top: #E5E5E5 solid 1px;
     }
     .filtro li a {
-        color: #0e0b16;
+        color: #E5E5E5;
+    }
+    .filtro li a:hover {
+        color: #4717F6;
     }
     #girar-flecha {
         display: none;
@@ -454,5 +558,8 @@ footer {
     .contenedorFooter {
         flex-direction: row;
         justify-content: space-around;
+    }
+    .container-sponsor {
+        display: flex;
     }
 }
