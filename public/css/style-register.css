@@ -49,8 +49,7 @@ form {
     flex-direction: column;
     align-items: center;
     padding: 10px 25px;
-    background-color: #E5E5E5;
-    border: solid 3px #4717F6;
+    background-color: #e5e5e5d7;
     border-radius: 10px;
 }
 
@@ -69,6 +68,7 @@ form div label {
     padding-bottom: 8px;
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 
 .input {
@@ -79,6 +79,7 @@ form div label {
     background-color: #7f7f7f32;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 .input:focus {
@@ -105,13 +106,14 @@ form p {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
     color: #0E0B16;
+    font-weight: 600;
 }
 
 form p a {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
     color: #4717F6;
-    ;
+    font-weight: 600;
 }
 
 .divisor {
