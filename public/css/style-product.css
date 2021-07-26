@@ -1,208 +1,46 @@
-
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: "roboto", sans-serif;  
+    font-family: "roboto", sans-serif;
 }
 
+
 /**/
+
 body {
     background-color: #0E0B16;
 }
 
-main{
-    margin: 0 9%;
-}
-.container-logo {
-    width: 180px;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    max-width: 220px;
-}                       
-.logo {
-    width: 100%;
-    max-width: 150px;
-    border-radius: 10px;
-    margin-left: 20px;
-}
-
-
-
-.display-lateral {
-    display: flex;
-    justify-content: center;
-}
-
-.display-reducida {
-    display: flex;
-    margin-left: 20px;
-    
-}
-
-.articulo{
-    display: flex;
-    justify-content: center;
-}
-
-.img-reducida {
-  width: 100px; 
-  height: 100px;
-  border: solid 3px #4717F6;
-  border-radius: 10px;
-  margin-bottom: 2%;
-}
-.img-grande {
-    
-    width: 100%; 
-    border: solid 3px #4717F6;
-    border-radius: 10px;
-}
-
-
-
-.titulo-producto{
-    color: #E7DFDD;
-    background-color: #A239CA;
-    border: solid 3px #4717F6;
-    border-radius: 10px;
-    padding: 10px;
-    height: 10%;
-}
-
-.todo{
-    width: 100%;
-    margin-right:2% ;
-}
-.product-caract{
-    color: #0E0B16;
-    background-color: #E5E5E5;
-    border: solid 3px #4717F6;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    
-    
-}
-.span {
-    display: flex;
-    justify-content: center;
-    color: #0E0B16;
-    background-color: #E5E5E5;
-    padding: 10px;
-    gap: 15px;
-    align-items: center;
-}
-
-.boton{
-    background-color: #A239CA;
-    height: 50px;
-    width: 100px;
-
-}
-
-.carrito{ 
-    font-size: 25px;
-   
-}
-
-.boton2 {
-    padding: 14px 24px;
-    border-radius: 5px;
-    border: 2px solid #4717F6;
-    border-radius: 10px;
-    background-color: #E5E5E5;
-    color: #0E0B16;
-    font-family: 'Roboto', sans-serif;
-}
-.boton2:hover {
-    background-color: #4717F6;
-    border-radius: 10px;
-    color: #E5E5E5;
-    transition-duration: 1s;
-}
-
-
-/* Boton Caracteristicas*/
-
-.tab {
-    display: block;
-      margin-left: auto;
-      margin-right: auto;
- 
-    position: relative;
-   
-  }
-  
-  /* (B) HIDE CHECKBOX */
-  .tab input { display: none; }
-  
-  /* (C) TAB LABEL */
-  .tab label {
-    height: 100%;
-    text-align: center;
-    display: block;
-    margin-top: 10px;
-    padding: 10px;
-    color: #E7DFDD;
-    border: solid 3px #4717F6;
-    border-radius: 7px;
-    background: #A239CA;
-    cursor: pointer;
-  }
-  
-  /* (D) TAB CONTENT */
-  .tab .tab-content {
-    /* CSS ANIMATION WILL NOT WORK WITH AUTO HEIGHT */
-    /* THIS IS WHY WE USE MAX-HEIGHT INSTEAD */
-    border-top-style: hidden;
-    border: solid 1px #4717F6;
-    border-radius: 7px;
-    color: #E5E5E5;
-    overflow: hidden;
-    transition: min-height 0.3 ,max-height 0.3s;
-    max-height: 0;
-  }
-  .tab .tab-content p { padding: 10px; }
-  
-  /* (E) OPEN TAB ON CHECKED */
-  .tab input:checked ~ .tab-content { max-height: 100vh; }
-  
-  /* (F) EXTRA - ADD ARROW INDICATOR */
-  .tab label::after {
-    content: "\25b6";
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    display: block;
-    transition: all 0.4s;
-  }
-  .tab input:checked ~ label::after { transform: rotate(90deg); }
-  
 header {
     background-color: #0e0b16;
     width: 100%;
-    border-bottom: solid 2px #A239CA;
-    border-radius: 7px;
 }
 
 .menu-top {
     width: 100%;
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 75px;
 }
 
+.container-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    max-width: 220px;
+}
 
-
+.logo {
+    width: 100%;
+    max-width: 150px;
+}
 
 .container-search {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 70%;
 }
 
 .container-input-i {
@@ -241,6 +79,7 @@ header {
     text-align: center;
     transition: all 0.4s;
     margin-right: 60px;
+    z-index: 100;
 }
 
 .menu-items li {
@@ -252,10 +91,11 @@ header {
 .menu-items li a {
     text-decoration: none;
     display: block;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans';
     font-size: 20px;
     color: #E5E5E5;
     padding: 30px;
+    transition: color 0.5s;
 }
 
 .menu-items li a:hover {
@@ -270,91 +110,250 @@ header {
     color: #E5E5E5;
     font-size: 20px;
     width: 20%;
-    margin-right: 10px;
-    margin-left: 10px;
 }
 
 .show {
-    top: 80px;
+    top: 75px;
+}
+
+main {
+    margin: 0 9%;
+}
+
+.container-logo {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    max-width: 220px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.display-lateral {
+    display: flex;
+    justify-content: center;
+}
+
+.display-reducida {
+    display: flex;
+    margin-left: 20px;
+}
+
+.articulo {
+    display: flex;
+    justify-content: center;
+}
+
+.img-reducida {
+    width: 100px;
+    height: 100px;
+    border: solid 3px #4717F6;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+.img-grande {
+    width: 100%;
+    border: solid 3px #4717F6;
+    border-radius: 10px;
+}
+
+.titulo-producto {
+    color: #E7DFDD;
+    background-color: #A239CA;
+    border: solid 3px #4717F6;
+    border-radius: 10px;
+    padding: 10px;
+    height: 10%;
+}
+
+.todo {
+    width: 100%;
+    margin-right: 2%;
+}
+
+.product-caract {
+    color: #0E0B16;
+    background-color: #E5E5E5;
+    border: solid 3px #4717F6;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.span {
+    display: flex;
+    justify-content: center;
+    color: #0E0B16;
+    background-color: #E5E5E5;
+    padding: 10px;
+    gap: 15px;
+    align-items: center;
+}
+
+.boton {
+    background-color: #A239CA;
+    height: 50px;
+    width: 100px;
+}
+
+.carrito {
+    font-size: 25px;
+}
+
+.boton2 {
+    padding: 14px 24px;
+    border-radius: 5px;
+    border: 2px solid #4717F6;
+    border-radius: 10px;
+    background-color: #E5E5E5;
+    color: #0E0B16;
+    font-family: 'Roboto', sans-serif;
+}
+
+.boton2:hover {
+    background-color: #4717F6;
+    border-radius: 10px;
+    color: #E5E5E5;
+    transition-duration: 1s;
+}
+
+
+/* Boton Caracteristicas*/
+
+.tab {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+
+/* (B) HIDE CHECKBOX */
+
+.tab input {
+    display: none;
+}
+
+
+/* (C) TAB LABEL */
+
+.tab label {
+    height: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    color: #E7DFDD;
+    border: solid 3px #4717F6;
+    border-radius: 7px;
+    background: #A239CA;
+    cursor: pointer;
+}
+
+
+/* (D) TAB CONTENT */
+
+.tab .tab-content {
+    /* CSS ANIMATION WILL NOT WORK WITH AUTO HEIGHT */
+    /* THIS IS WHY WE USE MAX-HEIGHT INSTEAD */
+    border-top-style: hidden;
+    border: solid 1px #4717F6;
+    border-radius: 7px;
+    color: #E5E5E5;
+    overflow: hidden;
+    transition: min-height 0.3, max-height 0.3s;
+    max-height: 0;
+  }
+  .tab .tab-content p { padding: 10px; }
+  
+  /* (E) OPEN TAB ON CHECKED */
+  .tab input:checked ~ .tab-content { max-height: 100vh; }
+  
+  /* (F) EXTRA - ADD ARROW INDICATOR */
+  .tab label::after {
+    content: "\25b6";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: all 0.4s;
+  }
+  .tab input:checked ~ label::after { transform: rotate(90deg); }
+  
+header {
+    background-color: #0e0b16;
+    width: 100%;
+    border-bottom: solid 2px #A239CA;
+    border-radius: 7px;
+}
+
+.tab .tab-content p {
+    padding: 10px;
+}
+
+
+/* (E) OPEN TAB ON CHECKED */
+
+.tab input:checked~.tab-content {
+    max-height: 100vh;
+}
+
+
+/* (F) EXTRA - ADD ARROW INDICATOR */
+
+.tab label::after {
+    content: "\25b6";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: all 0.4s;
+}
+
+.tab input:checked~label::after {
+    transform: rotate(90deg);
 }
 
 @media (min-width: 1025px) {
-
     .product-img {
         display: flex;
-        justify-content:baseline;
-        
-    }
-
-    .btn-menu {
-        display: none;
-    }
-    .container-search {
-        width: 40%;
-    }
-    .menu-items {
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-        top: initial;
-        width: 40%;
-        position: initial;
-        background: none;
-        height: 100%;
-    }
-    .menu-items li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #E5E5E5;
-        height: 70%;
-        margin-left: 10px;
-        border-left: 1px solid #E5E5E5;
-    }
-    .menu-items li a {
-        padding: 0px;
-        color: #0e0b16;
+        justify-content: baseline;
     }
 }
 
-
-
-
-
-
-
 @media screen and (max-width: 800px) {
-
-    .boton2{
+    .boton2 {
         display: block;
-      margin-left: auto;
-      margin-right: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    .titulo-producto{
+    .titulo-producto {
         align-items: center;
         display: flex;
         justify-content: center;
         padding: 10%;
         text-align: center;
     }
-
-
-
-   .img-grande{
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-   }
-
-    .tab {
-       display: block;
-      margin-left: auto;
-      margin-right: auto;
+    .img-grande {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
-
+    .tab {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     table {
-        width:100%;
+        width: 100%;
     }
     thead {
         display: none;
@@ -364,21 +363,21 @@ header {
     }
     tr td:first-child {
         background: #f0f0f0;
-        font-weight:bold;
-        font-size:1.3em;
+        font-weight: bold;
+        font-size: 1.3em;
     }
     tbody td {
         display: block;
-        text-align:center;
+        text-align: center;
     }
     tbody td:before {
         content: attr(data-th);
         display: block;
-        text-align:center;
+        text-align: center;
     }
 }
 
-@media (min-width:588){
+@media (min-width:588) {
     .product-img {
         display: flex;
         justify-content: stretch;
@@ -386,18 +385,42 @@ header {
 }
 
 @media (min-width: 769px) {
-
-    
-    .titulo-producto{
+    .menu-top {
+        justify-content: space-around;
+        height: 80px;
+    }
+    .container-search {
+        width: 30%;
+    }
+    .menu-items {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        position: static;
+        width: 45%;
+        max-width: 360px;
+        background: none;
+        top: initial;
+        margin-right: 0px;
+        z-index: initial;
+    }
+    .menu-items li a {
+        padding: 0px;
+        font-size: 15px;
+        padding: 10px 0px;
+    }
+    .btn-menu {
+        display: none;
+    }
+    .titulo-producto {
         align-items: center;
         display: flex;
         justify-content: center;
-        padding:inherit;
+        padding: inherit;
         text-align: center;
         font-size: 100%;
-       }
-
-    .product-caract{
+    }
+    .product-caract {
         color: #0E0B16;
         background-color: #E5E5E5;
         border: solid 3px #4717F6;
@@ -406,15 +429,12 @@ header {
         height: auto;
         width: auto;
         text-align: center;
-        
     }
     .product-img {
         margin-left: 2%;
         display: flex;
-        justify-content:center;
+        justify-content: center;
         gap: 50px;
-
-       
     }
     main {
         flex-direction: row-reverse;
