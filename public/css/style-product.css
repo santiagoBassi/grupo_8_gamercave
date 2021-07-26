@@ -68,7 +68,7 @@ main{
     border: solid 3px #4717F6;
     border-radius: 10px;
     padding: 10px;
-    height: 60px;
+    height: 10%;
 }
 
 .todo{
@@ -181,21 +181,6 @@ main{
   }
   .tab input:checked ~ label::after { transform: rotate(90deg); }
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
 header {
     background-color: #0e0b16;
     width: 100%;
