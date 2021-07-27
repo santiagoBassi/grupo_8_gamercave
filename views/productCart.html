@@ -10,79 +10,74 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style-carrito.css">
     <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
+    <script src="/js/carrito.js" defer></script>
 </head>
 
 <body>
-    <header class="container-logo">
-        <a href="/"><img src="images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo"></a>
-    </header><br>
-
+    <header>
+        <nav class="menu-top">
+            <div class="container-logo">
+                <a href="/"><img src="/images/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo"></a>
+            </div>
+            <div class="container-search">
+                <form action="" class="container-input-i">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <input type="text" placeholder="Buscar">
+                </form>
+            </div>
+            <ul class="menu-items" id="otro-modo">
+                <li><a href="/productCart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                <li><a href="/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
+            </ul>
+            <span class="btn-menu" onclick="showmenu()">
+                <i id="otro-modo" class="fa fa-bars"></i>
+            </span>
+        </nav>
+    </header>
     <main>
-        <div id="container">
-            <span>
-
+        <div class="container-producto-carrito">
+            <i class="close fas fa-times"></i>
+            <div class="container-img-producto">
                 <img src="images\ram-muestra.jpg" alt="">
-                <span>Memoria RAM DDR 8 GB HyperX FURY</span>
+            </div>
+            <div class="container-info-producto">
+                <div class="container-nombre-porducto">
+                    <h4>Memoria RAM DDR 8 GB HyperX FURY</h4>
+                </div>
+                <div class="container-cantidad-precio">
+                    <form class="container-cantidad">
+                        <div class="btn-aumen-decre" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" />
+                        <div class="btn-aumen-decre" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </form>
+                    <div class="container-precio">
+                        <p>$6.699</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container-envio-pago">
 
-            <form>
-                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                <input type="number" id="number" value="1" />
-                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-            </form>
-            <div>$6.699</div>
-            <button type="button" onclick="borrar()">BORRAR</button>
-            </span>
-        </div><br>
-
-        <div id="container">
-            <span>
-
-                <img src="images\ram-muestra.jpg" alt="">
-                <span>Memoria RAM DDR 8 GB HyperX FURY</span>
-
-            <form>
-                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                <input type="number" id="number" value="0" />
-                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-            </form>
-            <div>$6.699</div>
-            <button type="button" onclick="borrar()">BORRAR</button>
-            </span>
-        </div><br>
-
-        <div id="container">
-            <span>
-
-                <img src="images\ram-muestra.jpg" alt="">
-                <span>Memoria RAM DDR 8 GB HyperX FURY</span>
-
-            <form>
-                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                <input type="number" id="number" value="0" />
-                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-            </form>
-            <div>$6.699</div>
-            <button type="button" onclick="borrar()">BORRAR</button>
-            </span>
-        </div><br>
-
-
-        <div class="papa">
-            <br>
-            <div>
-                <div>Tipo de Envio:</div><br>
+            <div class="container-opciones-compra">
+                <h5>Tipo de Envio:</h5>
                 <label><input type="radio" name="envio"> Retiro al correo</label>
                 <label><input type="radio" name="envio"> Envio a domicilio domicilio</label><br><br>
             </div>
-            <div>Metodo de pago:</div><br>
-            <label><input type="radio" name="pago"> Transferencia bancaria</label>
-            <label><input type="radio" name="pago"> Tarjeta de Credito/Debito</label>
-            <label><input type="radio" name="pago"> Mercado Pago</label>
-            <label><input type="radio" name="pago"> Bitcoin</label><br><br>
 
-            <div>Precio total:</div><br>
+            <div class="container-opciones-compra">
+                <h5>Metodo de pago:</h5>
+                <label><input type="radio" name="pago"> Transferencia bancaria</label>
+                <label><input type="radio" name="pago"> Tarjeta de Credito/Debito</label>
+                <label><input type="radio" name="pago"> Mercado Pago</label>
+                <label><input type="radio" name="pago"> Bitcoin</label><br><br>
+            </div>
+            <h4>Precio total:</h4>
+            <div class="container-btn-comprar">
+                <button type="submit" type="button" class="btn-comprar">Comprar</button>
+            </div>
 
-            <button type="submit" type="button" class="boton2">Comprar</button>
 
 
     </main>
@@ -109,12 +104,6 @@
                 </ul>
             </div>
         </div>
-
-
-
-
-
-
     </footer>
 
     <script src="/grupo_8_gamercave/public/js/carrito.js"></script>

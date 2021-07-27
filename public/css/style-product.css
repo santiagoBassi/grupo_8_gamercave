@@ -15,6 +15,7 @@ body {
 header {
     background-color: #0e0b16;
     width: 100%;
+    border-bottom: solid 2px #A239CA;
 }
 
 .menu-top {
@@ -301,13 +302,6 @@ main {
 
 .tab input:checked~label::after {
     transform: rotate(90deg);
-}
-
-header {
-    background-color: #0e0b16;
-    width: 100%;
-    border-bottom: solid 2px #A239CA;
-    border-radius: 7px;
 }
 
 .tab .tab-content p {

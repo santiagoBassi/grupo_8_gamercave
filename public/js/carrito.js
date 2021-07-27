@@ -1,3 +1,8 @@
+/*comienza header*/
+function showmenu() {
+    document.getElementById("otro-modo").classList.toggle("show");
+}
+/*termina header*/
 /*Botones de agregar o disminuir cantidad*/
 function increaseValue() {
     var value = parseInt(document.getElementById('number').value, 10);
