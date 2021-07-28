@@ -35,7 +35,36 @@
             </span>
         </nav>
     </header>
+
     <main>
+        <div>
+            <div class="container-producto-carrito">
+                <i class="close fas fa-times"></i>
+                <div class="container-img-producto">
+                    <img src="images\ram-muestra.jpg" alt="">
+                </div>
+                <div class="container-info-producto">
+                    <div class="container-nombre-porducto">
+                        <p>Memoria RAM DDR 8 GB HyperX FURY</p>
+                    </div>
+                    <div class="container-cantidad-precio">
+                        <form class="container-cantidad">
+                            <div class="btn-aumen-decre" id="decrease" onclick="decreaseValue()" value="Decrease Value">
+                                -
+                            </div>
+                            <input type="number" id="number" value="0" />
+                            <div class="btn-aumen-decre" id="increase" onclick="increaseValue()" value="Increase Value">
+                                +
+                            </div>
+                        </form>
+                        <div class="container-precio">
+                            <p>$6.699</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-producto-carrito">
             <i class="close fas fa-times"></i>
             <div class="container-img-producto">
@@ -43,13 +72,17 @@
             </div>
             <div class="container-info-producto">
                 <div class="container-nombre-porducto">
-                    <h4>Memoria RAM DDR 8 GB HyperX FURY</h4>
+                    <p>Memoria RAM DDR 8 GB HyperX FURY</p>
                 </div>
                 <div class="container-cantidad-precio">
                     <form class="container-cantidad">
-                        <div class="btn-aumen-decre" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <div class="btn-aumen-decre" id="decrease" onclick="decreaseValue()" value="Decrease Value">
+                            -
+                        </div>
                         <input type="number" id="number" value="0" />
-                        <div class="btn-aumen-decre" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                        <div class="btn-aumen-decre" id="increase" onclick="increaseValue()" value="Increase Value">
+                            +
+                        </div>
                     </form>
                     <div class="container-precio">
                         <p>$6.699</p>
@@ -57,30 +90,63 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="container-envio-pago">
 
-            <div class="container-opciones-compra">
-                <h5>Tipo de Envio:</h5>
-                <label><input type="radio" name="envio"> Retiro al correo</label>
-                <label><input type="radio" name="envio"> Envio a domicilio domicilio</label><br><br>
+
+        <div class="container-producto-carrito">
+            <i class="close fas fa-times"></i>
+            <div class="container-img-producto">
+                <img src="images\ram-muestra.jpg" alt="">
             </div>
-
-            <div class="container-opciones-compra">
-                <h5>Metodo de pago:</h5>
-                <label><input type="radio" name="pago"> Transferencia bancaria</label>
-                <label><input type="radio" name="pago"> Tarjeta de Credito/Debito</label>
-                <label><input type="radio" name="pago"> Mercado Pago</label>
-                <label><input type="radio" name="pago"> Bitcoin</label><br><br>
+            <div class="container-info-producto">
+                <div class="container-nombre-porducto">
+                    <p>Memoria RAM DDR 8 GB HyperX FURY</p>
+                </div>
+                <div class="container-cantidad-precio">
+                    <form class="container-cantidad">
+                        <div class="btn-aumen-decre" id="decrease" onclick="decreaseValue()" value="Decrease Value">
+                            -
+                        </div>
+                        <input type="number" id="number" value="0" />
+                        <div class="btn-aumen-decre" id="increase" onclick="increaseValue()" value="Increase Value">
+                            +
+                        </div>
+                    </form>
+                    <div class="container-precio">
+                        <p>$6.699</p>
+                    </div>
+                </div>
             </div>
-            <h4>Precio total:</h4>
-            <div class="container-btn-comprar">
-                <button type="submit" type="button" class="btn-comprar">Comprar</button>
+        </div>
+
+
+        <div class="">
+            <div class="container-envio-pago main2">
+
+                <div class="container-opciones-compra span">
+                    <p>Tipo de Envio:</p><br>
+                    <span>
+                        <label><input type="radio" name="envio"> Retiro al correo</label>
+                        <label><input type="radio" name="envio"> Envio a domicilio domicilio</label>
+                    </span>
+                </div>
+
+                <div class="container-opciones-compra span">
+                    <p>Metodo de pago:</p><br>
+                    <label><input type="radio" name="pago"> Transferencia bancaria</label>
+                    <label><input type="radio" name="pago"> Tarjeta de Credito/Debito</label>
+                    <label><input type="radio" name="pago"> Mercado Pago</label>
+                    <label><input type="radio" name="pago"> Bitcoin</label>
+                </div><br>
+                <h4>Precio total:</h4><br>
+                <div class="container-btn-comprar">
+                    <button type="submit" type="button" class="btn-comprar">Comprar</button>
+                </div>
             </div>
-
-
-
+        </div>
     </main>
+
+    <hr>
+
 
     <footer>
         <div class="contenedorFooter">
