@@ -29,3 +29,14 @@ function borrar() {
     cont--;
 
 }
+
+
+
+
+
+
+
+
+
+
+
