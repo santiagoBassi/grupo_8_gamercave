@@ -6,20 +6,21 @@
 }
 
 body {
-    background-image: url('/images/background-account.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-color: #140f07;
 }
 
+
+/*
 p {
     text-align: center;
-}
+}*/
 
 header {
-    background-color: #0e0b16;
-    width: 100%;
-    margin-bottom: 20px;
+    background-color: #4b5985;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
 }
 
 .menu-top {
@@ -33,7 +34,9 @@ header {
     display: flex;
     align-items: center;
     margin-left: 10px;
-    max-width: 220px;
+    margin-right: 10px;
+    max-width: 100px;
+    border-radius: 20px;
 }
 
 .logo {
@@ -73,24 +76,29 @@ header {
     margin-right: 4px;
 }
 
+.container-input-i button i {
+    color: #140f07;
+}
+
 .menu-items {
     list-style: none;
     display: flex;
     flex-direction: column;
     position: fixed;
     width: 100vw;
-    background-color: #7F7F7F;
+    background-color: #120907e1;
     top: -100vh;
     text-align: center;
     transition: all 0.4s;
     margin-right: 60px;
-    z-index: 100;
+    z-index: 2;
 }
 
 .menu-items li {
     width: 100%;
     text-align: center;
-    border-top: solid 1px #0e0b16;
+    border-top: solid 3px #4f5d9c;
+    padding: 0px 10px;
 }
 
 .menu-items li a {
@@ -98,14 +106,18 @@ header {
     display: block;
     font-family: 'Noto Sans';
     font-size: 20px;
-    color: #E5E5E5;
+    color: white;
     padding: 30px;
     transition: color 0.5s;
 }
 
 .menu-items li a:hover {
-    color: #4717F6;
+    color: #4f5d9c;
     transition-duration: 0.5s;
+}
+
+.menu-items li a i {
+    color: white;
 }
 
 .btn-menu {
@@ -119,6 +131,14 @@ header {
 
 .show {
     top: 75px;
+}
+
+main {
+    margin-top: 110px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main {
@@ -141,14 +161,13 @@ hr {
 
 .container-producto-carrito {
     border-radius: 10px;
-    border: solid 2px #4717F6;
+    border: solid 2px #4b5985;
     margin: auto;
     width: 90%;
     margin-top: 6px;
     background-color: #e5e5e5de;
     border-radius: 5px;
     padding: 5px;
-    font-size: 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -180,16 +199,17 @@ hr {
 }
 
 .container-img-producto img {
+    background-color: #4b59857c;
     border-radius: 10px;
-    border: solid 2px #4717F6;
+    border: solid 2px #4b5985;
     width: 110px;
 }
 
 .btn-comprar {
     padding: 14px 24px;
     border-radius: 5px;
-    border: 2px solid #4717F6;
-    background-color: #E5E5E5;
+    border: 2px solid #4b5985;
+    background: #7f7f7f6c;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -197,7 +217,7 @@ hr {
 }
 
 .btn-comprar:hover {
-    background-color: #4717F6;
+    background-color: #4b5985;
     color: #E5E5E5;
 }
 
@@ -211,13 +231,12 @@ hr {
 }
 
 .container-nombre-porducto {
+    font-style: italic;
+    font-variant: small-caps;
     width: 100%;
     margin-top: 0px;
     margin-bottom: 10px;
-}
-
-.container-nombre-porducto h4 {
-    font-size: 12px;
+    font-size: 20px;
 }
 
 .container-cantidad-precio {
@@ -227,42 +246,58 @@ hr {
     width: 100%
 }
 
+.container-precio {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2e2e2e;
+    background-color: #4b59858e;
+    border-radius: 3px;
+    padding: 2%;
+}
+
 .container-cantidad {
-    width: 80px;
+    width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #4717F6;
+    border: 2px solid #4b5985;
     border-radius: 5px;
     margin-top: 5px;
 }
 
 .container-cantidad input {
-    width: 27px;
+    width: 35px;
     text-align: center;
-    padding: 4px;
     margin: 3px;
     border: none;
     background-color: #0e0b1600;
-    border-left: solid 1px #0e0b16;
-    border-right: solid 1px #0e0b16;
     padding: 4px 6px;
 }
 
+
+/*Con esto desaparecen los botones predefinidos del input number */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .btn-aumen-decre {
-    padding: 14px 24px;
-    border-radius: 5px;
+    text-align: center;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     transition: all .5s;
-    font-size: 20px;
-    padding: 3px;
+    padding: 7%;
     cursor: pointer;
+    width: 100%;
 }
 
 .btn-aumen-decre:hover {
-    background-color: #4717F6;
+    width: 100%;
+    background-color: #4b5985;
     color: #E5E5E5;
 }
 
@@ -275,22 +310,41 @@ hr {
     border-radius: 10px;
     margin: auto;
     width: 90%;
+    max-width: 400px;
     margin-top: 15px;
     background-color: #e5e5e5de;
-    border-radius: 5px;
+    border: solid 2px #4b5985;
+}
+
+select {
+    transition: all .5s;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    font-style: italic;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+select:hover {
+    background-color: #4b5985;
+    color: #E5E5E5;
 }
 
 .container-opciones-compra {
+    font-weight: 500;
+    background-color: #7f7f7f6c;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
     border: solid 2px #7F7F7F;
     border-radius: 10px;
-    width: 90%;
     margin-top: 6px;
     margin-bottom: 3px;
     padding: 10px;
+    width: 60%;
 }
 
 .container-opciones {
@@ -309,18 +363,18 @@ hr {
 }
 
 footer {
-    position: relative;
     bottom: 0px;
     width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #4b5985;
 }
 
-.contenedorFooter {
+.footer-superior {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    background-color: #0e0b16;
+    margin-top: 50px;
     color: #E5E5E5;
     padding: 20px;
 }
@@ -328,30 +382,72 @@ footer {
 .contenedorInfoL {
     text-decoration: none;
     font-style: normal;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacionLegal {
+    margin-bottom: 10px;
+}
+
+.lista-info-legal {
+    list-style: none;
+}
+
+.lista-info-legal li {
+    margin-top: 5px;
 }
 
 .contenedorContacto {
     text-decoration: none;
     font-style: normal;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .lista-contactanos {
     list-style: none;
 }
 
-.icono-contacto {
-    margin-top: 10px;
+.lista-contactanos li {
+    margin-top: 5px;
 }
 
-.icono-contacto a {
+.lista-contactanos li a {
     text-decoration: none;
     color: #E5E5E5;
+}
+
+.footer-inferior {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 5px;
+}
+
+.derechos-reservados {
+    display: flex;
+    flex-direction: row;
+    color: #E5E5E5;
+    margin-top: 5px;
+}
+
+.footer-inferior p a {
+    color: #E5E5E5;
+    text-decoration: none;
 }
 
 @media (min-width: 769px) {
     .menu-top {
         justify-content: space-around;
-        height: 80px;
+        height: 70px;
     }
     .container-search {
         width: 30%;
@@ -361,17 +457,27 @@ footer {
         align-items: center;
         justify-content: space-around;
         position: static;
-        width: 45%;
-        max-width: 360px;
+        width: 50%;
+        max-width: 370px;
         background: none;
         top: initial;
         margin-right: 0px;
         z-index: initial;
     }
+    .menu-items li {
+        border-top: none;
+        transition: all .5s;
+    }
     .menu-items li a {
-        padding: 0px;
-        font-size: 15px;
+        font-size: 12px;
         padding: 10px 0px;
+        margin: 0px 5px;
+        border-top: solid 4px #140f07;
+        transition: all .5s;
+    }
+    .menu-items li a:hover {
+        border-top: solid 4px white;
+        color: white;
     }
     .btn-menu {
         display: none;
@@ -386,5 +492,16 @@ footer {
     .contenedorFooter {
         flex-direction: row;
         justify-content: space-around;
+    }
+    .footer-superior {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .footer-inferior {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
     }
 }

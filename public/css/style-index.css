@@ -21,6 +21,10 @@ color1 {color: #120907;}
     color: white;
 }
 
+html {
+    width: 100vw;
+}
+
 body {
     background-color: #140f07;
 }
@@ -157,15 +161,18 @@ main {
 
 /**/
 
-.slider {
-    height: 500px;
+.container-slider {
+    width: 90%;
+    margin: auto;
     border-radius: 10px;
+}
+
+.slider {
     overflow: hidden;
 }
 
 .slides {
     width: 500%;
-    height: 500px;
     display: flex;
 }
 
@@ -180,20 +187,20 @@ main {
 
 .slide img {
     width: 100%;
-    height: 500px;
+    border-radius: 10px;
 }
 
 .nav-manual {
     position: absolute;
     left: 0px;
     right: 0px;
-    margin-top: -40px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
 
 .manual-btn {
-    border: solid 2px black;
+    border: solid 2px #4b5985;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -205,7 +212,7 @@ main {
 }
 
 .manual-btn:hover {
-    background-color: black;
+    background-color: #4b5985;
 }
 
 #radio1:checked~.first {
@@ -220,40 +227,13 @@ main {
     margin-left: -40%;
 }
 
-.nav-auto {
-    display: none;
-}
-
-.nav-auto div {
-    border: solid 2px black;
-    padding: 5px;
-    border-radius: 10px;
-    transition: 1s;
-}
-
-.nav-auto div:not(:last-child) {
-    margin-right: 40px;
-}
-
-#radio1:checked~.nav-auto .auto-btn1 {
-    background: black;
-}
-
-#radio2:checked~.nav-auto .auto-btn2 {
-    background: black;
-}
-
-#radio3:checked~.nav-auto .auto-btn3 {
-    background: black;
-}
-
 
 /**/
 
 .container-productos-filtro {
     display: flex;
     flex-direction: column;
-    margin-top: 110px;
+    margin-top: 80px;
 }
 
 
@@ -272,7 +252,7 @@ aside {
 }
 
 .btn-filtro {
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -331,17 +311,17 @@ aside {
 .list-filter li {
     text-align: center;
     padding: 20px;
+    transition: background-color 1s;
+}
+
+.list-filter li:hover {
+    background-color: #140f07;
 }
 
 .list-filter li a {
     text-decoration: none;
     text-align: center;
     color: #E5E5E5;
-    transition: color 1s;
-}
-
-.list-filter li a:hover {
-    color: #140f07;
 }
 
 
@@ -443,6 +423,7 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: solid 3px #4f5d9c;
     transition: box-shadow .5s;
 }
 
@@ -540,8 +521,7 @@ footer {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
 }
 
 .derechos-reservados {
@@ -549,10 +529,6 @@ footer {
     flex-direction: row;
     color: #E5E5E5;
     margin-top: 5px;
-}
-
-.icono-copyright {
-    color: #E5E5E5;
 }
 
 .footer-inferior p a {
@@ -598,7 +574,7 @@ h5 {
     /*comienza el header*/
     .menu-top {
         justify-content: space-around;
-        height: 90px;
+        height: 70px;
     }
     .container-search {
         width: 30%;
@@ -617,15 +593,17 @@ h5 {
     }
     .menu-items li {
         border-top: none;
+        transition: all .5s;
     }
     .menu-items li a {
-        font-size: 13px;
+        font-size: 12px;
         padding: 10px 0px;
         margin: 0px 5px;
         border-top: solid 4px #140f07;
-        color: white
+        transition: all .5s;
     }
-    .menu-items li a i {
+    .menu-items li a:hover {
+        border-top: solid 4px white;
         color: white;
     }
     .btn-menu {
@@ -680,7 +658,7 @@ h5 {
         width: 70%;
         margin-top: 10px;
         border-radius: 3px;
-        background-color: #8598e5;
+        background-color: #4b5985;
     }
     .filtro li {
         border-top: #E5E5E5 solid 1px;
