@@ -316,6 +316,11 @@ input[type=number]::-webkit-outer-spin-button {
     border: solid 2px #4b5985;
 }
 
+option{
+    transition: all .5s;
+  
+}
+
 select {
     transition: all .5s;
     cursor: pointer;
@@ -339,7 +344,7 @@ select:hover {
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
-    border: solid 2px #7F7F7F;
+    border: solid 2px #4b5985;
     border-radius: 10px;
     margin-top: 6px;
     margin-bottom: 3px;
