@@ -555,11 +555,59 @@ footer {
     .ocultar-close {
         display: none;
     }
-    .contenedorFooter {
+    .footer-superior {
         flex-direction: row;
         justify-content: space-around;
     }
     .container-sponsor {
         display: flex;
     }
+}
+
+.footer-inferior {
+    background: #101010;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.derechos-reservados {
+    display: flex;
+    flex-direction: row;
+    color: #E5E5E5;
+    margin-left: 10px;
+}
+
+.icono-copyright {
+    color: #E5E5E5;
+}
+
+.footer-inferior p a {
+    color: #E5E5E5;
+    text-decoration: none;
+}
+
+.ayuda-sobrenos {
+    margin-right: 10px;
+}
+
+.contenedor-envio-pago {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #0e0b16;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icono-footer {
+    color: blue;
+}
+
+.icono-footer:hover {
+    color: #39b54a;
+}
+
+h5 {
+    color: black;
 }
