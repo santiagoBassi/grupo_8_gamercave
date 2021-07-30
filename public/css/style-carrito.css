@@ -9,24 +9,13 @@ body {
     background-color: #0e0b16;
 }
 
-p{
-    text-align:center;
-
-}
-.span{
-    border-radius: 10px;
-    border: solid 2px #7F7F7F;
-    width: 30%;
-    margin-top: 6px;
-    border-radius: 5px;
+p {
     text-align: center;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3px;
-    margin-bottom: 3px;
-   
 }
+
 header {
+    border-bottom: solid 2px #4717F6;
+    border-radius: 7px;
     background-color: #0e0b16;
     width: 100%;
     margin-bottom: 20px;
@@ -131,7 +120,7 @@ header {
     top: 75px;
 }
 
- .main {
+.main {
     margin: auto;
     width: 90%;
     margin-top: 20px;
@@ -140,34 +129,16 @@ header {
     padding: 5px;
 }
 
-.main2 {
-    border-radius: 10px;
-
+hr {
     margin: auto;
-    width: 90%;
-    margin-top: 15px;
-    background-color: #e5e5e5de;
-    border-radius: 5px;
-   
-    
-    
-}
-
-
-
-hr{
-    margin: auto;
-   
     margin-top: 17px;
 }
 
-.h4{
+.h4 {
     text-align: center;
-
 }
 
 .container-producto-carrito {
-    
     border-radius: 10px;
     border: solid 2px #4717F6;
     margin: auto;
@@ -176,7 +147,7 @@ hr{
     background-color: #e5e5e5de;
     border-radius: 5px;
     padding: 5px;
-    font-size: 20px;
+
     text-align: center;
     display: flex;
     align-items: center;
@@ -207,8 +178,8 @@ hr{
     align-items: center;
 }
 
-
 .container-img-producto img {
+    background-color: #4717f64b;
     border-radius: 10px;
     border: solid 2px #4717F6;
     width: 110px;
@@ -218,7 +189,7 @@ hr{
     padding: 14px 24px;
     border-radius: 5px;
     border: 2px solid #4717F6;
-    background-color: #E5E5E5;
+    background: #7f7f7f6c;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -240,13 +211,12 @@ hr{
 }
 
 .container-nombre-porducto {
+    font-style: italic;
+    font-variant: small-caps;
     width: 100%;
     margin-top: 0px;
     margin-bottom: 10px;
-}
-
-.container-nombre-porducto h4 {
-    font-size: 12px;
+    font-size: 20px;
 }
 
 .container-cantidad-precio {
@@ -256,58 +226,111 @@ hr{
     width: 100%
 }
 
+.container-precio{
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2e2e2e;
+    background-color: #4717f68e;
+    border-radius: 3px;
+    padding: 2%;
+}
+
 .container-cantidad {
-    width: 80px;
+    width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #4717F6;      
+    border: 2px solid #4717F6;
     border-radius: 5px;
     margin-top: 5px;
 }
 
 .container-cantidad input {
-    width: 27px;
-    text-align: center;
-    padding: 4px;
+    width: 35px;
+    text-align:center;
     margin: 3px;
     border: none;
     background-color: #0e0b1600;
-    border-left: solid 1px #0e0b16;
-    border-right: solid 1px #0e0b16;
     padding: 4px 6px;
+    
 }
 
+
+/*Con esto desaparecen los botones predefinidos del input number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
 .btn-aumen-decre {
-    padding: 14px 24px;
-    border-radius: 5px;
+    text-align: center;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     transition: all .5s;
-    font-size: 20px;
-    padding: 3px;
-    cursor: pointer;
+    padding: 7%;
+    cursor: pointer; 
+    width: 100%;
 }
 
 .btn-aumen-decre:hover {
+    width: 100%;
     background-color: #4717F6;
     color: #E5E5E5;
 }
 
 .container-envio-pago {
-    
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
- 
+    border-radius: 10px;
+    margin: auto;
+    width: 30%;
+    margin-top: 15px;
+    background-color: #e5e5e5de;
+    border-radius: 5px;
+    border:solid 2px #4717F6;
+}
+
+
+select:hover {
+    background-color: #4717F6;
+    color: #E5E5E5;
+}
+
+
+select{
+    transition: all .5s;
+    cursor: pointer; 
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    font-style: italic;
+    width: 100%;
 }
 
 .container-opciones-compra {
+    font-weight: 500;
+    background-color: #7f7f7f6c;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    border: solid 2px #7F7F7F;
+    border-radius: 10px;
+    padding:3% ;
+    margin-top: 6px;
+    width: 54%;
+   
+}
+
+.container-opciones-compra span label {
+    display: block;
 }
 
 footer {
