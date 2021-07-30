@@ -113,14 +113,14 @@ form div label {
     font-size: 10px;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    color: #4717F6;
+    font-weight: 700;
+    color: #4b5985;
 }
 
 .boton {
     padding: 14px 24px;
     border-radius: 5px;
-    border: 2px solid #4717F6;
+    border: 2px solid #4b5985;
     background-color: #E5E5E5;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
@@ -129,7 +129,7 @@ form div label {
 }
 
 .boton:hover {
-    background-color: #4717F6;
+    background-color: #4b5985;
     color: #E5E5E5;
 }
 
@@ -143,7 +143,7 @@ form p {
 form p a {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
-    color: #4717F6;
+    color: #4b5985;
     font-weight: 600;
 }
 
