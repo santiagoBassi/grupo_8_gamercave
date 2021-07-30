@@ -9,10 +9,31 @@
 * Utilizar el tablero de Trello
 * Realizar más reuniones 
 
-## Continuar Haciendo:
+## Continuar haciendo:
 
 * Comunicación continua por zoom y slack
 
-## Hacer menos/dejar de hacer:
+## Hacer menos/Dejar de hacer:
 
 * Debido al poco tiempo que hemos llevado trabajando en equipo y a que el Sprint fue relativamente corto, no conseguimos encontrar ninguna acción la cual debamos hacer menos.
+
+
+# Retro N°2 30/07/21:
+
+
+### Cosas a comenzar a hacer:
+
+ * Analizar los tiempos con respecto a la realizacion de las tareas
+
+## Hacer más:
+
+* Utilizar el tablero de Trello
+
+## Continuar haciendo:
+
+* Comunicación continua por zoom y slack
+* Usar github
+
+## Hacer menos/ Dejar de hacer:
+
+* Trabajar en archivos en conjunto
