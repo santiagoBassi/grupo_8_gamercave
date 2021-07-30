@@ -6,7 +6,10 @@
 }
 
 body {
-    background-color: #0e0b16;
+    background-image: url('/images/background-account.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 p {
@@ -287,9 +290,21 @@ hr {
     width: 90%;
     margin-top: 6px;
     margin-bottom: 3px;
+    padding: 10px;
 }
 
-.container-opciones-compra span label {
+.container-opciones {
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container-opciones label {
     display: block;
 }
 
