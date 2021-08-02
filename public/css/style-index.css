@@ -44,7 +44,7 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    height: 75px;
+    height: 60px;
 }
 
 .container-logo {
@@ -52,13 +52,12 @@ header {
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
-    max-width: 100px;
+    max-width: 80px;
     border-radius: 20px;
 }
 
 .logo {
     width: 100%;
-    max-width: 150px;
 }
 
 .container-search {
@@ -91,6 +90,7 @@ header {
     position: absolute;
     margin-top: 10px;
     margin-right: 4px;
+    padding-right: 5px;
 }
 
 .container-input-i button i {
@@ -147,7 +147,7 @@ header {
 }
 
 .show {
-    top: 75px;
+    top: 60px;
 }
 
 main {
@@ -261,7 +261,6 @@ aside {
     width: 100%;
     height: 100%;
     transition: all .5s;
-    margin-left: 10px;
 }
 
 .btn-filtro p {
@@ -287,6 +286,10 @@ aside {
     z-index: 1;
     overflow: scroll;
     margin: auto;
+}
+
+.filtro::-webkit-scrollbar {
+    display: none;
 }
 
 .list-filter {
@@ -394,8 +397,8 @@ aside {
 .container-article {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     margin: auto;
 }
@@ -406,7 +409,7 @@ aside {
 }
 
 .container-article a {
-    width: 100%;
+    width: 280px;
     text-decoration: none;
     color: #0e0b16;
     margin-top: 20px;
@@ -574,7 +577,6 @@ h5 {
     /*comienza el header*/
     .menu-top {
         justify-content: space-around;
-        height: 70px;
     }
     .container-search {
         width: 30%;
@@ -616,7 +618,6 @@ h5 {
         margin-bottom: 40px;
     }
     .container-article a {
-        width: 45%;
         margin: 10px;
     }
     .contenedor-envio-pago {
@@ -636,8 +637,8 @@ h5 {
 }
 
 @media (min-width: 1280px) {
-    .container-article a {
-        width: 23%;
+    .container-slider {
+        width: 60%;
     }
     .container-productos-filtro {
         flex-direction: row;
@@ -665,9 +666,6 @@ h5 {
     }
     .filtro li a {
         color: #E5E5E5;
-    }
-    .filtro li a:hover {
-        color: #140f07;
     }
     #girar-flecha {
         display: none;
