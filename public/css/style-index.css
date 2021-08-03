@@ -121,7 +121,7 @@ header {
 .menu-items li a {
     text-decoration: none;
     display: block;
-    font-family: 'Noto Sans';
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
     color: white;
     padding: 30px;
@@ -231,10 +231,56 @@ main {
 
 /**/
 
+.contenedor-envio-pago {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    margin: 50px auto 20px;
+    width: max-content;
+    max-width: 90%;
+    border-radius: 10px;
+}
+
+.container-section-envio-pago {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    max-width: 160px;
+}
+
+.container-section-envio-pago p {
+    color: #140f07;
+    font-size: 1em;
+}
+
+.icono-envio-pago {
+    color: #171f35;
+    font-size: 2em;
+    margin-bottom: 15px;
+    transition: color .5s;
+}
+
+.icono-envio-pago:hover {
+    color: #39b54a;
+}
+
+.container-section-envio-pago h5 {
+    font-size: 12px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #120907;
+}
+
 .container-productos-filtro {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 
@@ -245,7 +291,6 @@ aside {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /*height: 100vh;*/
 }
 
 .container-filter-sponsor {
@@ -262,6 +307,7 @@ aside {
     width: 100%;
     height: 100%;
     transition: all .5s;
+    color: white;
 }
 
 .btn-filtro p {
@@ -270,6 +316,9 @@ aside {
     align-items: center;
     font-size: 20px;
     margin-right: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgba(255, 0, 0, 0.476);
+    color: black;
 }
 
 .rotate-flecha {
@@ -326,6 +375,7 @@ aside {
     text-decoration: none;
     text-align: center;
     color: #E5E5E5;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 
@@ -340,6 +390,11 @@ aside {
     margin-top: 40px;
     position: relative;
     display: none;
+}
+
+.container-sponsor h3 {
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .container-sponsor img {
@@ -393,6 +448,15 @@ aside {
     width: 90%;
     margin: auto;
     margin-top: 20px;
+    max-width: 1400px;
+}
+
+.titulares-productos {
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 20px;
+    color: white;
 }
 
 .container-article {
@@ -404,17 +468,11 @@ aside {
     margin: auto;
 }
 
-.titulares-productos {
-    font-size: 25px;
-    text-align: center;
-}
-
 .container-article a {
     width: 280px;
     text-decoration: none;
     color: #0e0b16;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 10px 20px;
     max-width: 350px;
 }
 
@@ -449,13 +507,15 @@ aside {
 
 .nombre-producto {
     text-align: center;
-    color: #140f07
+    color: #140f07;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .precio-producto {
     text-align: center;
     font-size: 18px;
     color: #24211c;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 footer {
@@ -538,40 +598,6 @@ footer {
 .footer-inferior p a {
     color: #E5E5E5;
     text-decoration: none;
-}
-
-.contenedor-envio-pago {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    padding: 10px;
-    color: #0e0b16;
-    font-family: 'Roboto', sans-serif;
-}
-
-.container-section-envio-pago {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.container-section-envio-pago p {
-    text-align: center;
-}
-
-.icono-envio-pago {
-    color: blue;
-}
-
-.icono-envio-pago:hover {
-    color: #39b54a;
-}
-
-h5 {
-    color: black;
 }
 
 @media (min-width: 769px) {
