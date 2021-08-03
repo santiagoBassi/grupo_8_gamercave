@@ -188,6 +188,7 @@ main {
 .slide img {
     width: 100%;
     border-radius: 10px;
+    border: solid 4px #4f5d9c;
 }
 
 .nav-manual {
@@ -398,7 +399,7 @@ aside {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin: auto;
 }
@@ -613,8 +614,6 @@ h5 {
     }
     /*termina el header*/
     .container-article {
-        flex-direction: row;
-        flex-wrap: wrap;
         margin-bottom: 40px;
     }
     .container-article a {
