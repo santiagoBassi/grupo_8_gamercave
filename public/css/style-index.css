@@ -82,6 +82,7 @@ header {
     padding: 10px;
     border-radius: 5px;
     background-color: #E5E5E5;
+    padding-right: 5px;
 }
 
 .container-input-i button {
@@ -90,7 +91,6 @@ header {
     position: absolute;
     margin-top: 10px;
     margin-right: 4px;
-    padding-right: 5px;
 }
 
 .container-input-i button i {
@@ -585,7 +585,7 @@ footer {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
-    padding: 5px;
+    padding: 20px;
 }
 
 .derechos-reservados {
@@ -657,7 +657,8 @@ footer {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 0px 20px;
+        padding-top: 20px;
+        padding-bottom: 10px
     }
 }
 
