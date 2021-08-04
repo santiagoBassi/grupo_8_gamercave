@@ -1,6 +1,6 @@
 const controlador = {
     index: (req, res) => {
-        return res.render('asdf')
+        return res.render('index')
     }
 
 };

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Cave</title>
+    <link rel="icon" href="/images/logoGamerCave-icono.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Source+Sans+Pro:wght@200&display=swap" rel=" stylesheet">
+    <link rel="stylesheet" href="/css/products/style-productDetail.css">
+    <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
+    <script src="/js/productDetail.js" defer></script>
+
+</head>
+
+<body>
+    <%- include('../partials/header')%>
+        <main>
+
+            <div class="product-img">
+                <div class="container-images-product">
+                    <article class="articulo">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen grande" class="img-grande">
+                    </article>
+                    <div class="display-lateral">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida display-reducida">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida display-reducida">
+                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida display-reducida">
+                    </div>
+                </div>
+                <div class="todo">
+                    <h1 class="titulo-producto">Memoria RAM DDR 8 GB HyperX FURY</h1><br>
+                    <div class="product-caract"><br>
+                        <div>Memorias/DDR4/HyperX FURY</div><br>
+                        <div>Hay Stock/Envió gratis/Garantía de 6 meses</div><br>
+                        <div>$6.669/Hasta 6 Cuotas sin interes</div><br>
+                        <div class="span">
+                            <button type="submit" type="button" class="boton-comprar">Comprar</button>
+                            <i class="fas fa-shopping-cart carrito"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <!-- Boton acordeon -->
+            <div class="tab">
+                <input id="tab-1" type="checkbox">
+                <label for="tab-1">Caracteristicas Principales</label>
+                <div class="tab-content">
+                    <p>Capacidad: 8 GB</p>
+                    <p>Velocidad: 1866 mhz</p>
+                    <p>Tipo de memoria: DDR3</p>
+                    <p>Cantidad De Memorias: 1</p>
+                    <p>Latencia: 10 cl</p>
+                    <p>Voltaje: 1.50</p>
+
+                </div>
+            </div>
+        </main><br>
+
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

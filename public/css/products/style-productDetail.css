@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #140f07;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    margin-top: 90px;
+    max-width: 350px;
+}
+
+.product-img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-images-product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.display-lateral {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-reducida {
+    width: 30%;
+    border: solid 3px #4f5d9c;
+    border-radius: 10px;
+}
+
+.todo {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titulo-producto {
+    font-size: 18px;
+}
+
+.articulo {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.img-grande {
+    width: 100%;
+    border: solid 3px #4f5d9c;
+    border-radius: 10px;
+}
+
+.titulo-producto {
+    color: #4f5d9c;
+    background-color: #c0d7ed;
+    border: solid 3px #4f5d9c;
+    border-radius: 10px;
+    padding: 10px;
+    height: 10%;
+    text-align: center;
+}
+
+.product-caract {
+    color: #0E0B16;
+    background-color: #c0d7ed;
+    border: solid 3px #4f5d9c;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.span {
+    display: flex;
+    justify-content: center;
+    color: #140f07;
+    padding: 10px;
+    gap: 15px;
+    align-items: center;
+}
+
+.carrito {
+    font-size: 25px;
+}
+
+.boton-comprar {
+    padding: 14px 24px;
+    border-radius: 5px;
+    border: 2px solid #4f5d9c;
+    border-radius: 10px;
+    background-color: #4f5d9c4f;
+    color: #0E0B16;
+    font-family: 'Roboto', sans-serif;
+    transition: all 1s;
+}
+
+.boton-comprar:hover {
+    background-color: #4f5d9c;
+    border-radius: 10px;
+    color: #E5E5E5;
+}
+
+.tab {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.tab input {
+    display: none;
+}
+
+.tab label {
+    height: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    color: #140f07;
+    border: solid 3px #4b5985;
+    border-radius: 7px;
+    background: #c0d7ed;
+    cursor: pointer;
+}
+
+.tab .tab-content {
+    border-top-style: hidden;
+    border-radius: 7px;
+    color: #E5E5E5;
+    overflow: hidden;
+    transition: all 1s;
+    max-height: 0;
+}
+
+.tab .tab-content p {
+    padding: 10px;
+}
+
+.tab input:checked~.tab-content {
+    max-height: 100vh;
+}
+
+.tab label::after {
+    content: "\25b6";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: all 0.4s;
+}
+
+.tab input:checked~label::after {
+    transform: rotate(90deg);
+}
+
+.tab .tab-content p {
+    padding: 10px;
+}
+
+.tab input:checked~.tab-content {
+    max-height: 100vh;
+    border: solid 1px #4b5985;
+}
+
+.tab label::after {
+    content: "\25b6";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: all 0.4s;
+}
+
+.tab input:checked~label::after {
+    transform: rotate(90deg);
+}
+
+@media (min-width: 769px) {
+    main {
+        max-width: none;
+    }
+    .todo {
+        margin-top: initial;
+    }
+    .titulo-producto {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: inherit;
+        text-align: center;
+        font-size: 100%;
+        background-color: white;
+    }
+    .product-caract {
+        background-color: white;
+    }
+    .product-img {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .container-images-product {
+        margin-right: 20px;
+    }
+    .articulo {
+        width: 80%;
+    }
+    .display-lateral {
+        width: 80%;
+    }
+    .titulo-producto {
+        font-size: 30px;
+    }
+    .tab label {
+        background-color: white;
+    }
+}

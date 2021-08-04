@@ -1,9 +1,3 @@
-/*comienza header*/
-function showmenu() {
-    document.getElementById("otro-modo").classList.toggle("show");
-}
-/*termina header*/
-
 /*comienza aside*/
 function showfiltro() {
     document.getElementById("mostrar-filtro").classList.toggle("show-filtro");

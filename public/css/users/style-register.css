@@ -11,30 +11,27 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding-bottom: 150px;
 }
 
 .container-logo {
     display: flex;
-    justify-content: left;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 80px;
+    border-radius: 20px;
 }
 
 .logo {
     width: 100%;
-    max-width: 150px;
-    border-radius: 10px;
-    margin-left: 20px;
 }
 
 main {
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 1250px;
-    margin: auto;
 }
 
 .container-form {
@@ -62,7 +59,6 @@ form h4 {
     color: #0E0B16;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
 }
 
 form div label {
@@ -70,7 +66,6 @@ form div label {
     padding-bottom: 8px;
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
     font-weight: 700;
 }
 
@@ -82,40 +77,11 @@ form div label {
     background-color: #7f7f7f32;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 .input:focus {
     background-color: #7F7F7F90;
-}
-
-.container-mantener-sesion {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.checkbox {
-    padding: 10px;
-}
-
-.mantener-sesion {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    margin-left: 4px;
-    font-weight: 500;
-}
-
-.container-olvidaste-contrasena {
-    margin-bottom: 10px;
-}
-
-.olvidaste-contrasena {
-    font-size: 10px;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    color: #4b5985;
 }
 
 .boton {
@@ -126,12 +92,12 @@ form div label {
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    transition: all .5s;
 }
 
 .boton:hover {
     background-color: #4b5985;
     color: #E5E5E5;
+    transition-duration: 1s;
 }
 
 form p {
@@ -234,7 +200,6 @@ form p a {
     main {
         flex-direction: row-reverse;
         justify-content: space-around;
-        margin-top: 100px;
     }
     .divisor {
         flex-direction: column;
@@ -247,7 +212,7 @@ form p a {
     }
     .linea {
         width: 1px;
-        height: 15vh;
+        height: 25vh;
     }
     .o {
         margin-top: 40px;
