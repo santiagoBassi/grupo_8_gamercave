@@ -5,6 +5,7 @@ const productsControllers = require('../controllers/productsController');
 router.get('/', productsControllers.products);
 router.get('/productDetail', productsControllers.productDetail);
 router.get('/productCart', productsControllers.productCart);
+router.get('/productUploadEdit', productsControllers.productsUploadEdit);
 
 
 
