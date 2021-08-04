@@ -28,9 +28,6 @@ body {
     background-color: #140f07;
 }
 
-
-/*aca empieza el header*/
-
 main {
     margin-top: 110px;
     width: 100%;
@@ -163,9 +160,6 @@ main {
     flex-direction: column;
     margin-top: 100px;
 }
-
-
-/*aca empieza el filtro para productos*/
 
 aside {
     width: 100%;
@@ -350,6 +344,18 @@ aside {
 @media (min-width: 769px) {
     .contenedor-envio-pago {
         flex-direction: row;
+    }
+    .footer-superior {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .footer-inferior {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 10px
     }
 }
 
