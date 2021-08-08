@@ -50,6 +50,7 @@ hr {
     position: relative;
     padding: 5px;
     margin-bottom: 5px;
+    font-size: 5%;
 }
 
 .close {
@@ -160,6 +161,7 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
+    font-size: 20px;
     font-weight: 500;
     transition: all .5s;
     padding: 7%;
@@ -237,6 +239,78 @@ select:hover {
 .container-opciones label {
     display: block;
 }
+
+@media (max-width: 520px){
+    .container-producto-carrito{
+        color: red;
+    }
+    .container-nombre-porducto{
+        font-size: 15px;
+    }
+
+    .container-img-producto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container-img-producto img {
+        background-color: #4b59857c;
+        border-radius: 10px;
+        border: solid 2px #4b5985;
+        width: 80px;
+    }
+    
+    .container-cantidad-precio {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 5px;
+    }
+
+    .btn-aumen-decre {
+        text-align: center;
+        color: #0E0B16;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        margin-right: 5px;
+        font-weight:bold, 500;
+        transition: all .5s;
+        padding: 7%;
+        cursor: pointer;
+        width: 5px;
+    }
+    
+    .btn-aumen-decre:hover {
+       
+        width: 5px;
+        background-color: #4b5985;
+        color: #E5E5E5;
+    }
+
+
+    .container-precio {
+        font-style: italic;
+        font-size: 13px;
+        font-weight: 500;
+        color: #2e2e2e;
+        background-color: #4b59858e;
+        border-radius: 3px;
+        padding: 2%;
+        margin-left: 10px;
+    }
+ 
+    
+.container-cantidad input {
+  border:none
+}
+
+    
+}
+
+
+
+
 
 @media (min-width: 769px) {
     .container-producto-carrito {
