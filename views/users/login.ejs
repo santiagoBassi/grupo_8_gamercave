@@ -18,7 +18,7 @@
     </header>
     <main>
         <div class="container-form">
-            <form action="">
+            <form action="" method="POST">
                 <h4>Iniciar sesión</h4>
 
                 <div>
@@ -32,8 +32,8 @@
                 </div><br>
 
                 <div class="container-mantener-sesion">
-                    <input class="checkbox" type="checkbox" data-testid="keepLoggedInCheckbox" value="false">
-                    <span class="mantener-sesion">Mantener sesión</span>
+                    <input class="checkbox" type="checkbox" id="mantener" data-testid="keepLoggedInCheckbox" value="false">
+                    <label class="mantener-sesion" for="mantener">Mantener sesión</label>
                 </div>
 
                 <div class="container-olvidaste-contrasena">

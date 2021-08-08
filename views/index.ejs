@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <%- include('./partials/header')%>
+    <%- include('./partials/header') -%>
         <main>
             <div class="container-slider">
                 <div class="slider">
@@ -99,25 +99,15 @@
                 <section class="container-productos">
                     <h4 class="titulares-productos">Productos Destacados</h4>
                     <div class="container-all-articles">
-                        <%- include('./partials/productItem') %>
-                            <%- include('./partials/productItem') %>
-                                <%- include('./partials/productItem') %>
-                                    <%- include('./partials/productItem') %>
-                                        <%- include('./partials/productItem') %>
-                                            <%- include('./partials/productItem') %>
-                                                <%- include('./partials/productItem') %>
-                                                    <%- include('./partials/productItem') %>
+                        <% productos.forEach(function(producto) {%>
+                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, srcImg: producto.srcImg}) -%>
+                                <% }) %>
                     </div>
                     <h4 class="titulares-productos">Ofertas</h4>
                     <div class="container-all-articles">
-                        <%- include('./partials/productItem') %>
-                            <%- include('./partials/productItem') %>
-                                <%- include('./partials/productItem') %>
-                                    <%- include('./partials/productItem') %>
-                                        <%- include('./partials/productItem') %>
-                                            <%- include('./partials/productItem') %>
-                                                <%- include('./partials/productItem') %>
-                                                    <%- include('./partials/productItem') %>
+                        <% productos.forEach(function(producto) {%>
+                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, srcImg: producto.srcImg}) -%>
+                                <% }) %>
                     </div>
 
                 </section>
@@ -126,7 +116,7 @@
 
         </main>
 
-        <%- include('./partials/footer') %>
+        <%- include('./partials/footer') -%>
 
 </body>
 

@@ -46,6 +46,14 @@ function decreaseValue3() {
     document.getElementById('number3').value = value;
 }
 
+function calcPrecio() {
+    var cantidad = parseInt(document.getElementById('number').value);
+
+    var precioFinal = cantidad * 1000;
+
+    document.getElementById('precioFinal').innerHTML = precioFinal;
+}
+
 
 /*Boton de eliminar producto*/
 
