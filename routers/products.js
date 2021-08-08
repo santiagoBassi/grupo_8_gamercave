@@ -7,9 +7,9 @@ router.get('/', productsControllers.products);
 router.get('/create', productsControllers.productDetail);
 router.post('/create', productsControllers.productDetail);
 */
-/*
-router.get('/:id', productsControllers.productDetail);
-*/
+
+router.get('/detail/:id', productsControllers.productDetail);
+
 router.get('/cart', productsControllers.productCart);
 router.get('/productUploadEdit', productsControllers.productsUploadEdit);
 
