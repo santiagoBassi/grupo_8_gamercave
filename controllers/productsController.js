@@ -49,15 +49,6 @@ const controlador = {
         });
 
 
-
-
-
-
-
-
-
-        return res.send(producto)
-
         productos.push(producto);
 
         let productosJSON = JSON.stringify(productos);
