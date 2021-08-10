@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Source+Sans+Pro:wght@200&display=swap" rel=" stylesheet">
+    <title>Gamer Cave</title>
+    <link rel="icon" href="/images/logos/logoGamerCave-icono.png">
+    <link rel="stylesheet" href="/css/products/style-productCreate.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header')%>
+        <main>
+            <style>
+                main {
+                    margin-top: 200px;
+                }
+            </style>
+
+            <form action="/products/create" method="POST">
+                <h4>Agregar producto:</h4>
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input class="input" name="nombre" type="text" id="name" required>
+                </div><br>
+
+                <div>
+                    <label for="categoria">Categoria:</label>
+                    <select class="categorias" name="categoria" id="categoria" required>
+                        <option class="categorias" value="Procesadores">Procesadores</option>
+                        <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
+                        <option class="categorias" value="Auriculares">Auriculares</option>
+                        <option class="categorias" value="Mouses">Mouses</option>
+                        <option class="categorias" value="Teclados">Teclados</option>
+                        <option class="categorias" value="MemoriasRam">Memorias Ram</option>
+                        <option class="categorias" value="Monitores">Monitores</option>
+                        <option class="categorias" value="Coolers">Coolers</option>
+                        <option class="categorias" value="Fuentes">Fuentes</option>
+                        <option class="categorias" value="Mothers">Mothers</option>
+                    </select>
+                </div><br>
+
+                <div>
+                    <label for="descripcion">Descripcion: </label>
+                    <textarea name="descripcion" class="input" id="descripcion" required></textarea>
+
+                </div><br>
+
+                <div>
+                    <label for="image">Imagen del producto: </label>
+                    <input type="file" name="imagesProduct">
+                </div>
+
+                <div>
+                    <label for="precio">Precio: $</label>
+                    <input class="input" type="number" id="precio" name="precio" required>
+                </div><br>
+
+
+                <button class="boton" type="submit">Cargar producto</button>
+
+
+            </form>
+        </main>
+
+
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

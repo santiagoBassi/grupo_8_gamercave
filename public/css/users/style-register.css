@@ -86,6 +86,17 @@ form div label {
     background-color: #7F7F7F90;
 }
 
+.categorias {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px white;
+    border-radius: 5px;
+    background-color: #7f7f7f32;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
 .boton {
     padding: 14px 24px;
     border-radius: 5px;
