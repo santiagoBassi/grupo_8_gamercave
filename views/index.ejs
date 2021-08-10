@@ -100,13 +100,13 @@
                     <h4 class="titulares-productos">Productos Destacados</h4>
                     <div class="container-all-articles">
                         <% productos.forEach(function(producto) {%>
-                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, srcImg: producto.srcImg}) -%>
+                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                 <% }) %>
                     </div>
                     <h4 class="titulares-productos">Ofertas</h4>
                     <div class="container-all-articles">
                         <% productos.forEach(function(producto) {%>
-                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, srcImg: producto.srcImg}) -%>
+                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                 <% }) %>
                     </div>
 
