@@ -35,9 +35,28 @@ const controlador = {
             id: id,
             nombre: req.body.nombre,
             categoria: req.body.categoria,
-            descripcon: req.body.descripcion,
-            precio: req.body.precio
+            precio: req.body.precio,
+            imagen: req.file.filename,
+
         };
+
+        let caracteristicas = req.body.descripcion.split(",");
+
+        caracteristicas.forEach((caracteristica, contador) => {
+
+            producto['caracteristica ' + (contador + 1)] = caracteristica;
+
+        });
+
+
+
+
+
+
+
+
+
+        return res.send(producto)
 
         productos.push(producto);
 
