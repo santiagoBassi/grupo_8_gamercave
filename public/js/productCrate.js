@@ -16,8 +16,10 @@ function agregarCampos() {
 
     lugarParaInsertar.appendChild(div);
 
+
+
     let elementosTotales = lugarParaInsertar.getElementsByTagName('div').length;
-    cantidadElementos.value = elementosTotales + 1;
+    cantidadElementos.value = elementosTotales;
 
 
 }

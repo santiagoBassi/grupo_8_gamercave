@@ -1,1 +1,4 @@
-[{"id":1,"nombre":"teclado","categoria":"Teclados","precio":"5000","imagen":"producto-1628625081209.png","caracteristica 1":"arquitectura: mecanico","caracteristica 2":" coneccion: USB"},{"id":2,"nombre":"placa","categoria":"PlacaVideo","precio":"12000","imagen":"producto-1628639866873.jpg","caracteristica 1":"color: negro","caracteristica 2":" tamaño de la memoria: 2gb"}]
+[
+    { "id": 1, "nombre": "teclado", "categoria": "Teclados", "precio": "5000", "imagen": "producto-1628625081209.png", "caracteristica 1": "arquitectura: mecanico", "caracteristica 2": " coneccion: USB" },
+    { "id": 2, "nombre": "placa", "categoria": "PlacaVideo", "precio": "12000", "imagen": "producto-1628639866873.jpg", "caracteristica 1": "color: negro", "caracteristica 2": " tamaño de la memoria: 2gb" }
+]
