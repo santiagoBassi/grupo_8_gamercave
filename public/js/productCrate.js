@@ -5,11 +5,8 @@ function agregarCampos() {
     const inputValue = document.createElement('input');
 
 
-
-    let contador = lugarParaInsertar.getElementsByTagName('div').length;
-    contador = contador + 1;
-    inputCarac.name = 'caracteristica' + contador;
-    inputValue.name = 'valor' + contador;
+    inputCarac.name = 'caracteristica';
+    inputValue.name = 'valor';
 
     div.appendChild(inputCarac);
     div.appendChild(inputValue);
