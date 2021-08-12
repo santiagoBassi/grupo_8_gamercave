@@ -40,14 +40,18 @@ const controlador = {
 
         };
 
-        let caracteristicas = req.body.descripcion.split(",");
 
-        caracteristicas.forEach((caracteristica, contador) => {
 
-            producto['caracteristica ' + (contador + 1)] = caracteristica;
+        function caracteristicas(cantidadCaracteristicas) {
+            for (let i = 0; i < cantidadCaracteristicas; i++) {
+                let caracteristica = 'caracteristica' + i;
+                producto[req.body.caracteristica] = req.body.valor2;
+            }
 
-        });
+        }
+        caracteristicas(req.body.cantidadInput)
 
+        return res.send(producto);
 
         productos.push(producto);
 

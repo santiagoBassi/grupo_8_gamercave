@@ -2,14 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Source+Sans+Pro:wght@200&display=swap" rel=" stylesheet">
-    <title>Gamer Cave</title>
-    <link rel="icon" href="/images/logos/logoGamerCave-icono.png">
-    <link rel="stylesheet" href="/css/products/style-productCreate.css">
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/products/style-productCreate.css">
+        <script src="/js/productCrate.js"></script>
 </head>
 
 <body>
@@ -22,7 +17,7 @@
                 }
             </style>
 
-            <form action="/products/create" method="POST" enctype="multipart/form-data">
+            <form id="frm" action="/products/create" method="POST" enctype="multipart/form-data">
                 <h4>Agregar producto:</h4>
                 <div>
                     <label for="name">Nombre:</label>
@@ -42,12 +37,28 @@
                         <option class="categorias" value="Coolers">Coolers</option>
                         <option class="categorias" value="Fuentes">Fuentes</option>
                         <option class="categorias" value="Mothers">Mothers</option>
+                        <option class="categorias" value="PlacaVideo">Placa de video</option>
                     </select>
                 </div><br>
 
-                <div>
-                    <label for="descripcion">Descripcion: </label>
-                    <textarea name="descripcion" class="input" id="descripcion" required></textarea>
+                <div id="caracteristicas">
+                    <input type="number" name="cantidadInput" id="cantidadElementos">
+                    <label for="caracteristica">Caracteristica: </label>
+                    <label for="valor">Valor: </label>
+                    <br>
+                    <div>
+                        <div>
+                            <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
+                        </div>
+                        <div>
+                            <div id="descripcion">
+                                <input class="input" name="caracteristica0" id="caracteristica" placeholder="ej: color" required>
+                                <input class="input" name="valor0" id="valor" placeholder="ej: rojo" required>
+                            </div>
+                        </div>
+
+                    </div>
+
 
                 </div><br>
 
