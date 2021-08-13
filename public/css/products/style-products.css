@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    width: 100vw;
+}
+
+body {
+    background-color: #140f07;
+}
+
+main {
+    margin-top: 110px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-productos {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 1400px;
+}
+
+.titulares-productos {
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.container-all-articles {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}

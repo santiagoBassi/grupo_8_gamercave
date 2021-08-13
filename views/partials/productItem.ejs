@@ -1,12 +1,13 @@
 <a class="container-article" href="/products/detail/<%- id -%>  ">
 
     <article class="article">
-        <img src="<%= srcImg %> " alt="">
+        <img src="/images/prodcuts/<%- imagen -%>" alt="Imagen de producto">
         <div class="container-info">
             <p class="nombre-producto">
                 <%= nombre %>
             </p>
             <p class="precio-producto">
+                $
                 <%= precio %>
             </p>
         </div>
@@ -31,6 +32,7 @@
             align-items: center;
             border: solid 3px #4f5d9c;
             transition: box-shadow .5s;
+            height: 300px;
         }
         
         .article:hover {

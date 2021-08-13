@@ -2,15 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamer Cave</title>
-    <link rel="icon" href="/images/logoGamerCave-icono.png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/products/style-productCart.css">
-    <script src="https://kit.fontawesome.com/fa2dfd92f3.js" crossorigin="anonymous"></script>
-    <script src="/js/productCart.js" defer></script>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/products/style-productCart.css">
+        <script src="/js/productCart.js" defer></script>
 </head>
 
 <body>
@@ -31,11 +25,11 @@
                     <div class="container-cantidad-precio">
                         <form class="container-cantidad">
                             <div class="btn-aumen-decre" id="decrease" onclick="decreaseValue()" value="Decrease Value">
-                              -
+                                -
                             </div>
                             <input type="number" id="number" value="0" />
                             <div class="btn-aumen-decre" id="increase" onclick="increaseValue()" value="Increase Value">
-                             +
+                                +
                             </div>
                         </form>
                         <div class="container-precio">
@@ -109,9 +103,9 @@
                     <div>
                         <label for="">Tipo de Envio:</label><br>
                         <select name="envio" id="" class="field">
-                        <option value="correo">Retiro al correo</option>
-                        <option value="domicilio">Envio a domicilio</option>
-                    </select>
+                            <option value="correo">Retiro al correo</option>
+                            <option value="domicilio">Envio a domicilio</option>
+                        </select>
                     </div>
                 </div>
 
@@ -120,11 +114,11 @@
                     <div>
                         <label for="">Metodo de pago:</label><br>
                         <select name="pago" id="" class="field">
-                        <option value="transferencia">Transferencia bancaria</option>
-                        <option value="tarjeta">Tarjeta de Credito/Debito</option>
-                        <option value="mercado">Mercado Pago</option>
-                        <option value="bitcoin">Bitcoin</option>
-                    </select>
+                            <option value="transferencia">Transferencia bancaria</option>
+                            <option value="tarjeta">Tarjeta de Credito/Debito</option>
+                            <option value="mercado">Mercado Pago</option>
+                            <option value="bitcoin">Bitcoin</option>
+                        </select>
                     </div>
                 </div><br>
 
