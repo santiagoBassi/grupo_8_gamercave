@@ -40,21 +40,24 @@ const controlador = {
 
         };
 
-        let caracteristicas = req.body.descripcion.split(",");
+        function caracteristicas(cantidadCaracteristicas) {
+            for (let i = 0; i < cantidadCaracteristicas; i++) {
 
-        caracteristicas.forEach((caracteristica, contador) => {
-
-            producto['caracteristica ' + (contador + 1)] = caracteristica;
-
-        });
-
+                if (cantidadCaracteristicas == 1) {
+                    producto[req.body.caracteristica] = req.body.valor;
+                } else {
+                    producto[req.body.caracteristica[i]] = req.body.valor[i];
+                }
+            }
+        }
+        caracteristicas(req.body.cantidadInput)
 
         productos.push(producto);
 
         let productosJSON = JSON.stringify(productos);
 
         fs.writeFileSync('data/products.json', productosJSON);
-        /*return res.redirect('create');*/
+        return res.redirect('create');
     },
     productEdit: (req, res) => {
         return res.render('./products/productEdit')
