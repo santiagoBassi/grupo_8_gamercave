@@ -16,22 +16,20 @@
 
     <%- include('../partials/header')%>
         <main>
-            <style>
-                main {
-                    margin-top: 200px;
-                }
-            </style>
 
-            <form action="/products/create" method="POST" enctype="multipart/form-data">
-                <h4>Agregar producto:</h4>
-                <div>
-                    <label for="name">Nombre:</label>
-                    <input class="input" name="nombre" type="text" id="name" required>
-                </div><br>
 
-                <div>
-                    <label for="categoria">Categoria:</label>
-                    <select class="categorias" name="categoria" id="categoria" required>
+            <div class="container-formulario-creacion">
+                <form class="form" action="/products/create" method="POST" enctype="multipart/form-data">
+
+                    <h4 class="crear-producto">Crear producto:</h4>
+                    <div>
+                        <label for="name">Nombre:</label>
+                        <input class="input" name="nombre" type="text" id="name" required>
+                    </div><br>
+
+                    <div>
+                        <label for="categoria">Categoría:</label>
+                        <select class="categorias" name="categoria" id="categoria" required>
                         <option class="categorias" value="Procesadores">Procesadores</option>
                         <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
                         <option class="categorias" value="Auriculares">Auriculares</option>
@@ -43,29 +41,34 @@
                         <option class="categorias" value="Fuentes">Fuentes</option>
                         <option class="categorias" value="Mothers">Mothers</option>
                     </select>
-                </div><br>
+                    </div><br>
 
-                <div>
-                    <label for="descripcion">Descripcion: </label>
-                    <textarea name="descripcion" class="input" id="descripcion" required></textarea>
+                    <div>
+                        <label for="descripcion">Descripción: </label>
+                        <textarea name="descripcion" class="input" id="descripcion" required></textarea>
 
-                </div><br>
+                    </div><br>
 
-                <div>
-                    <label for="image">Imagen del producto: </label>
-                    <input type="file" name="imagesProduct">
-                </div>
+                    <div>
+                        <label for="image">Imagen del producto: </label>
+                        <input type="file" name="imagesProduct">
+                    </div>
 
-                <div>
-                    <label for="precio">Precio: $</label>
-                    <input class="input" type="number" id="precio" name="precio" required>
-                </div><br>
+                    <div>
+                        <div class="container-precio">
+                            <label for="precio">Precio: $</label>
+                            <input class="input" type="number" id="precio" name="precio" required>
+
+                        </div>
+                    </div>
+                    <br>
 
 
-                <button class="boton" type="submit">Cargar producto</button>
+                    <button class="boton" type="submit">Cargar producto</button>
 
 
-            </form>
+                </form>
+            </div>
         </main>
 
 
