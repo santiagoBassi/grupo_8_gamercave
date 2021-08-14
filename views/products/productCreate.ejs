@@ -11,22 +11,18 @@
 
     <%- include('../partials/header')%>
         <main>
-            <style>
-                main {
-                    margin-top: 200px;
-                }
-            </style>
+            <div class="container-formulario-creacion">
 
-            <form id="frm" action="/products/create" method="POST" enctype="multipart/form-data">
-                <h4>Agregar producto:</h4>
-                <div>
-                    <label for="name">Nombre:</label>
-                    <input class="input" name="nombre" type="text" id="name" required>
-                </div><br>
+                <form id="frm" class="form" action="/products/create" method="POST" enctype="multipart/form-data">
+                    <h4>Agregar producto:</h4>
+                    <div>
+                        <label for="name">Nombre:</label>
+                        <input class="input" name="nombre" type="text" id="name" required>
+                    </div><br>
 
-                <div>
-                    <label for="categoria">Categoria:</label>
-                    <select class="categorias" name="categoria" id="categoria" required>
+                    <div>
+                        <label for="categoria">Categoria:</label>
+                        <select class="categorias" name="categoria" id="categoria" required>
                         <option class="categorias" value="Procesadores">Procesadores</option>
                         <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
                         <option class="categorias" value="Auriculares">Auriculares</option>
@@ -39,45 +35,57 @@
                         <option class="categorias" value="Mothers">Mothers</option>
                         <option class="categorias" value="PlacaVideo">Placa de video</option>
                     </select>
-                </div><br>
+                    </div><br>
 
-                <div id="caracteristicas">
-                    <input type="number" name="cantidadInput" id="cantidadElementos" value="1">
-                    <label for="caracteristica">Caracteristica: </label>
-                    <label for="valor">Valor: </label>
-                    <br>
-                    <div>
+
+
+                    <div id="caracteristicas">
+                        <input type="number" name="cantidadInput" id="cantidadElementos" value="1">
+                        <label for="caracteristica">Caracteristica: </label>
+                        <label for="valor">Valor: </label>
+                        <br>
                         <div>
-                            <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
-                        </div>
-                        <div id="descripcion">
                             <div>
-                                <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color" required>
-                                <input class="input" name="valor" id="valor" placeholder="ej: rojo" required>
+                                <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
+                            </div>
+                            <div id="descripcion">
+                                <div>
+                                    <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color" required>
+                                    <input class="input" name="valor" id="valor" placeholder="ej: rojo" required>
+                                </div>
+
                             </div>
 
                         </div>
 
-                    </div>
 
 
-                </div><br>
+                        <div>
+                            <label for="image">Imagen del producto: </label>
+                            <input type="file" name="imagesProduct">
 
-                <div>
-                    <label for="image">Imagen del producto: </label>
-                    <input type="file" name="imagesProduct" required>
+
+                            <div>
+                                <div class="container-precio">
+                                    <label for="precio">Precio: $</label>
+                                    <input class="input" type="number" id="precio" name="precio" required>
+                                </div>
+                                <div>
+                                    <label for="image">Imagen del producto: </label>
+                                    <input type="file" name="imagesProduct" required>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <button class="boton" type="submit">Cargar producto</button>
+
+
+                </form>
                 </div>
-
-                <div>
-                    <label for="precio">Precio: $</label>
-                    <input class="input" type="number" id="precio" name="precio" required>
-                </div><br>
-
-
-                <button class="boton" type="submit">Cargar producto</button>
-
-
-            </form>
         </main>
 
 

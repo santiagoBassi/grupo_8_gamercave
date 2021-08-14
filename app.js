@@ -1,4 +1,5 @@
 const express = require('express');
+const methodOverride = require('method-override')
 const app = express();
 
 const rutasMain = require('./routers/main.js');
@@ -11,6 +12,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(express.static('./public'));
+
+app.use(methodOverride('_method'))
 
 app.set('view engine', 'ejs')
 

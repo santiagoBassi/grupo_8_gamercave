@@ -20,6 +20,73 @@ main {
     align-items: center;
 }
 
+.tab {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 80%;
+}
+
+.checkbox-filter {
+    display: none;
+}
+
+.title-filter {
+    height: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    color: #140f07;
+    border: solid 3px #4b5985;
+    border-radius: 7px;
+    background: white;
+    cursor: pointer;
+}
+
+.tab .tab-content {
+    border-top-style: hidden;
+    border-radius: 7px;
+    color: #E5E5E5;
+    overflow: hidden;
+    transition: all 1s;
+    max-height: 0;
+    width: 100%;
+    padding: 0px 40px 15px;
+}
+
+.tab .tab-content p {
+    padding: 10px;
+}
+
+.checkbox-filter:checked~.tab-content {
+    max-height: 100vh;
+}
+
+.title-filter::after {
+    content: "\25b6";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: all 0.4s;
+}
+
+.checkbox-filter:checked~label::after {
+    transform: rotate(90deg);
+}
+
+.lista-categorias {
+    list-style: none;
+    background-color: white;
+}
+
+.lista-categorias li a {
+    text-decoration: none;
+    color: #140f07;
+}
+
 .container-productos {
     width: 90%;
     margin: auto;

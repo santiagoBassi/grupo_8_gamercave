@@ -7,6 +7,8 @@ function agregarCampos() {
 
     inputCarac.name = 'caracteristica';
     inputValue.name = 'valor';
+    inputCarac.className = 'input';
+    inputValue.className = 'input';
 
     div.appendChild(inputCarac);
     div.appendChild(inputValue);

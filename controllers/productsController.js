@@ -60,7 +60,16 @@ const controlador = {
         return res.redirect('create');
     },
     productEdit: (req, res) => {
-        return res.render('./products/productEdit')
+        let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
+        let productos = JSON.parse(productosJSON)
+
+        if (productos.length >= req.params.id) {
+
+            return res.render('./products/productEdit', { product: productos[req.params.id - 1] })
+        } else {
+            res.send('Este producto no existe, intente con otro id')
+        }
+
     },
     productEditSave: (req, res) => {
         return res.send('actualizo info producto por put')
