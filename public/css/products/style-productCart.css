@@ -65,7 +65,7 @@ hr {
     font-size: 20px;
     top: 7.5px;
     right: 7.5px;
-    color: red;
+    color: #4b5985;
 }
 
 .container-img-producto {
@@ -241,9 +241,7 @@ select:hover {
 }
 
 @media (max-width: 520px){
-    .container-producto-carrito{
-        color: red;
-    }
+
     .container-nombre-porducto{
         font-size: 15px;
     }
