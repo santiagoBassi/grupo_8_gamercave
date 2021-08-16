@@ -40,7 +40,7 @@
 
 
                     <div id="caracteristicas">
-                        <input type="number" name="cantidadInput" id="cantidadElementos" value="1">
+                        <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
                         <label for="caracteristica">Caracteristica: </label>
                         <label for="valor">Valor: </label>
                         <br>
@@ -62,7 +62,7 @@
 
                         <div>
                             <label for="image">Imagen del producto: </label>
-                            <input type="file" name="imagesProduct">
+                            <input type="file" name="imagesProduct" required>
 
 
                             <div>
@@ -70,10 +70,7 @@
                                     <label for="precio">Precio: $</label>
                                     <input class="input" type="number" id="precio" name="precio" required>
                                 </div>
-                                <div>
-                                    <label for="image">Imagen del producto: </label>
-                                    <input type="file" name="imagesProduct" required>
-                                </div>
+
 
 
                             </div>

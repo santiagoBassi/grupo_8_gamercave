@@ -11,13 +11,9 @@
 
     <%- include('../partials/header')%>
         <main>
-            <style>
-                main {
-                    margin-top: 200px;
-                }
-            </style>
 
-            <form id="frm" action="/products/edit/:id?method=PUT" method="POST" enctype="multipart/form-data">
+
+            <form id="frm" action="/products/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h4>Agregar producto:</h4>
                 <div>
                     <label for="name">Nombre:</label>
@@ -65,8 +61,10 @@
 
                 <div>
                     <label for="image">Imagen del producto: </label>
-                    <input type="file" name="imagesProduct" value="" required>
+                    <input type="file" name="imagesProduct">
                 </div>
+                <p>i</p>
+                <img src="/images/products/<%- product.imagen -%>" alt="">
 
                 <div>
                     <label for="precio">Precio: $</label>
