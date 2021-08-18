@@ -43,16 +43,13 @@
 
 
 ### Cosas a comenzar a hacer:
+    * De momento no vemos ninguna actividad la cual comenzar a este punto del trabajo
 
-    
 ## Hacer más:
-
-* 
+    * Mayor comunicacion en cuanto entregas y Github
 ## Continuar haciendo:
-
-* 
-* 
+    * Comunicación continua por zoom y slack
+    * Usar github
 
 ## Hacer menos/ Dejar de hacer:
-
-* 
+    * Trabajar en archivos en conjunto
