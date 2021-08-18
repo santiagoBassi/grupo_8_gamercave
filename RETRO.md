@@ -37,3 +37,22 @@
 ## Hacer menos/ Dejar de hacer:
 
 * Trabajar en archivos en conjunto
+
+
+# Retro N°3 16/08/21:
+
+
+### Cosas a comenzar a hacer:
+
+    
+## Hacer más:
+
+* 
+## Continuar haciendo:
+
+* 
+* 
+
+## Hacer menos/ Dejar de hacer:
+
+* 

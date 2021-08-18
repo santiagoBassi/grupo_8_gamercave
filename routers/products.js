@@ -17,17 +17,17 @@ const upload = multer({ storage })
 
 router.get('/', productsControllers.products);
 
-router.get('/detail/:id', productsControllers.productDetail);
+router.get('/:id', productsControllers.productDetail);
 
 router.get('/create', productsControllers.productCreate);
 
 router.post('/create', upload.single('imagesProduct'), productsControllers.productCreateSave);
 
-router.get('/edit/:id', productsControllers.productEdit);
+router.get('/:id/edit', productsControllers.productEdit);
 
-router.put('/edit/:id', productsControllers.productEditSave)
+router.put('/:id/edit', productsControllers.productEditSave)
 
-router.delete('/delete/:id', productsControllers.productDelete)
+router.delete('/:id/delete', productsControllers.productDelete)
 
 
 

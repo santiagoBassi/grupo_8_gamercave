@@ -4,6 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/products/style-productDetail.css">
+        <script src="/js/productDetail.js"></script>
 </head>
 
 <body>
@@ -13,20 +14,28 @@
             <div class="product-img">
                 <div class="container-images-product">
                     <article class="articulo">
-                        <img src="\images\ram-muestra.jpg" alt="Imagen grande" class="img-grande">
+                        <img src="/images/products/<%- producto.imagen -%>" id="img1" alt="Imagen grande" class="img-grande mostrar">
+                        <img src="\images\ram-muestra.jpg" id="img2" alt="Imagen grande" class="img-grande">
+                        <img src="\images\ram-muestra.jpg" id="img3" alt="Imagen grande" class="img-grande">
                     </article>
                     <div class="display-lateral">
-                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida">
-                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida">
-                        <img src="\images\ram-muestra.jpg" alt="Imagen chica" class="img-reducida">
+                        <img src="/images/products/<%- producto.imagen -%>" onclick="showImg(1)" alt="Imagen chica" class="img-reducida">
+                        <img src="\images\ram-muestra.jpg" onclick="showImg(2)" alt="Imagen chica" class="img-reducida">
+                        <img src="\images\ram-muestra.jpg" onclick="showImg(3)" alt="Imagen chica" class="img-reducida">
                     </div>
                 </div>
                 <div class="todo">
-                    <p class="titulo-producto">Memoria RAM DDR 8 GB HyperX FURY</p><br>
+                    <p class="titulo-producto">
+                        <%= producto.nombre %>
+                    </p><br>
                     <div class="product-caract"><br>
-                        <div class="texto">Memorias/DDR4/HyperX FURY</div><br>
+                        <div class="texto">
+                            <%= producto.categoria %> /
+                                <%= producto.nombre %>
+                        </div><br>
                         <div class="texto">Hay Stock/Envió gratis/Garantía de 6 meses</div><br>
-                        <div class="texto">$6.669/Hasta 6 Cuotas sin interes</div>
+                        <div class="texto">$
+                            <%= producto.precio %> /Hasta 6 Cuotas sin interes</div>
                         <div class="span">
                             <button type="submit" type="button" class="boton-comprar">Comprar</button>
                             <i class="fas fa-shopping-cart carrito"></i>
@@ -38,21 +47,16 @@
 
             </div>
 
-
-
-
-
-            <!-- Boton acordeon -->
             <div class="tab">
                 <input id="tab-1" type="checkbox">
                 <label for="tab-1">Caracteristicas Principales</label>
                 <div class="tab-content">
-                    <p>Capacidad: 8 GB</p>
-                    <p>Velocidad: 1866 mhz</p>
-                    <p>Tipo de memoria: DDR3</p>
-                    <p>Cantidad De Memorias: 1</p>
-                    <p>Latencia: 10 cl</p>
-                    <p>Voltaje: 1.50</p>
+                    <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
+                        <p>
+                            <%= caracteristica[0] %> :
+                                <%= caracteristica[1]  %>
+                        </p>
+                        <% }) %>
 
                 </div>
             </div>

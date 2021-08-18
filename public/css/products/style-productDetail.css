@@ -27,21 +27,47 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
+}
+
+.articulo {
+    width: 100%;
+    margin-bottom: 20px;
+    max-width: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-grande {
+    width: 80%;
+    border: solid 3px #4f5d9c;
+    border-radius: 10px;
+    display: none;
+    padding: 10px;
+    background-color: white;
+}
+
+.mostrar {
+    display: initial;
 }
 
 .display-lateral {
     width: 80%;
+    max-width: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .img-reducida {
-    margin: 0 auto;
     width: 25%;
     border: solid 3px #4f5d9c;
     border-radius: 10px;
+    padding: 10px;
+    background-color: white;
 }
 
 .todo {
@@ -51,34 +77,25 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
-.articulo {
-    width: 60%;
-    margin-bottom: 20px;
-}
-
-.img-grande {
-    width: 100%;
-    border: solid 3px #4f5d9c;
-    border-radius: 10px;
-}
 
 .titulo-producto {
     background-color: white;
     border: solid 3px #4f5d9c;
     border-radius: 10px;
-   padding: 5%;
+    padding: 5%;
     height: 100%;
     text-align: center;
 }
-.texto{
+
+.texto {
     background-color: #4f5d9c4f;
     border-bottom: solid 1px #4f5d9c;
     border-radius: 10px;
     padding: 8px;
     width: 100%;
     text-align: center;
-    
 }
+
 .product-caract {
     font-size: 18px;
     background-color: white;
@@ -112,6 +129,7 @@ main {
     font-family: 'Roboto', sans-serif;
     transition: all 1s;
     cursor: pointer;
+    font-weight: 800;
 }
 
 .boton-comprar:hover {
@@ -125,6 +143,8 @@ main {
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    width: 80%;
+    max-width: 400px;
 }
 
 .tab input {
@@ -196,7 +216,7 @@ main {
     transform: rotate(90deg);
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
     main {
         max-width: none;
     }
@@ -219,7 +239,6 @@ main {
         background-color: white;
     }
     .product-img {
-        
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -229,12 +248,14 @@ main {
     }
     .articulo {
         margin-top: 20px;
-        width: 60%;
+        width: 70%;
+    }
+    .img-grande {
+        height: unset;
     }
     .display-lateral {
-        width: 80%;
+        width: 70%;
     }
-  
     .tab label {
         background-color: white;
     }

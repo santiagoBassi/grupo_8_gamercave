@@ -7,7 +7,6 @@ const rutasUsers = require('./routers/users.js');
 const rutasProducts = require('./routers/products.js');
 
 
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
