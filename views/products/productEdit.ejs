@@ -23,17 +23,72 @@
                 <div>
                     <label for="categoria">Categoria:</label>
                     <select class="categorias" name="categoria" id="categoria" required>
-                        <option class="categorias" value="Procesadores">Procesadores</option>
-                        <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
-                        <option class="categorias" value="Auriculares">Auriculares</option>
-                        <option class="categorias" value="Mouses">Mouses</option>
-                        <option class="categorias" value="Teclados">Teclados</option>
-                        <option class="categorias" value="MemoriasRam">Memorias Ram</option>
-                        <option class="categorias" value="Monitores">Monitores</option>
-                        <option class="categorias" value="Coolers">Coolers</option>
-                        <option class="categorias" value="Fuentes">Fuentes</option>
-                        <option class="categorias" value="Mothers">Mothers</option>
-                        <option class="categorias" value="PlacaVideo">Placa de video</option>
+                         
+                        <option class="categorias" value="Procesadores"
+                        <% if (product.categoria == 'Procesadores') {%>
+                        selected
+                        <% } %> 
+                        >Procesadores</option>
+
+                        <option class="categorias" value="DiscosRigidos"
+                        <% if (product.categoria == 'DiscosRigidos') {%>
+                        selected
+                        <% } %> 
+                        >Discos Rigidos</option>
+
+                        <option class="categorias" value="Auriculares"
+                        <% if (product.categoria == 'Auriculares') {%>
+                        selected
+                        <% } %> 
+                        >Auriculares</option>
+
+                        <option class="categorias" value="Mouses"
+                        <% if (product.categoria == 'Mouses') {%>
+                        selected
+                        <% } %> 
+                        >Mouses</option>
+
+                        <option class="categorias" value="Teclados"
+                        <% if (product.categoria == 'Teclados') {%>
+                        selected
+                        <% } %>
+                        >Teclados</option>
+
+                        <option class="categorias" value="MemoriasRam"
+                        <% if (product.categoria == 'MemoriasRam') {%>
+                        selected
+                        <% } %>
+                        >Memorias Ram</option>
+
+                        <option class="categorias" value="Monitores"
+                        <% if (product.categoria == 'Monitores') {%>
+                        selected
+                        <% } %>
+                        >Monitores</option>
+
+                        <option class="categorias" value="Coolers"
+                        <% if (product.categoria == 'Coolers') {%>
+                        selected
+                        <% } %>
+                        >Coolers</option>
+
+                        <option class="categorias" value="Fuentes"
+                        <% if (product.categoria == 'Fuentes') {%>
+                        selected
+                        <% } %>
+                        >Fuentes</option>
+
+                        <option class="categorias" value="Mothers"
+                        <% if (product.categoria == 'Mothers') {%>
+                        selected
+                        <% } %>
+                        >Mothers</option>
+
+                        <option class="categorias" value="PlacaVideo"
+                        <% if (product.categoria == 'PlacaVideo') {%>
+                        selected
+                        <% } %>
+                        >Placa de video</option>
                     </select>
                 </div><br>
 

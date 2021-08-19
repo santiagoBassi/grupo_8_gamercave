@@ -17,7 +17,7 @@ const upload = multer({ storage })
 
 router.get('/', productsControllers.products);
 
-router.get('/:id', productsControllers.productDetail);
+router.get('/detail/:id', productsControllers.productDetail);
 
 router.get('/create', productsControllers.productCreate);
 
@@ -28,8 +28,6 @@ router.get('/:id/edit', productsControllers.productEdit);
 router.put('/:id/edit', productsControllers.productEditSave)
 
 router.delete('/:id/delete', productsControllers.productDelete)
-
-
 
 router.get('/cart', productsControllers.productCart);
 

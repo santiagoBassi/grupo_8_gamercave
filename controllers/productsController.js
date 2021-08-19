@@ -4,11 +4,13 @@ const uuid = require('uuid');
 const { send } = require('process');
 
 const controlador = {
+
     products: (req, res) => {
         let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
         let productos = JSON.parse(productosJSON)
         return res.render('./products/products', { productos: productos })
     },
+
 
     productDetail: (req, res) => {
         let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
@@ -27,12 +29,11 @@ const controlador = {
         });
     },
 
-    productCart: (req, res) => {
-        return res.render('./products/productCart')
-    },
+
     productCreate: (req, res) => {
         return res.render('./products/productCreate')
     },
+
 
 
     productCreateSave: (req, res) => {
@@ -47,7 +48,6 @@ const controlador = {
         };
 
         let id = uuid.v4();
-
 
         let producto = {
             id: id,
@@ -78,15 +78,17 @@ const controlador = {
     },
 
     productEdit: (req, res) => {
-        let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
-        let productos = JSON.parse(productosJSON)
+        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
+        let products = JSON.parse(productsJSON)
 
-        if (productos.length >= req.params.id) {
+        products.forEach(product => {
+            if (product.id == req.params.id) {
+                return res.render('./products/productEdit', { product: product })
+            }
+        });
 
-            return res.render('./products/productEdit', { product: productos[req.params.id - 1] })
-        } else {
-            res.send('Este producto no existe, intente con otro id')
-        }
+
+
 
     },
 
@@ -96,6 +98,9 @@ const controlador = {
 
     productDelete: (req, res) => {
         return res.send('borro producto')
+    },
+    productCart: (req, res) => {
+        return res.render('./products/productCart')
     }
 
 
