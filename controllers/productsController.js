@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const uuid = require('uuid');
 const { send } = require('process');
 
 const controlador = {
@@ -25,12 +26,14 @@ const controlador = {
             };
         });
     },
+
     productCart: (req, res) => {
         return res.render('./products/productCart')
     },
     productCreate: (req, res) => {
         return res.render('./products/productCreate')
     },
+
 
     productCreateSave: (req, res) => {
         let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
@@ -43,7 +46,8 @@ const controlador = {
             productos = JSON.parse(archivoProductosJson);
         };
 
-        let id = productos.length + 1;
+        let id = uuid.v4();
+
 
         let producto = {
             id: id,
@@ -72,6 +76,7 @@ const controlador = {
         fs.writeFileSync('data/products.json', productosJSON);
         return res.redirect('create');
     },
+
     productEdit: (req, res) => {
         let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
         let productos = JSON.parse(productosJSON)
@@ -84,9 +89,11 @@ const controlador = {
         }
 
     },
+
     productEditSave: (req, res) => {
         return res.send('actualizo info producto por put')
     },
+
     productDelete: (req, res) => {
         return res.send('borro producto')
     }
