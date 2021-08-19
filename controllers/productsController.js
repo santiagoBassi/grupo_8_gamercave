@@ -83,11 +83,14 @@ const controlador = {
 
         products.forEach(product => {
             if (product.id == req.params.id) {
-                return res.render('./products/productEdit', { product: product })
+                let claves = Object.keys(product);
+                let caracteristicas = {};
+                for (let i = 5; i < claves.length; i++) {
+                    caracteristicas[claves[i]] = product[claves[i]];
+                }
+                return res.render('./products/productEdit', { caracteristicas: caracteristicas, product: product })
             }
         });
-
-
 
 
     },

@@ -93,21 +93,21 @@
                 </div><br>
 
                 <div id="caracteristicas">
-                    <input type="number" name="cantidadInput" id="cantidadElementos" value="1">
+
                     <label for="caracteristica">Caracteristica: </label>
                     <label for="valor">Valor: </label>
                     <br>
                     <div>
-                        <div>
-                            <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
-                        </div>
-                        <div id="descripcion">
-                            <div>
-                                <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color" required>
-                                <input class="input" name="valor" id="valor" placeholder="ej: rojo" required>
-                            </div>
+                        <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
+                            <div id="descripcion">
+                                <div>
+                                    <input class="input" name="caracteristica" value="<%= caracteristica[0] %> " id="caracteristica" placeholder="ej: color" required>
+                                    <input class="input" name="valor" value="<%= caracteristica[1] %> " id="valor" placeholder="ej: rojo" required>
+                                </div>
 
-                        </div>
+                            </div>
+                            <%  }); %>
+
 
                     </div>
 
