@@ -6,9 +6,9 @@ const { send } = require('process');
 const controlador = {
 
     products: (req, res) => {
-        let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
-        let productos = JSON.parse(productosJSON)
-        return res.render('./products/products', { productos: productos })
+        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
+        let products = JSON.parse(productsJSON)
+        return res.render('./products/products', { products: products })
     },
 
 
@@ -20,7 +20,7 @@ const controlador = {
             if (producto.id == req.params.id) {
                 let claves = Object.keys(producto);
                 let caracteristicas = {};
-                for (let i = 5; i < claves.length; i++) {
+                for (let i = 7; i < claves.length; i++) {
                     caracteristicas[claves[i]] = producto[claves[i]];
                 }
 
@@ -54,8 +54,11 @@ const controlador = {
             nombre: req.body.nombre,
             categoria: req.body.categoria,
             precio: req.body.precio,
-            imagen: req.file.filename,
+            img1: req.files[0].filename,
+            img2: req.files[1].filename,
+            img3: req.files[2].filename
         };
+
 
         function caracteristicas(cantidadCaracteristicas) {
             for (let i = 0; i < cantidadCaracteristicas; i++) {
@@ -68,6 +71,7 @@ const controlador = {
             }
         }
         caracteristicas(req.body.cantidadInput)
+
 
         productos.push(producto);
 
@@ -85,7 +89,7 @@ const controlador = {
             if (product.id == req.params.id) {
                 let claves = Object.keys(product);
                 let caracteristicas = {};
-                for (let i = 5; i < claves.length; i++) {
+                for (let i = 7; i < claves.length; i++) {
                     caracteristicas[claves[i]] = product[claves[i]];
                 }
                 return res.render('./products/productEdit', { caracteristicas: caracteristicas, product: product })

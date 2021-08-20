@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head') -%>
-        <link rel="stylesheet" href="/css/products/style-productCreate.css">
+        <link rel="stylesheet" href="/css/products/style-productEdit.css">
         <script src="/js/productCrate.js"></script>
 </head>
 
@@ -13,7 +13,7 @@
         <main>
 
 
-            <form id="frm" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form id="frm" action="/products/<%= product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h4>Agregar producto:</h4>
                 <div>
                     <label for="name">Nombre:</label>
@@ -115,11 +115,18 @@
                 </div><br>
 
                 <div>
-                    <label for="image">Imagen del producto: </label>
+                    <label for="image">Imagenes del producto:</label>
+                    <p>Si desea editar las imagenes inserte las tres imagenes nuevas.</p>
                     <input type="file" name="imagesProduct">
                 </div>
-                <p>i</p>
-                <img src="/images/products/<%- product.imagen -%>" alt="">
+
+                <p>Imagenes actuales:</p>
+                <div>
+                    <img src="/images/products/<%- product.img1 -%>" width="150px" alt="">
+                    <img src="/images/products/<%- product.img2 -%>" width="150px" alt="">
+                    <img src="/images/products/<%- product.img3 -%>" width="150px" alt="">
+                </div>
+
 
                 <div>
                     <label for="precio">Precio: $</label>
