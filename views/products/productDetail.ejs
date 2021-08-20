@@ -37,9 +37,19 @@
                         <div class="texto">$
                             <%= producto.precio %> /Hasta 6 Cuotas sin interes</div>
                         <div class="span">
+
                             <button type="submit" type="button" class="boton-comprar">Comprar</button>
                             <i class="fas fa-shopping-cart carrito"></i>
+                        </div><br>
+                        <div>
 
+                            <form action="/products/<%= producto.id %>/delete?_method=DELETE" method="POST">
+                                <button type="submit">ELIMINAR PRODCUTO</button>
+                            </form>
+
+                            <form action="/products/<%= producto.id %>/edit" method="GET">
+                                <button type="submit">EDITAR PRODCUTO</button>
+                            </form>
                         </div>
                     </div>
                 </div>

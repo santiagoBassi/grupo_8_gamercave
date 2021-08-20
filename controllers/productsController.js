@@ -100,14 +100,74 @@ const controlador = {
     },
 
     productEditSave: (req, res) => {
-        return res.send('actualizo info producto por put')
+        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+        let products = JSON.parse(productsJSON);
+        let updatedProducts = []
+        products.forEach(product => {
+            if (product.id == req.params.id) {
+
+                let updatedProduct = {
+                    id: product.id,
+                    nombre: req.body.nombre,
+                    categoria: req.body.categoria,
+                    precio: req.body.precio,
+                };
+
+                if (req.files == '') {
+                    updatedProduct['img1'] = product.img1;
+                    updatedProduct['img2'] = product.img2;
+                    updatedProduct['img3'] = product.img3;
+                } else {
+                    updatedProduct['img1'] = req.files[0].filename;
+                    updatedProduct['img2'] = req.files[1].filename;
+                    updatedProduct['img3'] = req.files[2].filename;
+                };
+
+                function caracteristicas(cantidadCaracteristicas) {
+                    for (let i = 0; i < cantidadCaracteristicas; i++) {
+
+                        if (cantidadCaracteristicas == 1) {
+                            updatedProduct[req.body.caracteristica] = req.body.valor;
+                        } else {
+                            updatedProduct[req.body.caracteristica[i]] = req.body.valor[i];
+                        }
+                    }
+                }
+                caracteristicas(req.body.cantidadInput)
+
+
+                updatedProducts.push(updatedProduct)
+
+
+            } else {
+                updatedProducts.push(product)
+            };
+
+            let updatedProductsJSON = JSON.stringify(updatedProducts);
+
+            fs.writeFileSync('data/products.json', updatedProductsJSON);
+            return res.redirect('../detail/' + req.params.id);
+        });
+
+
     },
 
     productDelete: (req, res) => {
-        return res.send('borro producto')
+
+        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+        let products = JSON.parse(productsJSON);
+
+        let updatedProducts = products.filter(product => {
+            return product.id != req.params.id;
+        });
+
+        let updatedProductsJSON = JSON.stringify(updatedProducts);
+
+        fs.writeFileSync('data/products.json', updatedProductsJSON);
+        return res.redirect('/products');
     },
     productCart: (req, res) => {
-        return res.render('./products/productCart')
+        return res.render('./products/productCart');
     }
 
 

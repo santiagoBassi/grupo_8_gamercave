@@ -25,7 +25,7 @@ router.post('/create', upload.any('imagesProduct'), productsControllers.productC
 
 router.get('/:id/edit', productsControllers.productEdit);
 
-router.put('/:id/edit', productsControllers.productEditSave)
+router.put('/:id/edit', upload.any('imagesProduct'), productsControllers.productEditSave)
 
 router.delete('/:id/delete', productsControllers.productDelete)
 

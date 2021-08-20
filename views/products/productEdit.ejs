@@ -4,7 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/products/style-productEdit.css">
-        <script src="/js/productCrate.js"></script>
+        <script src="/js/productEdit.js"></script>
 </head>
 
 <body>
@@ -93,22 +93,21 @@
                 </div><br>
 
                 <div id="caracteristicas">
-
+                    <input type="number" name="cantidadInput" id="cantidadElementos" value="1">
                     <label for="caracteristica">Caracteristica: </label>
                     <label for="valor">Valor: </label>
                     <br>
                     <div>
-                        <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
-                            <div id="descripcion">
+                        <div id="descripcion">
+                            <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
+
                                 <div>
                                     <input class="input" name="caracteristica" value="<%= caracteristica[0] %> " id="caracteristica" placeholder="ej: color" required>
                                     <input class="input" name="valor" value="<%= caracteristica[1] %> " id="valor" placeholder="ej: rojo" required>
                                 </div>
 
-                            </div>
-                            <%  }); %>
-
-
+                                <%  }); %>
+                        </div>
                     </div>
 
 
@@ -117,7 +116,7 @@
                 <div>
                     <label for="image">Imagenes del producto:</label>
                     <p>Si desea editar las imagenes inserte las tres imagenes nuevas.</p>
-                    <input type="file" name="imagesProduct">
+                    <input type="file" name="imagesProduct" multiple>
                 </div>
 
                 <p>Imagenes actuales:</p>
