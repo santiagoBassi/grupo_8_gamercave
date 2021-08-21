@@ -123,9 +123,9 @@ const controlador = {
                     updatedProduct['img1'] = req.files[0].filename;
                     updatedProduct['img2'] = req.files[1].filename;
                     updatedProduct['img3'] = req.files[2].filename;
-                    fs.unlinkSync('../public/images/products/' + product.img1);
-                    fs.unlinkSync('../public/images/products/' + product.img2);
-                    fs.unlinkSync('../public/images/products/' + product.img3);
+                    fs.unlinkSync(`./public/images/products/${product.img1}`);
+                    fs.unlinkSync(`./public/images/products/${product.img2}`);
+                    fs.unlinkSync(`./public/images/products/${product.img3}`);
                 };
 
                 function caracteristicas(cantidadCaracteristicas) {
@@ -165,6 +165,14 @@ const controlador = {
         let updatedProducts = products.filter(product => {
             return product.id != req.params.id;
         });
+
+        products.forEach(product => {
+            if (product.id == req.params.id) {
+                fs.unlinkSync(`./public/images/products/${product.img1}`);
+                fs.unlinkSync(`./public/images/products/${product.img2}`);
+                fs.unlinkSync(`./public/images/products/${product.img3}`);
+            }
+        })
 
         let updatedProductsJSON = JSON.stringify(updatedProducts);
 
