@@ -1,20 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
+const { validationResult } = require('express-validator');
 const { send } = require('process');
 
 const controlador = {
 
     products: (req, res) => {
-        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
-        let products = JSON.parse(productsJSON)
-        return res.render('./products/products', { products: products })
+        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+        let products = JSON.parse(productsJSON);
+        return res.render('./products/products', { products: products });
     },
 
 
     productDetail: (req, res) => {
-        let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
-        let productos = JSON.parse(productosJSON)
+        let productosJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+        let productos = JSON.parse(productosJSON);
 
         productos.forEach(producto => {
             if (producto.id == req.params.id) {
@@ -24,21 +25,21 @@ const controlador = {
                     caracteristicas[claves[i]] = producto[claves[i]];
                 }
 
-                return res.render('./products/productDetail', { caracteristicas: caracteristicas, producto: producto })
+                return res.render('./products/productDetail', { caracteristicas: caracteristicas, producto: producto });
             };
         });
     },
 
 
     productCreate: (req, res) => {
-        return res.render('./products/productCreate')
+        return res.render('./products/productCreate');
     },
 
 
 
     productCreateSave: (req, res) => {
-        let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
 
+        let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
         let productos;
 
         if (archivoProductosJson == '') {
@@ -78,12 +79,13 @@ const controlador = {
         let productosJSON = JSON.stringify(productos);
 
         fs.writeFileSync('data/products.json', productosJSON);
+
         return res.redirect('create');
     },
 
     productEdit: (req, res) => {
-        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' })
-        let products = JSON.parse(productsJSON)
+        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+        let products = JSON.parse(productsJSON);
 
         products.forEach(product => {
             if (product.id == req.params.id) {
@@ -92,7 +94,7 @@ const controlador = {
                 for (let i = 7; i < claves.length; i++) {
                     caracteristicas[claves[i]] = product[claves[i]];
                 }
-                return res.render('./products/productEdit', { caracteristicas: caracteristicas, product: product })
+                return res.render('./products/productEdit', { caracteristicas: caracteristicas, product: product });
             }
         });
 
@@ -121,6 +123,9 @@ const controlador = {
                     updatedProduct['img1'] = req.files[0].filename;
                     updatedProduct['img2'] = req.files[1].filename;
                     updatedProduct['img3'] = req.files[2].filename;
+                    fs.unlinkSync(`./public/images/products/${product.img1}`);
+                    fs.unlinkSync(`./public/images/products/${product.img2}`);
+                    fs.unlinkSync(`./public/images/products/${product.img3}`);
                 };
 
                 function caracteristicas(cantidadCaracteristicas) {
@@ -133,14 +138,14 @@ const controlador = {
                         }
                     }
                 }
-                caracteristicas(req.body.cantidadInput)
+                caracteristicas(req.body.cantidadInput);
 
 
-                updatedProducts.push(updatedProduct)
+                updatedProducts.push(updatedProduct);
 
 
             } else {
-                updatedProducts.push(product)
+                updatedProducts.push(product);
             };
 
             let updatedProductsJSON = JSON.stringify(updatedProducts);
@@ -160,6 +165,14 @@ const controlador = {
         let updatedProducts = products.filter(product => {
             return product.id != req.params.id;
         });
+
+        products.forEach(product => {
+            if (product.id == req.params.id) {
+                fs.unlinkSync(`./public/images/products/${product.img1}`);
+                fs.unlinkSync(`./public/images/products/${product.img2}`);
+                fs.unlinkSync(`./public/images/products/${product.img3}`);
+            }
+        })
 
         let updatedProductsJSON = JSON.stringify(updatedProducts);
 
