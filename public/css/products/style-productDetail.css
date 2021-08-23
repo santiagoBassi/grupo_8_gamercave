@@ -27,58 +27,80 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-.display-lateral {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.img-reducida {
-    margin: 0 auto;
-    width: 25%;
-    border: solid 3px #4f5d9c;
-    border-radius: 10px;
-}
-
-.todo {
-    margin-top: 50px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 .articulo {
-    width: 60%;
+    width: 90%;
     margin-bottom: 20px;
+    max-width: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-grande {
     width: 100%;
     border: solid 3px #4f5d9c;
     border-radius: 10px;
+    display: none;
+    padding: 10px;
+    background-color: white;
+}
+
+.mostrar {
+    display: initial;
+}
+
+.display-lateral {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-reducida {
+    width: 25%;
+    border: solid 3px #4f5d9c;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.todo {
+    margin-top: 50px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .titulo-producto {
     background-color: white;
     border: solid 3px #4f5d9c;
     border-radius: 10px;
-   padding: 5%;
+    padding: 5%;
     height: 100%;
     text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
 }
-.texto{
+
+.texto {
     background-color: #4f5d9c4f;
     border-bottom: solid 1px #4f5d9c;
     border-radius: 10px;
     padding: 8px;
     width: 100%;
     text-align: center;
-    
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
 }
+
 .product-caract {
     font-size: 18px;
     background-color: white;
@@ -112,6 +134,7 @@ main {
     font-family: 'Roboto', sans-serif;
     transition: all 1s;
     cursor: pointer;
+    font-weight: 800;
 }
 
 .boton-comprar:hover {
@@ -125,6 +148,8 @@ main {
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    width: 90%;
+    max-width: 400px;
 }
 
 .tab input {
@@ -142,6 +167,7 @@ main {
     border-radius: 7px;
     background: white;
     cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .tab .tab-content {
@@ -155,6 +181,8 @@ main {
 
 .tab .tab-content p {
     padding: 10px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
 }
 
 .tab input:checked~.tab-content {
@@ -196,7 +224,7 @@ main {
     transform: rotate(90deg);
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
     main {
         max-width: none;
     }
@@ -219,7 +247,6 @@ main {
         background-color: white;
     }
     .product-img {
-        
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -229,12 +256,14 @@ main {
     }
     .articulo {
         margin-top: 20px;
-        width: 60%;
+        width: 70%;
+    }
+    .img-grande {
+        height: unset;
     }
     .display-lateral {
-        width: 80%;
+        width: 70%;
     }
-  
     .tab label {
         background-color: white;
     }

@@ -3,8 +3,8 @@
 
 <head>
     <%- include('../partials/head') -%>
-        <link rel="stylesheet" href="/css/products/style-productCreate.css">
-        <script src="/js/productCrate.js"></script>
+        <link rel="stylesheet" href="/css/products/style-productEdit.css">
+        <script src="/js/productEdit.js"></script>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <main>
 
 
-            <form id="frm" action="/products/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form id="frm" action="/products/<%= product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h4>Agregar producto:</h4>
                 <div>
                     <label for="name">Nombre:</label>
@@ -23,17 +23,72 @@
                 <div>
                     <label for="categoria">Categoria:</label>
                     <select class="categorias" name="categoria" id="categoria" required>
-                        <option class="categorias" value="Procesadores">Procesadores</option>
-                        <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
-                        <option class="categorias" value="Auriculares">Auriculares</option>
-                        <option class="categorias" value="Mouses">Mouses</option>
-                        <option class="categorias" value="Teclados">Teclados</option>
-                        <option class="categorias" value="MemoriasRam">Memorias Ram</option>
-                        <option class="categorias" value="Monitores">Monitores</option>
-                        <option class="categorias" value="Coolers">Coolers</option>
-                        <option class="categorias" value="Fuentes">Fuentes</option>
-                        <option class="categorias" value="Mothers">Mothers</option>
-                        <option class="categorias" value="PlacaVideo">Placa de video</option>
+                         
+                        <option class="categorias" value="Procesadores"
+                        <% if (product.categoria == 'Procesadores') {%>
+                        selected
+                        <% } %> 
+                        >Procesadores</option>
+
+                        <option class="categorias" value="DiscosRigidos"
+                        <% if (product.categoria == 'DiscosRigidos') {%>
+                        selected
+                        <% } %> 
+                        >Discos Rigidos</option>
+
+                        <option class="categorias" value="Auriculares"
+                        <% if (product.categoria == 'Auriculares') {%>
+                        selected
+                        <% } %> 
+                        >Auriculares</option>
+
+                        <option class="categorias" value="Mouses"
+                        <% if (product.categoria == 'Mouses') {%>
+                        selected
+                        <% } %> 
+                        >Mouses</option>
+
+                        <option class="categorias" value="Teclados"
+                        <% if (product.categoria == 'Teclados') {%>
+                        selected
+                        <% } %>
+                        >Teclados</option>
+
+                        <option class="categorias" value="MemoriasRam"
+                        <% if (product.categoria == 'MemoriasRam') {%>
+                        selected
+                        <% } %>
+                        >Memorias Ram</option>
+
+                        <option class="categorias" value="Monitores"
+                        <% if (product.categoria == 'Monitores') {%>
+                        selected
+                        <% } %>
+                        >Monitores</option>
+
+                        <option class="categorias" value="Coolers"
+                        <% if (product.categoria == 'Coolers') {%>
+                        selected
+                        <% } %>
+                        >Coolers</option>
+
+                        <option class="categorias" value="Fuentes"
+                        <% if (product.categoria == 'Fuentes') {%>
+                        selected
+                        <% } %>
+                        >Fuentes</option>
+
+                        <option class="categorias" value="Mothers"
+                        <% if (product.categoria == 'Mothers') {%>
+                        selected
+                        <% } %>
+                        >Mothers</option>
+
+                        <option class="categorias" value="PlacaVideo"
+                        <% if (product.categoria == 'PlacaVideo') {%>
+                        selected
+                        <% } %>
+                        >Placa de video</option>
                     </select>
                 </div><br>
 
@@ -43,28 +98,34 @@
                     <label for="valor">Valor: </label>
                     <br>
                     <div>
-                        <div>
-                            <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
-                        </div>
                         <div id="descripcion">
-                            <div>
-                                <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color" required>
-                                <input class="input" name="valor" id="valor" placeholder="ej: rojo" required>
-                            </div>
+                            <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
 
+                                <div>
+                                    <input class="input" name="caracteristica" value="<%= caracteristica[0] %> " id="caracteristica" placeholder="ej: color" required>
+                                    <input class="input" name="valor" value="<%= caracteristica[1] %> " id="valor" placeholder="ej: rojo" required>
+                                </div>
+
+                                <%  }); %>
                         </div>
-
                     </div>
 
 
                 </div><br>
 
                 <div>
-                    <label for="image">Imagen del producto: </label>
-                    <input type="file" name="imagesProduct">
+                    <label for="image">Imagenes del producto:</label>
+                    <p>Si desea editar las imagenes inserte las tres imagenes nuevas.</p>
+                    <input type="file" name="imagesProduct" multiple>
                 </div>
-                <p>i</p>
-                <img src="/images/products/<%- product.imagen -%>" alt="">
+
+                <p>Imagenes actuales:</p>
+                <div>
+                    <img src="/images/products/<%- product.img1 -%>" width="150px" alt="">
+                    <img src="/images/products/<%- product.img2 -%>" width="150px" alt="">
+                    <img src="/images/products/<%- product.img3 -%>" width="150px" alt="">
+                </div>
+
 
                 <div>
                     <label for="precio">Precio: $</label>

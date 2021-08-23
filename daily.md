@@ -34,18 +34,17 @@
 
 ### Agustín: 
         
-        hice ayer: 
-		    *Repare algunos errores del carrito en cuanto a los botones
-            *Corregi algunos tamaños del carrito
-		    *Modifique esteticamente el detalle del producto
+    hice ayer: 
+		*Repare algunos errores del carrito en cuanto a los botones
+    *Corregi algunos tamaños del carrito
+		*Modifique esteticamente el detalle del producto
 
 		
-        Inpedimentos: 
-		    *Me quedaron algunas cosas por modificar en el carrito
-
-        voy a hacer hoy: 
-		    *Terminar carrito
-            *Terminar Detalle
+    Inpedimentos: 
+		*Me quedaron algunas cosas por modificar en el carrito
+    voy a hacer hoy: 
+		*Terminar carrito
+    *Terminar Detalle
 
 
 
@@ -58,7 +57,7 @@
 		* Creacion de rutas para el crud
 
     Inconvenientes: 
-        *Ninguno
+    *Ninguno
 
 
     Hare hoy: 
@@ -72,22 +71,68 @@
 		*Correciones de carrito
 
     inconvenientes: 
-        *Problema estetico con espacios vacios
+    *Problema estetico con espacios vacios
 
     Hare hoy: 
 		*Continuar con carrito y producto
 
-Dante:
+### Dante:
 
     Que hice ayer: 
 		*Cambios esteticos del home
 		*Correciones en el home
 
     inconvenientes: 
-        *Ninguno
+    *Ninguno
 
     Hare hoy: 
 		*Terminar el home
+		
+		
+# Sprint 4
            
+## 20/8/21
 
 
+### Santiago: 
+
+    Que hice ayer: 
+		* Deje funcionando el formulario de edicion de productos
+		* Eliminar productos funcionando
+    * Imagens del product Detail cambian de tamaño
+    * Product detail dinamico
+
+    Inconvenientes: 
+    * No sabia como recibir muchos archivos en un mismo input
+    * Algunos porblemas con las imagenes en el formulario de edicion
+
+
+    Hare hoy: 
+		* Voy a intentar poder borrar las imagenes que quedan obsoletas
+    * Voy a intentar hacer funcionar la barra de busqueda de prodcutos
+
+
+### Agustín:
+
+    Que hice ayer: 
+		*Ajustes en el carrito
+		*Cargar productos
+
+    inconvenientes: 
+    *Ninguno
+
+    Hare hoy: 
+		*Terminar de cargar productos
+    *Dejar funcionando el registro de usuarios.
+
+### Dante:
+
+    Que hice ayer: 
+		* Modificaciones en el footer
+		* Comence modificaciones en el filtro
+
+    inconvenientes: 
+    *Ninguno
+
+    Hare hoy: 
+		*Terminar modificaciones en el filtro

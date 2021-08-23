@@ -17,24 +17,24 @@
                     <h4>Agregar producto:</h4>
                     <div>
                         <label for="name">Nombre:</label>
-                        <input class="input" name="nombre" type="text" id="name" required>
+                        <input class="input" name="nombre" type="text" id="name">
                     </div><br>
 
                     <div>
                         <label for="categoria">Categoria:</label>
-                        <select class="categorias" name="categoria" id="categoria" required>
-                        <option class="categorias" value="Procesadores">Procesadores</option>
-                        <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
-                        <option class="categorias" value="Auriculares">Auriculares</option>
-                        <option class="categorias" value="Mouses">Mouses</option>
-                        <option class="categorias" value="Teclados">Teclados</option>
-                        <option class="categorias" value="MemoriasRam">Memorias Ram</option>
-                        <option class="categorias" value="Monitores">Monitores</option>
-                        <option class="categorias" value="Coolers">Coolers</option>
-                        <option class="categorias" value="Fuentes">Fuentes</option>
-                        <option class="categorias" value="Mothers">Mothers</option>
-                        <option class="categorias" value="PlacaVideo">Placa de video</option>
-                    </select>
+                        <select class="categorias" name="categoria" id="categoria">
+                            <option class="categorias" value="Procesadores">Procesadores</option>
+                            <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
+                            <option class="categorias" value="Auriculares">Auriculares</option>
+                            <option class="categorias" value="Mouses">Mouses</option>
+                            <option class="categorias" value="Teclados">Teclados</option>
+                            <option class="categorias" value="MemoriasRam">Memorias Ram</option>
+                            <option class="categorias" value="Monitores">Monitores</option>
+                            <option class="categorias" value="Coolers">Coolers</option>
+                            <option class="categorias" value="Fuentes">Fuentes</option>
+                            <option class="categorias" value="Mothers">Mothers</option>
+                            <option class="categorias" value="PlacaVideo">Placa de video</option>
+                        </select>
                     </div><br>
 
 
@@ -50,8 +50,8 @@
                             </div>
                             <div id="descripcion">
                                 <div>
-                                    <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color" required>
-                                    <input class="input" name="valor" id="valor" placeholder="ej: rojo" required>
+                                    <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color">
+                                    <input class="input" name="valor" id="valor" placeholder="ej: rojo">
                                 </div>
 
                             </div>
@@ -61,14 +61,15 @@
 
 
                         <div>
-                            <label for="image">Imagen del producto: </label>
-                            <input type="file" name="imagesProduct" required>
+                            <label for="image">Imagenes del producto: </label>
+                            <p>Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
+                            <input type="file" multiple name="imagesProduct">
 
 
                             <div>
                                 <div class="container-precio">
                                     <label for="precio">Precio: $</label>
-                                    <input class="input" type="number" id="precio" name="precio" required>
+                                    <input class="input" type="number" id="precio" name="precio">
                                 </div>
 
 
