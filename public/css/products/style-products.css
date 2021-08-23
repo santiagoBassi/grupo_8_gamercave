@@ -123,12 +123,8 @@ main {
 }
 
 @media (min-width: 769px) {
-    main {
-        display: flex;
-        flex-direction: row;
-    }
-    ;
     .tab {
-        display: flex;
+        width: 10%;
+        margin-left: 300px;
     }
 }
