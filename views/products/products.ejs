@@ -11,58 +11,59 @@
     <%- include('../partials/header') -%>
         <main>
 
-            <div class="container-productos-filtro">
-                <aside>
+            <aside>
 
 
 
-                    <div class="tab">
-                        <input id="tab-1" class="checkbox-filter" type="checkbox">
-                        <label class="title-filter" for="tab-1">Filrar por:</label>
-                        <div class="tab-content">
-                            <div style="border: solid 2px red;">
-                                <h4> precio:</h4>
-                                <form action="" method="GE ">
-                                    <div>
-                                        <label for="max">Máximo: $</label>
-                                        <input id="max" type="number">
-                                    </div>
-                                    <div>
-                                        <label for="min">Minimo: $</label>
-                                        <input id="min" type="number">
-                                    </div>
-                                    <button type="submit">Filtrar</button>
-                                </form>
-                                <br><br>
-                                <h4>Filtrar por categorias</h4>
-                                <ul class="lista-categorias">
-                                    <li><a href="#">Procesadores</a></li>
-                                    <li><a href="#">Discos Rigidos</a></li>
-                                    <li><a href="#">Auriculares</a></li>
-                                    <li><a href="#">Mouses</a></li>
-                                    <li><a href="#">Teclados</a></li>
-                                    <li><a href="#">Memorias Ram</a></li>
-                                    <li><a href="#">Monitores</a></li>
-                                    <li><a href="#">Coolers</a></li>
-                                    <li><a href="#">Fuentes</a></li>
-                                    <li><a href="#">Mothers</a></li>
-                                    <li><a href="#">Placa de video</a></li>
-                                </ul>
+                <div class="tab">
+                    <input id="tab-1" class="checkbox-filter" type="checkbox">
+                    <label class="title-filter" for="tab-1">Filtrar por:</label>
+                    <div class="tab-content">
 
+                        <h4> precio:</h4>
+                        <form action="" method="GE ">
+                            <div>
+                                <label for="max">Máximo: $</label>
+                                <input id="max" type="number">
                             </div>
-
-                        </div>
+                            <div>
+                                <label for="min">Minimo: $</label>
+                                <input id="min" type="number">
+                            </div>
+                            <button type="submit">Filtrar</button>
+                        </form>
+                        <br><br>
+                        <h4>Filtrar por categorias:</h4>
+                        <ul class="lista-categorias">
+                            <li><a href="#">Procesadores</a></li>
+                            <li><a href="#">Discos Rigidos</a></li>
+                            <li><a href="#">Auriculares</a></li>
+                            <li><a href="#">Mouses</a></li>
+                            <li><a href="#">Teclados</a></li>
+                            <li><a href="#">Memorias Ram</a></li>
+                            <li><a href="#">Monitores</a></li>
+                            <li><a href="#">Coolers</a></li>
+                            <li><a href="#">Fuentes</a></li>
+                            <li><a href="#">Mothers</a></li>
+                            <li><a href="#">Placa de video</a></li>
+                        </ul>
                     </div>
+                </div>
+
+
+                </div>
+                </div>
 
 
 
 
-                </aside>
+            </aside>
 
-                <section class="container-productos ">
-                    <h4 class="titulares-productos ">Mouses</h4>
-                    <div class="container-all-articles ">
-                        <% productos.forEach(function(producto) {%>
+            <section class="container-productos ">
+                <h4 class="titulares-productos ">Mouses</h4>
+                <div class="container-all-articles ">
+                    <% productos.forEach(function(producto) {%>
+                        <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                             <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                 <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                     <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
@@ -70,12 +71,12 @@
                                             <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                                 <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                                     <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
-                                                        <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
-                                                            <% }) %>
-                    </div>
-                    <h4 class="titulares-productos ">Monitores</h4>
-                    <div class="container-all-articles ">
-                        <% productos.forEach(function(producto) {%>
+                                                        <% }) %>
+                </div>
+                <h4 class="titulares-productos ">Monitores</h4>
+                <div class="container-all-articles ">
+                    <% productos.forEach(function(producto) {%>
+                        <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                             <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                 <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                     <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
@@ -83,11 +84,10 @@
                                             <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                                 <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
                                                     <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
-                                                        <%- include('../partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen}) -%>
-                                                            <% }) %>
-                    </div>
+                                                        <% }) %>
+                </div>
 
-                </section>
+            </section>
 
             </div>
 
