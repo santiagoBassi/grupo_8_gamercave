@@ -100,7 +100,8 @@ main {
     font-family: 'Noto Sans', sans-serif;
     font-size: 14px;
 }
-.text-price{
+
+.text-price {
     background-color: #4f5d9c4f;
     border: solid 1px #4f5d9c;
     border-radius: 10px;
@@ -110,6 +111,7 @@ main {
     font-family: 'Noto Sans', sans-serif;
     font-size: 18px;
 }
+
 .product-caract {
     font-size: 18px;
     background-color: white;
@@ -120,7 +122,7 @@ main {
     text-align: center;
 }
 
-.span{
+.span {
     display: flex;
     justify-content: center;
     color: #140f07;
@@ -129,17 +131,18 @@ main {
     align-items: center;
 }
 
-.span-price{
+.span-price {
     display: flex;
     justify-content: center;
     color: #140f07;
     align-items: center;
 }
+
 .carrito {
     font-size: 25px;
 }
-.boton-tab{
-    
+
+.boton-tab {
     border-radius: 5px;
     border-radius: 10px;
     background-color: #4f5d9c4f;
