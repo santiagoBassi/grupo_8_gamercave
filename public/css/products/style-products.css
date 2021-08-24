@@ -1,134 +1,134 @@
-* {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-}
-
-html {
-    width: 100vw;
-}
-
-body {
-    background-color: #140f07;
-}
-
-main {
-    margin-top: 110px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.tab {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    width: 80%;
-}
-
-.checkbox-filter {
-    display: none;
-}
-
-.tab-content {
-    font-family: 'Noto Sans', sans-serif;
-    background-color: #e5e5e5d7;
-}
-
-.title-filter:hover {
-    background-color: #f8f8f8dc;
-    transition-duration: 0.5s;
-}
-
-.title-filter {
-    height: 100%;
-    text-align: center;
-    display: block;
-    margin-top: 10px;
-    padding: 10px;
-    color: #140f07;
-    border: solid 3px #4b5985;
-    border-radius: 7px;
-    background: white;
-    cursor: pointer;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-.tab .tab-content {
-    border-top-style: hidden;
-    border-radius: 7px;
-    color: #0E0B16;
-    overflow: hidden;
-    transition: all 1s;
-    max-height: 0;
-    width: 100%;
-    padding-left: 10px;
-    background-color: #e5e5e5
-}
-
-.tab .tab-content p {
-    padding: 10px;
-}
-
-.checkbox-filter:checked~.tab-content {
-    max-height: 100vh;
-}
-
-.title-filter::after {
-    content: "\25b6";
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    display: block;
-    transition: all 0.4s;
-}
-
-.checkbox-filter:checked~label::after {
-    transform: rotate(90deg);
-}
-
-.lista-categorias {
-    list-style: none;
-}
-
-.lista-categorias li a {
-    text-decoration: none;
-    color: #0E0B16;
-}
-
-.container-productos {
-    width: 90%;
-    margin: auto;
-    margin-top: 20px;
-    max-width: 1400px;
-}
-
-.titulares-productos {
-    font-size: 25px;
-    text-align: center;
-    font-family: 'Noto Sans', sans-serif;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.container-all-articles {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-@media (min-width: 769px) {
-    main {
-        display: flex;
-        flex-direction: row;
-    }
-    ;
-    .tab {
-        display: flex;
-    }
-}
+                * {
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            html {
+                width: 100vw;
+            }
+            
+            body {
+                background-color: #140f07;
+            }
+            
+            main {
+                margin-top: 110px;
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .tab {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                width: 80%;
+            }
+            
+            .checkbox-filter {
+                display: none;
+            }
+            
+            .tab-content {
+                font-family: 'Noto Sans', sans-serif;
+                background-color: #e5e5e5d7;
+            }
+            
+            .title-filter:hover {
+                background-color: #f8f8f8dc;
+                transition-duration: 0.5s;
+            }
+            
+            .title-filter {
+                height: 100%;
+                text-align: center;
+                display: block;
+                margin-top: 10px;
+                padding: 10px;
+                color: #140f07;
+                border: solid 3px #4b5985;
+                border-radius: 7px;
+                background: white;
+                cursor: pointer;
+                font-family: 'Noto Sans', sans-serif;
+            }
+            
+            .tab .tab-content {
+                border-top-style: hidden;
+                border-radius: 7px;
+                color: #0E0B16;
+                overflow: hidden;
+                transition: all 1s;
+                max-height: 0;
+                width: 100%;
+                padding-left: 10px;
+                background-color: #e5e5e5
+            }
+            
+            .tab .tab-content p {
+                padding: 10px;
+            }
+            
+            .checkbox-filter:checked~.tab-content {
+                max-height: 100vh;
+            }
+            
+            .title-filter::after {
+                content: "\25b6";
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                display: block;
+                transition: all 0.4s;
+            }
+            
+            .checkbox-filter:checked~label::after {
+                transform: rotate(90deg);
+            }
+            
+            .lista-categorias {
+                list-style: none;
+            }
+            
+            .lista-categorias li a {
+                text-decoration: none;
+                color: #0E0B16;
+            }
+            
+            .container-productos {
+                width: 90%;
+                margin: auto;
+                margin-top: 20px;
+                max-width: 1400px;
+            }
+            
+            .titulares-productos {
+                font-size: 25px;
+                text-align: center;
+                font-family: 'Noto Sans', sans-serif;
+                margin-bottom: 20px;
+                color: white;
+            }
+            
+            .container-all-articles {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+            }
+            
+            @media (min-width: 769px) {
+                aside {
+                    display: flex;
+                    flex-direction: row;
+                }
+                .tab {
+                    max-width: 200px;
+                    max-height: 50px;
+                    margin-top: 100px;
+                }

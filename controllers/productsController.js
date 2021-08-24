@@ -3,6 +3,7 @@ const path = require('path');
 const uuid = require('uuid');
 const { validationResult } = require('express-validator');
 const { send } = require('process');
+const { RSA_NO_PADDING } = require('constants');
 
 const controlador = {
 
@@ -104,8 +105,9 @@ const controlador = {
     productEditSave: (req, res) => {
         let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
         let products = JSON.parse(productsJSON);
-        let updatedProducts = []
+        let updatedProducts = [];
         products.forEach(product => {
+
             if (product.id == req.params.id) {
 
                 let updatedProduct = {
@@ -114,7 +116,6 @@ const controlador = {
                     categoria: req.body.categoria,
                     precio: req.body.precio,
                 };
-
                 if (req.files == '') {
                     updatedProduct['img1'] = product.img1;
                     updatedProduct['img2'] = product.img2;
@@ -143,16 +144,18 @@ const controlador = {
 
                 updatedProducts.push(updatedProduct);
 
-
             } else {
                 updatedProducts.push(product);
             };
 
-            let updatedProductsJSON = JSON.stringify(updatedProducts);
 
-            fs.writeFileSync('data/products.json', updatedProductsJSON);
-            return res.redirect('../detail/' + req.params.id);
+
         });
+
+        let updatedProductsJSON = JSON.stringify(updatedProducts);
+
+        fs.writeFileSync('data/products.json', updatedProductsJSON);
+        return res.redirect('../detail/' + req.params.id);
 
 
     },
