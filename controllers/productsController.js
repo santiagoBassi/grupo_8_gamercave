@@ -55,7 +55,6 @@ const controlador = {
             } else {
                 productos = JSON.parse(archivoProductosJson);
             };
-
             let id = uuid.v4();
 
             let producto = {
@@ -86,9 +85,9 @@ const controlador = {
 
             let productosJSON = JSON.stringify(productos);
 
-            fs.writeFileSync('data/products.json', productosJSON);
+            /*fs.writeFileSync('data/products.json', productosJSON);
 
-            return res.redirect('create');
+            return res.redirect('create');*/
         } else {
 
             return res.render('./products/productCreate', { errors: errors.mapped() });
