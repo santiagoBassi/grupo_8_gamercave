@@ -15,14 +15,20 @@
 
                 <form id="frm" class="form" action="/products/create" method="POST" enctype="multipart/form-data">
                     <h4>Agregar producto:</h4>
+
                     <div>
                         <label for="name">Nombre:</label>
                         <input class="input" name="nombre" type="text" id="name">
                     </div><br>
+                    <% if(locals.errors && errors.nombre) { %>
+                        <p>
+                            <%= errors.nombre.msg %>
+                        </p>
+                        <% } %>
 
-                    <div>
-                        <label for="categoria">Categoria:</label>
-                        <select class="categorias" name="categoria" id="categoria">
+                            <div>
+                                <label for="categoria">Categoria:</label>
+                                <select class="categorias" name="categoria" id="categoria">
                             <option class="categorias" value="Procesadores">Procesadores</option>
                             <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
                             <option class="categorias" value="Auriculares">Auriculares</option>
@@ -35,55 +41,54 @@
                             <option class="categorias" value="Mothers">Mothers</option>
                             <option class="categorias" value="PlacaVideo">Placa de video</option>
                         </select>
-                    </div><br>
+                            </div><br>
 
 
 
-                    <div id="caracteristicas">
-                        <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
-                        <label for="caracteristica">Caracteristica: </label>
-                        <label for="valor">Valor: </label>
-                        <br>
-                        <div>
-                            <div>
-                                <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
-                            </div>
-                            <div id="descripcion">
+                            <div id="caracteristicas">
+                                <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
+                                <label for="caracteristica">Caracteristica: </label>
+                                <label for="valor">Valor: </label>
+                                <br>
                                 <div>
-                                    <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color">
-                                    <input class="input" name="valor" id="valor" placeholder="ej: rojo">
+                                    <div>
+                                        <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
+                                    </div>
+                                    <div id="descripcion">
+                                        <div>
+                                            <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color">
+                                            <input class="input" name="valor" id="valor" placeholder="ej: rojo">
+                                        </div>
+
+                                    </div>
+
                                 </div>
 
                             </div>
-
-                        </div>
-
-
-
-                        <div>
-                            <label for="image">Imagenes del producto: </label>
-                            <p>Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
-                            <input type="file" multiple name="imagesProduct">
-
 
                             <div>
-                                <div class="container-precio">
-                                    <label for="precio">Precio: $</label>
-                                    <input class="input" type="number" id="precio" name="precio">
-                                </div>
-
-
-
+                                <label for="image">Imagenes del producto: </label>
+                                <p>Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
+                                <input type="file" multiple name="imagesProduct">
                             </div>
-                        </div>
-                        <br>
 
 
-                        <button class="boton" type="submit">Cargar producto</button>
+                            <div class="container-precio">
+                                <label for="precio">Precio: $</label>
+                                <input class="input" type="number" id="precio" name="precio">
+                            </div>
+                            <br>
+                            <% if(errors && errors.precio) { %>
+                                <p>
+                                    <%= errors.precio.msg %>
+                                </p>
+                                <% } %>
+
+                                    <button class="boton" type="submit">Cargar producto</button>
 
 
                 </form>
-                </div>
+            </div>
         </main>
 
 
