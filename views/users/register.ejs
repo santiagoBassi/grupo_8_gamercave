@@ -4,6 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/users/style-register.css">
+        <script src="/js/register.js" defer></script>
 </head>
 
 <body>
@@ -11,8 +12,9 @@
         <a href="/"><img src="/images/logos/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo"></a>
     </header>
     <main>
+
         <div class="container-form">
-            <form action="/users/create" method="POST" enctype="multipart/form-data">
+            <form action="/users/create" method="POST" enctype="multipart/form-data" id="formulario">
                 <h4>Registrate</h4>
                 <div>
                     <label for="name">Nombre:</label>
@@ -35,18 +37,27 @@
                 </div><br>
 
                 <div> <label for="img_user">Imagen de Usuario:</label>
-                    <input class="input" type="file"  name ="img_user" id="img_user" required>
+                    <input class="input" type="file" name="img_user" id="img_user" required>
                 </div><br>
 
                 <div>
                     <label for="password">Contraseña:</label>
-                    <input class="input" type="password" id="password" name="contrasena" placeholder="Password" required>
+                    <div class="containerInput">
+                        <input class="input" type="password" id="password" name="contrasena" placeholder="Password" required>
+                        <i id="iconoConfirmPasswordError" class="fas fa-times-circle iconoConfirmPasswordError"></i>
+                        <i id="iconoConfirmPasswordCheck" class="fas fa-check-circle iconoConfirmPasswordCheck"></i>
+                    </div>
+
                 </div><br>
 
                 <div>
                     <label for="confirmPassword">Confirme su contraseña:</label>
-                    <input class="input" type="password" id="confirmPassword" name="confirmar" placeholder="Confirm your Password"
-                        required>
+                    <div class="containerInput">
+                        <input class="input" type="password" id="confirmPassword" name="confirmar" placeholder="Confirm your Password" required>
+                        <i id="iconoConfirmPasswordError2" class="fas fa-times-circle iconoConfirmPasswordError"></i>
+                        <i id="iconoConfirmPasswordCheck2" class="fas fa-check-circle iconoConfirmPasswordCheck"></i>
+                    </div>
+                    <p id="errorConfirmPassword" class="errorConfirmPassword">Las contraseñas deben ser iguales y deben tener un minimo de 10 caracteres.</p>
                 </div><br>
 
                 <button class="boton" type="submit">Enviar</button>

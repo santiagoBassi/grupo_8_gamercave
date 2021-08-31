@@ -60,14 +60,14 @@ form div {
 form h4 {
     color: #0E0B16;
     font-size: 24px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 form div label {
     color: #0E0B16;
     padding-bottom: 8px;
     margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
 }
 
@@ -78,7 +78,7 @@ form div label {
     border-radius: 5px;
     background-color: #7f7f7f32;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
 }
 
@@ -93,8 +93,40 @@ form div label {
     border-radius: 5px;
     background-color: #7f7f7f32;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
+}
+
+.containerInput {
+    position: relative;
+}
+
+.iconoConfirmPasswordError {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    z-index: 10;
+    color: red;
+    opacity: 0;
+}
+
+.iconoConfirmPasswordCheck {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    z-index: 10;
+    color: rgb(80, 180, 41);
+    opacity: 0;
+}
+
+.mostrarConfirm {
+    opacity: 1;
+}
+
+.errorConfirmPassword {
+    display: none;
+    color: red;
+    font-size: 16px;
 }
 
 .boton {
@@ -103,7 +135,7 @@ form div label {
     border: 2px solid #4b5985;
     background-color: #E5E5E5;
     color: #0E0B16;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
 }
 
@@ -115,14 +147,14 @@ form div label {
 
 form p {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #0E0B16;
     font-weight: 600;
 }
 
 form p a {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #4b5985;
     font-weight: 600;
 }
@@ -174,7 +206,7 @@ form p a {
     padding: 18px 24px;
     width: 100%;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
     transition: all .5s;
 }
@@ -199,7 +231,7 @@ form p a {
     padding: 18px 24px;
     width: 100%;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
     transition: all .5s;
 }

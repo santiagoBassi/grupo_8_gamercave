@@ -19,7 +19,7 @@ const upload = multer({ storage });
 
 
 router.get('/register', usersControllers.register);
-router.post('/create',upload.single("img_user"), usersControllers.create)
+router.post('/create', upload.single("img_user"), usersControllers.create)
 
 router.get('/login', usersControllers.login);
 router.get('/recoverpassword', usersControllers.recoverpassword);
