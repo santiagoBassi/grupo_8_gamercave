@@ -8,14 +8,6 @@ const controlador = {
         return res.render('./users/register');
     },
 
-    login: (req, res) => {
-        return res.render('./users/login');
-    },
-
-    recoverpassword: (req, res) => {
-        return res.render('./users/recover-password');
-    },
-
     create: (req, res) => {
         if (req.body.contrasena == req.body.confirmar) {
             const userJSON = fs.readFileSync("data/users.json", { encoding: "utf-8" });
@@ -50,6 +42,28 @@ const controlador = {
         };
 
 
+    },
+
+    showLogin: (req, res) => {
+        return res.render('./users/login');
+    },
+    login: (req, res) => {
+        const userJSON = fs.readFileSync("data/users.json", { encoding: "utf-8" });
+        const usuarios = JSON.parse(userJSON);
+
+        usuarios.forEach((usuario) => {
+
+            if (usuario.email == req.body.email && bcrypt.compareSync(req.body.password, usuario.contrasena)) {
+                res.send('Logueado con exito')
+            } else {
+                res.send('Credenciales invalidas')
+            }
+        });
+    },
+
+
+    recoverpassword: (req, res) => {
+        return res.render('./users/recover-password');
     }
 
 
