@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const path = require("path")
-const usersControllers = require('../controllers/usersController');
 
+const path = require("path");
 const multer = require('multer');
+
+const usersControllers = require('../controllers/usersController');
+const guestMiddlware = require('../middlewares/guestMiddlware');
+const loggedInMiddlware = require('../middlewares/loggedInMiddlware');
+
 
 
 
@@ -18,15 +22,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-router.get('/register', usersControllers.register);
+router.get('/register', guestMiddlware, usersControllers.register);
+
 router.post('/create', upload.single("img_user"), usersControllers.create)
 
-router.get('/login', usersControllers.showLogin);
+router.get('/login', guestMiddlware, usersControllers.showLogin);
 router.post('/login', usersControllers.login)
 
 router.get('/recoverpassword', usersControllers.recoverpassword);
-
-
 
 
 module.exports = router;

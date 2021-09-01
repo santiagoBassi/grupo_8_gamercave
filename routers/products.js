@@ -6,6 +6,9 @@ const path = require('path');
 const { check } = require('express-validator');
 
 const productsControllers = require('../controllers/productsController');
+const guestMiddlware = require('../middlewares/guestMiddlware');
+const loggedInMiddlware = require('../middlewares/loggedInMiddlware');
+
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -40,7 +43,7 @@ router.put('/:id/edit', upload.any('imagesProduct'), productsControllers.product
 
 router.delete('/:id/delete', productsControllers.productDelete);
 
-router.get('/cart', productsControllers.productCart);
+router.get('/cart', loggedInMiddlware, productsControllers.productCart);
 
 
 
