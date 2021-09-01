@@ -91,6 +91,11 @@ main {
     transition-duration: 1s;
 }
 
+#descripcion div {
+    display: flex;
+    flex-direction: row;
+}
+
 @media (min-width: 769px) {
     main {
         flex-direction: row-reverse;
