@@ -54,11 +54,12 @@ const controlador = {
         usuarios.forEach((usuario) => {
 
             if (usuario.email == req.body.email && bcrypt.compareSync(req.body.password, usuario.contrasena)) {
-                res.send('Logueado con exito')
-            } else {
-                res.send('Credenciales invalidas')
+                res.redirect('/')
             }
         });
+
+        let error = 'Algo salió mal';
+        res.render('./users/login', { error })
     },
 
 

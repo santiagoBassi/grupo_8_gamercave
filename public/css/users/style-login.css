@@ -63,6 +63,11 @@ form h4 {
     font-size: 24px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
+    margin: 10px;
+}
+
+.errorMsg {
+    color: rgba(255, 0, 0, 0.596);
 }
 
 form div label {

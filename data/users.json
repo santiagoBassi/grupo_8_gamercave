@@ -1,0 +1,19 @@
+[{
+        "id": "a8821a65-388c-4e34-90e5-cef5f66d72b8",
+        "nombre": "Santiago",
+        "apellido": "Bassi",
+        "email": "santiagobassi21@gmail.com",
+        "telefono": "+54 9 2241 516309",
+        "img_user": "usuario-1630457377460.jpeg",
+        "contrasena": "$2a$10$ZbdEGdzyFNBBiznlYwL/E.j8u0pM8rIaSbS1h.Z7l3rihlHPCEjxm"
+    },
+    {
+        "id": "7f274ad8-a287-4395-92bb-2afd2ffcad13",
+        "nombre": "Sebastian",
+        "apellido": "Bassi",
+        "email": "sebabassi@gmail.com",
+        "telefono": "+54 9 2241 5555555",
+        "img_user": "usuario-1630457431167.jpeg",
+        "contrasena": "$2a$10$U39PJaNyRNF5HHNYB3fDju3ThDvyTRQgQwqeSkaQupC1ffxsBEeSG"
+    }
+]
