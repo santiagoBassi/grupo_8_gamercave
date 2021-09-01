@@ -3,7 +3,7 @@ const router = express.Router();
 
 const multer = require('multer');
 const path = require('path');
-const { body } = require('express-validator');
+const { check } = require('express-validator');
 
 const productsControllers = require('../controllers/productsController');
 
@@ -18,11 +18,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 const validations = [
-    body('nombre').notEmpty().withMessage('Tienes que poner un nombre'),
-    body('categoria').notEmpty().withMessage('Tienes que seleccionar una categoria'),
-    body('caracteristica').notEmpty().withMessage('Tienes que poner una caracteristica'),
-    body('valor').notEmpty().withMessage('Tienes que poner un valor'),
-    body('precio').notEmpty().withMessage('Tienes que poner el precio del producto')
+    check('nombre').notEmpty().withMessage('Tienes que poner un nombre'),
+    check('categoria').notEmpty().withMessage('Tienes que seleccionar una categoria'),
+    check('caracteristica').notEmpty().withMessage('Tienes que poner una caracteristica'),
+    check('valor').notEmpty().withMessage('Tienes que poner un valor'),
+    check('precio').notEmpty().withMessage('Tienes que poner el precio del producto')
 ];
 
 

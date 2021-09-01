@@ -2,8 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 const { validationResult } = require('express-validator');
-const { send } = require('process');
+/*const { send } = require('process');
 const { RSA_NO_PADDING } = require('constants');
+const { listenerCount } = require('events');*/
+
 
 const controlador = {
 
@@ -33,55 +35,65 @@ const controlador = {
 
 
     productCreate: (req, res) => {
-        return res.render('./products/productCreate');
+
+        return res.render('./products/productCreate', { errors: {} });
     },
 
 
 
     productCreateSave: (req, res) => {
 
-        let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
-        let productos;
+        let errors = validationResult(req);
 
-        if (archivoProductosJson == '') {
-            productos = [];
-        } else {
-            productos = JSON.parse(archivoProductosJson);
-        };
+        if (errors.isEmpty()) {
 
-        let id = uuid.v4();
+            let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+            let productos;
 
-        let producto = {
-            id: id,
-            nombre: req.body.nombre,
-            categoria: req.body.categoria,
-            precio: req.body.precio,
-            img1: req.files[0].filename,
-            img2: req.files[1].filename,
-            img3: req.files[2].filename
-        };
+            if (archivoProductosJson == '') {
+                productos = [];
+            } else {
+                productos = JSON.parse(archivoProductosJson);
+            };
+            let id = uuid.v4();
+
+            let producto = {
+                id: id,
+                nombre: req.body.nombre,
+                categoria: req.body.categoria,
+                precio: req.body.precio,
+                img1: req.files[0].filename,
+                img2: req.files[1].filename,
+                img3: req.files[2].filename
+            };
 
 
-        function caracteristicas(cantidadCaracteristicas) {
-            for (let i = 0; i < cantidadCaracteristicas; i++) {
+            function caracteristicas(cantidadCaracteristicas) {
+                for (let i = 0; i < cantidadCaracteristicas; i++) {
 
-                if (cantidadCaracteristicas == 1) {
-                    producto[req.body.caracteristica] = req.body.valor;
-                } else {
-                    producto[req.body.caracteristica[i]] = req.body.valor[i];
+                    if (cantidadCaracteristicas == 1) {
+                        producto[req.body.caracteristica] = req.body.valor;
+                    } else {
+                        producto[req.body.caracteristica[i]] = req.body.valor[i];
+                    }
                 }
             }
+            caracteristicas(req.body.cantidadInput)
+
+
+            productos.push(producto);
+
+            let productosJSON = JSON.stringify(productos);
+
+            /*fs.writeFileSync('data/products.json', productosJSON);
+
+            return res.redirect('create');*/
+        } else {
+
+            return res.render('./products/productCreate', { errors: errors.mapped() });
         }
-        caracteristicas(req.body.cantidadInput)
 
 
-        productos.push(producto);
-
-        let productosJSON = JSON.stringify(productos);
-
-        fs.writeFileSync('data/products.json', productosJSON);
-
-        return res.redirect('create');
     },
 
     productEdit: (req, res) => {
