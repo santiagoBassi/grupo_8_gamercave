@@ -4,6 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/users/style-login.css">
+        <script src="/js/login.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,11 @@
 
                         <div>
                             <label for="password">Contraseña:</label>
-                            <input class="input" name="password" type="password" id="password" placeholder="Password" required>
+                            <div class="containerShowPassword">
+                                <input class="input" name="password" type="password" id="password" placeholder="Password" required>
+                                <i onclick="showPassword()" id="hide" style="display: none;" class="iconShowPassword fas fa-eye-slash"></i>
+                                <i onclick="showPassword()" id="show" class="iconShowPassword fas fa-eye"></i>
+                            </div>
                         </div><br>
 
                         <div class="container-mantener-sesion">

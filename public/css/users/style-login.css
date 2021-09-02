@@ -93,6 +93,16 @@ form div label {
     background-color: #7F7F7F90;
 }
 
+.containerShowPassword {
+    position: relative;
+}
+
+.iconShowPassword {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 .container-mantener-sesion {
     width: 100%;
     display: flex;
