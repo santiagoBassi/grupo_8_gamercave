@@ -18,7 +18,7 @@
 
                     <div>
                         <label for="name">Nombre:</label>
-                        <input class="input" name="nombre" type="text" id="name">
+                        <input class="input" name="name" type="text" id="name">
                     </div><br>
                     <% if(locals.errors && errors.nombre) { %>
                         <p>
@@ -28,7 +28,7 @@
 
                             <div>
                                 <label for="categoria">Categoria:</label>
-                                <select class="categorias" name="categoria" id="categoria">
+                                <select class="categorias" name="category" id="categoria">
                             <option class="categorias" value="Procesadores">Procesadores</option>
                             <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
                             <option class="categorias" value="Auriculares">Auriculares</option>
@@ -56,8 +56,8 @@
                                     </div>
                                     <div id="descripcion">
                                         <div>
-                                            <input class="input" name="caracteristica" id="caracteristica" placeholder="ej: color">
-                                            <input class="input" name="valor" id="valor" placeholder="ej: rojo">
+                                            <input class="input" name="characteristic" id="caracteristica" placeholder="ej: color">
+                                            <input class="input" name="value" id="valor" placeholder="ej: rojo">
                                         </div>
 
                                     </div>
@@ -75,7 +75,7 @@
 
                             <div class="container-precio">
                                 <label for="precio">Precio: $</label>
-                                <input class="input" type="number" id="precio" name="precio">
+                                <input class="input" type="number" id="price" name="precio">
                             </div>
                             <br>
                             <% if(errors && errors.precio) { %>

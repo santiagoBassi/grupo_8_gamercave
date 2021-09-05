@@ -17,12 +17,12 @@
                 <h4>Agregar producto:</h4>
                 <div>
                     <label for="name">Nombre:</label>
-                    <input class="input" name="nombre" type="text" id="name" value="<%= product.nombre %> " required>
+                    <input class="input" name="name" type="text" id="name" value="<%= product.nombre %> " required>
                 </div><br>
 
                 <div>
                     <label for="categoria">Categoria:</label>
-                    <select class="categorias" name="categoria" id="categoria" required>
+                    <select class="categorias" name="category" id="categoria" required>
                          
                         <option class="categorias" value="Procesadores"
                         <% if (product.categoria == 'Procesadores') {%>
@@ -102,8 +102,8 @@
                             <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
 
                                 <div>
-                                    <input class="input" name="caracteristica" value="<%= caracteristica[0] %> " id="caracteristica" placeholder="ej: color" required>
-                                    <input class="input" name="valor" value="<%= caracteristica[1] %> " id="valor" placeholder="ej: rojo" required>
+                                    <input class="input" name="characteristic" value="<%= caracteristica[0] %> " id="caracteristica" placeholder="ej: color" required>
+                                    <input class="input" name="value" value="<%= caracteristica[1] %> " id="valor" placeholder="ej: rojo" required>
                                 </div>
 
                                 <%  }); %>
@@ -129,7 +129,7 @@
 
                 <div>
                     <label for="precio">Precio: $</label>
-                    <input class="input" type="number" id="precio" name="precio" required value="<%= product.precio %>">
+                    <input class="input" type="number" id="precio" name="price" required value="<%= product.precio %>">
                 </div><br>
 
 

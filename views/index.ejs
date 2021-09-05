@@ -66,8 +66,8 @@
                 <section class="container-productos">
                     <h4 class="titulares-productos">Productos Destacados</h4>
                     <div class="container-all-articles">
-                        <% productos.forEach(function(producto) {%>
-                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, img1: producto.img1,img2: producto.img2,img3: producto.img3}) -%>
+                        <% products.forEach(function(product) {%>
+                            <%- include('./partials/productItem', {id: product.id, nombre: product.nombre, precio: product.precio, img1: product.img1,img2: product.img2,img3: product.img3}) -%>
 
                                 <% }) %>
                     </div>
@@ -79,8 +79,8 @@
 
                     <h4 class="titulares-productos">Ofertas</h4>
                     <div class="container-all-articles">
-                        <% productos.forEach(function(producto) {%>
-                            <%- include('./partials/productItem', {id: producto.id, nombre: producto.nombre, precio: producto.precio, img1: producto.img1,img2: producto.img2,img3: producto.img3}) -%>
+                        <% products.forEach(function(product) {%>
+                            <%- include('./partials/productItem', {id: product.id, nombre: product.nombre, precio: product.precio, img1: product.img1,img2: product.img2,img3: product.img3}) -%>
 
 
                                 <% }) %>

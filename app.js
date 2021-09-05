@@ -22,12 +22,14 @@ app.use(session({
 
 app.use(cookieParser());
 
-const rutasMain = require('./routers/main.js');
-const rutasUsers = require('./routers/users.js');
-const rutasProducts = require('./routers/products.js');
+const routsMain = require('./routers/main.js');
+const routsUsers = require('./routers/users.js');
+const routsProducts = require('./routers/products.js');
+const routsAdmin = require('./routers/admin.js');
 
-app.use('/', rutasMain);
-app.use('/users', rutasUsers);
-app.use('/products', rutasProducts);
+app.use('/', routsMain);
+app.use('/users', routsUsers);
+app.use('/products', routsProducts);
+app.use('/admin', routsAdmin);
 
 app.listen(3030, () => console.log('Servidor corriendo en el puerto 3030'));
