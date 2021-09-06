@@ -26,18 +26,18 @@
                 </div>
                 <div class="todo">
                     <p class="titulo-producto">
-                        <%= producto.nombre %>
+                        <%= producto.name %>
                     </p><br>
                     <div class="product-caract"><br>
                         <div class="texto">
-                            <%= producto.categoria %> /
-                                <%= producto.nombre %>
+                            <%= producto.category %> /
+                                <%= producto.name %>
                         </div><br>
                         <div class="texto">Hay Stock/Envió gratis/Garantía de 6 meses</div><br>
                         <div class="texto">
                             Hasta 6 Cuotas sin interes</div><br>
                         <span class="span-price"><div class="text-price">
-                            $ <%= producto.precio %>
+                            $ <%= producto.price %>
                         </div></span>
 
                         <div class="span">
@@ -65,10 +65,10 @@
                 <input id="tab-1" type="checkbox">
                 <label for="tab-1">Caracteristicas Principales</label>
                 <div class="tab-content">
-                    <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
+                    <% Object.entries(caracteristicas).forEach(function (characteristic) { %>
                         <p>
-                            <%= caracteristica[0] %> :
-                                <%= caracteristica[1] %>
+                            <%= characteristic[0] %> :
+                                <%= characteristic[1] %>
                         </p>
                         <% }) %>
 

@@ -12,54 +12,55 @@ const controlador = {
     },
     productCreateSave: (req, res) => {
 
-        let errors = validationResult(req);
+        /*let errors = validationResult(req);*/
 
-        if (errors.isEmpty()) {
+        /*if (errors.isEmpty()) {*/
 
-            let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
-            let productos;
+        let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+        let productos;
 
-            if (archivoProductosJson == '') {
-                productos = [];
-            } else {
-                productos = JSON.parse(archivoProductosJson);
-            };
-            let id = uuid.v4();
+        if (archivoProductosJson == '') {
+            productos = [];
+        } else {
+            productos = JSON.parse(archivoProductosJson);
+        };
+        let id = uuid.v4();
 
-            let producto = {
-                id: id,
-                name: req.body.name,
-                category: req.body.category,
-                price: req.body.price,
-                img1: req.files[0].filename,
-                img2: req.files[1].filename,
-                img3: req.files[2].filename
-            };
+        let producto = {
+            id: id,
+            name: req.body.name,
+            category: req.body.category,
+            price: req.body.price,
+            img1: req.files[0].filename,
+            img2: req.files[1].filename,
+            img3: req.files[2].filename
+        };
 
 
-            function caracteristicas(cantidadCaracteristicas) {
-                for (let i = 0; i < cantidadCaracteristicas; i++) {
+        function caracteristicas(cantidadCaracteristicas) {
+            for (let i = 0; i < cantidadCaracteristicas; i++) {
 
-                    if (cantidadCaracteristicas == 1) {
-                        producto[req.body.characteristic] = req.body.value;
-                    } else {
-                        producto[req.body.characteristic[i]] = req.body.value[i];
-                    }
+                if (cantidadCaracteristicas == 1) {
+                    producto[req.body.characteristic] = req.body.value;
+                } else {
+                    producto[req.body.characteristic[i]] = req.body.value[i];
                 }
             }
-            caracteristicas(req.body.cantidadInput)
+        }
+        caracteristicas(req.body.cantidadInput)
 
 
-            productos.push(producto);
+        productos.push(producto);
 
-            let productosJSON = JSON.stringify(productos);
+        let productosJSON = JSON.stringify(productos);
 
-            fs.writeFileSync('data/products.json', productosJSON);
+        fs.writeFileSync('data/products.json', productosJSON);
 
-            return res.redirect('create');
+        return res.redirect('create');
+        /*
         } else {
             return res.render('./products/productCreate', { errors: errors.mapped() });
-        }
+        }*/
 
 
     },

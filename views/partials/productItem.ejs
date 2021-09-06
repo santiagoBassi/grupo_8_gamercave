@@ -6,21 +6,19 @@
             <div class="flex">
                 <p class="precio-producto">
                     $
-                    <%= precio %>
+                    <%= price %>
                 </p>
                 <p class="precio-producto">15% OFF</p>
             </div>
 
 
             <p class="nombre-producto">
-                <%= nombre %>
+                <%= name %>
             </p>
 
         </div>
     </article>
     <style>
-
-
         .container-article {
             width: 280px;
             text-decoration: none;
@@ -28,7 +26,7 @@
             margin: 10px 20px;
             max-width: 350px;
         }
-
+        
         .article {
             background-color: #e2e0f6;
             border-radius: 8px;
@@ -41,11 +39,11 @@
             transition: box-shadow .5s;
             height: 400px;
         }
-
+        
         .article:hover {
             box-shadow: 5px 5px 12px #4f5d9c;
         }
-
+        
         .article img {
             height: 250px;
             margin-top: 5px;
@@ -53,7 +51,7 @@
             margin: auto;
             margin-bottom: 5px;
         }
-
+        
         .container-info {
             display: flex;
             flex-direction: column;
@@ -63,17 +61,15 @@
             height: 117px;
             background-color: #4b59852c;
         }
-
+        
         .nombre-producto {
-
             background-color: #4b598559;
             text-align: center;
             color: #140f07;
             font-family: 'Noto Sans', sans-serif;
         }
-
+        
         .precio-producto {
-
             font-weight: 600;
             margin-bottom: 5px;
             text-align: center;
@@ -81,12 +77,11 @@
             color: #24211c;
             font-family: 'Noto Sans', sans-serif;
         }
-
+        
         @media (min-width: 769px) {
             .container-article {
                 margin-bottom: 40px;
             }
-
             .container-article a {
                 margin: 10px;
             }

@@ -374,5 +374,14 @@
         "CapacidadDeMemoria": "4096MB",
         "CantidadDeProcesos": "Stream",
         "CantidadDeCoolersFan": "2"
+    },
+    {
+        "id": "e3368677-e225-4bc6-bfc7-0153ab818cb1",
+        "name": "Susana maria",
+        "category": "DiscosRigidos",
+        "img1": "producto-1630885708485.jpeg",
+        "img2": "producto-1630885708488.jpeg",
+        "img3": "producto-1630885708489.jpeg",
+        "sadf": "asdf"
     }
 ]
