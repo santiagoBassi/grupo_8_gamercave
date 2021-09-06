@@ -12,6 +12,30 @@
     <%- include('../partials/header')%>
         <main>
 
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>img</th>
+                    <th>name</th>
+                    <th>actions</th>
+                </tr>
+                <% products.forEach((product) => { %>
+                    <tr>
+                        <th>
+                            <%= product.id %>
+                        </th>
+                        <th>
+                            <img width="50px" src="/images/products/<%= product.img1 %>" alt="">
+
+                        </th>
+                        <th>
+                            <%= product.name %>
+                        </th>
+                        <th>actions</th>
+                    </tr>
+                    <% }) %>
+            </table>
+
         </main>
 
 

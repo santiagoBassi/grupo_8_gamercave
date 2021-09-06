@@ -4,7 +4,11 @@ const uuid = require('uuid');
 
 const controlador = {
     admin: (req, res) => {
-        return res.render('./admin/adminPanel')
+        let archivoProductsJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+
+        let products = JSON.parse(archivoProductsJson);
+
+        return res.render('./admin/adminPanel', { products })
     },
     productCreate: (req, res) => {
 
