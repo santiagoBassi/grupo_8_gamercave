@@ -17,7 +17,7 @@
                 <h4>Agregar producto:</h4>
                 <div>
                     <label for="name">Nombre:</label>
-                    <input class="input" name="name" type="text" id="name" value="<%= product.nombre %> " required>
+                    <input class="input" name="name" type="text" id="name" value="<%= product.name %> " required>
                 </div><br>
 
                 <div>
@@ -25,67 +25,67 @@
                     <select class="categorias" name="category" id="categoria" required>
                          
                         <option class="categorias" value="Procesadores"
-                        <% if (product.categoria == 'Procesadores') {%>
+                        <% if (product.category == 'Procesadores') {%>
                         selected
                         <% } %> 
                         >Procesadores</option>
 
                         <option class="categorias" value="DiscosRigidos"
-                        <% if (product.categoria == 'DiscosRigidos') {%>
+                        <% if (product.category == 'DiscosRigidos') {%>
                         selected
                         <% } %> 
                         >Discos Rigidos</option>
 
                         <option class="categorias" value="Auriculares"
-                        <% if (product.categoria == 'Auriculares') {%>
+                        <% if (product.category == 'Auriculares') {%>
                         selected
                         <% } %> 
                         >Auriculares</option>
 
                         <option class="categorias" value="Mouses"
-                        <% if (product.categoria == 'Mouses') {%>
+                        <% if (product.category == 'Mouses') {%>
                         selected
                         <% } %> 
                         >Mouses</option>
 
                         <option class="categorias" value="Teclados"
-                        <% if (product.categoria == 'Teclados') {%>
+                        <% if (product.category == 'Teclados') {%>
                         selected
                         <% } %>
                         >Teclados</option>
 
                         <option class="categorias" value="MemoriasRam"
-                        <% if (product.categoria == 'MemoriasRam') {%>
+                        <% if (product.category == 'MemoriasRam') {%>
                         selected
                         <% } %>
                         >Memorias Ram</option>
 
                         <option class="categorias" value="Monitores"
-                        <% if (product.categoria == 'Monitores') {%>
+                        <% if (product.category == 'Monitores') {%>
                         selected
                         <% } %>
                         >Monitores</option>
 
                         <option class="categorias" value="Coolers"
-                        <% if (product.categoria == 'Coolers') {%>
+                        <% if (product.category == 'Coolers') {%>
                         selected
                         <% } %>
                         >Coolers</option>
 
                         <option class="categorias" value="Fuentes"
-                        <% if (product.categoria == 'Fuentes') {%>
+                        <% if (product.category == 'Fuentes') {%>
                         selected
                         <% } %>
                         >Fuentes</option>
 
                         <option class="categorias" value="Mothers"
-                        <% if (product.categoria == 'Mothers') {%>
+                        <% if (product.category == 'Mothers') {%>
                         selected
                         <% } %>
                         >Mothers</option>
 
                         <option class="categorias" value="PlacaVideo"
-                        <% if (product.categoria == 'PlacaVideo') {%>
+                        <% if (product.category == 'PlacaVideo') {%>
                         selected
                         <% } %>
                         >Placa de video</option>
@@ -99,7 +99,7 @@
                     <br>
                     <div>
                         <div id="descripcion">
-                            <% Object.entries(caracteristicas).forEach(function (caracteristica) { %>
+                            <% Object.entries(characteristic).forEach(function (caracteristica) { %>
 
                                 <div>
                                     <input class="input" name="characteristic" value="<%= caracteristica[0] %> " id="caracteristica" placeholder="ej: color" required>
@@ -129,7 +129,7 @@
 
                 <div>
                     <label for="precio">Precio: $</label>
-                    <input class="input" type="number" id="precio" name="price" required value="<%= product.precio %>">
+                    <input class="input" type="number" id="precio" name="price" value="<%= product.price %>" required>
                 </div><br>
 
 
