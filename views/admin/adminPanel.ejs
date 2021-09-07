@@ -31,7 +31,11 @@
                         <th>
                             <%= product.name %>
                         </th>
-                        <th>actions</th>
+                        <th>
+                            <form action="/admin/<%= product.id %>/delete?_methoD=DELETE" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </th>
                     </tr>
                     <% }) %>
             </table>
