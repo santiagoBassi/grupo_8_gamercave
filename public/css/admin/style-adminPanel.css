@@ -1,0 +1,16 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container-content {
+    width: 90%;
+    margin: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+table th tr {
+    border: black solid 2px;
+}

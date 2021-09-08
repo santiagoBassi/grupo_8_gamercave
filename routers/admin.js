@@ -18,6 +18,7 @@ const upload = multer({ storage });
 
 router.get('/', adminControllers.admin);
 
+
 router.get('/create', adminControllers.productCreate);
 router.post('/create', upload.any('imagesProduct'), adminControllers.productCreateSave);
 
