@@ -22,6 +22,10 @@ app.use(session({
 
 app.use(cookieParser());
 
+const rememberMiddlware = require('./middlewares/rememberMiddlware.js');
+
+app.use(rememberMiddlware);
+
 const routsMain = require('./routers/main.js');
 const routsUsers = require('./routers/users.js');
 const routsProducts = require('./routers/products.js');

@@ -64,11 +64,17 @@ const controller = {
         if (usuarioALogearse == undefined) {
             return res.render('./users/login', { errors: [{ msj: 'credenciales ivalidas' }] })
         };
+
         req.session.usuarioLogeado = usuarioALogearse;
-        return res.redirect('/')
+
+        if (req.body.remember != undefined) {
+            res.cookie('remember', usuarioALogearse.id, { maxAge: 60000 })
+
+        }
+        return res.redirect('/');
 
 
-        return res.render('./users/login', { error: 'Algo salio mal' })
+
     },
 
 
