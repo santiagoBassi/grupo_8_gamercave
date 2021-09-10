@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #0E0B16;
+}
+
 main {
     margin: auto;
     display: flex;
@@ -29,6 +33,7 @@ main {
     padding: 10px 25px;
     background-color: #e5e5e5d7;
     border-radius: 10px;
+    margin: auto;
 }
 
 form div {
@@ -39,6 +44,14 @@ form h4 {
     color: #0E0B16;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
+}
+
+.line {
+    width: 100%;
+    color: #0E0B16;
+    background-color: #0E0B16;
+    height: 3px;
+    margin: 10px 0px 20px;
 }
 
 form div label {
@@ -75,6 +88,27 @@ form div label {
     font-weight: 600;
 }
 
+#descripcion {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.containerAddField {
+    position: absolute;
+    right: 30px;
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelKeyValue {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
 .inputFile {
     background-color: white;
 }
@@ -107,11 +141,6 @@ form p a {
     font-family: 'Roboto', sans-serif;
     color: #4b5985;
     font-weight: 600;
-}
-
-#descripcion div {
-    display: flex;
-    flex-direction: row;
 }
 
 @media (min-width: 769px) {

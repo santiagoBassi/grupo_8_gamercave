@@ -1,5 +1,5 @@
 function agregarCampos() {
-    const lugarParaInsertar = document.getElementById('descripcion')
+    const lugarParaInsertar = document.getElementById('descripcion');
     const div = document.createElement('div');
     const inputCarac = document.createElement('input');
     const inputValue = document.createElement('input');
