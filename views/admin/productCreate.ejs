@@ -51,11 +51,11 @@
                                 <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
 
                                 <div id="descripcion">
-                                    <div class="colum">
+                                    <div id="carac" class="colum">
                                         <label class="labelKeyValue" for="caracteristica">Caracteristica: </label>
                                         <input class="input" name="characteristic" id="caracteristica" placeholder="ej: color">
                                     </div>
-                                    <div class="colum">
+                                    <div id="value" class="colum">
                                         <label class="labelKeyValue" for="valor">Valor: </label>
                                         <input class="input" name="value" id="valor" placeholder="ej: rojo">
                                     </div>
@@ -66,7 +66,7 @@
                             <div>
                                 <label for="image">Imagenes del producto: </label>
                                 <p>Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
-                                <input type="file" class="inputFile" multiple name="imagesProduct">
+                                <input type="file" class="input" multiple name="imagesProduct">
                             </div><br>
 
 
@@ -80,7 +80,7 @@
                                     <%= errors.precio.msg %>
                                 </p>
                                 <% } %>
-
+                                    <hr class="line">
                                     <button class="boton" type="submit">Cargar producto</button>
 
 

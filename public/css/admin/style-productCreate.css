@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #0E0B16;
-}
+body {}
 
 main {
     margin: auto;
@@ -30,10 +28,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 25px;
+    padding: 10px 35px;
     background-color: #e5e5e5d7;
     border-radius: 10px;
     margin: auto;
+    box-shadow: 2px 5px 10px #4b5985;
 }
 
 form div {
@@ -71,6 +70,8 @@ form div label {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+    margin-bottom: 4px;
+    box-shadow: 2px 5px 10px #4b5985;
 }
 
 .input:focus {
@@ -86,31 +87,44 @@ form div label {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+    box-shadow: 2px 5px 10px #4b5985;
+}
+
+#caracteristicas {
+    position: relative;
 }
 
 #descripcion {
     display: flex;
-    flex-direction: row;
-    position: relative;
+    justify-content: space-between;
 }
 
 .containerAddField {
     position: absolute;
-    right: 30px;
+    border: solid 1px black;
+    right: -25px;
+    top: 25px;
+    padding: 2px;
+    height: 30px;
+    transition: all .5s;
+}
+
+.containerAddField:hover {
+    padding: 4px;
+    top: 23px;
+    right: -27px;
+    transform: rotate(360deg);
 }
 
 .colum {
     display: flex;
     flex-direction: column;
+    width: 48%;
 }
 
 .labelKeyValue {
     margin-bottom: 0px;
     padding-bottom: 0px;
-}
-
-.inputFile {
-    background-color: white;
 }
 
 .boton {

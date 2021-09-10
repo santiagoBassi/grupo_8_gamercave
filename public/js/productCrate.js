@@ -1,23 +1,23 @@
 function agregarCampos() {
-    const lugarParaInsertar = document.getElementById('descripcion');
-    const div = document.createElement('div');
+
+    const lugarParaInsertatCarac = document.getElementById('carac');
+    const lugarParaInsertatValue = document.getElementById('value');
+
     const inputCarac = document.createElement('input');
     const inputValue = document.createElement('input');
 
-
-    inputCarac.name = 'caracteristica';
-    inputValue.name = 'valor';
     inputCarac.className = 'input';
     inputValue.className = 'input';
 
-    div.appendChild(inputCarac);
-    div.appendChild(inputValue);
-
-    lugarParaInsertar.appendChild(div);
+    inputCarac.name = 'caracteristica';
+    inputValue.name = 'valor';
 
 
+    lugarParaInsertatCarac.appendChild(inputCarac);
+    lugarParaInsertatValue.appendChild(inputValue);
 
-    let elementosTotales = lugarParaInsertar.getElementsByTagName('div').length;
+
+    let elementosTotales = lugarParaInsertatCarac.getElementsByTagName('input').length;
     cantidadElementos.value = elementosTotales;
 
 
