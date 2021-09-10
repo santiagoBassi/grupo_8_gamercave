@@ -9,8 +9,8 @@ function agregarCampos() {
     inputCarac.className = 'input';
     inputValue.className = 'input';
 
-    inputCarac.name = 'caracteristica';
-    inputValue.name = 'valor';
+    inputCarac.name = 'characteristic';
+    inputValue.name = 'value';
 
 
     lugarParaInsertatCarac.appendChild(inputCarac);
