@@ -65,14 +65,14 @@
 
                             <div>
                                 <label for="image">Imagenes del producto: </label>
-                                <p>Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
-                                <input type="file" class="input" multiple name="imagesProduct">
+                                <p class="textHelp">Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
+                                <input type="file" class="input" id="image" multiple name="imagesProduct">
                             </div><br>
 
 
-                            <div class="container-precio">
-                                <label for="precio">Precio: $</label>
-                                <input class="input" type="number" id="price" name="precio">
+                            <div>
+                                <label for="price">Precio:</label>
+                                <input class="input" type="number" id="price" name="precio" placeholder="$15000">
                             </div>
                             <br>
                             <% if(errors && errors.precio) { %>
@@ -80,7 +80,15 @@
                                     <%= errors.precio.msg %>
                                 </p>
                                 <% } %>
+
+                                    <div>
+                                        <label for="discount">Descuento: </label>
+                                        <input class="input" type="number" id="discount" name="discount" placeholder="15%">
+                                    </div>
+                                    <br>
+
                                     <hr class="line">
+
                                     <button class="boton" type="submit">Cargar producto</button>
 
 

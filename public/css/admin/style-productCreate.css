@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-body {}
-
 main {
     margin: auto;
     display: flex;
@@ -127,6 +125,11 @@ form div label {
     padding-bottom: 0px;
 }
 
+.textHelp {
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
 .boton {
     padding: 14px 24px;
     border-radius: 5px;
@@ -141,20 +144,6 @@ form div label {
     background-color: #4b5985;
     color: #E5E5E5;
     transition-duration: 1s;
-}
-
-form p {
-    font-size: 12px;
-    font-family: 'Roboto', sans-serif;
-    color: #0E0B16;
-    font-weight: 600;
-}
-
-form p a {
-    font-size: 12px;
-    font-family: 'Roboto', sans-serif;
-    color: #4b5985;
-    font-weight: 600;
 }
 
 @media (min-width: 769px) {
