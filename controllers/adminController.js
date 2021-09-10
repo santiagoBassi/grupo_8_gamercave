@@ -101,6 +101,7 @@ const controlador = {
                     name: req.body.name,
                     category: req.body.category,
                     price: req.body.price,
+                    discount: req.body.discount,
                 };
                 if (req.files == '') {
                     updatedProduct['img1'] = product.img1;
