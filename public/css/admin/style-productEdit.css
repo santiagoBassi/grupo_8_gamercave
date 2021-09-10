@@ -22,26 +22,36 @@ main {
 
 .form {
     width: 90%;
-    max-width: 360px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 25px;
+    padding: 10px 35px;
     background-color: #e5e5e5d7;
     border-radius: 10px;
+    margin: auto;
+    box-shadow: 2px 5px 10px #4b5985;
 }
 
-.form div {
+form div {
     width: 100%;
 }
 
-.form h4 {
+form h4 {
     color: #0E0B16;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
 }
 
-.form div label {
+.line {
+    width: 100%;
+    color: #0E0B16;
+    background-color: #0E0B16;
+    height: 3px;
+    margin: 10px 0px 20px;
+}
+
+form div label {
     color: #0E0B16;
     padding-bottom: 8px;
     margin-bottom: 20px;
@@ -58,6 +68,8 @@ main {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+    margin-bottom: 4px;
+    box-shadow: 2px 5px 10px #4b5985;
 }
 
 .input:focus {
@@ -73,6 +85,63 @@ main {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+    box-shadow: 2px 5px 10px #4b5985;
+}
+
+#caracteristicas {
+    position: relative;
+}
+
+#descripcion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerAddField {
+    position: absolute;
+    border: solid 1px black;
+    right: -25px;
+    top: 25px;
+    padding: 2px;
+    height: 30px;
+    transition: all .5s;
+}
+
+.containerAddField:hover {
+    padding: 4px;
+    top: 23px;
+    right: -27px;
+    transform: rotate(360deg);
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.labelKeyValue {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.textHelp {
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
+.containerImages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.images {
+    margin: 5px auto;
+    box-shadow: 2px 5px 10px #4b5985;
+    width: 150px;
 }
 
 .boton {
@@ -91,21 +160,26 @@ main {
     transition-duration: 1s;
 }
 
-#descripcion div {
-    display: flex;
-    flex-direction: row;
-}
-
 @media (min-width: 769px) {
     main {
         flex-direction: row-reverse;
         justify-content: space-around;
     }
-    .form {
+    form {
         max-width: 500px;
         width: 80%;
     }
-    .form h4 {
+    form h4 {
         font-size: 28px;
+    }
+    .containerImages {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .images {
+        margin: 5px auto;
+        box-shadow: 2px 5px 10px #4b5985;
+        width: 100px;
     }
 }
