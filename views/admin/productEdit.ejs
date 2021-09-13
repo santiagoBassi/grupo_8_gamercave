@@ -13,9 +13,8 @@
         <main>
 
 
-            <form id="frm" class="form" action="/admin/<%= product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/admin/<%= product.id %>/edit?_method=PUT" id="frm" class="form" method="POST" enctype="multipart/form-data">
                 <h4>Editar Prodcuto</h4>
-
 
                 <hr class="line">
 
@@ -109,6 +108,7 @@
                                 <%  }); %>
 
                         </div>
+
                         <div id="value" class="colum">
                             <label class="labelKeyValue" for="valor">Valor: </label>
                             <% Object.entries(characteristic).forEach(function (caracteristica) { %>

@@ -142,7 +142,7 @@ const controlador = {
         let updatedProductsJSON = JSON.stringify(updatedProducts);
 
         fs.writeFileSync('data/products.json', updatedProductsJSON);
-        return res.redirect('../detail/' + req.params.id);
+        return res.redirect('../../products/detail/' + req.params.id);
 
 
     },
