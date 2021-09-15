@@ -41,7 +41,6 @@ form h4 {
     color: #0E0B16;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
 }
 
 .line {
@@ -119,6 +118,16 @@ form div label {
     display: flex;
     flex-direction: column;
     width: 48%;
+}
+
+.containerDeleteField {
+    position: relative;
+}
+
+.deleteField {
+    position: absolute;
+    top: 10px;
+    left: -15px;
 }
 
 .labelKeyValue {

@@ -17,8 +17,9 @@ const controlador = {
         productos.forEach(producto => {
             if (producto.id == req.params.id) {
                 let claves = Object.keys(producto);
+                console.log(claves)
                 let caracteristicas = {};
-                for (let i = 7; i < claves.length; i++) {
+                for (let i = 8; i < claves.length; i++) {
                     caracteristicas[claves[i]] = producto[claves[i]];
                 }
 

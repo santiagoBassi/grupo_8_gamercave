@@ -7,6 +7,8 @@ function uuidv4() {
 }
 
 function borrarCampo(carac, value) {
+
+
     const caracABorrar = document.getElementById(carac);
     const valueABorrar = document.getElementById(value)
 
