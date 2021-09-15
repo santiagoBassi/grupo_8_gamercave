@@ -32,10 +32,14 @@
                             <%= product.name %>
                         </th>
                         <th>
-                            <form action="/admin/<%= product.id %>/delete?_method=DELETE" method="POST">
-                                <button type="submit">Delete</button>
+                            <div class="container-delete">
+                                <form action="/admin/<%= product.id %>/delete?_method=DELETE" method="POST">
+                                    <button type="submit">Delete</button>
+                            </div>
                             </form>
-                            <a href="/admin/<%= product.id %>/edit">Editar</a>
+                            <div class="container-editar">
+                                <a href="/admin/<%= product.id %>/edit">Editar</a>
+                            </div>
                         </th>
                     </tr>
                     <% }) %>

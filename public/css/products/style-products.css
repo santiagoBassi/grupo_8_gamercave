@@ -21,7 +21,7 @@
                 }
                 
                 .tab {
-                    <<<<<<< HEAD display: block;
+                    display: block;
                     margin-left: auto;
                     margin-right: auto;
                     position: relative;
@@ -91,11 +91,16 @@
                 
                 .lista-categorias {
                     list-style: none;
+                    padding-bottom: 15px;
                 }
                 
                 .lista-categorias li a {
                     text-decoration: none;
                     color: #0E0B16;
+                }
+                
+                .boton-filtrar {
+                    padding-top: 15px;
                 }
                 
                 .container-productos {
