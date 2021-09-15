@@ -51,13 +51,17 @@
                                 <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
 
                                 <div id="descripcion">
+
                                     <div id="carac" class="colum">
                                         <label class="labelKeyValue" for="caracteristica">Caracteristica: </label>
-                                        <input class="input" name="characteristic" id="caracteristica" placeholder="ej: color">
+                                        <div class="containerDeleteField" id="caracNum1">
+                                            <i onclick="borrarCampo('caracNum1','valueNum1')" class="deleteField fas fa-times"></i>
+                                            <input class="input" name="characteristic" id="caracteristica" placeholder="Ej: color">
+                                        </div>
                                     </div>
                                     <div id="value" class="colum">
                                         <label class="labelKeyValue" for="valor">Valor: </label>
-                                        <input class="input" name="value" id="valor" placeholder="ej: rojo">
+                                        <input class="input" name="value" id="valueNum1" placeholder="Ej: rojo">
                                     </div>
                                 </div>
 

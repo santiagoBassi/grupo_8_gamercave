@@ -120,6 +120,16 @@ form div label {
     width: 48%;
 }
 
+.containerDeleteField {
+    position: relative;
+}
+
+.deleteField {
+    position: absolute;
+    top: 10px;
+    left: -15px;
+}
+
 .labelKeyValue {
     margin-bottom: 0px;
     padding-bottom: 0px;
