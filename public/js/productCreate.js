@@ -35,8 +35,8 @@ function agregarCampos() {
     inputCarac.name = 'characteristic';
     inputValue.name = 'value';
 
-    inputCarac.attributes.required = "required";
-    inputValue.attributes.required = "required";
+    inputCarac.setAttribute("required", "");
+    inputValue.setAttribute("required", "");
 
     inputCarac.placeholder = 'Ej: color';
     inputValue.placeholder = 'Ej: rojo';
