@@ -20,6 +20,7 @@ function agregarCampos() {
 
     const lugarParaInsertatCarac = document.getElementById('carac');
     const lugarParaInsertatValue = document.getElementById('value');
+    const cantidadElementos = document.getElementById('cantidadElementos');
 
     const inputCarac = document.createElement('input');
     const inputValue = document.createElement('input');
@@ -61,5 +62,13 @@ function agregarCampos() {
 
     let elementosTotales = lugarParaInsertatValue.getElementsByTagName('input').length;
     cantidadElementos.value = elementosTotales;
-
 }
+
+(function() {
+    let lugarParaInsertatValue = document.getElementById('value');
+    let cantidadElementos = document.getElementById('cantidadElementos');
+
+
+    let elementosTotales = lugarParaInsertatValue.getElementsByTagName('input').length;
+    cantidadElementos.setAttribute('value', elementosTotales);
+})();

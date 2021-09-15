@@ -4,7 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/admin/style-productEdit.css">
-        <script src="/js/productCreate.js"></script>
+        <script src="/js/productCreate.js" defer></script>
 </head>
 
 <body>
@@ -96,8 +96,7 @@
                 </div><br>
 
                 <div id="caracteristicas">
-                    <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
-
+                    <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="">
                     <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
 
                     <div id="descripcion">
@@ -113,6 +112,7 @@
                                 <% let idValue = [];  %>
                                     <% let contadorCarac = 0; %>
                                         <% Object.entries(characteristic).forEach(function (caracteristica) { %>
+
 
                                             <% let idCarac = uuidv4() %>
                                                 <% idValue.push(uuidv4()) %>
@@ -137,6 +137,7 @@
 
                         </div>
                     </div>
+
 
                 </div><br>
 
