@@ -35,6 +35,7 @@ const controlador = {
             name: req.body.name,
             category: req.body.category,
             price: req.body.price,
+            discount: req.body.discount,
             img1: req.files[0].filename,
             img2: req.files[1].filename,
             img3: req.files[2].filename
@@ -77,7 +78,7 @@ const controlador = {
             if (product.id == req.params.id) {
                 let claves = Object.keys(product);
                 let characteristic = {};
-                for (let i = 7; i < claves.length; i++) {
+                for (let i = 8; i < claves.length; i++) {
                     characteristic[claves[i]] = product[claves[i]];
                 }
                 return res.render('./admin/productEdit', { characteristic: characteristic, product: product });
@@ -100,6 +101,7 @@ const controlador = {
                     name: req.body.name,
                     category: req.body.category,
                     price: req.body.price,
+                    discount: req.body.discount,
                 };
                 if (req.files == '') {
                     updatedProduct['img1'] = product.img1;
@@ -126,7 +128,6 @@ const controlador = {
                 }
                 caracteristicas(req.body.cantidadInput);
 
-
                 updatedProducts.push(updatedProduct);
 
             } else {
@@ -137,10 +138,11 @@ const controlador = {
 
         });
 
+
         let updatedProductsJSON = JSON.stringify(updatedProducts);
 
         fs.writeFileSync('data/products.json', updatedProductsJSON);
-        return res.redirect('../detail/' + req.params.id);
+        return res.redirect('../../products/detail/' + req.params.id);
 
 
     },

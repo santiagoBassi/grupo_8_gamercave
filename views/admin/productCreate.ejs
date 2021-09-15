@@ -3,8 +3,8 @@
 
 <head>
     <%- include('../partials/head') -%>
-        <link rel="stylesheet" href="/css/products/style-productCreate.css">
-        <script src="/js/productCrate.js"></script>
+        <link rel="stylesheet" href="/css/admin/style-adminForms.css">
+        <script src="/js/productCreate.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 
                 <form id="frm" class="form" action="/admin/create" method="POST" enctype="multipart/form-data">
                     <h4>Agregar producto:</h4>
-
+                    <hr class="line">
                     <div>
                         <label for="name">Nombre:</label>
                         <input class="input" name="name" type="text" id="name">
@@ -29,53 +29,55 @@
                             <div>
                                 <label for="categoria">Categoria:</label>
                                 <select class="categorias" name="category" id="categoria">
-                            <option class="categorias" value="Procesadores">Procesadores</option>
-                            <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
-                            <option class="categorias" value="Auriculares">Auriculares</option>
-                            <option class="categorias" value="Mouses">Mouses</option>
-                            <option class="categorias" value="Teclados">Teclados</option>
-                            <option class="categorias" value="MemoriasRam">Memorias Ram</option>
-                            <option class="categorias" value="Monitores">Monitores</option>
-                            <option class="categorias" value="Coolers">Coolers</option>
-                            <option class="categorias" value="Fuentes">Fuentes</option>
-                            <option class="categorias" value="Mothers">Mothers</option>
-                            <option class="categorias" value="PlacaVideo">Placa de video</option>
-                        </select>
+                                    <option class="categorias" value="Procesadores">Procesadores</option>
+                                    <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
+                                    <option class="categorias" value="Auriculares">Auriculares</option>
+                                    <option class="categorias" value="Mouses">Mouses</option>
+                                    <option class="categorias" value="Teclados">Teclados</option>
+                                    <option class="categorias" value="MemoriasRam">Memorias Ram</option>
+                                    <option class="categorias" value="Monitores">Monitores</option>
+                                    <option class="categorias" value="Coolers">Coolers</option>
+                                    <option class="categorias" value="Fuentes">Fuentes</option>
+                                    <option class="categorias" value="Mothers">Mothers</option>
+                                    <option class="categorias" value="PlacaVideo">Placa de video</option>
+                                </select>
                             </div><br>
 
 
 
                             <div id="caracteristicas">
                                 <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
-                                <label for="caracteristica">Caracteristica: </label>
-                                <label for="valor">Valor: </label>
-                                <br>
-                                <div>
-                                    <div>
-                                        <button onclick="agregarCampos()" type="button" id="btn-add"><i class="fas fa-plus"></i></button><br>
-                                    </div>
-                                    <div id="descripcion">
-                                        <div>
-                                            <input class="input" name="characteristic" id="caracteristica" placeholder="ej: color">
-                                            <input class="input" name="value" id="valor" placeholder="ej: rojo">
+                                <i onclick="agregarCampos()" id="btn-add" class="containerAddField fas fa-plus"></i>
+                                <!-- <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
+-->
+                                <div id="descripcion">
+
+                                    <div id="carac" class="colum">
+                                        <label class="labelKeyValue" for="caracteristica">Caracteristica: </label>
+                                        <div class="containerDeleteField" id="caracNum1">
+                                            <i onclick="borrarCampo('caracNum1','valueNum1')" class="deleteField fas fa-times"></i>
+                                            <input class="input" name="characteristic" id="caracteristica" placeholder="Ej: color" required>
                                         </div>
-
                                     </div>
 
+                                    <div id="value" class="colum">
+                                        <label class="labelKeyValue" for="valor">Valor: </label>
+                                        <input class="input" name="value" id="valueNum1" placeholder="Ej: rojo" required>
+                                    </div>
                                 </div>
 
-                            </div>
+                            </div><br>
 
                             <div>
                                 <label for="image">Imagenes del producto: </label>
-                                <p>Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
-                                <input type="file" class="inputFile" multiple name="imagesProduct">
-                            </div>
+                                <p class="textHelp">Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
+                                <input type="file" class="input" id="image" multiple name="imagesProduct">
+                            </div><br>
 
 
-                            <div class="container-precio">
-                                <label for="precio">Precio: $</label>
-                                <input class="input" type="number" id="price" name="precio">
+                            <div>
+                                <label for="price">Precio:</label>
+                                <input class="input" type="number" id="price" name="price" placeholder="$15000">
                             </div>
                             <br>
                             <% if(errors && errors.precio) { %>
@@ -83,6 +85,14 @@
                                     <%= errors.precio.msg %>
                                 </p>
                                 <% } %>
+
+                                    <div>
+                                        <label for="discount">Descuento: </label>
+                                        <input class="input" type="number" id="discount" name="discount" placeholder="15%">
+                                    </div>
+                                    <br>
+
+                                    <hr class="line">
 
                                     <button class="boton" type="submit">Cargar producto</button>
 

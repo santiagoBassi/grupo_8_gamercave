@@ -22,13 +22,15 @@ main {
 
 .form {
     width: 90%;
-    max-width: 360px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 25px;
+    padding: 10px 35px;
     background-color: #e5e5e5d7;
     border-radius: 10px;
+    margin: auto;
+    box-shadow: 2px 5px 10px #4b5985;
 }
 
 form div {
@@ -39,6 +41,14 @@ form h4 {
     color: #0E0B16;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
+}
+
+.line {
+    width: 100%;
+    color: #0E0B16;
+    background-color: #0E0B16;
+    height: 3px;
+    margin: 10px 0px 20px;
 }
 
 form div label {
@@ -58,6 +68,8 @@ form div label {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+    margin-bottom: 4px;
+    box-shadow: 2px 5px 10px #4b5985;
 }
 
 .input:focus {
@@ -73,10 +85,78 @@ form div label {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+    box-shadow: 2px 5px 10px #4b5985;
 }
 
-.inputFile {
+#caracteristicas {
+    position: relative;
+}
+
+#descripcion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerAddField {
+    position: absolute;
+    right: -30px;
+    top: 25px;
+    transition: all .5s;
+    box-shadow: 1px 1px 5px black;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+}
+
+.containerAddField:hover {
+    transform: rotate(360deg);
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.containerDeleteField {
+    position: relative;
+}
+
+.deleteField {
+    position: absolute;
+    top: 6px;
+    left: -28px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 1px 1px 5px black;
     background-color: white;
+    padding: 5px;
+}
+
+.labelKeyValue {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.textHelp {
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
+.containerImages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.images {
+    margin: 5px auto;
+    box-shadow: 2px 5px 10px #4b5985;
+    width: 150px;
 }
 
 .boton {
@@ -86,32 +166,13 @@ form div label {
     background-color: #E5E5E5;
     color: #0E0B16;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .boton:hover {
     background-color: #4b5985;
     color: #E5E5E5;
     transition-duration: 1s;
-}
-
-form p {
-    font-size: 12px;
-    font-family: 'Roboto', sans-serif;
-    color: #0E0B16;
-    font-weight: 600;
-}
-
-form p a {
-    font-size: 12px;
-    font-family: 'Roboto', sans-serif;
-    color: #4b5985;
-    font-weight: 600;
-}
-
-#descripcion div {
-    display: flex;
-    flex-direction: row;
 }
 
 @media (min-width: 769px) {
@@ -125,5 +186,15 @@ form p a {
     }
     form h4 {
         font-size: 28px;
+    }
+    .containerImages {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .images {
+        margin: 5px auto;
+        box-shadow: 2px 5px 10px #4b5985;
+        width: 100px;
     }
 }
