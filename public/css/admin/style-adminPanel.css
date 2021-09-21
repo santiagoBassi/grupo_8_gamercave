@@ -1,44 +1,46 @@
-        * {
-            padding: 0px;
-            margin: 0px;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #140f07;
-        }
-        
-        .container-content {
-            width: 90%;
-            margin: auto;
-            margin-top: 200px;
-            margin-bottom: 200px;
-        }
-        
-        table tr th {
-            border: gray solid 3px;
-            padding: 25px 25px 25px 25px;
-            background-color: white;
-        }
-        
-        .table {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .container-delete:hover {
-            background-color: #4b5985;
-            color: #E5E5E5;
-            width: 50px;
-        }
-        
-        .container-delete {
-            margin-bottom: 20px;
-        }
-        
-        .container-editar a {
-            text-decoration: none;
-            border-color: #140f07;
-        }
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container-content {
+    width: 90%;
+    margin: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.container-table {
+    overflow-x: auto;
+    margin: auto;
+    background-color: #e5e5e5d7;
+    border-radius: 20px;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 2px 5px 10px #4b5985;
+    max-width: 1000px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table tbody tr th {
+    padding: 8px 15px;
+    box-shadow: 1px 1px 5px rgb(98, 98, 98);
+}
+
+.container-delete {
+    margin-bottom: 5px;
+}
+
+.delete {
+    padding: 2px 5px;
+}
+
+.container-editar a {
+    text-decoration: none;
+    color: #140f07;
+    background-color: #4b598586;
+    padding: 2px 4px;
+}

@@ -11,41 +11,49 @@
 
     <%- include('../partials/header')%>
         <main class="container-content">
+            <div class="container-add-product">
+                <a href="/admin/create">Nuevo Producto <i class="fas fa-plus"></i></a>
+            </div>
 
-            <a href="/admin/create">Nuevo Producto</a>
-
-            <table class="table">
-                <tr>
-                    <th>id</th>
-                    <th>img</th>
-                    <th>name</th>
-                    <th>actions</th>
-                </tr>
-                <% products.forEach((product) => { %>
+            <div class="container-table">
+                <table class="table">
                     <tr>
-                        <th>
-                            <%= product.id %>
-                        </th>
-                        <th>
-                            <img width="50px" src="/images/products/<%= product.img1 %>" alt="">
-
-                        </th>
-                        <th>
-                            <%= product.name %>
-                        </th>
-                        <th>
-                            <div class="container-delete">
-                                <form action="/admin/<%= product.id %>/delete?_method=DELETE" method="POST">
-                                    <button type="submit">Delete</button>
-                            </div>
-                            </form>
-                            <div class="container-editar">
-                                <a href="/admin/<%= product.id %>/edit">Editar</a>
-                            </div>
-                        </th>
+                        <th>id</th>
+                        <th>img</th>
+                        <th>name</th>
+                        <th>actions</th>
                     </tr>
-                    <% }) %>
-            </table>
+                    <% products.forEach((product) => { %>
+
+                        <tr>
+
+                            <th>
+                                <%= product.id %>
+                            </th>
+                            <th>
+                                <img width="50px" src="/images/products/<%= product.img1 %>" alt="">
+
+                            </th>
+                            <th>
+                                <%= product.name %>
+                            </th>
+                            <th>
+                                <div class="container-delete">
+                                    <form action="/admin/<%= product.id %>/delete?_method=DELETE" method="POST">
+                                        <button class="delete" type="submit">Borrar</button>
+
+                                    </form>
+                                </div>
+                                <div class="container-editar">
+                                    <a href="/admin/<%= product.id %>/edit">Editar</a>
+                                </div>
+                            </th>
+                        </tr>
+
+                        <% }) %>
+                </table>
+
+            </div>
 
         </main>
 
