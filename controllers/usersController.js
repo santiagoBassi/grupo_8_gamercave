@@ -80,8 +80,13 @@ const controller = {
 
     recoverpassword: (req, res) => {
         return res.render('./users/recover-password');
-    }
+    },
 
+    logout: (req,res) =>{
+        req.session.destroy();
+        res.cookie('email',null,{maxAge: -1});
+        res.redirect('/')
+      },
 
 };
 module.exports = controller;

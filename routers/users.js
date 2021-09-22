@@ -31,5 +31,6 @@ router.post('/login', usersControllers.login)
 
 router.get('/recoverpassword', usersControllers.recoverpassword);
 
+router.get('/logout', usersControllers.logout);
 
 module.exports = router;

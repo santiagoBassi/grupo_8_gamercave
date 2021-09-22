@@ -26,9 +26,9 @@
             margin: 10px 20px;
             max-width: 350px;
         }
-        
+
         .article {
-            background-color: #e2e0f6;
+            background-color: #9696b5;
             border-radius: 8px;
             padding: 10px;
             margin: auto;
@@ -39,11 +39,11 @@
             transition: box-shadow .5s;
             height: 400px;
         }
-        
+
         .article:hover {
             box-shadow: 5px 5px 12px #4f5d9c;
         }
-        
+
         .article img {
             height: 250px;
             margin-top: 5px;
@@ -51,37 +51,56 @@
             margin: auto;
             margin-bottom: 5px;
         }
-        
+
         .container-info {
+            margin: auto;
+            padding: inherit;
+            border-radius: 10px;
+            border: solid 1px #470064;
+            background-color: #4b207973;
+            align-content: center;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             padding: 10px 5px;
             width: 260px;
             height: 117px;
-            background-color: #4b59852c;
         }
-        
+
         .nombre-producto {
-            background-color: #4b598559;
+            border-radius: 10px;
+            background-color: #6a5690;
             text-align: center;
             color: #140f07;
-            font-family: 'Noto Sans', sans-serif;
+            border: solid 1px #484056;
+            overflow: hidden;
+            letter-spacing: 1px;
+            padding-bottom: 2px;
+            text-overflow: ellipsis;
+            padding-left: 4px;
+            transition: box-shadow .5s;
+           
         }
-        
+
+        .nombre-producto:hover {
+            box-shadow: inset 0px 0px 1px 2px #9696b5;
+        }
+
+
         .precio-producto {
-            font-weight: 600;
-            margin-bottom: 5px;
+            font-weight: 500;
+            margin-bottom: 1px;
             text-align: center;
             font-size: 18px;
-            color: #24211c;
+            color: #18161a;
             font-family: 'Noto Sans', sans-serif;
         }
-        
+
         @media (min-width: 769px) {
             .container-article {
                 margin-bottom: 40px;
             }
+
             .container-article a {
                 margin: 10px;
             }
