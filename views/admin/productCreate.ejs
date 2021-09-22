@@ -3,8 +3,8 @@
 
 <head>
     <%- include('../partials/head') -%>
-        <link rel="stylesheet" href="/css/admin/style-productCreate.css">
-        <script src="/js/productCrate.js"></script>
+        <link rel="stylesheet" href="/css/admin/style-adminForms.css">
+        <script src="/js/productCreate.js" defer></script>
 </head>
 
 <body>
@@ -47,17 +47,22 @@
 
                             <div id="caracteristicas">
                                 <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
-
-                                <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
-
+                                <i onclick="agregarCampos()" id="btn-add" class="containerAddField fas fa-plus"></i>
+                                <!-- <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
+-->
                                 <div id="descripcion">
+
                                     <div id="carac" class="colum">
                                         <label class="labelKeyValue" for="caracteristica">Caracteristica: </label>
-                                        <input class="input" name="characteristic" id="caracteristica" placeholder="ej: color">
+                                        <div class="containerDeleteField" id="caracNum1">
+                                            <i onclick="borrarCampo('caracNum1','valueNum1')" class="deleteField fas fa-times"></i>
+                                            <input class="input" name="characteristic" id="caracteristica" placeholder="Ej: color" required>
+                                        </div>
                                     </div>
+
                                     <div id="value" class="colum">
                                         <label class="labelKeyValue" for="valor">Valor: </label>
-                                        <input class="input" name="value" id="valor" placeholder="ej: rojo">
+                                        <input class="input" name="value" id="valueNum1" placeholder="Ej: rojo" required>
                                     </div>
                                 </div>
 

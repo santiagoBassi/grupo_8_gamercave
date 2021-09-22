@@ -66,6 +66,14 @@ form h4 {
     margin: 10px;
 }
 
+.line {
+    width: 100%;
+    color: #0E0B16;
+    background-color: #0E0B16;
+    height: 3px;
+    margin: 10px 0px 20px;
+}
+
 .errorMsg {
     color: rgba(255, 0, 0, 0.596);
 }

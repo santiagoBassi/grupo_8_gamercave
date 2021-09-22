@@ -41,7 +41,6 @@ form h4 {
     color: #0E0B16;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
 }
 
 .line {
@@ -100,18 +99,17 @@ form div label {
 
 .containerAddField {
     position: absolute;
-    border: solid 1px black;
-    right: -25px;
+    right: -30px;
     top: 25px;
-    padding: 2px;
-    height: 30px;
     transition: all .5s;
+    box-shadow: 1px 1px 5px black;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
 }
 
 .containerAddField:hover {
-    padding: 4px;
-    top: 23px;
-    right: -27px;
     transform: rotate(360deg);
 }
 
@@ -119,6 +117,22 @@ form div label {
     display: flex;
     flex-direction: column;
     width: 48%;
+}
+
+.containerDeleteField {
+    position: relative;
+}
+
+.deleteField {
+    position: absolute;
+    top: 6px;
+    left: -28px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+    padding: 5px;
 }
 
 .labelKeyValue {

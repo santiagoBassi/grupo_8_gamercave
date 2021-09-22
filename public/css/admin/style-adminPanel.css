@@ -11,6 +11,36 @@
     margin-bottom: 200px;
 }
 
-table th tr {
-    border: black solid 2px;
+.container-table {
+    overflow-x: auto;
+    margin: auto;
+    background-color: #e5e5e5d7;
+    border-radius: 20px;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 2px 5px 10px #4b5985;
+    max-width: 1000px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table tbody tr th {
+    padding: 8px 15px;
+    box-shadow: 1px 1px 5px rgb(98, 98, 98);
+}
+
+.container-delete {
+    margin-bottom: 5px;
+}
+
+.delete {
+    padding: 2px 5px;
+}
+
+.container-editar a {
+    text-decoration: none;
+    color: #140f07;
+    background-color: #4b598586;
+    padding: 2px 4px;
 }

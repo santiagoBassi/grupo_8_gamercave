@@ -128,7 +128,6 @@ const controlador = {
                 }
                 caracteristicas(req.body.cantidadInput);
 
-
                 updatedProducts.push(updatedProduct);
 
             } else {
@@ -138,6 +137,7 @@ const controlador = {
 
 
         });
+
 
         let updatedProductsJSON = JSON.stringify(updatedProducts);
 

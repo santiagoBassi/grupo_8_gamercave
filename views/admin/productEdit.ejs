@@ -3,8 +3,8 @@
 
 <head>
     <%- include('../partials/head') -%>
-        <link rel="stylesheet" href="/css/admin/style-productEdit.css">
-        <script src="/js/productEdit.js"></script>
+        <link rel="stylesheet" href="/css/admin/style-adminForms.css">
+        <script src="/js/productCreate.js" defer></script>
 </head>
 
 <body>
@@ -96,27 +96,48 @@
                 </div><br>
 
                 <div id="caracteristicas">
-                    <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
-
-
+                    <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="">
+                    <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
 
                     <div id="descripcion">
                         <div id="carac" class="colum">
                             <label class="labelKeyValue" for="caracteristica">Caracteristica: </label>
-                            <% Object.entries(characteristic).forEach(function (caracteristica) { %>
-                                <input class="input" value="<%= caracteristica[0] %>" name="characteristic" id="caracteristica" placeholder="ej: color">
-                                <%  }); %>
+                            <% function uuidv4() {
+                                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                                    var r = Math.random() * 16 | 0,
+                                        v = c == 'x' ? r : (r & 0x3 | 0x8);
+                                    return v.toString(16);
+                                });
+                            }%>
+                                <% let idValue = [];  %>
+                                    <% let contadorCarac = 0; %>
+                                        <% Object.entries(characteristic).forEach(function (caracteristica) { %>
+
+
+                                            <% let idCarac = uuidv4() %>
+                                                <% idValue.push(uuidv4()) %>
+
+                                                    <div class="containerDeleteField" id="<%= idCarac %>">
+                                                        <i onclick="borrarCampo('<%= idCarac %>','<%= idValue[contadorCarac] %>')" class="deleteField fas fa-times"></i>
+                                                        <input class="input" value="<%= caracteristica[0] %>" name="characteristic" id="caracteristica" placeholder="ej: color" required>
+                                                    </div>
+                                                    <% contadorCarac = contadorCarac + 1; %>
+                                                        <%  }); %>
 
                         </div>
 
                         <div id="value" class="colum">
                             <label class="labelKeyValue" for="valor">Valor: </label>
-                            <% Object.entries(characteristic).forEach(function (caracteristica) { %>
-                                <input class="input" value="<%= caracteristica[1] %>" name="value" id="valor" placeholder="ej: rojo">
-                                <%  }); %>
+                            <% let contadorValue = 0; %>
+                                <% Object.entries(characteristic).forEach(function (caracteristica) { %>
+
+                                    <input class="input" value="<%= caracteristica[1] %>" name="value" id="<%= idValue[contadorValue] %>" placeholder="ej: rojo" required>
+                                    <% contadorValue = contadorValue + 1; %>
+                                        <%  }); %>
 
                         </div>
                     </div>
+
 
                 </div><br>
 
