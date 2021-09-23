@@ -82,11 +82,11 @@ const controller = {
         return res.render('./users/recover-password');
     },
 
-    logout: (req,res) =>{
+    logout: (req, res) => {
         req.session.destroy();
-        res.cookie('email',null,{maxAge: -1});
+        res.cookie('remember', null, { maxAge: -1 });
         res.redirect('/')
-      },
+    },
 
 };
 module.exports = controller;
