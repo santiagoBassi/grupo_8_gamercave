@@ -2,6 +2,8 @@ const fs = require("fs");
 const uuid = require("uuid");
 const bcrypt = require('bcryptjs');
 
+const db = require('../database/models/index.js')
+
 
 const controller = {
     register: (req, res) => {
