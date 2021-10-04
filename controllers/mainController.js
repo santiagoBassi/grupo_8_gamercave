@@ -3,6 +3,7 @@ const fs = require('fs');
 const db = require('../database/models/index.js')
 const User = db.User;
 const Rol = db.Rol
+const Product = db.Product
 
 const controlador = {
     index: (req, res) => {
@@ -11,11 +12,11 @@ const controlador = {
         return res.render('index', { products: products })
     },
     testDB: (req, res) => {
-        User.findAll({
-                include: ['rol']
+        Product.findAll({
+                include: ['category']
             })
-            .then(users => {
-                res.json(users)
+            .then(products => {
+                res.json(products)
             })
     }
 
