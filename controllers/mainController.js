@@ -2,6 +2,7 @@ const fs = require('fs');
 
 const db = require('../database/models/index.js')
 const User = db.User;
+const Rol = db.Rol
 
 const controlador = {
     index: (req, res) => {
@@ -10,7 +11,12 @@ const controlador = {
         return res.render('index', { products: products })
     },
     testDB: (req, res) => {
-
+        User.findAll({
+                include: ['rol']
+            })
+            .then(users => {
+                res.json(users)
+            })
     }
 
 };
