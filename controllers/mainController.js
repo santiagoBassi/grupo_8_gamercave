@@ -1,12 +1,14 @@
 const fs = require('fs');
 
-const db = require('../database/models/index.js')
+const db = require('../database/models/index.js');
+
 const User = db.User;
 const Rol = db.Rol;
 const Product = db.Product;
 const Characteristic = db.Characteristic;
 const Category = db.Category;
-const Image = db.Image
+const Image = db.Image;
+const Invoice = db.Invoice;
 
 const controlador = {
     index: (req, res) => {
@@ -15,8 +17,8 @@ const controlador = {
         return res.render('index', { products: products })
     },
     testDB: (req, res) => {
-        Product.findAll({
-                include: ['images']
+        Invoice.findAll({
+                include: ['products']
             })
             .then(products => {
                 res.json(products)

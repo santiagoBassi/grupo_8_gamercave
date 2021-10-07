@@ -41,6 +41,13 @@ module.exports = (sequelize, dataTypes) => {
             as: 'images',
             foreignKey: 'product_id'
         })
+        Product.belongsToMany(models.Invoice, {
+            as: 'invoices',
+            through: 'invoice_has_product',
+            foreignKey: 'product_id',
+            otherKey: 'invoice_id',
+            timestamps: false
+        })
     }
 
     return Product;
