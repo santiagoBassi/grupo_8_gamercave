@@ -139,5 +139,17 @@
                     }
                     .title-filter::after {
                         padding-top: 13px;
+                        content: none;
+                    }
+                    .tab .tab-content {
+                        border-top-style: hidden;
+                        border-radius: 7px;
+                        color: #0E0B16;
+                        overflow: visible;
+                        transition: none;
+                        max-height: none;
+                        width: auto;
+                        padding-left: 0;
+                        background-color: #e5e5e5
                     }
                 }
