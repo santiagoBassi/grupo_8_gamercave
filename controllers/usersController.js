@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 
 
 const controller = {
+
     register: (req, res) => {
         return res.render('./users/register');
     },
@@ -84,7 +85,7 @@ const controller = {
 
     logout: (req, res) => {
         req.session.destroy();
-        res.cookie('remember', null, { maxAge: -1 });
+        res.cookie('<remember></remember>', null, { maxAge: -1 });
         res.redirect('/')
     },
 

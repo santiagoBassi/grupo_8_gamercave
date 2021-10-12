@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    background-color: #140f07;
+    background-color: #fefaff;
 }
 
 main {
@@ -232,7 +232,7 @@ main {
     font-family: 'Noto Sans', sans-serif;
     margin-bottom: 20px;
     margin-top: 60px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .container-all-articles {
