@@ -25,21 +25,13 @@
                             <%= errors.nombre.msg %>
                         </p>
                         <% } %>
-
                             <div>
                                 <label for="categoria">Categoria:</label>
                                 <select class="categorias" name="category" id="categoria">
-                                    <option class="categorias" value="Procesadores">Procesadores</option>
-                                    <option class="categorias" value="DiscosRigidos">Discos Rigidos</option>
-                                    <option class="categorias" value="Auriculares">Auriculares</option>
-                                    <option class="categorias" value="Mouses">Mouses</option>
-                                    <option class="categorias" value="Teclados">Teclados</option>
-                                    <option class="categorias" value="MemoriasRam">Memorias Ram</option>
-                                    <option class="categorias" value="Monitores">Monitores</option>
-                                    <option class="categorias" value="Coolers">Coolers</option>
-                                    <option class="categorias" value="Fuentes">Fuentes</option>
-                                    <option class="categorias" value="Mothers">Mothers</option>
-                                    <option class="categorias" value="PlacaVideo">Placa de video</option>
+                                    <% categories.forEach(category => { %>
+                                     <option class="categorias" value="<%= category.id %>"><%= category.name %></option>
+                                    <% }) %> 
+                                    
                                 </select>
                             </div><br>
 
@@ -48,8 +40,7 @@
                             <div id="caracteristicas">
                                 <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
                                 <i onclick="agregarCampos()" id="btn-add" class="containerAddField fas fa-plus"></i>
-                                <!-- <button onclick="agregarCampos()" class="containerAddField" type="button" id="btn-add"><i class="fas fa-plus"></i></button>
--->
+
                                 <div id="descripcion">
 
                                     <div id="carac" class="colum">

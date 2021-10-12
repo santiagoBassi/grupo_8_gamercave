@@ -2,6 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 
+const db = require('../database/models/index.js');
+
+const Product = db.Product;
+const Category = db.Category;
+const Image = db.Image;
+
+
+
 const controlador = {
     admin: (req, res) => {
         let archivoProductsJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
@@ -11,63 +19,76 @@ const controlador = {
         return res.render('./admin/adminPanel', { products })
     },
     productCreate: (req, res) => {
+        Category.findAll()
+            .then(categories => {
+                return res.render('./admin/productCreate', { categories, errors: {} });
+            })
 
-        return res.render('./admin/productCreate', { errors: {} });
     },
     productCreateSave: (req, res) => {
 
-        /*let errors = validationResult(req);*/
-
-        /*if (errors.isEmpty()) {*/
-
-        let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
-        let productos;
-
-        if (archivoProductosJson == '') {
-            productos = [];
-        } else {
-            productos = JSON.parse(archivoProductosJson);
-        };
-        let id = uuid.v4();
-
-        let producto = {
-            id: id,
-            name: req.body.name,
-            category: req.body.category,
-            price: req.body.price,
-            discount: req.body.discount,
-            img1: req.files[0].filename,
-            img2: req.files[1].filename,
-            img3: req.files[2].filename
-        };
-
-
-        function caracteristicas(cantidadCaracteristicas) {
-            for (let i = 0; i < cantidadCaracteristicas; i++) {
-
-                if (cantidadCaracteristicas == 1) {
-                    producto[req.body.characteristic] = req.body.value;
-                } else {
-                    producto[req.body.characteristic[i]] = req.body.value[i];
+        Product.create({
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                category_id: req.body.category
+            })
+            .then(product => {
+                for (let i = 0; i < req.files.length; i++) {
+                    Image.create({
+                        name: req.files[i].filename,
+                        product_id: product.id
+                    })
                 }
-            }
-        }
-        caracteristicas(req.body.cantidadInput)
+                res.redirect(`../../product/detail/${product.id}`)
+            })
 
-
-        productos.push(producto);
-
-        let productosJSON = JSON.stringify(productos);
-
-        fs.writeFileSync('data/products.json', productosJSON);
-
-        return res.redirect('create');
         /*
-        } else {
-            return res.render('./products/productCreate', { errors: errors.mapped() });
-        }*/
+                    let archivoProductosJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+                    let productos;
+
+                    if (archivoProductosJson == '') {
+                        productos = [];
+                    } else {
+                        productos = JSON.parse(archivoProductosJson);
+                    };
+                    let id = uuid.v4();
+
+                    let producto = {
+                        id: id,
+                        name: req.body.name,
+                        category: req.body.category,
+                        price: req.body.price,
+                        discount: req.body.discount,
+                        img1: req.files[0].filename,
+                        img2: req.files[1].filename,
+                        img3: req.files[2].filename
+                    };
 
 
+                    function caracteristicas(cantidadCaracteristicas) {
+                        for (let i = 0; i < cantidadCaracteristicas; i++) {
+
+                            if (cantidadCaracteristicas == 1) {
+                                producto[req.body.characteristic] = req.body.value;
+                            } else {
+                                producto[req.body.characteristic[i]] = req.body.value[i];
+                            }
+                        }
+                    }
+                    caracteristicas(req.body.cantidadInput)
+
+
+                    productos.push(producto);
+
+                    let productosJSON = JSON.stringify(productos);
+
+                    fs.writeFileSync('data/products.json', productosJSON);
+
+                    return res.redirect('create');
+
+
+            */
     },
 
     productEdit: (req, res) => {
