@@ -1,22 +1,22 @@
-const fs = require('fs');
+const db = require('../database/models/index.js');
+const User = db.User;
 
 
 function remember(req, res, next) {
 
     if (req.cookies.remember != undefined && req.session.usuarioLogeado == undefined) {
-        const usersJSON = fs.readFileSync("data/users.json", { encoding: "utf-8" });
-        const users = JSON.parse(usersJSON);
 
-        let usuarioALogearse;
-        users.forEach((user) => {
-            if (user.id == req.cookies.remember) {
-                usuarioALogearse = user;
+        User.findByPk(req.cookies.remember)
+            .then(user => {
+                req.session.usuarioLogeado = user;
+                next();
+            })
 
-            };
-        });
-        req.session.usuarioLogeado = usuarioALogearse;
+
+    } else {
+        next();
     }
-    next();
+
 }
 
 module.exports = remember;

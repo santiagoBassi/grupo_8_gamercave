@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 
 app.use(session({
     secret: 'gamerCaveSuperSecreta',
-    resave: false,
+    resave: true,
     saveUninitialized: true
 }));
 
