@@ -2,6 +2,10 @@ const fs = require("fs");
 const uuid = require("uuid");
 const bcrypt = require('bcryptjs');
 
+const db = require('../database/models/index.js');
+
+const User = db.User;
+
 
 const controller = {
 
@@ -10,36 +14,20 @@ const controller = {
     },
 
     create: (req, res) => {
-        const userJSON = fs.readFileSync("data/users.json", { encoding: "utf-8" });
-        let usuarios
-        if (userJSON == "") {
-            usuarios = [];
-        } else {
-            usuarios = JSON.parse(userJSON)
-        };
-
-        let id = uuid.v4();
-
-        let encryptedPassword = bcrypt.hashSync(req.body.contrasena, 10)
-
-
-        let usuario = {
-            id: id,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            telefono: req.body.telefono,
-            img_user: req.file.filename,
-            contrasena: encryptedPassword
-        };
-
-        usuarios.push(usuario);
-
-        const usuariosJSON = JSON.stringify(usuarios);
-        fs.writeFileSync("data/users.json", usuariosJSON);
-
-        return res.redirect("../../");
-
+        let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
+        User.create({
+                name: req.body.name,
+                lastName: req.body.lastName,
+                phone: req.body.phone,
+                email: req.body.email,
+                password: encryptedPassword,
+                image: req.file.filename,
+                rol_id: 2
+            })
+            .then(user => {
+                req.session.usuarioLogeado = user;
+                return res.redirect("../../");
+            })
 
 
     },
@@ -49,32 +37,36 @@ const controller = {
     },
     login: (req, res) => {
 
-        const usersJSON = fs.readFileSync("data/users.json", { encoding: "utf-8" });
-        const users = JSON.parse(usersJSON);
-
-
         let usuarioALogearse;
-        users.forEach((user) => {
 
-            if (user.email == req.body.email) {
-                if (bcrypt.compareSync(req.body.password, user.contrasena)) {
+        User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            .then(user => {
+                if (bcrypt.compareSync(req.body.password, user.password)) {
                     usuarioALogearse = user;
-                };
-            };
-        });
-        if (usuarioALogearse == undefined) {
-            return res.render('./users/login', { errors: [{ msj: 'credenciales ivalidas' }] })
-        };
 
-        req.session.usuarioLogeado = usuarioALogearse;
+                } else {
+                    return res.render('./users/login', { errors: [{ msj: 'credenciales ivalidas' }] })
+                }
 
-        if (req.body.remember != undefined) {
-            res.cookie('remember', usuarioALogearse.id, { maxAge: 60000 })
-
-        }
-        return res.redirect('/');
+                req.session.usuarioLogeado = usuarioALogearse.id;
 
 
+
+                if (req.body.remember != undefined) {
+                    res.cookie('remember', usuarioALogearse.id, { maxAge: 60000 })
+
+                }
+                return res.redirect('/');
+            })
+            .catch(() => {
+
+                return res.render('./users/login', { errors: [{ msj: 'credenciales ivalidas' }] })
+
+            })
 
     },
 

@@ -25,7 +25,7 @@ const upload = multer({ storage });
 
 router.get('/register', guestMiddlware, usersControllers.register);
 
-router.post('/create', upload.single("img_user"), usersControllers.create)
+router.post('/create', upload.single("image"), usersControllers.create)
 
 router.get('/login', guestMiddlware, usersControllers.showLogin);
 router.post('/login', usersControllers.login)
