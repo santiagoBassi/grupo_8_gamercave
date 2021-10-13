@@ -66,7 +66,6 @@ const controlador = {
             })
 
     },
-
     productEdit: (req, res) => {
         let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
         let products = JSON.parse(productsJSON);
@@ -84,7 +83,6 @@ const controlador = {
 
 
     },
-
     productEditSave: (req, res) => {
         let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
         let products = JSON.parse(productsJSON);
@@ -165,6 +163,5 @@ const controlador = {
         fs.writeFileSync('data/products.json', updatedProductsJSON);
         return res.redirect('/products');
     }
-
 };
 module.exports = controlador;

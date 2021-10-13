@@ -112,6 +112,7 @@ main {
     width: max-content;
     max-width: 90%;
     border-radius: 10px;
+    border: solid 1px black;
 }
 
 .container-section-envio-pago {
@@ -134,11 +135,20 @@ main {
     color: #171f35;
     font-size: 2em;
     margin-bottom: 15px;
-    transition: color .5s;
+    transition: all .5s;
 }
 
 .icono-envio-pago:hover {
-    color: #39b54a;
+    color: #8598e5;
+    font-size: 2.05em;
+}
+
+.colores {
+    color: #120907;
+    color: #171f35;
+    color: #4b5985;
+    color: #8598e5;
+    color: #c0d7ed;
 }
 
 .container-section-envio-pago h5 {
@@ -150,70 +160,7 @@ main {
 .container-productos-banner {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
-}
-
-.publicidades {
-    background-image: url('/images/sponsors/background-cripto.jpg');
-    background-size: contain;
-    width: 320px;
-    margin: 200px auto 50px;
-}
-
-.container-titulo-publicidad {
-    width: 100%;
-    background-color: #1209076b;
-    padding: 10px 60px;
-    margin: auto;
-}
-
-.container-titulo-publicidad h3 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: white;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-.container-slider-publicidades {
-    width: 90%;
-    margin: auto;
-    border-radius: 10px;
-}
-
-.slider-publicidades {
-    overflow: hidden;
-}
-
-.slides-publicidades {
-    width: 500%;
-    display: flex;
-}
-
-.slides-publicidades input {
-    display: none;
-}
-
-.slide-publicidades {
-    width: 20%;
-    transition: 2s;
-}
-
-.slide-publicidades img {
-    width: 100%;
-    height: 70px;
-    border-radius: 10px;
-}
-
-#radio-publicidades1:checked~.first-publicidades {
-    margin-left: 0;
-}
-
-#radio-publicidades2:checked~.first-publicidades {
-    margin-left: -20%;
-}
-
-#radio-publicidades3:checked~.first-publicidades {
-    margin-left: -40%;
+    margin-top: 30px;
 }
 
 
@@ -230,9 +177,11 @@ main {
     font-size: 25px;
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     margin-top: 60px;
     color: rgb(0, 0, 0);
+    border-bottom: black 2px solid;
+    padding-bottom: 15px;
 }
 
 .container-all-articles {
@@ -244,23 +193,12 @@ main {
     margin: auto;
 }
 
-.container-banner-garbarino {
-    width: 100%;
-    margin-top: 60px;
-    margin-bottom: 100px;
-    display: none;
-}
-
-.container-banner-garbarino img {
-    width: 100%;
-}
-
 @media (min-width: 769px) {
     .contenedor-envio-pago {
         flex-direction: row;
     }
-    .container-banner-garbarino {
-        display: initial;
+    .container-productos-banner {
+        margin-top: 0px;
     }
 }
 
