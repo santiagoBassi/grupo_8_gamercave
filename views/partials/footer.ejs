@@ -22,17 +22,17 @@
             <div class="contenedorListaFooter">
                 <p class="tituloFooter">Seguinos en nuestras redes</p>
                 <ul class="listaFooter">
-                    <li><a class="contenidoListaFooter" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a class="contenidoListaFooter" href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fab fa-instagram icono-footer"></i> Instagram</a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fab fa-facebook-f icono-footer"></i> Facebook</a></li>
                 </ul>
             </div>
 
             <div class="contenedorListaFooter">
                 <p class="tituloFooter">Contacto:</p>
                 <ul class="listaFooter">
-                    <li><a class="contenidoListaFooter" href="#"><i class="fas fa-envelope "></i> E-mail</a></li>
-                    <li><a class="contenidoListaFooter" href="#"><i class="fas fa-phone-alt "></i> tel</a></li>
-                    <li><a class="contenidoListaFooter" href="#"><i class="fas fa-home"></i> Chascomus, Buenos Aires, Argentina </a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fas fa-envelope icono-footer"></i> E-mail</a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fas fa-phone-alt icono-footer"></i> tel</a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fas fa-home icono-footer"></i> Chascomus, Buenos Aires, Argentina </a></li>
                 </ul>
             </div>
         </div>
@@ -111,6 +111,14 @@
             font-size: 15px;
             text-decoration: none;
             color: white;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+        
+        .icono-footer {
+            color: #120907e8;
+            font-size: 1.1em;
         }
         
         .contenedorRedesContacto {
@@ -149,10 +157,36 @@
                 justify-content: space-around;
                 align-items: flex-start;
             }
+            .contenedorListaFooter {
+                border-bottom: none;
+                padding-top: 15px;
+                border-top: solid 2px black;
+            }
             .footer-inferior {
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+            }
+        }
+        
+        @media (min-width: 1000px) {
+            .container-logo-footer {
+                width: 330px;
+            }
+            .contenedorListaFooter {
+                width: 272px;
+            }
+            .contenedorRedesContacto {
+                width: max-content;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .contenedorRedesContacto {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                width: 43%;
             }
         }
     </style>

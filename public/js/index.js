@@ -6,12 +6,3 @@ setInterval(function() {
         counter = 1;
     }
 }, 5000)
-
-var contador = 1;
-setInterval(function() {
-    document.getElementById('radio-publicidades' + contador).checked = true;
-    contador++;
-    if (contador > 3) {
-        contador = 1;
-    }
-}, 5000)
