@@ -14,11 +14,12 @@ const Characteristic = db.Characteristic;
 
 const controlador = {
     admin: (req, res) => {
-        let archivoProductsJson = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
-
-        let products = JSON.parse(archivoProductsJson);
-
-        return res.render('./admin/adminPanel', { products })
+        Product.findAll({
+                include: ['images']
+            })
+            .then(products => {
+                return res.render('./admin/adminPanel', { products })
+            })
     },
     productCreate: (req, res) => {
         Category.findAll()
@@ -44,7 +45,7 @@ const controlador = {
                 }
 
                 function caracteristicas(cantidadCaracteristicas) {
-                    for (let i = 0; i < cantidadCaracteristicas; i++) {
+                    for (let i = 0; i <= cantidadCaracteristicas; i++) {
                         if (cantidadCaracteristicas == 1) {
                             Characteristic.create({
                                 name: req.body.characteristic,
@@ -62,12 +63,28 @@ const controlador = {
                 }
                 caracteristicas(req.body.cantidadInput)
 
-                res.redirect(`../../product/detail/${product.id}`)
+                res.redirect(`../../products/detail/${product.id}`)
             })
 
     },
     productEdit: (req, res) => {
-        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
+        Product.findByPk(req.params.id, {
+                include: ['category', 'characteristics', 'images']
+            })
+            .then(product => {
+                let images = {
+                    img1: product.images[0].name,
+                    img2: product.images[1].name,
+                    img3: product.images[2].name
+                }
+                Category.findAll()
+                    .then(categories => {
+                        return res.render('./admin/productEdit', { product, images, categories });
+                    })
+
+            })
+
+        /*let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
         let products = JSON.parse(productsJSON);
 
         products.forEach(product => {
@@ -81,7 +98,7 @@ const controlador = {
             }
         });
 
-
+*/
     },
     productEditSave: (req, res) => {
         let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });

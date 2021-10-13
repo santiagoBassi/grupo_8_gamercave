@@ -23,76 +23,19 @@
                     <input class="input" name="name" type="text" id="name" value="<%= product.name %> " required>
                 </div><br>
 
+
                 <div>
                     <label for="categoria">Categoria:</label>
-                    <select class="categorias" name="category" id="categoria" required>
-                         
-                        <option class="categorias" value="Procesadores"
-                        <% if (product.category == 'Procesadores') {%>
-                        selected
-                        <% } %> 
-                        >Procesadores</option>
-
-                        <option class="categorias" value="DiscosRigidos"
-                        <% if (product.category == 'DiscosRigidos') {%>
-                        selected
-                        <% } %> 
-                        >Discos Rigidos</option>
-
-                        <option class="categorias" value="Auriculares"
-                        <% if (product.category == 'Auriculares') {%>
-                        selected
-                        <% } %> 
-                        >Auriculares</option>
-
-                        <option class="categorias" value="Mouses"
-                        <% if (product.category == 'Mouses') {%>
-                        selected
-                        <% } %> 
-                        >Mouses</option>
-
-                        <option class="categorias" value="Teclados"
-                        <% if (product.category == 'Teclados') {%>
-                        selected
-                        <% } %>
-                        >Teclados</option>
-
-                        <option class="categorias" value="MemoriasRam"
-                        <% if (product.category == 'MemoriasRam') {%>
-                        selected
-                        <% } %>
-                        >Memorias Ram</option>
-
-                        <option class="categorias" value="Monitores"
-                        <% if (product.category == 'Monitores') {%>
-                        selected
-                        <% } %>
-                        >Monitores</option>
-
-                        <option class="categorias" value="Coolers"
-                        <% if (product.category == 'Coolers') {%>
-                        selected
-                        <% } %>
-                        >Coolers</option>
-
-                        <option class="categorias" value="Fuentes"
-                        <% if (product.category == 'Fuentes') {%>
-                        selected
-                        <% } %>
-                        >Fuentes</option>
-
-                        <option class="categorias" value="Mothers"
-                        <% if (product.category == 'Mothers') {%>
-                        selected
-                        <% } %>
-                        >Mothers</option>
-
-                        <option class="categorias" value="PlacaVideo"
-                        <% if (product.category == 'PlacaVideo') {%>
-                        selected
-                        <% } %>
-                        >Placa de video</option>
-                    </select>
+                    <select class="categorias" name="category" id="categoria">
+                            <% categories.forEach(category => { %>
+                             <option class="categorias" value="<%= category.id %>"
+                            <% if (product.category.name == category.name) { %>
+                                selected
+                            <% } %>  
+                            ><%= category.name %></option>
+                            <% }) %> 
+                            
+                        </select>
                 </div><br>
 
                 <div id="caracteristicas">
@@ -111,7 +54,7 @@
                             }%>
                                 <% let idValue = [];  %>
                                     <% let contadorCarac = 0; %>
-                                        <% Object.entries(characteristic).forEach(function (caracteristica) { %>
+                                        <% product.characteristics.forEach(characteristic => { %>
 
 
                                             <% let idCarac = uuidv4() %>
@@ -119,7 +62,7 @@
 
                                                     <div class="containerDeleteField" id="<%= idCarac %>">
                                                         <i onclick="borrarCampo('<%= idCarac %>','<%= idValue[contadorCarac] %>')" class="deleteField fas fa-times"></i>
-                                                        <input class="input" value="<%= caracteristica[0] %>" name="characteristic" id="caracteristica" placeholder="ej: color" required>
+                                                        <input class="input" value="<%= characteristic.name %>" name="characteristic" id="caracteristica" placeholder="ej: color" required>
                                                     </div>
                                                     <% contadorCarac = contadorCarac + 1; %>
                                                         <%  }); %>
@@ -129,9 +72,9 @@
                         <div id="value" class="colum">
                             <label class="labelKeyValue" for="valor">Valor: </label>
                             <% let contadorValue = 0; %>
-                                <% Object.entries(characteristic).forEach(function (caracteristica) { %>
+                                <% product.characteristics.forEach(characteristic => { %>
 
-                                    <input class="input" value="<%= caracteristica[1] %>" name="value" id="<%= idValue[contadorValue] %>" placeholder="ej: rojo" required>
+                                    <input class="input" value="<%= characteristic.value %>" name="value" id="<%= idValue[contadorValue] %>" placeholder="ej: rojo" required>
                                     <% contadorValue = contadorValue + 1; %>
                                         <%  }); %>
 
@@ -153,9 +96,9 @@
                 <div>
                     <p>Imagenes actuales:</p>
                     <div class="containerImages">
-                        <img class="images" src="/images/products/<%- product.img1 -%>" alt="">
-                        <img class="images" src="/images/products/<%- product.img2 -%>" alt="">
-                        <img class="images" src="/images/products/<%- product.img3 -%>" alt="">
+                        <img class="images" src="/images/products/<%- images.img1 -%>" alt="">
+                        <img class="images" src="/images/products/<%- images.img2 -%>" alt="">
+                        <img class="images" src="/images/products/<%- images.img3 -%>" alt="">
                     </div>
                 </div>
 
