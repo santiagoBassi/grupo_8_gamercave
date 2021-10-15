@@ -17,6 +17,7 @@ const controlador = {
                 include: ['category', 'characteristics', 'images']
             })
             .then(product => {
+                return res.json(product.images)
                 let images = {
                     img1: product.images[0].name,
                     img2: product.images[1].name,

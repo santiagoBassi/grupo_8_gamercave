@@ -14,6 +14,13 @@ function borrarCampo(carac, value) {
 
     caracABorrar.remove();
     valueABorrar.remove();
+
+    let lugarParaInsertatValue = document.getElementById('value');
+    let cantidadElementos = document.getElementById('cantidadElementos');
+
+
+    let elementosTotales = lugarParaInsertatValue.getElementsByTagName('input').length;
+    cantidadElementos.setAttribute('value', elementosTotales);
 }
 
 function agregarCampos() {
@@ -60,15 +67,10 @@ function agregarCampos() {
     lugarParaInsertatValue.appendChild(inputValue);
 
 
-    let elementosTotales = lugarParaInsertatValue.getElementsByTagName('input').length;
-    cantidadElementos.value = elementosTotales;
+    let lugarParaInsertatValue2 = document.getElementById('value');
+    let cantidadElementos2 = document.getElementById('cantidadElementos');
+
+
+    let elementosTotales2 = lugarParaInsertatValue2.getElementsByTagName('input').length;
+    cantidadElementos2.setAttribute('value', elementosTotales2);
 }
-
-(function() {
-    let lugarParaInsertatValue = document.getElementById('value');
-    let cantidadElementos = document.getElementById('cantidadElementos');
-
-
-    let elementosTotales = lugarParaInsertatValue.getElementsByTagName('input').length;
-    cantidadElementos.setAttribute('value', elementosTotales);
-})();

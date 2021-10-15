@@ -39,31 +39,44 @@ const controlador = {
             .then(product => {
                 for (let i = 0; i < req.files.length; i++) {
                     Image.create({
-                        name: req.files[i].filename,
-                        product_id: product.id
-                    })
+                            name: req.files[i].filename,
+                            product_id: product.id
+                        })
+                        .catch(err => {
+                            res.send(err)
+                        })
                 }
 
                 function caracteristicas(cantidadCaracteristicas) {
                     for (let i = 0; i <= cantidadCaracteristicas; i++) {
                         if (cantidadCaracteristicas == 1) {
                             Characteristic.create({
-                                name: req.body.characteristic,
-                                value: req.body.value,
-                                product_id: product.id
-                            })
+                                    name: req.body.characteristic,
+                                    value: req.body.value,
+                                    product_id: product.id
+                                })
+                                .catch(err => {
+                                    res.send(err)
+                                })
+                            break;
                         } else {
                             Characteristic.create({
-                                name: req.body.characteristic[i],
-                                value: req.body.value[i],
-                                product_id: product.id
-                            })
+                                    name: req.body.characteristic[i],
+                                    value: req.body.value[i],
+                                    product_id: product.id
+                                })
+                                .catch(err => {
+                                    res.send(err)
+                                })
                         }
                     }
                 }
                 caracteristicas(req.body.cantidadInput)
 
-                res.redirect(`../../products/detail/${product.id}`)
+                return res.redirect(`../../products/detail/${product.id}`)
+            })
+            .catch(err => {
+                res.send(err)
             })
 
     },

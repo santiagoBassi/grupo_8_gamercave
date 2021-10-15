@@ -1,5 +1,10 @@
 const bcrypt = require('bcryptjs');
 
+//Google auth
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client('402810559666-j55lu0tf3cba2lhh0roa7qrfhef90no6.apps.googleusercontent.com');
+
+
 const db = require('../database/models/index.js');
 const User = db.User;
 
@@ -61,6 +66,54 @@ const controller = {
                 return res.render('./users/login', { errors: [{ msj: 'credenciales ivalidas' }] })
 
             })
+
+    },
+    loginGoogle: (req, res) => {
+        async function verify() {
+            const ticket = await client.verifyIdToken({
+                idToken: req.body.idtoken,
+                audience: '402810559666-j55lu0tf3cba2lhh0roa7qrfhef90no6.apps.googleusercontent.com'
+            });
+            const payload = ticket.getPayload();
+            const userid = payload['sub'];
+            console.log('sou el 5')
+            return payload
+        }
+        verify()
+            .then((payload) => {
+
+                User.findOne({
+                        where: {
+                            email: payload.email
+                        }
+                    })
+                    .then(user => {
+                        if (user) {
+                            req.session.usuarioLogeado = user.id;
+                            console.log('sou el 2')
+                        } else {
+
+                            User.create({
+                                    name: payload.given_name,
+                                    lastName: payload.family_name,
+                                    phone: null,
+                                    email: payload.email,
+                                    password: null,
+                                    image: null,
+                                    rol_id: 2
+                                })
+                                .then(user => {
+                                    req.session.usuarioLogeado = user.id;
+
+                                    return res.redirect('/')
+                                })
+                        }
+
+
+                    })
+            })
+            .catch(console.error);
+
 
     },
     recoverpassword: (req, res) => {
