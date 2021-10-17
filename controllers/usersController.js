@@ -91,6 +91,7 @@ const controller = {
                         if (user) {
                             req.session.usuarioLogeado = user.id;
                             console.log('sou el 2')
+
                         } else {
 
                             User.create({
@@ -104,8 +105,8 @@ const controller = {
                                 })
                                 .then(user => {
                                     req.session.usuarioLogeado = user.id;
+                                    res.redirect('../../')
 
-                                    return res.redirect('/')
                                 })
                         }
 

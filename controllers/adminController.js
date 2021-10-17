@@ -37,43 +37,49 @@ const controlador = {
                 category_id: req.body.category
             })
             .then(product => {
-                for (let i = 0; i < req.files.length; i++) {
-                    Image.create({
-                            name: req.files[i].filename,
-                            product_id: product.id
-                        })
-                        .catch(err => {
-                            res.send(err)
-                        })
-                }
+                let img0 = Image.create({
+                    name: req.files[0].filename,
+                    product_id: product.id
+                })
+                let img1 = Image.create({
+                    name: req.files[1].filename,
+                    product_id: product.id
+                })
+                let img2 = Image.create({
+                    name: req.files[2].filename,
+                    product_id: product.id
+                })
 
-                function caracteristicas(cantidadCaracteristicas) {
-                    for (let i = 0; i <= cantidadCaracteristicas; i++) {
-                        if (cantidadCaracteristicas == 1) {
-                            Characteristic.create({
-                                    name: req.body.characteristic,
-                                    value: req.body.value,
-                                    product_id: product.id
-                                })
-                                .catch(err => {
-                                    res.send(err)
-                                })
-                            break;
-                        } else {
-                            Characteristic.create({
-                                    name: req.body.characteristic[i],
-                                    value: req.body.value[i],
-                                    product_id: product.id
-                                })
-                                .catch(err => {
-                                    res.send(err)
-                                })
+                Promise.all([img0, img1, img2])
+                    .then(() => {
+                        function caracteristicas(cantidadCaracteristicas) {
+                            for (let i = 0; i <= cantidadCaracteristicas; i++) {
+                                if (cantidadCaracteristicas == 1) {
+                                    Characteristic.create({
+                                            name: req.body.characteristic,
+                                            value: req.body.value,
+                                            product_id: product.id
+                                        })
+                                        .catch(err => {
+                                            res.send(err)
+                                        })
+                                    break;
+                                } else {
+                                    Characteristic.create({
+                                            name: req.body.characteristic[i],
+                                            value: req.body.value[i],
+                                            product_id: product.id
+                                        })
+                                        .catch(err => {
+                                            res.send(err)
+                                        })
+                                }
+
+                            }
                         }
-                    }
-                }
-                caracteristicas(req.body.cantidadInput)
+                        caracteristicas(req.body.cantidadInput)
 
-                return res.redirect(`../../products/detail/${product.id}`)
+                    })
             })
             .catch(err => {
                 res.send(err)
