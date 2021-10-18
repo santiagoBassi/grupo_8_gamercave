@@ -15,19 +15,13 @@ function borrarCampo(carac, value) {
     caracABorrar.remove();
     valueABorrar.remove();
 
-    let lugarParaInsertatValue = document.getElementById('value');
-    let cantidadElementos = document.getElementById('cantidadElementos');
 
-
-    let elementosTotales = lugarParaInsertatValue.getElementsByTagName('input').length;
-    cantidadElementos.setAttribute('value', elementosTotales);
 }
 
 function agregarCampos() {
 
     const lugarParaInsertatCarac = document.getElementById('carac');
     const lugarParaInsertatValue = document.getElementById('value');
-    const cantidadElementos = document.getElementById('cantidadElementos');
 
     const inputCarac = document.createElement('input');
     const inputValue = document.createElement('input');
@@ -66,11 +60,15 @@ function agregarCampos() {
     lugarParaInsertatCarac.appendChild(divContainerDeleteField);
     lugarParaInsertatValue.appendChild(inputValue);
 
-
-    let lugarParaInsertatValue2 = document.getElementById('value');
-    let cantidadElementos2 = document.getElementById('cantidadElementos');
-
-
-    let elementosTotales2 = lugarParaInsertatValue2.getElementsByTagName('input').length;
-    cantidadElementos2.setAttribute('value', elementosTotales2);
 }
+
+let form = document.querySelector('#frm')
+
+form.addEventListener('submit', () => {
+    let lugarParaInsertatValue = document.getElementById('value');
+    let cantidadElementos = document.getElementById('cantidadElementos');
+    let elementosTotales = lugarParaInsertatValue.getElementsByTagName('input').length;
+    console.log(cantidadElementos)
+    cantidadElementos.setAttribute('value', elementosTotales);
+    console.log(cantidadElementos)
+})

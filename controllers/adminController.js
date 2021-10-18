@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const uuid = require('uuid');
+
 
 const db = require('../database/models/index.js');
 
@@ -147,92 +147,90 @@ const controlador = {
                     .then((product) => {
 
                         if (req.files != '') {
+                            fs.unlinkSync(`./public/images/products/${product.images[0].name}`);
+                            fs.unlinkSync(`./public/images/products/${product.images[1].name}`);
+                            fs.unlinkSync(`./public/images/products/${product.images[2].name}`);
+
                             let img0 = Image.update({
                                 name: req.files[0].filename,
                             }, {
                                 where: { id: product.images[0].id }
-                            })
+                            });
+
                             let img1 = Image.update({
                                 name: req.files[1].filename,
                             }, {
                                 where: { id: product.images[1].id }
-                            })
+                            });
+
                             let img2 = Image.update({
                                 name: req.files[2].filename,
                             }, {
                                 where: { id: product.images[2].id }
-                            })
+                            });
 
                             Promise.all([img0, img1, img2])
-
-                            fs.unlinkSync(`./public/images/products/${product.images[0].name}`);
-                            fs.unlinkSync(`./public/images/products/${product.images[1].name}`);
-                            fs.unlinkSync(`./public/images/products/${product.images[2].name}`);
                         }
+                        Characteristic.destroy({ where: { product_id: product.id } })
+                            .then(() => {
+
+                                function caracteristicas(cantidadCaracteristicas) {
+                                    for (let i = 0; i < cantidadCaracteristicas; i++) {
+                                        if (cantidadCaracteristicas == 1) {
+                                            Characteristic.create({
+                                                    name: req.body.characteristic,
+                                                    value: req.body.value,
+                                                    product_id: product.id
+                                                })
+                                                .then(() => {
+                                                    return res.redirect(`../../products/detail/${product.id}`)
+                                                })
+
+                                            .catch(err => {
+                                                res.send(err)
+                                            })
+                                            break;
+                                        } else {
+                                            Characteristic.create({
+                                                    name: req.body.characteristic[i],
+                                                    value: req.body.value[i],
+                                                    product_id: product.id
+                                                })
+                                                .then(() => {
+                                                    if (cantidadCaracteristicas == i + 1) {
+                                                        return res.redirect(`../../products/detail/${product.id}`)
+                                                    }
+                                                })
+                                                .catch(err => {
+                                                    res.send(err)
+                                                })
+                                        }
+                                    }
+                                }
+                                caracteristicas(req.body.cantidadInput)
+                            })
                     })
             })
 
-        /*
-
-
-                let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
-                let products = JSON.parse(productsJSON);
-                let updatedProducts = [];
-                products.forEach(product => {
-
-                    if (product.id == req.params.id) {
-
-                        let updatedProduct = {
-                            id: product.id,
-                            name: req.body.name,
-                            category: req.body.category,
-                            price: req.body.price,
-                            discount: req.body.discount,
-                        };
-                        if (req.files == '') {
-                            updatedProduct['img1'] = product.img1;
-                            updatedProduct['img2'] = product.img2;
-                            updatedProduct['img3'] = product.img3;
-                        } else {
-                            updatedProduct['img1'] = req.files[0].filename;
-                            updatedProduct['img2'] = req.files[1].filename;
-                            updatedProduct['img3'] = req.files[2].filename;
-                            fs.unlinkSync(`./public/images/products/${product.img1}`);
-                            fs.unlinkSync(`./public/images/products/${product.img2}`);
-                            fs.unlinkSync(`./public/images/products/${product.img3}`);
-                        };
-
-                        function caracteristicas(cantidadCaracteristicas) {
-                            for (let i = 0; i < cantidadCaracteristicas; i++) {
-
-                                if (cantidadCaracteristicas == 1) {
-                                    updatedProduct[req.body.characteristic] = req.body.value;
-                                } else {
-                                    updatedProduct[req.body.characteristic[i]] = req.body.value[i];
-                                }
-                            }
-                        }
-                        caracteristicas(req.body.cantidadInput);
-
-                        updatedProducts.push(updatedProduct);
-
-                    } else {
-                        updatedProducts.push(product);
-                    };
-
-
-
-                });
-
-
-                let updatedProductsJSON = JSON.stringify(updatedProducts);
-
-                fs.writeFileSync('data/products.json', updatedProductsJSON);
-                return res.redirect('../../products/detail/' + req.params.id);
-
-        */
     },
     productDelete: (req, res) => {
+        Product.findByPk(req.params.id, {
+                include: ['category', 'characteristics', 'images']
+            })
+            .then((product) => {
+                fs.unlinkSync(`./public/images/products/${product.images[0].name}`);
+                fs.unlinkSync(`./public/images/products/${product.images[1].name}`);
+                fs.unlinkSync(`./public/images/products/${product.images[2].name}`);
+
+
+                Product.destroy({ where: { id: req.params.id } })
+                    .then(() => {
+                        res.redirect('/')
+                    })
+            })
+
+
+        /*
 
         let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
         let products = JSON.parse(productsJSON);
@@ -252,7 +250,7 @@ const controlador = {
         let updatedProductsJSON = JSON.stringify(updatedProducts);
 
         fs.writeFileSync('data/products.json', updatedProductsJSON);
-        return res.redirect('/products');
+        return res.redirect('/products');*/
     }
 };
 module.exports = controlador;
