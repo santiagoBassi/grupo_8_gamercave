@@ -18,6 +18,7 @@ const controlador = {
             })
             .then(product => {
 
+
                 let images = {
                     img1: product.images[0].name,
                     img2: product.images[1].name,

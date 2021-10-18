@@ -51,18 +51,25 @@ const controlador = {
                 })
 
                 Promise.all([img0, img1, img2])
-                    .then(() => {
+                    .then((img0) => {
+                        console.log(img0)
+
                         function caracteristicas(cantidadCaracteristicas) {
-                            for (let i = 0; i <= cantidadCaracteristicas; i++) {
+                            for (let i = 0; i < cantidadCaracteristicas; i++) {
                                 if (cantidadCaracteristicas == 1) {
                                     Characteristic.create({
                                             name: req.body.characteristic,
                                             value: req.body.value,
                                             product_id: product.id
                                         })
-                                        .catch(err => {
-                                            res.send(err)
+                                        .then(() => {
+                                            return res.redirect(`../../products/detail/${product.id}`)
+
                                         })
+
+                                    .catch(err => {
+                                        res.send(err)
+                                    })
                                     break;
                                 } else {
                                     Characteristic.create({
@@ -70,11 +77,15 @@ const controlador = {
                                             value: req.body.value[i],
                                             product_id: product.id
                                         })
+                                        .then(() => {
+                                            if (cantidadCaracteristicas == i + 1) {
+                                                return res.redirect(`../../products/detail/${product.id}`)
+                                            }
+                                        })
                                         .catch(err => {
                                             res.send(err)
                                         })
                                 }
-
                             }
                         }
                         caracteristicas(req.body.cantidadInput)
