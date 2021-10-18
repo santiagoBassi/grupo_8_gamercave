@@ -29,5 +29,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return CaCarttegory;
+    return Cart;
 };
