@@ -210,6 +210,9 @@ const controlador = {
                                 caracteristicas(req.body.cantidadInput)
                             })
                     })
+                    .catch(err => {
+                        res.send(err)
+                    })
             })
 
     },
