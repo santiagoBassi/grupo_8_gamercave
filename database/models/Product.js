@@ -48,6 +48,10 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'invoice_id',
             timestamps: false
         })
+        Product.hasMany(models.Cart, {
+            as: 'cart',
+            foreignKey: 'product_id'
+        })
     }
 
     return Product;
