@@ -26,7 +26,7 @@ const controller = {
             })
             .then(user => {
                 req.session.usuarioLogeado = user;
-                return res.redirect("../../");
+                return res.redirect("/");
             })
 
 
@@ -69,7 +69,7 @@ const controller = {
 
     },
     loginGoogle: (req, res) => {
-        async function verify() {
+        /*  async function verify() {
             const ticket = await client.verifyIdToken({
                 idToken: req.body.idtoken,
                 audience: '402810559666-j55lu0tf3cba2lhh0roa7qrfhef90no6.apps.googleusercontent.com'
@@ -115,14 +115,15 @@ const controller = {
             })
             .catch(console.error);
 
-
+*/
     },
     recoverpassword: (req, res) => {
         return res.render('./users/recover-password');
     },
     logout: (req, res) => {
         req.session.destroy();
-        res.cookie('<remember></remember>', null, { maxAge: -1 });
+        res.clearCookie("remember");
+
         res.redirect('/')
     },
 };

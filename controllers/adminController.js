@@ -1,6 +1,4 @@
 const fs = require('fs');
-const path = require('path');
-
 
 const db = require('../database/models/index.js');
 
@@ -8,8 +6,6 @@ const Product = db.Product;
 const Category = db.Category;
 const Image = db.Image;
 const Characteristic = db.Characteristic;
-
-
 
 
 const controlador = {
@@ -256,4 +252,5 @@ const controlador = {
         return res.redirect('/products');*/
     }
 };
+
 module.exports = controlador;
