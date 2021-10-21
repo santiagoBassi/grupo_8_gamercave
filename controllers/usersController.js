@@ -1,18 +1,13 @@
-const fs = require("fs");
-const uuid = require("uuid");
 const bcrypt = require('bcryptjs');
 
 const db = require('../database/models/index.js');
-
 const User = db.User;
 
 
 const controller = {
-
     register: (req, res) => {
         return res.render('./users/register');
     },
-
     create: (req, res) => {
         let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
         User.create({
@@ -31,7 +26,6 @@ const controller = {
 
 
     },
-
     showLogin: (req, res) => {
         return res.render('./users/login');
     },
@@ -69,17 +63,13 @@ const controller = {
             })
 
     },
-
-
     recoverpassword: (req, res) => {
         return res.render('./users/recover-password');
     },
-
     logout: (req, res) => {
         req.session.destroy();
         res.cookie('<remember></remember>', null, { maxAge: -1 });
         res.redirect('/')
     },
-
 };
 module.exports = controller;

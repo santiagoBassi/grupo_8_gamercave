@@ -57,14 +57,11 @@
 
                 </div>
                 </div>
-
-
-
                 <section class="container-productos">
                     <h4 class="titulares-productos">Productos</h4>
                     <div class="container-all-articles ">
                         <% products.forEach(function(product) {%>
-                            <%- include('../partials/productItem', {id: product.id, name: product.name, price: product.price, img1: product.img1,img2: product.img2,img3: product.img3}) -%>
+                            <%- include('../partials/productItem', {id: product.id, name: product.name, price: product.price, img1: product.images[2].name}) -%>
                                 <% }) %>
                     </div>
 

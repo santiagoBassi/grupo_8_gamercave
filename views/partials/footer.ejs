@@ -1,43 +1,43 @@
 <footer>
     <div class="footer-superior">
 
-        <div class="contenedorSobreNos">
-            <div class="container-logo">
-                <a><img src="/images/logos/logoGamerCaveLetrasOscuras.png" alt="Logo de Gamer Cave" class="logo"></a>
+
+        <div class="container-logo-footer">
+            <img src="/images/logos/logoGamerCaveLetrasOscuras.png" alt="Logo de Gamer Cave" class="logo-footer"> GamerCave es una pequeña empresa que se dedica a vender componentes de computadora de alta gama. Nuestro objetivo es el de ofrecer productos
+            destinados a la minería de criptomonedas y al gaming, a precios accesibles, en pocas cuotas y al menor interés
+        </div>
+
+
+
+
+        <div class="contenedorListaFooter">
+            <p class="tituloFooter">Información Legal</p>
+            <ul class="listaFooter">
+                <li class="contenidoListaFooter">Confguración de cookies</li>
+                <li class="contenidoListaFooter">Terminos y condiciones</li>
+                <li class="contenidoListaFooter">Políticas de privacidad</li>
+            </ul>
+        </div>
+        <div class="contenedorRedesContacto">
+            <div class="contenedorListaFooter">
+                <p class="tituloFooter">Seguinos en nuestras redes</p>
+                <ul class="listaFooter">
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fab fa-instagram icono-footer"></i> Instagram</a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fab fa-facebook-f icono-footer"></i> Facebook</a></li>
+                </ul>
             </div>
-            <a>Sobre Nosotros:</a>
-            <p>GamerCave es una pequeña empresa que se dedica a vender componentes de computadora de alta gama. Nuestro objetivo es el de ofrecer productos destinados a la minería de criptomonedas y al gaming, a precios accesibles, en pocas cuotas y al menor
-                interés </p>
 
-
+            <div class="contenedorListaFooter">
+                <p class="tituloFooter">Contacto:</p>
+                <ul class="listaFooter">
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fas fa-envelope icono-footer"></i> E-mail</a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fas fa-phone-alt icono-footer"></i> tel</a></li>
+                    <li class="contenidoListaFooter"><a class="contenidoListaFooter" href="#"><i class="fas fa-home icono-footer"></i> Chascomus, Buenos Aires, Argentina </a></li>
+                </ul>
+            </div>
         </div>
-        <div class="contenedorInfoL">
-            <p class="informacionLegal">Información Legal</p>
-            <ul class="lista-info-legal">
-                <li>Confguración de cookies</li>
-                <li>Terminos y condiciones</li>
-                <li>Políticas de privacidad</li>
-            </ul>
-        </div>
-        <div class="contenedorRedes">
-            <p class="redesSociales">Seguinos en nuestras redes</p>
-            <ul class="lista-redes">
 
-                <li><a href="#"><i class="fab fa-instagram "></i> Instagram</a></li>
-                <li><a href="#"><i class="fab fa-facebook-f "></i> Facebook</a></li>
-            </ul>
-        </div>
-        <div class="contenedorContacto">
-            <p class="contactanos">Contacto :</p>
 
-            <ul class="lista-contactanos">
-
-                <li><a href="#"><i class="fas fa-envelope "></i> E-mail</a></li>
-
-                <li><a href="#"><i class="fas fa-phone-alt "></i> tel</a></li>
-                <li><a href="#"><i class="fas fa-home"></i> Chascomus, Buenos Aires, Argentina </a></li>
-            </ul>
-        </div>
     </div>
     <div class="footer-inferior">
         <div class="derechos-reservados">
@@ -67,80 +67,67 @@
             box-shadow: 0px 0px 3px rgb(0 0 0) inset;
         }
         
-        .contenedorSobreNos {
-            padding-top: 5px;
-            padding-left: 10px;
-            padding-bottom: 10px;
-            ;
-        }
-        
-        .lista-redes li {
-            padding-top: 15px;
-        }
-        
-        .lista-redes li a {
-            text-decoration: none;
-            color: #E5E5E5;
-        }
-        
-        .lista-redes {
-            list-style: none;
-        }
-        
-        .contenedorInfoL {
-            text-decoration: none;
-            font-style: normal;
+        .container-logo-footer {
+            text-align: justify;
+            padding: 20px;
             margin-bottom: 20px;
+            font-family: 'Noto Sans', sans-serif;
             width: 100%;
+            max-width: 460px;
+        }
+        
+        .logo-footer {
+            width: 100px;
+            float: left;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .contenedorListaFooter {
+            margin-bottom: 20px;
+            width: 85%;
+            max-width: 272px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            padding-bottom: 20px;
+            border-bottom: solid 2px black;
         }
         
-        .informacionLegal {
-            margin-bottom: 10px;
+        .tituloFooter {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
         
-        .lista-info-legal {
+        .listaFooter {
             list-style: none;
+            display: flex;
+            flex-direction: column;
         }
         
-        .lista-info-legal li {
-            margin-top: 5px;
-        }
-        
-        .contenedorContacto {
+        .contenidoListaFooter {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 15px;
             text-decoration: none;
-            font-style: normal;
+            color: white;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+        
+        .icono-footer {
+            color: #120907e8;
+            font-size: 1.1em;
+        }
+        
+        .contenedorRedesContacto {
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-        
-        .contenedorRedes {
-            text-decoration: none;
-            font-style: normal;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .lista-contactanos {
-            list-style: none;
-        }
-        
-        .lista-contactanos li {
-            margin-top: 5px;
-        }
-        
-        .lista-contactanos li a {
-            text-decoration: none;
-            color: #E5E5E5;
         }
         
         .footer-inferior {
@@ -156,11 +143,13 @@
             flex-direction: row;
             color: #E5E5E5;
             margin-top: 5px;
+            font-family: 'Noto Sans', sans-serif;
         }
         
         .footer-inferior p a {
             color: #E5E5E5;
             text-decoration: none;
+            font-family: 'Noto Sans', sans-serif;
         }
         
         @media (min-width: 769px) {
@@ -169,10 +158,36 @@
                 justify-content: space-around;
                 align-items: flex-start;
             }
+            .contenedorListaFooter {
+                border-bottom: none;
+                padding-top: 15px;
+                border-top: solid 2px black;
+            }
             .footer-inferior {
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+            }
+        }
+        
+        @media (min-width: 1000px) {
+            .container-logo-footer {
+                width: 330px;
+            }
+            .contenedorListaFooter {
+                width: 272px;
+            }
+            .contenedorRedesContacto {
+                width: max-content;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .contenedorRedesContacto {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                width: 43%;
             }
         }
     </style>

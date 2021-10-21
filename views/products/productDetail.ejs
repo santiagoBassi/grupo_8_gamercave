@@ -14,30 +14,30 @@
             <div class="product-img">
                 <div class="container-images-product">
                     <article class="articulo">
-                        <img src="/images/products/<%- producto.img1 -%>" id="img1" alt="Imagen grande" class="img-grande mostrar">
-                        <img src="/images/products/<%- producto.img2 -%>" id="img2" alt="Imagen grande" class="img-grande">
-                        <img src="/images/products/<%- producto.img3 -%>" id="img3" alt="Imagen grande" class="img-grande">
+                        <img src="/images/products/<%- images.img1 -%>" id="img1" alt="Imagen grande" class="img-grande mostrar">
+                        <img src="/images/products/<%- images.img2 -%>" id="img2" alt="Imagen grande" class="img-grande">
+                        <img src="/images/products/<%- images.img3 -%>" id="img3" alt="Imagen grande" class="img-grande">
                     </article>
                     <div class="display-lateral">
-                        <img src="/images/products/<%- producto.img1 -%>" onclick="showImg(1)" alt="Imagen chica" class="img-reducida">
-                        <img src="/images/products/<%- producto.img2 -%>" onclick="showImg(2)" alt="Imagen chica" class="img-reducida">
-                        <img src="/images/products/<%- producto.img3 -%>" onclick="showImg(3)" alt="Imagen chica" class="img-reducida">
+                        <img src="/images/products/<%-images.img1 -%>" onclick="showImg(1)" alt="Imagen chica" class="img-reducida">
+                        <img src="/images/products/<%-images.img2 -%>" onclick="showImg(2)" alt="Imagen chica" class="img-reducida">
+                        <img src="/images/products/<%-images.img3 -%>" onclick="showImg(3)" alt="Imagen chica" class="img-reducida">
                     </div>
                 </div>
                 <div class="todo">
                     <p class="titulo-producto">
-                        <%= producto.name %>
+                        <%= product.name %>
                     </p><br>
                     <div class="product-caract"><br>
                         <div class="texto">
-                            <%= producto.category %> /
-                                <%= producto.name %>
+                            <%= product.category.name %> /
+                                <%= product.name %>
                         </div><br>
                         <div class="texto">Hay Stock/Envió gratis/Garantía de 6 meses</div><br>
                         <div class="texto">
                             Hasta 6 Cuotas sin interes</div><br>
                         <span class="span-price"><div class="text-price">
-                            $ <%= producto.price %>
+                            $ <%= product.price %>
                         </div></span>
 
                         <div class="span">
@@ -56,12 +56,13 @@
                 <input id="tab-1" type="checkbox">
                 <label for="tab-1">Caracteristicas Principales</label>
                 <div class="tab-content">
-                    <% Object.entries(caracteristicas).forEach(function (characteristic) { %>
+                    <% product.characteristics.forEach(characteristic => { %>
                         <p>
-                            <%= characteristic[0] %> :
-                                <%= characteristic[1] %>
+                            <%= characteristic.name %> :
+                                <%= characteristic.value %>
                         </p>
                         <% }) %>
+
 
                 </div>
             </div>
