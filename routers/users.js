@@ -28,7 +28,9 @@ router.get('/register', guestMiddlware, usersControllers.register);
 router.post('/create', upload.single("image"), usersControllers.create)
 
 router.get('/login', guestMiddlware, usersControllers.showLogin);
-router.post('/login', usersControllers.login)
+router.post('/login', usersControllers.login);
+
+router.post('/loginGoogle', usersControllers.loginGoogle)
 
 router.get('/recoverpassword', usersControllers.recoverpassword);
 
