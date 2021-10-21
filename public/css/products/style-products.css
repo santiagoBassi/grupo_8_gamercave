@@ -8,6 +8,13 @@
                     width: 100vw;
                 }
                 
+<<<<<<< HEAD
+                body {
+                    background-color: #fefaff
+                }
+                
+=======
+>>>>>>> 7f4432f99551aecad6f729c7533ff9105d0a3e41
                 main {
                     margin-top: 110px;
                     width: 100%;
@@ -26,6 +33,10 @@
                 
                 .checkbox-filter {
                     display: none;
+                }
+                
+                .tab-content div {
+                    padding-left: 10px;
                 }
                 
                 .tab-content {
@@ -61,11 +72,20 @@
                     max-height: 0;
                     width: 100%;
                     padding-left: 10px;
-                    background-color: #e5e5e5
+                    background-color: #e5e5e5;
+                    box-shadow: 0px 0px 10px rgb(0 0 0);
                 }
                 
                 .tab .tab-content p {
                     padding: 10px;
+                }
+                
+                .tab .tab-content h4 {
+                    padding-left: 10px;
+                }
+                
+                .lista-categorias li {
+                    padding-left: 10px;
                 }
                 
                 .checkbox-filter:checked~.tab-content {
