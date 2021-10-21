@@ -180,3 +180,47 @@
 
     Hare hoy: 
 		*Nada de momento
+
+
+## Sprint 6
+
+## 21/10/21
+
+### Santiago: 
+
+    Que hice ayer: 
+		* Hice que se borren las imagenes obsoletas, cuando editas o eliminas un producto
+		* Empece a intentar hacer que el formulario de busqueda funcione
+
+    Inconvenientes: 
+    *Ninguno
+
+    Hare hoy: 
+		* Hacer que el formulario de busqueda funcione
+
+
+
+### Agustín:
+
+    Que hice ayer: 
+		*Creacion de usuarios
+		*Modificaciones leves del Home
+
+    inconvenientes: 
+    *Ninguno
+
+    Hare hoy: 
+		
+    *Nada de momento
+
+### Dante:
+
+    Que hice ayer: 
+		* Modificaciones en el footer
+		* Teminacion del filtro
+
+    inconvenientes: 
+    *Ninguno
+
+    Hare hoy: 
+		*Nada de momento
