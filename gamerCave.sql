@@ -1,0 +1,1 @@
+SELECT * FROM grupo_8_gamercave.user;

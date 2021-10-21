@@ -15,6 +15,8 @@ router.get('/', productsControllers.products);
 
 router.get('/detail/:id', productsControllers.productDetail);
 
+router.get('/addToCart/:id', productsControllers.addToCart)
+
 router.get('/cart', loggedInMiddlware, productsControllers.productCart);
 
 
