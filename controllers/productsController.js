@@ -1,5 +1,7 @@
 const db = require('../database/models/index.js');
+
 const Product = db.Product;
+const Cart = db.Cart;
 
 
 const controlador = {
@@ -27,6 +29,20 @@ const controlador = {
                 return res.render('./products/productDetail', { product, images });
             })
 
+    },
+    addToCart: (req, res) => {
+
+
+        Cart.create({
+                user_id: 2,
+                product_id: req.params.id
+            })
+            .then(() => {
+                res.redirect('/products/cart')
+            })
+            .catch(err => {
+                res.send(err)
+            })
     },
     productCart: (req, res) => {
         return res.render('./products/productCart');

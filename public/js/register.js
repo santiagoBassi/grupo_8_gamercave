@@ -2,7 +2,7 @@ const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
 const errorConfirmPassword = document.getElementById('errorConfirmPassword');
 
-let comparePasswords = () => {
+let comparePasswords = (event) => {
     if (password.value == confirmPassword.value && password.value.length >= 10) {
         document.getElementById('iconoConfirmPasswordCheck').classList.add('mostrarConfirm');
         document.getElementById('iconoConfirmPasswordError').classList.remove('mostrarConfirm');
