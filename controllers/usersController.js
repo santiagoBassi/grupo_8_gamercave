@@ -49,6 +49,7 @@ const controller = {
                 }
 
                 req.session.usuarioLogeado = usuarioALogearse.id;
+                req.locals.user= req.session.usuarioALogearse;
 
 
 
