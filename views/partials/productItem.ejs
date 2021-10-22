@@ -1,23 +1,29 @@
-<a class="container-article" href="/products/detail/<%- id -%>  ">
+<a class="container-article" href="/products/detail/<%- id -%> ">
 
     <article class="article">
         <img src="/images/products/<%- img1 -%>" alt="Imagen de producto">
+        
         <div class="container-info">
-            <div class="flex">
+            <p class="nombre-producto">
+            <%= name %>
+        </p>
+            <div class="precio-producto">
+
                 <p class="precio-producto">
                     $
                     <%= price %>
                 </p>
-                <p class="precio-producto">15% OFF</p>
+
+                <p class="oferta">Oferta especial</p>
+                <p class="precio-producto">15% OFF
+                    <i class="fa fa-thumbs-up dolar" aria-hidden="true"></i>
+                </p>
             </div>
-
-
-            <p class="nombre-producto">
-                <%= name %>
-            </p>
 
         </div>
     </article>
+
+
     <style>
         .container-article {
             width: 280px;
@@ -26,9 +32,28 @@
             margin: 10px 20px;
             max-width: 350px;
         }
-        
+
+    
+
+        .precio {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .oferta {
+            font-size: small;
+            padding-left: 3px;
+        }
+
+        .dolar {
+            color: #4f5d9c;
+            font-size: 30px;
+            padding-left: 100px;
+        }
+
         .article {
-            background-color: #9696b5;
+            background-color: #ffffff;
             padding: 10px;
             margin: auto;
             width: 100%;
@@ -39,11 +64,11 @@
             height: 400px;
             box-shadow: 0px 0px 10px rgb(0 0 0);
         }
-        
+
         .article:hover {
             box-shadow: 5px 5px 12px #4f5d9c;
         }
-        
+
         .article img {
             height: 250px;
             margin-top: 5px;
@@ -52,23 +77,25 @@
             margin-bottom: 5px;
             border-radius: 2px;
         }
-        
+
         .container-info {
+            border: 10px solid rgb(185, 176, 176);
+            border-style: inset;
             margin: auto;
             padding: inherit;
-            background-color: #4b207973;
+            background-color: hsl(0, 0%, 92%);
             align-content: center;
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
             justify-content: space-around;
             padding: 10px 5px;
             width: 260px;
             height: 117px;
         }
-        
+
         .nombre-producto {
-            text-align: center;
-            color: #140f07;
+            text-align: left;
+            color: #663675;
             overflow: hidden;
             letter-spacing: 1px;
             padding-bottom: 2px;
@@ -76,20 +103,39 @@
             padding-left: 4px;
             transition: box-shadow .5s;
         }
-        
+
+        .btn-comprar {
+            font-size: large;
+            padding: 0px 30px;
+            border-radius: 5px;
+            border: 1px solid #ffffff;
+            background: #e9e4e46c;
+            color: #0E0B16;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            transition: all .5s;
+        }
+
+        .btn-comprar:hover {
+
+            background-color: #6e1b75d8;
+            color: #E5E5E5;
+        }
+
         .precio-producto {
-            font-weight: 500;
+            font-weight: 700;
             margin-bottom: 1px;
-            text-align: center;
+            text-align: left;
             font-size: 18px;
             color: #18161a;
             font-family: 'Noto Sans', sans-serif;
         }
-        
+
         @media (min-width: 769px) {
             .container-article {
                 margin-bottom: 40px;
             }
+
             .container-article a {
                 margin: 10px;
             }
