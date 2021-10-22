@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `grupo_8_gamercave` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `grupo_8_gamercave`;
 -- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
 --
 -- Host: localhost    Database: grupo_8_gamercave
@@ -15,7 +17,31 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+--
+-- Table structure for table `cart`
+--
 
+DROP TABLE IF EXISTS `cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cart` (
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  KEY `fk_user_has_product_product1_idx` (`product_id`),
+  KEY `fk_user_has_product_user1_idx` (`user_id`),
+  CONSTRAINT `fk_user_has_product_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  CONSTRAINT `fk_user_has_product_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cart`
+--
+
+LOCK TABLES `cart` WRITE;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `category`
@@ -56,7 +82,7 @@ CREATE TABLE `characteristic` (
   PRIMARY KEY (`id`),
   KEY `fk_caracter_product1_idx` (`product_id`),
   CONSTRAINT `fk_caracter_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +91,7 @@ CREATE TABLE `characteristic` (
 
 LOCK TABLES `characteristic` WRITE;
 /*!40000 ALTER TABLE `characteristic` DISABLE KEYS */;
-INSERT INTO `characteristic` VALUES (100,'Frecuencia mínima de reloj','3.8 GHz',9),(101,'Frecuencia máxima de reloj','5.1 GHz',9),(102,'Tipos de memoria RAM soportadas','DDR4',9),(103,'Tamaño máximo de memoria RAM soportada','128 GB',9),(104,'Arquitectura','x86-64',9),(105,'Caché','16 MB',9),(106,'Cantidad de núcleos de CPU','8',9),(107,'Potencia de diseño térmico','125 W',9),(108,'Color de la retroiluminación','Sí',10),(109,'Idioma','Español España',10);
+INSERT INTO `characteristic` VALUES (120,'Frecuencia máxima de reloj','4.6 GHz',57),(121,'Frecuencia mínima de reloj','3.7 GHz',57),(122,'Tipos de memoria RAM soportadas','DDR4',57),(123,'Tamaño máximo de memoria RAM soportada','128 GB',57),(124,'Arquitectura','x86-64',57),(125,'Caché','32 MB',57),(126,'Cantidad de núcleos de CPU','12',57),(127,'Potencia de diseño térmico','65 W',57),(128,'Idioma','Español España',58),(129,'Es resistente a salpicaduras','Sí',58),(130,'Con pad numérico','Sí',58),(131,'Largo del cable','1.5m',58),(132,'Arquitectura','Membrana',58),(133,'Con retroiluminación','No',58),(134,'Tipo de conector','USB',58),(135,'Idioma','Español España',10),(136,'Es resistente a salpicaduras','No',10),(137,'Con pad numérico','No',10),(138,'Largo del cable','1.2 m',10),(139,'Arquitectura','Mecánico',10),(140,'Con retroiluminación','Sí',10),(141,'Tipo de conector','USB',10),(142,'Velocidad de rotación','5400 rpm',59),(143,'Aplicaciones','PC, Notebook',59),(144,'Capacidad','1 TB',59),(145,'Tecnología de almacenamiento','HDD',59),(146,'Caché de datos','128 MB',59),(147,'Consumo energético','1.65 W',59),(148,'Aplicaciones','Servidor',60),(149,'Velocidad de rotación','5900 rpm',60),(150,'Capacidad','1 TB',60),(151,'Tecnología de almacenamiento','HDD',60),(152,'Caché de datos','64 MB',60),(153,'Consumo energético','3.6 W',60),(172,'Es gamer','Sí',61),(173,'Conexiones del monitor','VGA/D-Sub,HDMI,Jack 3.5 mm',61),(174,'Altura con soporte','366.5 mm',61),(175,'Largo con soporte','181.9 mm',61),(176,'Es curvo','No',61),(177,'Ancho con soporte','463.8 mm',61),(178,'Tipo de pantalla','LED',61),(179,'Peso con soporte','2.3 kg',61),(180,'Tamaño de la pantalla','20 \"',61),(181,'Frecuencia mínima de reloj','3.8 GHz',9),(182,'Frecuencia máxima de reloj','5.1 GHz',9),(183,'Tipos de memoria RAM soportadas','DDR4',9),(184,'Tamaño máximo de memoria RAM soportada','128 GB',9),(185,'Arquitectura','x86-64',9),(186,'Caché','16 MB',9),(187,'Cantidad de núcleos de CPU','8',9),(188,'Potencia de diseño térmico','125 W',9);
 /*!40000 ALTER TABLE `characteristic` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +109,7 @@ CREATE TABLE `image` (
   PRIMARY KEY (`id`),
   KEY `fk_images_product1_idx` (`product_id`),
   CONSTRAINT `fk_images_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +118,7 @@ CREATE TABLE `image` (
 
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
-INSERT INTO `image` VALUES (27,'producto-1634520735185.jpg',9),(28,'producto-1634520735187.png',9),(29,'producto-1634520735195.jpg',9),(30,'producto-1634161879562.png',10),(31,'producto-1634161879565.png',10),(32,'producto-1634161879567.png',10);
+INSERT INTO `image` VALUES (27,'producto-1634520735185.jpg',9),(28,'producto-1634520735187.png',9),(29,'producto-1634520735195.jpg',9),(30,'producto-1634161879562.png',10),(31,'producto-1634161879565.png',10),(32,'producto-1634161879567.png',10),(171,'producto-1634923917596.jpg',57),(172,'producto-1634923917598.jpg',57),(173,'producto-1634923917598.jpg',57),(174,'producto-1634924631577.jpg',58),(175,'producto-1634924631579.jpg',58),(176,'producto-1634924631580.jpg',58),(177,'producto-1634930854137.jpg',59),(178,'producto-1634930854137.jpg',59),(179,'producto-1634930854138.jpg',59),(180,'producto-1634931066973.jpg',60),(181,'producto-1634931066974.jpg',60),(182,'producto-1634931066974.jpg',60),(183,'producto-1634931713657.jpg',61),(184,'producto-1634931713660.jpg',61),(185,'producto-1634931713661.jpg',61);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +191,7 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`),
   KEY `fk_product_categoty_idx` (`category_id`),
   CONSTRAINT `fk_product_categoty` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +200,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (9,'Procesador Intel Core i7      ',47997,4,1),(10,'Teclado gamer Nisuta NSKBGZ61 QWERTY Outemu  ',6401,0,5);
+INSERT INTO `product` VALUES (9,'Procesador Intel Core i7',47997,4,1),(10,'Teclado gamer Nisuta NSKBGZ61 QWERTY Outemu',6401,0,5),(57,'Procesador gamer AMD Ryzen 5',41999,4,1),(58,'Teclado Logitech K120 QWERTY',759,0,5),(59,'Disco duro interno Toshiba MQ04ABF',4799,5,2),(60,'Disco duro interno Seagate IronWolf',6099,0,2),(61,'Monitor Led LG 20 Mk400h-b Hdmi   ',21284,10,7);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,36 +259,15 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (20,'Santiago','Bassi','+54 9 2241 516306','santiagobassi21@gmail.com','$2a$10$tCuk4yhiaSINlC.aEISjZuYHhVO2NQjPDBovm7G0lUuLLO3uLEkfS','usuario-1634577288385.png',2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'grupo_8_gamercave'
+--
+
+--
+-- Dumping routines for database 'grupo_8_gamercave'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-
-
-
---
--- Table structure for table `cart`
---
-
-DROP TABLE IF EXISTS `cart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cart` (
-  `user_id` int NOT NULL,
-  `product_id` int NOT NULL,
-  KEY `fk_user_has_product_product1_idx` (`product_id`),
-  KEY `fk_user_has_product_user1_idx` (`user_id`),
-  CONSTRAINT `fk_user_has_product_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
-  CONSTRAINT `fk_user_has_product_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cart`
---
-
-LOCK TABLES `cart` WRITE;
-/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
-UNLOCK TABLES;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -272,4 +277,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-21 21:03:27
+-- Dump completed on 2021-10-22 19:53:41
