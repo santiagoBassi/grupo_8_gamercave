@@ -120,6 +120,9 @@ const controller = {
     recoverpassword: (req, res) => {
         return res.render('./users/recover-password');
     },
+    editForm: (req, res) => {
+        return res.render('./users/userEdit.ejs')
+    },
     logout: (req, res) => {
         req.session.destroy();
         res.clearCookie("remember");

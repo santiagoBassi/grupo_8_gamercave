@@ -1,7 +1,7 @@
 module.exports = {
     "development": {
         "username": "root",
-        "password": '0214131707_',
+        "password": null,
         "database": "grupo_8_gamercave",
         "host": "127.0.0.1",
         "dialect": "mysql"
