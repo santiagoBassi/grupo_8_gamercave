@@ -1,9 +1,5 @@
 const bcrypt = require('bcryptjs');
 
-//Google auth
-const { OAuth2Client } = require('google-auth-library');
-const client = new OAuth2Client('402810559666-j55lu0tf3cba2lhh0roa7qrfhef90no6.apps.googleusercontent.com');
-
 
 const db = require('../database/models/index.js');
 const User = db.User;
