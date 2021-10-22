@@ -22,6 +22,7 @@ const controller = {
             })
             .then(user => {
                 req.session.usuarioLogeado = user;
+
                 return res.redirect("/");
             })
 
@@ -48,6 +49,7 @@ const controller = {
                 }
 
                 req.session.usuarioLogeado = usuarioALogearse.id;
+                res.locals.user = req.session.usuarioLogeado;
 
 
 
