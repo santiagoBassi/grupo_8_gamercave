@@ -22,6 +22,7 @@ const controller = {
             })
             .then(user => {
                 req.session.usuarioLogeado = user;
+
                 return res.redirect("/");
             })
 

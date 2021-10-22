@@ -10,32 +10,25 @@
             </form>
         </div>
 
-<<<<<<< HEAD
-        <% if(locals.usuario) { %>  
 
-            <li><a href="/users/logout">Cerrar sesión<i class="icono-nav-bar far fa-address-card"></i></a></li> 
-=======
-        <ul class="nav-bar-account" id="otro-modo">
-            <li><a href="/users/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
-            <li><a href="/users/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
+        <% if(locals.usuario) { %>
+
             <li><a href="/users/logout">Cerrar sesión<i class="icono-nav-bar far fa-address-card"></i></a></li>
-        </ul>
->>>>>>> 897c4c4216b1f43c2708c9248076527ba8051408
 
             <li class="nav-bar-account">
-              <img src="/images/users/<%=locals.users.img_user %>"  width = '30' style= 'border-radius: 100%;'alt="">
+                <img src="/images/users/<%=locals.users.img_user %>" width='30' style='border-radius: 100%;' alt="">
             </li>
-          <% } else { %>  
-      
-            <!--Cuando no estoy logueado debería ver esto-->
-            <ul class="nav-bar-account" id="otro-modo">
-                <li><a href="/users/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
-                <li><a href="/users/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
-            </ul>
-          <%}%>  
+            <% } else { %>
 
-        
-        <span class="btn-menu" onclick="showmenu()">
+                <!--Cuando no estoy logueado debería ver esto-->
+                <ul class="nav-bar-account" id="otro-modo">
+                    <li><a href="/users/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                    <li><a href="/users/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
+                </ul>
+                <%}%>
+
+
+                    <span class="btn-menu" onclick="showmenu()">
             <i  class="fa fa-bars"></i>
         </span>
     </nav>
