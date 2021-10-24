@@ -14,6 +14,8 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
+
+
 app.use(session({
     secret: 'gamerCaveSuperSecreta',
     resave: true,
@@ -23,8 +25,11 @@ app.use(session({
 app.use(cookieParser());
 
 const rememberMiddlware = require('./middlewares/rememberMiddlware.js');
+const accesMiddlware = require('./middlewares/accesMiddlware.js')
 
 app.use(rememberMiddlware);
+
+app.use(accesMiddlware)
 
 const routsMain = require('./routers/main.js');
 const routsUsers = require('./routers/users.js');

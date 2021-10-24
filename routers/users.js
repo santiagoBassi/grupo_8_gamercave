@@ -24,13 +24,13 @@ const upload = multer({ storage });
 
 
 router.get('/register', guestMiddlware, usersControllers.register);
-
 router.post('/create', upload.single("image"), usersControllers.create)
-router.get('/edit', usersControllers.editForm)
+
+router.get('/:id/edit', usersControllers.userEdit)
+router.put('/:id/edit', upload.single("image"), usersControllers.userEditSave)
+
 router.get('/login', guestMiddlware, usersControllers.showLogin);
 router.post('/login', usersControllers.login);
-
-router.post('/loginGoogle', usersControllers.loginGoogle)
 
 router.get('/recoverpassword', usersControllers.recoverpassword);
 

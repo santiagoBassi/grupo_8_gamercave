@@ -10,34 +10,35 @@
             </form>
         </div>
 
+        <ul class="nav-bar-account" id="otro-modo">
+            <% if(locals.user) { %>
 
-        <% if(locals.user) { %>
+                <li><a href="/users/logout">Cerrar sesión<i class="icono-nav-bar far fa-address-card"></i></a></li>
+                <li class="nav-bar-account">
+                    <a href="/users/<%= locals.user.id %>/edit"><img src="/images/users/<%= locals.user.image %>" width='30' style='border-radius: 100%;' alt="hola"></a>
 
-            <li><a href="/users/logout">Cerrar sesión<i class="icono-nav-bar far fa-address-card"></i></a></li>
+                </li>
+                <% } else { %>
+                    <!--Cuando no estoy logueado debería ver esto-->
 
-            <li class="nav-bar-account">
-                <img src="/images/users/<%=locals.users.img_user %>" width='30' style='border-radius: 100%;' alt="">
-            </li>
-            <% } else { %>
-
-                <!--Cuando no estoy logueado debería ver esto-->
-                <ul class="nav-bar-account" id="otro-modo">
                     <li><a href="/users/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
                     <li><a href="/users/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
-                </ul>
-                <%}%>
 
-
-                    <span class="btn-menu" onclick="showmenu()">
-            <i  class="fa fa-bars"></i>
-        </span>
+                    <%}%>
+        </ul>
+        <span class="btn-menu" onclick="showmenu()">
+                        <i  class="fa fa-bars"></i>
+                    </span>
     </nav>
     <nav class="menu-bootom">
         <ul class="nav-bar-site" id="otro-modo2">
             <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="/products">Productos</a></li>
             <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
-            <li><a href="/admin">Administrar</a></li>
+            <% if (locals.user.role == 2) { %>
+                <li><a href="/admin">Administrar</a></li>
+                <% } %>
+
         </ul>
     </nav>
 
