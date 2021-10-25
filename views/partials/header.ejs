@@ -346,5 +346,11 @@
             document.getElementById('otro-modo').classList.toggle('show');
             document.getElementById('otro-modo2').classList.toggle('show2');
         }
+        const btnUser = document.querySelector(".btn-user");
+        const ulUser = document.querySelector(".ul-user")
+
+        btnUser.addEventListener('click', () => {
+            ulUser.classList.toggle('ul-user-show');
+        })
     </script>
 </header>
