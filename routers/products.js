@@ -19,7 +19,7 @@ router.get('/search', productsControllers.search);
 
 router.get('/addToCart/:id', loggedInMiddlware, productsControllers.addToCart);
 
-router.get('/cart', loggedInMiddlware, productsControllers.productCart);
+router.get('/cart', loggedInMiddlware, productsControllers.cart);
 
 
 module.exports = router;

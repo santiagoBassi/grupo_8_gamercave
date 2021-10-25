@@ -4,6 +4,7 @@ const { Op } = require("sequelize");
 
 const Product = db.Product;
 const Cart = db.Cart;
+const Image = db.Image;
 
 
 const controlador = {
@@ -32,9 +33,19 @@ const controlador = {
             })
 
     },
+    cart: (req, res) => {
+        Cart.findAll({
+                include: ['products']
+            }, {
+                where: {
+                    user_id: req.session.user.id
+                }
+            })
+            .then((products) => {
 
-    productCart: (req, res) => {
-        return res.render('./products/productCart');
+                return res.render('./products/productCart', { products });
+            })
+
     },
     addToCart: (req, res) => {
         Cart.create({
