@@ -1,5 +1,7 @@
 const db = require('../database/models/index.js');
 
+const { Op } = require("sequelize");
+
 const Product = db.Product;
 const Cart = db.Cart;
 
@@ -46,6 +48,22 @@ const controlador = {
     },
     productCart: (req, res) => {
         return res.render('./products/productCart');
+    },
+    search: (req, res) => {
+        Product.findAll({
+                include: ['images']
+            }, {
+                where: {
+                    name: {
+                        [Op.substring]: `${req.query.product}`
+                    }
+
+                }
+            })
+            .then(products => {
+                console.log(products)
+                return res.render('./products/results', { products });
+            })
     }
 };
 module.exports = controlador;
