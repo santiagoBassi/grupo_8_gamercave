@@ -15,7 +15,7 @@
 
                 <li><a href="/users/logout">Cerrar sesión<i class="icono-nav-bar far fa-address-card"></i></a></li>
                 <li class="nav-bar-account">
-                    <a href="/users/<%= locals.user.id %>/edit"><img src="/images/users/<%= locals.user.image %>" width='30' style='border-radius: 100%;' alt="hola"></a>
+                    <a href="/users/<%= locals.user.id %>/edit"><img href="views\users\userEdit.ejs" src="/images/users/<%= locals.user.image %>"  width='30' style='border-radius: 100%;' alt="hola"></a>
 
                 </li>
                 <% } else { %>
