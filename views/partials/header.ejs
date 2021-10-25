@@ -4,20 +4,34 @@
             <a href="/"><img src="/images/logos/logoGamerCaveLetrasOscuras.png" alt="Logo de Gamer Cave" class="logo"></a>
         </div>
         <div class="container-search">
-            <form action="/search" method="GET" class="container-input-i">
+            <form action="/products/search" method="GET" class="container-input-i">
                 <button type="submit"><i class="fas fa-search"></i></button>
-                <input type="text" placeholder="Buscar">
+                <input type="text" name="product" placeholder="Buscar">
             </form>
         </div>
 
         <ul class="nav-bar-account" id="otro-modo">
             <% if(locals.user) { %>
 
-                <li><a href="/users/logout">Cerrar sesión<i class="icono-nav-bar far fa-address-card"></i></a></li>
-                <li class="nav-bar-account">
-                    <a href="/users/<%= locals.user.id %>/edit"><img href="views\users\userEdit.ejs" src="/images/users/<%= locals.user.image %>"  width='30' style='border-radius: 100%;' alt="hola"></a>
 
-                </li>
+                <div class="container-btn-user">
+                    <button class="btn-user">
+                        <%= locals.user.name %> <img src="/images/users/<%= locals.user.image %>" width='30' style='border-radius: 100%;' alt="hola"> <i class="fas fa-angle-down"></i>
+                    </button>
+                    <ul class="ul-user">
+                        <li>
+                            <a href="/users/<%= locals.user.id %>/edit">Editar Perfil</a>
+                        </li>
+                        <li>
+                            <a href="/users/logout">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+
                 <% } else { %>
                     <!--Cuando no estoy logueado debería ver esto-->
 
@@ -35,7 +49,8 @@
             <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="/products">Productos</a></li>
             <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
-            <% if (locals.user.role == 2) { %>
+
+            <% if (locals.user.rol_id == 1) { %>
                 <li><a href="/admin">Administrar</a></li>
                 <% } %>
 
@@ -62,7 +77,7 @@
             display: flex;
             align-items: center;
             height: 60px;
-            background-color: #8598e5;
+            background-color: #acafb7;
         }
         
         .container-logo {
@@ -155,6 +170,43 @@
             color: white;
         }
         
+        .container-btn-user {
+            position: relative;
+        }
+        
+        .btn-user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 12px;
+        }
+        
+        .ul-user {
+            width: max-content;
+            position: absolute;
+            list-style-type: none;
+            right: 0px;
+            background-color: red;
+            padding: 20px;
+            display: none;
+        }
+        
+        .ul-user-show {
+            display: initial;
+        }
+        
+        .ul-user li {
+            width: 100px;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .ul-user li a {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        
         .btn-menu {
             justify-content: center;
             cursor: pointer;
@@ -165,7 +217,7 @@
         }
         
         .menu-bootom {
-            background-color: #8598e5;
+            background-color: #acafb7;
         }
         
         .nav-bar-site {
@@ -294,5 +346,11 @@
             document.getElementById('otro-modo').classList.toggle('show');
             document.getElementById('otro-modo2').classList.toggle('show2');
         }
+        const btnUser = document.querySelector(".btn-user");
+        const ulUser = document.querySelector(".ul-user")
+
+        btnUser.addEventListener('click', () => {
+            ulUser.classList.toggle('ul-user-show');
+        })
     </script>
 </header>

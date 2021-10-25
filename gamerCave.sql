@@ -17,31 +17,6 @@ USE `grupo_8_gamercave`;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `cart`
---
-
-DROP TABLE IF EXISTS `cart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cart` (
-  `user_id` int NOT NULL,
-  `product_id` int NOT NULL,
-  KEY `fk_user_has_product_product1_idx` (`product_id`),
-  KEY `fk_user_has_product_user1_idx` (`user_id`),
-  CONSTRAINT `fk_user_has_product_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
-  CONSTRAINT `fk_user_has_product_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cart`
---
-
-LOCK TABLES `cart` WRITE;
-/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `category`
@@ -247,7 +222,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   KEY `fk_user_rol1_idx` (`rol_id`),
   CONSTRAINT `fk_user_rol1` FOREIGN KEY (`rol_id`) REFERENCES `rol` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,17 +231,38 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (20,'Santiago','Bassi','+54 9 2241 516306','santiagobassi21@gmail.com','$2a$10$tCuk4yhiaSINlC.aEISjZuYHhVO2NQjPDBovm7G0lUuLLO3uLEkfS','usuario-1634577288385.png',2);
+INSERT INTO `user` VALUES (24,'Profesor','Digita House','+54 9 11 455445','profeAdmin@digitalhouse.com','$2a$10$HuYYWcSfuxEjAyifHl8y5.Gvm/D7oxzxskLokIm5xb8PwxG3b2K2O','image-default.png',1),(25,'Profesor','Digita House','+54 9 11 323232','profeUser@digitalhouse.com','$2a$10$v8UFSzuwrrmlQFZj3uG88OYtpwWZCaC3pOwsRRWLdy4vlI1Vp5EIe','image-default.png',2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Dumping events for database 'grupo_8_gamercave'
---
 
 --
--- Dumping routines for database 'grupo_8_gamercave'
+-- Table structure for table `cart`
 --
+
+DROP TABLE IF EXISTS `cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cart` (
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  KEY `fk_user_has_product_product1_idx` (`product_id`),
+  KEY `fk_user_has_product_user1_idx` (`user_id`),
+  CONSTRAINT `fk_user_has_product_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  CONSTRAINT `fk_user_has_product_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cart`
+--
+
+LOCK TABLES `cart` WRITE;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -277,4 +273,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-22 19:53:41
+-- Dump completed on 2021-10-25 16:52:03

@@ -15,9 +15,11 @@ router.get('/', productsControllers.products);
 
 router.get('/detail/:id', productsControllers.productDetail);
 
-router.get('/addToCart/:id', productsControllers.addToCart)
+router.get('/search', productsControllers.search);
 
-router.get('/cart', loggedInMiddlware, productsControllers.productCart);
+router.get('/addToCart/:id', loggedInMiddlware, productsControllers.addToCart);
+
+router.get('/cart', loggedInMiddlware, productsControllers.cart);
 
 
 module.exports = router;

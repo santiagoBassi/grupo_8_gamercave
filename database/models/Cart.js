@@ -14,9 +14,11 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: "cart",
-        timestamps: false
+        timestamps: false,
+        primaryKey: false
     };
     const Cart = sequelize.define(alias, cols, config);
+    Cart.removeAttribute('id');
 
 
     Cart.associate = function(models) {

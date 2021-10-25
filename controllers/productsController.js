@@ -1,7 +1,10 @@
 const db = require('../database/models/index.js');
 
+const { Op } = require("sequelize");
+
 const Product = db.Product;
 const Cart = db.Cart;
+const Image = db.Image;
 
 
 const controlador = {
@@ -30,11 +33,23 @@ const controlador = {
             })
 
     },
+    cart: (req, res) => {
+        Cart.findAll({
+                include: ['products']
+            }, {
+                where: {
+                    user_id: req.session.user.id
+                }
+            })
+            .then((products) => {
+
+                return res.render('./products/productCart', { products });
+            })
+
+    },
     addToCart: (req, res) => {
-
-
         Cart.create({
-                user_id: 2,
+                user_id: req.session.user.id,
                 product_id: req.params.id
             })
             .then(() => {
@@ -44,8 +59,21 @@ const controlador = {
                 res.send(err)
             })
     },
-    productCart: (req, res) => {
-        return res.render('./products/productCart');
+    search: (req, res) => {
+        Product.findAll({
+                include: ['images']
+            }, {
+                where: {
+                    name: {
+                        [Op.substring]: `${req.query.product}`
+                    }
+
+                }
+            })
+            .then(products => {
+
+                return res.render('./products/results', { products });
+            })
     }
 };
 module.exports = controlador;

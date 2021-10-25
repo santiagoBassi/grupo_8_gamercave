@@ -58,7 +58,7 @@ main {
 .slide img {
     width: 100%;
     border-radius: 10px;
-    border: solid 4px #4f5d9c;
+    border: solid 4px #171f35;
 }
 
 .nav-manual {
@@ -71,7 +71,7 @@ main {
 }
 
 .manual-btn {
-    border: solid 2px #4b5985;
+    border: solid 2px #171f35;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -83,7 +83,7 @@ main {
 }
 
 .manual-btn:hover {
-    background-color: #4b5985;
+    background-color: #171f35;
 }
 
 #radio1:checked~.first {

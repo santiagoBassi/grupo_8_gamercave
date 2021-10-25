@@ -61,7 +61,7 @@
                     <h4 class="titulares-productos">Productos</h4>
                     <div class="container-all-articles ">
                         <% products.forEach(function(product) {%>
-                            <%- include('../partials/productItem', {id: product.id, name: product.name, price: product.price, img1: product.images[2].name}) -%>
+                            <%- include('../partials/productItem', {id: product.id, name: product.name, price: product.price,discount:product.discount, img1: product.images[2].name}) -%>
                                 <% }) %>
                     </div>
 
