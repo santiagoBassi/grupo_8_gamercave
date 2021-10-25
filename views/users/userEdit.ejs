@@ -7,7 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/users/style-edit.css">
-        <script src="/js/register.js" defer></script>
 
 </head>
 
@@ -15,7 +14,7 @@
     <%- include('../partials/header') -%>
         <main>
             <div class="container-form">
-                <form action="/users/<%= user.id %>/edit/?_method=PUT" method="POST" enctype="multipart/form-data" id="formulario">
+                <form action="/users/<%= user.id %>/edit/?_method=PUT" class="form" method="POST" enctype="multipart/form-data" id="formulario">
                     <h4>Edita tu cuenta</h4>
                     <hr class="line">
                     <div>

@@ -11,20 +11,38 @@ const controller = {
     },
     create: (req, res) => {
         let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
-        User.create({
-                name: req.body.name,
-                lastName: req.body.lastName,
-                phone: req.body.phone,
-                email: req.body.email,
-                password: encryptedPassword,
-                image: req.file.filename,
-                rol_id: 2
-            })
-            .then(user => {
-                req.session.user = user;
+        if (req.file) {
+            User.create({
+                    name: req.body.name,
+                    lastName: req.body.lastName,
+                    phone: req.body.phone,
+                    email: req.body.email,
+                    password: encryptedPassword,
+                    image: req.file.filename,
+                    rol_id: 2
+                })
+                .then(user => {
+                    req.session.user = user;
 
-                return res.redirect("/");
-            })
+                    return res.redirect("/");
+                })
+        } else {
+            User.create({
+                    name: req.body.name,
+                    lastName: req.body.lastName,
+                    phone: req.body.phone,
+                    email: req.body.email,
+                    password: encryptedPassword,
+                    rol_id: 2
+                })
+                .then(user => {
+                    req.session.user = user;
+
+                    return res.redirect("/");
+                })
+        }
+
+
 
 
     },

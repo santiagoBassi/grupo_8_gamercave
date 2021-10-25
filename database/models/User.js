@@ -22,7 +22,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         image: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            defaultValue: 'image-default.png'
         },
         rol_id: {
             type: dataTypes.INTEGER,

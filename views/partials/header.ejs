@@ -35,7 +35,8 @@
             <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="/products">Productos</a></li>
             <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
-            <% if (locals.user.role == 2) { %>
+
+            <% if (locals.user.rol_id == 1) { %>
                 <li><a href="/admin">Administrar</a></li>
                 <% } %>
 
@@ -62,7 +63,7 @@
             display: flex;
             align-items: center;
             height: 60px;
-            background-color: #8598e5;
+            background-color: #acafb7;
         }
         
         .container-logo {
@@ -165,7 +166,7 @@
         }
         
         .menu-bootom {
-            background-color: #8598e5;
+            background-color: #acafb7;
         }
         
         .nav-bar-site {
