@@ -32,11 +32,13 @@ const controlador = {
             })
 
     },
+
+    productCart: (req, res) => {
+        return res.render('./products/productCart');
+    },
     addToCart: (req, res) => {
-
-
         Cart.create({
-                user_id: 2,
+                user_id: req.session.user.id,
                 product_id: req.params.id
             })
             .then(() => {
@@ -45,9 +47,6 @@ const controlador = {
             .catch(err => {
                 res.send(err)
             })
-    },
-    productCart: (req, res) => {
-        return res.render('./products/productCart');
     },
     search: (req, res) => {
         Product.findAll({
@@ -61,7 +60,7 @@ const controlador = {
                 }
             })
             .then(products => {
-                console.log(products)
+
                 return res.render('./products/results', { products });
             })
     }

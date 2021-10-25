@@ -6,6 +6,7 @@ const Product = db.Product;
 
 const controlador = {
     index: (req, res) => {
+
         Product.findAll({
                 include: ['category', 'characteristics', 'images']
             })
