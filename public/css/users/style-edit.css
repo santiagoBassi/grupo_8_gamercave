@@ -8,20 +8,6 @@ html {
     min-height: 100vh;
 }
 
-.container-logo {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    max-width: 80px;
-    border-radius: 20px;
-    margin-bottom: 40px;
-}
-
-.logo {
-    width: 100%;
-}
-
 main {
     margin: auto;
     margin-top: 200px;

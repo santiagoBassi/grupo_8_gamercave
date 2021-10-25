@@ -13,11 +13,25 @@
         <ul class="nav-bar-account" id="otro-modo">
             <% if(locals.user) { %>
 
-                <li><a href="/users/logout">Cerrar sesión<i class="icono-nav-bar far fa-address-card"></i></a></li>
-                <li class="nav-bar-account">
-                    <a href="/users/<%= locals.user.id %>/edit"><img src="/images/users/<%= locals.user.image %>" width='30' style='border-radius: 100%;' alt="hola"></a>
 
-                </li>
+                <div class="container-btn-user">
+                    <button class="btn-user">
+                        <%= locals.user.name %> <img src="/images/users/<%= locals.user.image %>" width='30' style='border-radius: 100%;' alt="hola"> <i class="fas fa-angle-down"></i>
+                    </button>
+                    <ul class="ul-user">
+                        <li>
+                            <a href="/users/<%= locals.user.id %>/edit">Editar Perfil</a>
+                        </li>
+                        <li>
+                            <a href="/users/logout">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+
                 <% } else { %>
                     <!--Cuando no estoy logueado debería ver esto-->
 
@@ -154,6 +168,43 @@
         
         .nav-bar-account li a i {
             color: white;
+        }
+        
+        .container-btn-user {
+            position: relative;
+        }
+        
+        .btn-user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 12px;
+        }
+        
+        .ul-user {
+            width: max-content;
+            position: absolute;
+            list-style-type: none;
+            right: 0px;
+            background-color: red;
+            padding: 20px;
+            display: none;
+        }
+        
+        .ul-user-show {
+            display: initial;
+        }
+        
+        .ul-user li {
+            width: 100px;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .ul-user li a {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
         }
         
         .btn-menu {

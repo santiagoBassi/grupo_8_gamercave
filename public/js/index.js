@@ -6,3 +6,10 @@ setInterval(function() {
         counter = 1;
     }
 }, 5000)
+
+const btnUser = document.querySelector(".btn-user");
+const ulUser = document.querySelector(".ul-user")
+
+btnUser.addEventListener('click', () => {
+    ulUser.classList.toggle('ul-user-show');
+})
