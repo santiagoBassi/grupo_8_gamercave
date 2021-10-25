@@ -4,11 +4,11 @@ const User = db.User;
 
 function remember(req, res, next) {
 
-    if (req.cookies.remember != undefined && req.session.usuarioLogeado == undefined) {
+    if (req.cookies.remember != undefined && req.session.user == undefined) {
 
         User.findByPk(req.cookies.remember)
             .then(user => {
-                req.session.usuarioLogeado = user;
+                req.session.user = user;
                 next();
             })
 

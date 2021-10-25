@@ -1,5 +1,5 @@
 function guestMddlware(req, res, next) {
-    if (req.session.usuarioLogeado == undefined) {
+    if (req.session.user == undefined) {
         next();
     } else {
         res.redirect('/');

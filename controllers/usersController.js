@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-
+const fs = require('fs');
 
 const db = require('../database/models/index.js');
 const User = db.User;
@@ -21,7 +21,7 @@ const controller = {
                 rol_id: 2
             })
             .then(user => {
-                req.session.usuarioLogeado = user;
+                req.session.user = user;
 
                 return res.redirect("/");
             })
@@ -48,8 +48,9 @@ const controller = {
                     return res.render('./users/login', { errors: [{ msj: 'credenciales ivalidas' }] })
                 }
 
-                req.session.usuarioLogeado = usuarioALogearse.id;
-                res.locals.user = req.session.usuarioLogeado;
+                req.session.user = usuarioALogearse;
+
+
 
 
 
@@ -66,60 +67,41 @@ const controller = {
             })
 
     },
-    loginGoogle: (req, res) => {
-        /*  async function verify() {
-            const ticket = await client.verifyIdToken({
-                idToken: req.body.idtoken,
-                audience: '402810559666-j55lu0tf3cba2lhh0roa7qrfhef90no6.apps.googleusercontent.com'
-            });
-            const payload = ticket.getPayload();
-            const userid = payload['sub'];
-            console.log('sou el 5')
-            return payload
-        }
-        verify()
-            .then((payload) => {
-
-                User.findOne({
-                        where: {
-                            email: payload.email
-                        }
-                    })
-                    .then(user => {
-                        if (user) {
-                            req.session.usuarioLogeado = user.id;
-                            console.log('sou el 2')
-
-                        } else {
-
-                            User.create({
-                                    name: payload.given_name,
-                                    lastName: payload.family_name,
-                                    phone: null,
-                                    email: payload.email,
-                                    password: null,
-                                    image: null,
-                                    rol_id: 2
-                                })
-                                .then(user => {
-                                    req.session.usuarioLogeado = user.id;
-                                    res.redirect('../../')
-
-                                })
-                        }
-
-
-                    })
-            })
-            .catch(console.error);
-
-*/
-    },
     recoverpassword: (req, res) => {
         return res.render('./users/recover-password');
     },
-    editForm: (req, res) => {
-        return res.render('./users/userEdit.ejs')
+    userEdit: (req, res) => {
+        User.findByPk(req.params.id)
+            .then(user => {
+                return res.render('./users/userEdit', { user })
+            })
+    },
+    userEditSave: (req, res) => {
+        User.findByPk(req.params.id)
+            .then(user => {
+                let image;
+                if (req.file) {
+                    image = req.file.filename;
+                    fs.unlinkSync(`./public/images/users/${user.image}`);
+                } else {
+                    image = user.image
+                }
+                User.update({
+                        name: req.body.name,
+                        lastName: req.body.lastName,
+                        phone: req.body.phone,
+                        email: req.body.email,
+                        image: image
+                    }, {
+                        where: {
+                            id: req.params.id
+                        }
+                    })
+                    .then(() => {
+                        return res.redirect('/')
+                    })
+            })
+
     },
     logout: (req, res) => {
         req.session.destroy();
