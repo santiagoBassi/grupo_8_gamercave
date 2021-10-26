@@ -41,3 +41,14 @@
 
 ## Link Tablero de Trabajo
 *https://trello.com/b/h2XOrfLR/trabajo-integrador-gamercave
+
+
+## Perfiles de Usuario
+
+## admin:
+email: profeAdmin@digitalhouse.com
+contraseña: 1234567891
+
+## usuario común:
+email: profeUser@digitalhouse.com
+contraseña: 1234567891
