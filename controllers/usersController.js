@@ -109,6 +109,7 @@ const controller = {
                         lastName: req.body.lastName,
                         phone: req.body.phone,
                         email: req.body.email,
+                        password: req.body.password,
                         image: image
                     }, {
                         where: {
