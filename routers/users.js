@@ -30,7 +30,8 @@ router.post('/create', upload.single("image"), validationsRegister, usersControl
 router.get('/:id/edit', usersControllers.userEdit)
 
 router.put('/:id/edit', upload.single("image"), usersControllers.userEditSave)
-router.get('/changepassword', usersControllers.changePassword)
+router.get('/:id/changepassword', usersControllers.showChangePassword)
+router.put('/:id/changepassword', usersControllers.changePassword)
 router.get('/login', guestMiddlware, usersControllers.showLogin);
 router.post('/login', usersControllers.login);
 
