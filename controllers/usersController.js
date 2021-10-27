@@ -104,6 +104,11 @@ const controller = {
                 return res.render('./users/userEdit', { user })
             })
     },
+    changePassword: (req, res) => {
+
+        return res.render('./users/changePassword')
+
+    },
     userEditSave: (req, res) => {
         User.findByPk(req.params.id)
             .then(user => {
@@ -119,7 +124,7 @@ const controller = {
                         lastName: req.body.lastName,
                         phone: req.body.phone,
                         email: req.body.email,
-                        password: req.body.password,
+
                         image: image
                     }, {
                         where: {
