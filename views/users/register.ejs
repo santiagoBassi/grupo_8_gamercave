@@ -19,35 +19,67 @@
             <form action="/users/create" method="POST" enctype="multipart/form-data" id="formulario">
                 <h4>Registrate</h4>
                 <hr class="line">
+
                 <div>
                     <label for="name">Nombre:</label>
                     <input class="input" type="text" id="name" name="name" placeholder="Ej: Juan" required>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.name) { %>
+                            <%= locals.errors.name.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
                 <div>
                     <label for="lastname">Apellido:</label>
                     <input class="input" type="text" id="lastname" name="lastName" placeholder="Ej: Pérez" required>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.lastName) { %>
+                            <%= locals.errors.lastName.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
                 <div>
                     <label for="email">E-mail:</label>
                     <input class="input" type="email" id="email" name="email" placeholder="Ej: Juanperez22@gmail.com" required>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.email) { %>
+                            <%= locals.errors.email.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
                 <div>
                     <label for="phone">Teléfono:</label>
                     <input class="input" type="tel" id="phone" name="phone" placeholder="Ej: +54 9 11 4545-4545" required>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.phone) { %>
+                            <%= locals.errors.phone.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
-                <div> <label for="img_user">Imagen de Usuario:</label>
+                <div>
+                    <label for="img_user">Imagen de Usuario:</label>
                     <input class="input" type="file" name="image" id="img_user">
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.image) { %>
+                            <%= locals.errors.image.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
 
                 <div>
-                    <label for="password">Contraseña:</label>
+                    <label for="password">Contraseña:</label> <br> <span style="display: none;" class="validation-password">La contraseña debe tener como mínimo 8 caracteres</span>
                     <div class="containerInput">
-                        <input class="input" type="password" id="password" name="password" placeholder="Password" required>
+                        <input class="input" minlength="8" maxlength="20" type="password" id="password" name="password" placeholder="Password" required>
+                        <span class="error">
+                            <% if (locals.errors && locals.errors.password) { %>
+                                <%= locals.errors.password.msg %> 
+                            <% } %>
+                        </span>
                         <i id="iconoConfirmPasswordError" class="fas fa-times-circle iconoConfirmPasswordError"></i>
                         <i id="iconoConfirmPasswordCheck" class="fas fa-check-circle iconoConfirmPasswordCheck"></i>
                     </div>
@@ -61,7 +93,6 @@
                         <i id="iconoConfirmPasswordError2" class="fas fa-times-circle iconoConfirmPasswordError"></i>
                         <i id="iconoConfirmPasswordCheck2" class="fas fa-check-circle iconoConfirmPasswordCheck"></i>
                     </div>
-                    <p id="errorConfirmPassword" class="errorConfirmPassword">Las contraseñas deben ser iguales y deben tener un minimo de 10 caracteres.</p>
                 </div><br>
 
                 <button class="boton" type="submit">Enviar</button>

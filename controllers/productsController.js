@@ -34,17 +34,32 @@ const controlador = {
 
     },
     cart: (req, res) => {
-        Cart.findAll({
-                include: ['products']
-            }, {
-                where: {
-                    user_id: req.session.user.id
-                }
+        Product.findAll({
+                include: [{
+                    model: 'Cart'
+                }]
             })
-            .then((products) => {
-
-                return res.render('./products/productCart', { products });
+            .then((resultados) => {
+                res.send(resultados)
             })
+            .catch(err => {
+                res.send(err)
+            })
+            //Cart.findAll({
+            //        include: ['products']
+            //    }, {
+            //        where: {
+            //            user_id: req.session.user.id
+            //        }
+            //    })
+            //    .then((products) => {
+            //        let productsId = [];
+            //        products.forEach(product => {
+            //            productsId.push(product.id)
+            //        });
+            //
+            //        //return res.render('./products/productCart', { products });
+            //    })
 
     },
     addToCart: (req, res) => {

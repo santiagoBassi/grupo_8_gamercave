@@ -8,6 +8,7 @@ const usersControllers = require('../controllers/usersController');
 const guestMiddlware = require('../middlewares/guestMiddlware');
 const loggedInMiddlware = require('../middlewares/loggedInMiddlware');
 
+const validationsRegister = require('../middlewares/validationsRegister')
 
 
 
@@ -24,7 +25,7 @@ const upload = multer({ storage });
 
 
 router.get('/register', guestMiddlware, usersControllers.register);
-router.post('/create', upload.single("image"), usersControllers.create)
+router.post('/create', upload.single("image"), validationsRegister, usersControllers.create)
 
 router.get('/:id/edit', usersControllers.userEdit)
 router.put('/:id/edit', upload.single("image"), usersControllers.userEditSave)

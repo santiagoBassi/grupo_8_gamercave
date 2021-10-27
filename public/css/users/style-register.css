@@ -95,6 +95,18 @@ form div label {
     background-color: #7F7F7F90;
 }
 
+.input:valid {
+    border: solid 2px rgba(0, 128, 0, 0.2);
+}
+
+.input:invalid {
+    border: solid 2px rgba(255, 0, 0, 0.2);
+}
+
+.error {
+    color: rgb(200, 0, 0);
+}
+
 .categorias {
     width: 100%;
     padding: 10px;
@@ -136,6 +148,10 @@ form div label {
     display: none;
     color: red;
     font-size: 16px;
+}
+
+.validation-password {
+    font-size: 12px;
 }
 
 .boton {
