@@ -11,6 +11,23 @@
     margin-bottom: 200px;
 }
 
+.container-add-product {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.container-add-product a {
+    padding: 14px 12px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.container-add-product a:hover {
+    box-shadow: 3px 3px 10px #140f07;
+}
+
 .container-table {
     overflow-x: auto;
     margin: auto;
