@@ -15,7 +15,10 @@ const controller = {
         const resultValidation = validationResult(req)
 
         if (resultValidation.errors.length > 0) {
-            return res.render('./users/register', { errors: resultValidation.mapped() });
+            return res.render('./users/register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
         } else {
             return res.send('Esto fue un éxito!')
         }
@@ -77,10 +80,6 @@ const controller = {
                 }
 
                 req.session.user = usuarioALogearse;
-
-
-
-
 
                 if (req.body.remember != undefined) {
                     res.cookie('remember', usuarioALogearse.id, { maxAge: 60000 })

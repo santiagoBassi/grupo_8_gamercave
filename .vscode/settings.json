@@ -4,8 +4,10 @@
   "emmet.syntaxProfiles": {
     "javascript": "html"
   },
+
   "emmet.includeLanguages": {
-    "javascript": "html"
+    "javascript": "html",
+    "ejs": "html"
   },
   "emmet.triggerExpansionOnTab": true,
 }

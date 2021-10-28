@@ -22,8 +22,10 @@
 
                 <div>
                     <label for="name">Nombre:</label>
-                    <input class="input" type="text" id="name" name="name" placeholder="Ej: Juan" required>
-                    <span class="error">
+                    <input class="input" type="text" <% if (locals.oldData && locals.oldData.name) { %> value="
+                    <%= oldData.name %>"
+                        <% } %> id="name" name="name" placeholder="Ej: Juan" required>
+                            <span class="error">
                         <% if (locals.errors && locals.errors.name) { %>
                             <%= locals.errors.name.msg %> 
                         <% } %>
@@ -32,8 +34,10 @@
 
                 <div>
                     <label for="lastname">Apellido:</label>
-                    <input class="input" type="text" id="lastname" name="lastName" placeholder="Ej: Pérez" required>
-                    <span class="error">
+                    <input class="input" type="text" id="lastname" <% if (locals.oldData && locals.oldData.lastName) { %> value="
+                    <%= oldData.lastName %>"
+                        <% } %> name="lastName" placeholder="Ej: Pérez" required>
+                            <span class="error">
                         <% if (locals.errors && locals.errors.lastName) { %>
                             <%= locals.errors.lastName.msg %> 
                         <% } %>
@@ -42,8 +46,10 @@
 
                 <div>
                     <label for="email">E-mail:</label>
-                    <input class="input" type="email" id="email" name="email" placeholder="Ej: Juanperez22@gmail.com" required>
-                    <span class="error">
+                    <input class="input" type="email" id="email" name="email" <% if (locals.oldData && locals.oldData.email) { %> value="
+                    <%= oldData.email %>"
+                        <% } %> placeholder="Ej: Juanperez22@gmail.com" required>
+                            <span class="error">
                         <% if (locals.errors && locals.errors.email) { %>
                             <%= locals.errors.email.msg %> 
                         <% } %>
@@ -52,8 +58,10 @@
 
                 <div>
                     <label for="phone">Teléfono:</label>
-                    <input class="input" type="tel" id="phone" name="phone" placeholder="Ej: +54 9 11 4545-4545" required>
-                    <span class="error">
+                    <input class="input" type="tel" id="phone" name="phone" <% if (locals.oldData && locals.oldData.phone) { %> value="
+                    <%= oldData.phone %>"
+                        <% } %> placeholder="Ej: +54 9 11 4545-4545" required>
+                            <span class="error">
                         <% if (locals.errors && locals.errors.phone) { %>
                             <%= locals.errors.phone.msg %> 
                         <% } %>
