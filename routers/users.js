@@ -28,8 +28,10 @@ router.get('/register', guestMiddlware, usersControllers.register);
 router.post('/create', upload.single("image"), validationsRegister, usersControllers.create)
 
 router.get('/:id/edit', usersControllers.userEdit)
-router.put('/:id/edit', upload.single("image"), usersControllers.userEditSave)
 
+router.put('/:id/edit', upload.single("image"), usersControllers.userEditSave)
+router.get('/:id/changepassword', usersControllers.showChangePassword)
+router.put('/:id/changepassword', usersControllers.changePassword)
 router.get('/login', guestMiddlware, usersControllers.showLogin);
 router.post('/login', usersControllers.login);
 

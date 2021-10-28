@@ -103,6 +103,33 @@ const controller = {
                 return res.render('./users/userEdit', { user })
             })
     },
+    showChangePassword: (req, res) => {
+        return res.render('./users/changePassword')
+    },
+    changePassword: (req, res) => {
+        User.findByPk(req.params.id)
+            .then(user => {
+
+                if (bcrypt.compareSync(req.body.oldPassword, user.password)) {
+                    console.log("chau")
+                    let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
+                    User.update({ password: encryptedPassword }, { where: { id: req.params.id } })
+                        .then(() => {
+                            res.redirect('/')
+                        })
+                        .catch(e => {
+                            res.send(e)
+                        })
+                } else {
+                    console.log("hola estoy");
+                    let errors = 'Error'
+                    res.render('./users/changePassword', { errors })
+                }
+            }).catch(e => {
+                res.send(e)
+            })
+
+    },
     userEditSave: (req, res) => {
         User.findByPk(req.params.id)
             .then(user => {
@@ -118,6 +145,7 @@ const controller = {
                         lastName: req.body.lastName,
                         phone: req.body.phone,
                         email: req.body.email,
+
                         image: image
                     }, {
                         where: {
