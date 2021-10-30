@@ -8,7 +8,7 @@ const usersControllers = require('../controllers/usersController');
 const guestMiddlware = require('../middlewares/guestMiddlware');
 const loggedInMiddlware = require('../middlewares/loggedInMiddlware');
 
-const validationsRegister = require('../middlewares/validationsRegister')
+const validationsRegister = require('../middlewares/validationsRegister');
 
 
 

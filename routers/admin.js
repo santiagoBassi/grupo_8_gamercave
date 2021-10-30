@@ -5,6 +5,8 @@ const adminControllers = require('../controllers/adminController');
 const multer = require('multer');
 const path = require('path');
 
+const validationsProductCreate = require('../middlewares/validationsProductCreate.js');
+
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, path.join(__dirname, '../public/images/products'));
@@ -20,7 +22,7 @@ router.get('/', adminControllers.admin);
 
 
 router.get('/create', adminControllers.productCreate);
-router.post('/create', upload.any('imagesProduct'), adminControllers.productCreateSave);
+router.post('/create', upload.any('imagesProduct'), validationsProductCreate, adminControllers.productCreateSave);
 
 router.get('/:id/edit', adminControllers.productEdit);
 router.put('/:id/edit', upload.any('imagesProduct'), adminControllers.productEditSave);

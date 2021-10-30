@@ -20,44 +20,38 @@ const controller = {
                 oldData: req.body
             });
         } else {
-            return res.send('Esto fue un éxito!')
+            let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
+            if (req.file) {
+                User.create({
+                        name: req.body.name,
+                        lastName: req.body.lastName,
+                        phone: req.body.phone,
+                        email: req.body.email,
+                        password: encryptedPassword,
+                        image: req.file.filename,
+                        rol_id: 2
+                    })
+                    .then(user => {
+                        req.session.user = user;
+    
+                        return res.redirect("/");
+                    })
+            } else {
+                User.create({
+                        name: req.body.name,
+                        lastName: req.body.lastName,
+                        phone: req.body.phone,
+                        email: req.body.email,
+                        password: encryptedPassword,
+                        rol_id: 2
+                    })
+                    .then(user => {
+                        req.session.user = user;
+    
+                        return res.redirect("/");
+                    })
+            }
         }
-        /*
-        let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
-        if (req.file) {
-            User.create({
-                    name: req.body.name,
-                    lastName: req.body.lastName,
-                    phone: req.body.phone,
-                    email: req.body.email,
-                    password: encryptedPassword,
-                    image: req.file.filename,
-                    rol_id: 2
-                })
-                .then(user => {
-                    req.session.user = user;
-
-                    return res.redirect("/");
-                })
-        } else {
-            User.create({
-                    name: req.body.name,
-                    lastName: req.body.lastName,
-                    phone: req.body.phone,
-                    email: req.body.email,
-                    password: encryptedPassword,
-                    rol_id: 2
-                })
-                .then(user => {
-                    req.session.user = user;
-
-                    return res.redirect("/");
-                })
-        }
-
-
-
-*/
     },
     showLogin: (req, res) => {
         return res.render('./users/login');

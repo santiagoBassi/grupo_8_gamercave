@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const { validationResult } = require('express-validator');
+
 const db = require('../database/models/index.js');
 
 const Product = db.Product;
