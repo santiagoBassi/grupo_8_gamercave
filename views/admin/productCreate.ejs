@@ -23,7 +23,7 @@
                         <% if (locals.oldData && locals.oldData.name) { %> 
                             value="<%= oldData.name %>"
                         <% } %> 
-                        type="text" id="name">
+                        type="text" id="name" maxlength="80" required>
                         <span class="error">
                             <% if (locals.errors && locals.errors.name) { %>
                                 <%= locals.errors.name.msg %> 
@@ -61,7 +61,7 @@
                                     <% if (locals.oldData && locals.oldData.characteristic) { %> 
                                         value="<%= oldData.characteristic %>"
                                     <% } %>
-                                    id="caracteristica" placeholder="Ej: color" >
+                                    id="caracteristica" placeholder="Ej: color" maxlength="45" required>
                                     <span class="error">
                                         <% if (locals.errors && locals.errors.characteristic) { %>
                                             <%= locals.errors.characteristic.msg %> 
@@ -75,7 +75,7 @@
                                 <% if (locals.oldData && locals.oldData.value) { %> 
                                     value="<%= oldData.value %>"
                                 <% } %>
-                                id="valueNum1" placeholder="Ej: rojo" >
+                                id="valueNum1" placeholder="Ej: rojo" maxlength="45" required>
                                 <span class="error">
                                     <% if (locals.errors && locals.errors.value) { %>
                                         <%= locals.errors.value.msg %> 
@@ -88,7 +88,7 @@
                     <div>
                         <label for="image">Imagenes del producto: </label>
                         <p class="textHelp">Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
-                        <input type="file" class="input" id="image" multiple name="imagesProduct">
+                        <input type="file" class="input" id="image" multiple name="imagesProduct" accept="image/*" required>
                         <span class="error">
                             <% if (locals.errors && locals.errors.imagesProduct) { %>
                                 <%= locals.errors.imagesProduct.msg %> 
@@ -103,7 +103,7 @@
                         <% if (locals.oldData && locals.oldData.price) { %> 
                             value="<%= oldData.price %>"
                         <% } %>
-                        id="price" name="price" placeholder="$15000">
+                        id="price" name="price" placeholder="$15000"required>
                         <span class="error">
                             <% if (locals.errors && locals.errors.price) { %>
                                 <%= locals.errors.price.msg %> 
@@ -119,7 +119,7 @@
                         <% if (locals.oldData && locals.oldData.discount) { %> 
                             value="<%= oldData.discount %>"
                         <% } %>
-                        id="discount" name="discount" placeholder="15%" value="">
+                        id="discount" name="discount" placeholder="15%" required>
                         <span class="error">
                             <% if (locals.errors && locals.errors.discount) { %>
                                 <%= locals.errors.discount.msg %> 
