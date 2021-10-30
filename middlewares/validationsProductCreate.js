@@ -19,6 +19,10 @@ const validateProductCreate = [
     .notEmpty().withMessage('No puede estar vacío.')
     .isNumeric().withMessage('Debes ingresar un numero'),
 
+    check('discount')
+    .notEmpty().withMessage('No puede estar vacío.')
+    .isNumeric().withMessage('Debes ingresar un numero'),
+
     check('imagesProduct').custom((value, { req }) => {
         let acceptedExtensions = ['.png', '.jpeg', '.jpg', '.gif'];
         if (req.files.length == 3) {
@@ -28,13 +32,17 @@ const validateProductCreate = [
                 if (!acceptedExtensions.includes(fileExtension)) {
                     fs.unlinkSync(`./public/images/users/${file.filename}`);
                     throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`)
+                }else{
+                    return true;
                 }
-                return true;
+                
             });
         } else {
             throw new Error('Debes ingresar tres imagenes')
         }
+        return true;
     })
+    
 ]
 
 module.exports = validateProductCreate;

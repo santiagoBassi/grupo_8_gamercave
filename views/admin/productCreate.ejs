@@ -16,76 +16,121 @@
                 <form id="frm" class="form" action="/admin/create" method="POST" enctype="multipart/form-data">
                     <h4>Agregar producto:</h4>
                     <hr class="line">
+                    
                     <div>
                         <label for="name">Nombre:</label>
-                        <input class="input" name="name" type="text" id="name">
+                        <input class="input" name="name"
+                        <% if (locals.oldData && locals.oldData.name) { %> 
+                            value="<%= oldData.name %>"
+                        <% } %> 
+                        type="text" id="name">
+                        <span class="error">
+                            <% if (locals.errors && locals.errors.name) { %>
+                                <%= locals.errors.name.msg %> 
+                            <% } %>
+                        </span>
                     </div><br>
-                    <% if(locals.errors && errors.nombre) { %>
-                        <p>
-                            <%= errors.nombre.msg %>
-                        </p>
-                        <% } %>
-                            <div>
-                                <label for="categoria">Categoria:</label>
-                                <select class="categorias" name="category" id="categoria">
-                                    <% categories.forEach(category => { %>
-                                     <option class="categorias" value="<%= category.id %>"><%= category.name %></option>
-                                    <% }) %> 
-                                    
-                                </select>
-                            </div><br>
+                   
+                    
+                    <div>
+                        <label for="categoria">Categoria:</label>
+                        <select class="categorias" name="category" id="categoria">
+                            <% categories.forEach(category => { %>
+                                 <option class="categorias" value="<%= category.id %>" 
+                                <% if (locals.oldData && locals.oldData.category && locals.oldData.category == category.id) { %>
+                                    selected
+                                <% } %>>
+                                <%= category.name %>
+                                </option>
+                            <% }) %> 
+                            
+                        </select>
+                    </div><br>
 
 
 
-                            <div id="caracteristicas">
-                                <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
-                                <i onclick="agregarCampos()" id="btn-add" class="containerAddField fas fa-plus"></i>
-
-                                <div id="descripcion">
-
-                                    <div id="carac" class="colum">
-                                        <label class="labelKeyValue" for="caracteristica">Caracteristica: </label>
-                                        <div class="containerDeleteField" id="caracNum1">
-                                            <i onclick="borrarCampo('caracNum1','valueNum1')" class="deleteField fas fa-times"></i>
-                                            <input class="input" name="characteristic" id="caracteristica" placeholder="Ej: color" required>
-                                        </div>
-                                    </div>
-
-                                    <div id="value" class="colum">
-                                        <label class="labelKeyValue" for="valor">Valor: </label>
-                                        <input class="input" name="value" id="valueNum1" placeholder="Ej: rojo" required>
-                                    </div>
+                    <div id="caracteristicas">
+                        <input style="display: none;" type="number" name="cantidadInput" id="cantidadElementos" value="1">
+                        <i onclick="agregarCampos()" id="btn-add" class="containerAddField fas fa-plus"></i>
+                        <div id="descripcion">
+                            <div id="carac" class="colum">
+                                <label class="labelKeyValue" for="caracteristica">Caracteristica: </label>
+                                <div class="containerDeleteField" id="caracNum1">
+                                    <i onclick="borrarCampo('caracNum1','valueNum1')" class="deleteField fas fa-times"></i>
+                                    <input class="input" name="characteristic"
+                                    <% if (locals.oldData && locals.oldData.characteristic) { %> 
+                                        value="<%= oldData.characteristic %>"
+                                    <% } %>
+                                    id="caracteristica" placeholder="Ej: color" >
+                                    <span class="error">
+                                        <% if (locals.errors && locals.errors.characteristic) { %>
+                                            <%= locals.errors.characteristic.msg %> 
+                                        <% } %>
+                                    </span>
                                 </div>
-
-                            </div><br>
-
-                            <div>
-                                <label for="image">Imagenes del producto: </label>
-                                <p class="textHelp">Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
-                                <input type="file" class="input" id="image" multiple name="imagesProduct">
-                            </div><br>
-
-
-                            <div>
-                                <label for="price">Precio:</label>
-                                <input class="input" type="number" id="price" name="price" placeholder="$15000">
                             </div>
-                            <br>
-                            <% if(errors && errors.precio) { %>
-                                <p>
-                                    <%= errors.precio.msg %>
-                                </p>
+                            <div id="value" class="colum">
+                                <label class="labelKeyValue" for="valor">Valor: </label>
+                                <input class="input" name="value"
+                                <% if (locals.oldData && locals.oldData.value) { %> 
+                                    value="<%= oldData.value %>"
                                 <% } %>
+                                id="valueNum1" placeholder="Ej: rojo" >
+                                <span class="error">
+                                    <% if (locals.errors && locals.errors.value) { %>
+                                        <%= locals.errors.value.msg %> 
+                                    <% } %>
+                                </span>
+                            </div>
+                        </div>
+                    </div><br>
 
-                                    <div>
-                                        <label for="discount">Descuento: </label>
-                                        <input class="input" type="number" id="discount" name="discount" placeholder="15%">
-                                    </div>
-                                    <br>
+                    <div>
+                        <label for="image">Imagenes del producto: </label>
+                        <p class="textHelp">Inserte tres imagenes. Las imagenes deben ser cuadradas.</p>
+                        <input type="file" class="input" id="image" multiple name="imagesProduct">
+                        <span class="error">
+                            <% if (locals.errors && locals.errors.imagesProduct) { %>
+                                <%= locals.errors.imagesProduct.msg %> 
+                            <% } %>
+                        </span>
+                    </div><br>
 
-                                    <hr class="line">
 
-                                    <button class="boton" type="submit">Cargar producto</button>
+                    <div>
+                        <label for="price">Precio:</label>
+                        <input class="input" type="number"
+                        <% if (locals.oldData && locals.oldData.price) { %> 
+                            value="<%= oldData.price %>"
+                        <% } %>
+                        id="price" name="price" placeholder="$15000">
+                        <span class="error">
+                            <% if (locals.errors && locals.errors.price) { %>
+                                <%= locals.errors.price.msg %> 
+                            <% } %>
+                        </span>
+                    </div>
+                    <br>
+                            
+
+                    <div>
+                        <label for="discount">Descuento: </label>
+                        <input class="input" type="number"
+                        <% if (locals.oldData && locals.oldData.discount) { %> 
+                            value="<%= oldData.discount %>"
+                        <% } %>
+                        id="discount" name="discount" placeholder="15%" value="">
+                        <span class="error">
+                            <% if (locals.errors && locals.errors.discount) { %>
+                                <%= locals.errors.discount.msg %> 
+                            <% } %>
+                        </span>
+                    </div>
+                    <br>
+
+                    <hr class="line">
+
+                    <button class="boton" type="submit">Cargar producto</button>
 
 
                 </form>

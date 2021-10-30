@@ -75,6 +75,17 @@ form div label {
 .input:focus {
     background-color: #7F7F7F90;
 }
+.input:valid {
+    border: solid 2px rgba(0, 128, 0, 0.2);
+}
+
+.input:invalid {
+    border: solid 2px rgba(255, 0, 0, 0.2);
+}
+
+.error {
+    color: rgb(200, 0, 0);
+}
 
 .categorias {
     width: 100%;

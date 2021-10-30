@@ -27,8 +27,22 @@ const controlador = {
 
     },
     productCreateSave: (req, res) => {
+        const resultValidation = validationResult(req)
 
-        Product.create({
+        if (resultValidation.errors.length > 0) {
+            
+            console.log(req.body);
+            Category.findAll()
+            .then((categories => {
+                return res.render('./admin/productCreate', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    categories
+                });
+            }))
+            
+        } else{
+            Product.create({
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
@@ -91,6 +105,9 @@ const controlador = {
             .catch(err => {
                 res.send(err)
             })
+        }
+
+       
 
     },
     productEdit: (req, res) => {
