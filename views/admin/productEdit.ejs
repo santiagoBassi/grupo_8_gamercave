@@ -21,21 +21,26 @@
                 <div>
                     <label for="name">Nombre:</label>
                     <input class="input" name="name" type="text" id="name" value="<%= product.name %> " required>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.name) { %>
+                            <%= locals.errors.name.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
 
                 <div>
                     <label for="categoria">Categoria:</label>
                     <select class="categorias" name="category" id="categoria">
-                            <% categories.forEach(category => { %>
-                             <option class="categorias" value="<%= category.id %>"
+                        <% categories.forEach(category => { %>
+                            <option class="categorias" value="<%= category.id %>"
                             <% if (product.category.name == category.name) { %>
                                 selected
                             <% } %>  
                             ><%= category.name %></option>
-                            <% }) %> 
-                            
-                        </select>
+                        <% }) %> 
+                        
+                    </select>
                 </div><br>
 
                 <div id="caracteristicas">
@@ -52,31 +57,37 @@
                                     return v.toString(16);
                                 });
                             }%>
-                                <% let idValue = [];  %>
-                                    <% let contadorCarac = 0; %>
-                                        <% product.characteristics.forEach(characteristic => { %>
-
-
-                                            <% let idCarac = uuidv4() %>
-                                                <% idValue.push(uuidv4()) %>
-
-                                                    <div class="containerDeleteField" id="<%= idCarac %>">
-                                                        <i onclick="borrarCampo('<%= idCarac %>','<%= idValue[contadorCarac] %>')" class="deleteField fas fa-times"></i>
-                                                        <input class="input" value="<%= characteristic.name %>" name="characteristic" id="caracteristica" placeholder="ej: color" required>
-                                                    </div>
-                                                    <% contadorCarac = contadorCarac + 1; %>
-                                                        <%  }); %>
+                            <% let idValue = [];  %>
+                            <% let contadorCarac = 0; %>
+                            <% product.characteristics.forEach(characteristic => { %>
+                                <% let idCarac = uuidv4() %>
+                                <% idValue.push(uuidv4()) %>
+                                <div class="containerDeleteField" id="<%= idCarac %>">
+                                    <i onclick="borrarCampo('<%= idCarac %>','<%= idValue[contadorCarac] %>')" class="deleteField fas fa-times"></i>
+                                    <input class="input" value="<%= characteristic.name %>" name="characteristic" id="caracteristica" placeholder="ej: color" required>
+                                    <span class="error">
+                                        <% if (locals.errors && locals.errors.characteristic) { %>
+                                            <%= locals.errors.characteristic.msg %> 
+                                        <% } %>
+                                    </span>
+                                </div>
+                                <% contadorCarac = contadorCarac + 1; %>
+                            <%  }); %>
 
                         </div>
 
                         <div id="value" class="colum">
                             <label class="labelKeyValue" for="valor">Valor: </label>
                             <% let contadorValue = 0; %>
-                                <% product.characteristics.forEach(characteristic => { %>
-
-                                    <input class="input" value="<%= characteristic.value %>" name="value" id="<%= idValue[contadorValue] %>" placeholder="ej: rojo" required>
-                                    <% contadorValue = contadorValue + 1; %>
-                                        <%  }); %>
+                            <% product.characteristics.forEach(characteristic => { %>
+                                <input class="input" value="<%= characteristic.value %>" name="value" id="<%= idValue[contadorValue] %>" placeholder="ej: rojo" required>
+                                <span class="error">
+                                    <% if (locals.errors && locals.errors.value) { %>
+                                        <%= locals.errors.value.msg %> 
+                                    <% } %>
+                                </span>
+                                <% contadorValue = contadorValue + 1; %>
+                            <%  }); %>
 
                         </div>
                     </div>
@@ -91,6 +102,11 @@
                     <label for="image">Imagenes del producto:</label>
                     <p class="textHelp">Si desea reemplazar las imagenes inserte las tres imagenes nuevas.</p>
                     <input type="file" class="input" id="image" name="imagesProduct" multiple>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.imagesProduct) { %>
+                            <%= locals.errors.imagesProduct.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
                 <div>
@@ -107,11 +123,21 @@
                 <div>
                     <label for="precio">Precio:</label>
                     <input class="input" type="number" id="precio" name="price" value="<%= product.price %>" required>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.price) { %>
+                            <%= locals.errors.price.msg %> 
+                        <% } %>
+                    </span>
                 </div><br>
 
                 <div>
                     <label for="discount">Descuento: </label>
                     <input class="input" type="number" id="discount" name="discount" value="<%= product.discount %>" required>
+                    <span class="error">
+                        <% if (locals.errors && locals.errors.discount) { %>
+                            <%= locals.errors.discount.msg %> 
+                        <% } %>
+                    </span>
                 </div>
                 <br>
 

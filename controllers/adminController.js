@@ -144,8 +144,29 @@ const controlador = {
 */
     },
     productEditSave: (req, res) => {
+        console.log('Llegue al controller');
+        const resultValidation = validationResult(req)
 
-        Product.update({
+        if (resultValidation.errors.length > 0) {
+            
+            Product.findByPk(req.params.id, {
+                include: ['category', 'characteristics', 'images']
+            })
+            .then(product => {
+                let images = {
+                    img1: product.images[0].name,
+                    img2: product.images[1].name,
+                    img3: product.images[2].name
+                }
+                Category.findAll()
+                    .then(categories => {
+                        return res.render('./admin/productEdit', { product, images, categories, errors: resultValidation.mapped(),  });
+                    })
+
+            })
+            
+        } else{
+            Product.update({
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
@@ -229,6 +250,8 @@ const controlador = {
                         res.send(err)
                     })
             })
+        }
+        
 
     },
     productDelete: (req, res) => {
