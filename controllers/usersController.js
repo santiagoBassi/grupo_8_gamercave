@@ -103,9 +103,7 @@ const controller = {
     changePassword: (req, res) => {
         User.findByPk(req.params.id)
             .then(user => {
-
                 if (bcrypt.compareSync(req.body.oldPassword, user.password)) {
-                    console.log("chau")
                     let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
                     User.update({ password: encryptedPassword }, { where: { id: req.params.id } })
                         .then(() => {
@@ -115,7 +113,6 @@ const controller = {
                             res.send(e)
                         })
                 } else {
-                    console.log("hola estoy");
                     let errors = 'Error'
                     res.render('./users/changePassword', { errors })
                 }
