@@ -10,8 +10,8 @@ const Image = db.Image;
 const controlador = {
     products: (req, res) => {
         Product.findAll({
-                include: ['category', 'characteristics', 'images']
-            })
+            include: ['category', 'characteristics', 'images']
+        })
             .then(products => {
                 return res.render('./products/products', { products });
             })
@@ -19,8 +19,8 @@ const controlador = {
     },
     productDetail: (req, res) => {
         Product.findByPk(req.params.id, {
-                include: ['category', 'characteristics', 'images']
-            })
+            include: ['category', 'characteristics', 'images']
+        })
             .then(product => {
 
 
@@ -34,39 +34,24 @@ const controlador = {
 
     },
     cart: (req, res) => {
-        Product.findAll({
-                include: [{
-                    model: 'Cart'
-                }]
+
+        Cart.findAll({
+                include: ['products']
+            }, {
+                where: {
+                    user_id: req.session.user.id
+                }
             })
-            .then((resultados) => {
-                res.send(resultados)
+            .then((products) => {
+                return res.render('./products/productCart', { products });
             })
-            .catch(err => {
-                res.send(err)
-            })
-            //Cart.findAll({
-            //        include: ['products']
-            //    }, {
-            //        where: {
-            //            user_id: req.session.user.id
-            //        }
-            //    })
-            //    .then((products) => {
-            //        let productsId = [];
-            //        products.forEach(product => {
-            //            productsId.push(product.id)
-            //        });
-            //
-            //        //return res.render('./products/productCart', { products });
-            //    })
 
     },
     addToCart: (req, res) => {
         Cart.create({
-                user_id: req.session.user.id,
-                product_id: req.params.id
-            })
+            user_id: req.session.user.id,
+            product_id: req.params.id
+        })
             .then(() => {
                 res.redirect('/products/cart')
             })
@@ -74,17 +59,28 @@ const controlador = {
                 res.send(err)
             })
     },
+    deleteToCart:(req,res) => {
+        Cart.destroy({
+            where:{
+                user_id: req.session.user.id,
+                product_id: req.params.id
+            }
+        })
+        .then(()=>{
+            return res.redirect('/products/cart')
+        })
+    },
     search: (req, res) => {
         Product.findAll({
-                include: ['images']
-            }, {
-                where: {
-                    name: {
-                        [Op.substring]: `${req.query.product}`
-                    }
-
+            include: ['images']
+        }, {
+            where: {
+                name: {
+                    [Op.substring]: `${req.query.product}`
                 }
-            })
+
+            }
+        })
             .then(products => {
 
                 return res.render('./products/results', { products });
