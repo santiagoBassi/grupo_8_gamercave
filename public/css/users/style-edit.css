@@ -8,6 +8,14 @@ html {
     min-height: 100vh;
 }
 
+.img-user {
+    border: solid 1px #4b5985;
+    justify-content: center;
+    width: 200px;
+    border-radius: 100%;
+    justify-content: center;
+}
+
 main {
     margin: auto;
     margin-top: 200px;
@@ -25,14 +33,15 @@ main {
 }
 
 .form {
+    text-align: center;
     width: 90%;
     max-width: 360px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px 25px;
-    background-color: #e5e5e5d7;
-    border-radius: 10px;
+    background-color: #959595;
+    
     box-shadow: 5px 5px 15px #0E0B16;
 }
 
@@ -56,7 +65,7 @@ main {
 }
 
 .form div label {
-    color: #0E0B16;
+    color: #5832be;
     padding-bottom: 8px;
     margin-bottom: 20px;
     font-family: 'Noto Sans', sans-serif;
@@ -66,12 +75,16 @@ main {
 .input {
     width: 100%;
     padding: 10px;
-    border: solid 1px white;
+    border: solid 1px #4f5d9c;
     border-radius: 5px;
     background-color: #7f7f7f32;
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
+}
+
+.input :hover{
+    background-color: #4b5985;
 }
 
 .input:focus {
@@ -138,10 +151,12 @@ main {
 }
 
 .form p {
-    font-size: 12px;
+    margin-bottom: 10px;
+    font-size: 20px;
     font-family: 'Noto Sans', sans-serif;
     color: #0E0B16;
-    font-weight: 600;
+    font-weight: 500;
+    font-style: oblique;
 }
 
 .form p a {
@@ -163,4 +178,80 @@ main {
     .form h4 {
         font-size: 28px;
     }
+}
+
+.btn {
+    /* Color del texo */
+    color: #0099CC;
+    /* Eliminar color de fondo */
+    background: transparent;
+    /* Grosor del borde, estilo de línea y color */
+    border: 2px solid #0099CC;
+    /* Añadir esquinas curvadas */
+    border-radius: 6px;
+    /* Poner texto en mayúsculas */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+/* Al poner el curso encima (hover) */
+
+.btn1:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.btn {
+    /* Color del texo */
+    color: #0099CC;
+    /* Eliminar color de fondo */
+    background: transparent;
+    /* Grosor del borde, estilo de línea y color */
+    border: 2px solid #0099CC;
+    /* Añadir esquinas curvadas */
+    border-radius: 6px;
+    /* Poner texto en mayúsculas */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+/* Al poner el curso encima (hover) */
+
+.btn1:hover {
+    background-color: #008CBA;
+    color: white;
 }

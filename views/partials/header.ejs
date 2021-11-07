@@ -1,7 +1,8 @@
 <header>
     <nav class="menu-top">
         <div class="container-logo">
-            <a href="/"><img src="/images/logos/logoGamerCaveLetrasOscuras.png" alt="Logo de Gamer Cave" class="logo"></a>
+            <a href="/"><img src="/images/logos/logoGamerCaveLetrasOscuras.png" alt="Logo de Gamer Cave"
+                    class="logo"></a>
         </div>
         <div class="container-search">
             <form action="/products/search" method="GET" class="container-input-i">
@@ -16,8 +17,10 @@
 
                 <div class="container-btn-user">
                     <button class="btn-user">
-                        <%= locals.user.name %> <img src="/images/users/<%= locals.user.image %>" width='30' style='border-radius: 100%;' alt="hola"> <i class="fas fa-angle-down"></i>
+                        <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='35'
+                                style='border-radius: 100%;' alt="hola"> <i class="fas fa-angle-down"></i>
                     </button>
+
                     <ul class="ul-user">
                         <li>
                             <a href="/users/<%= locals.user.id %>/edit">Editar Perfil</a>
@@ -44,23 +47,22 @@
                     <%}%>
         </ul>
         <span class="btn-menu" onclick="showmenu()">
-                        <i  class="fa fa-bars"></i>
-                    </span>
+            <i class="fa fa-bars"></i>
+        </span>
     </nav>
+
     <nav class="menu-bootom">
         <ul class="nav-bar-site" id="otro-modo2">
             <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="/products">Productos</a></li>
             <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
 
-            <% if (locals.user.rol_id == 1) { %>
+            <% if (locals.user.rol_id==1) { %>
                 <li><a href="/admin">Administrar</a></li>
                 <% } %>
 
         </ul>
     </nav>
-
-
 
 
 
@@ -74,7 +76,7 @@
             top: 0px;
             z-index: 1;
         }
-        
+
         .menu-top {
             width: 100%;
             display: flex;
@@ -82,7 +84,7 @@
             height: 60px;
             background-color: #acafb7;
         }
-        
+
         .container-logo {
             display: flex;
             align-items: center;
@@ -91,18 +93,18 @@
             max-width: 80px;
             border-radius: 10px;
         }
-        
+
         .logo {
             width: 100%;
         }
-        
+
         .container-search {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 70%;
         }
-        
+
         .container-input-i {
             display: flex;
             text-align: left;
@@ -111,7 +113,7 @@
             position: relative;
             width: 90%;
         }
-        
+
         .container-input-i input {
             width: 100%;
             border: none;
@@ -119,7 +121,7 @@
             border-radius: 5px;
             background-color: #E5E5E5;
         }
-        
+
         .container-input-i button {
             border: none;
             background-color: #E5E5E5;
@@ -128,11 +130,11 @@
             margin-right: 4px;
             padding-right: 5px;
         }
-        
+
         .container-input-i button i {
             color: #140f07;
         }
-        
+
         .nav-bar-account {
             list-style: none;
             display: flex;
@@ -146,70 +148,80 @@
             margin-right: 60px;
             z-index: 2;
         }
-        
+
         .nav-bar-account li {
             width: 100%;
             text-align: center;
             border-bottom: solid 3px #4f5d9c;
             padding: 0px 10px;
         }
-        
+
         .nav-bar-account li a {
             text-decoration: none;
             display: block;
             font-family: 'Noto Sans', sans-serif;
             font-size: 20px;
-            color: white;
+            color: rgb(148, 30, 168);
             padding: 30px;
             transition: color 0.5s;
         }
-        
+
         .nav-bar-account li a:hover {
             color: #4f5d9c;
             transition-duration: 0.5s;
         }
-        
+
         .nav-bar-account li a i {
             color: white;
         }
-        
+
         .container-btn-user {
             position: relative;
         }
-        
+
         .btn-user {
             display: flex;
+            border-radius: 1px;
+            background-color: #9da7d4ca;
             justify-content: center;
             align-items: center;
             padding: 5px 12px;
+            font-size: 19px;
         }
-        
+
         .ul-user {
             width: max-content;
             position: absolute;
             list-style-type: none;
             right: 0px;
-            background-color: red;
+            background-color: rgba(177, 173, 173, 0.527);
             padding: 20px;
             display: none;
+            border-top: solid 2px;
+            border-bottom: solid 2px;
         }
-        
+
+        .ul-user :hover {
+            background-color: #4f5d9c;
+            transition-duration: 0.5s;
+        }
+
         .ul-user-show {
             display: initial;
         }
-        
+
         .ul-user li {
             width: 100px;
             margin: 0px;
             padding: 0px;
         }
-        
+
         .ul-user li a {
             width: 100%;
             margin: 0px;
             padding: 0px;
         }
-        
+
         .btn-menu {
             justify-content: center;
             cursor: pointer;
@@ -218,32 +230,33 @@
             font-size: 20px;
             width: 20%;
         }
-        
+
         .menu-bootom {
             background-color: #acafb7;
+            border: solid 2px #5832bea1;
         }
-        
+
         .nav-bar-site {
             list-style: none;
             display: flex;
             flex-direction: column;
             position: fixed;
             width: 100vw;
-            background-color: #120907e8;
+            background-color: #6b6665e8;
             top: -100vh;
             text-align: center;
             transition: all 0.4s;
             margin-right: 60px;
             z-index: 2;
         }
-        
+
         .nav-bar-site li {
             width: 100%;
             text-align: center;
             border-bottom: solid 3px #4f5d9c;
             padding: 0px 10px;
         }
-        
+
         .nav-bar-site li a {
             text-decoration: none;
             display: block;
@@ -253,33 +266,35 @@
             padding: 30px;
             transition: color 0.5s;
         }
-        
+
         .nav-bar-site li a:hover {
             color: #4f5d9c;
             transition-duration: 0.5s;
         }
-        
+
         .nav-bar-site li a i {
             color: white;
         }
-        
+
         .show {
             top: 318px;
         }
-        
+
         .show2 {
             top: 60px;
         }
-        
+
         @media (min-width: 769px) {
             .menu-top {
                 justify-content: space-between;
                 padding-left: 25px;
                 padding-right: 25px;
             }
+
             .container-search {
                 width: 100%;
             }
+
             .nav-bar-account {
                 flex-direction: row;
                 align-items: center;
@@ -292,29 +307,36 @@
                 margin-right: 0px;
                 z-index: initial;
             }
+
             .nav-bar-account li {
                 transition: all .5s;
                 border-bottom: none;
                 width: 160px;
             }
+
             .nav-bar-account li a {
                 width: 100%;
                 font-size: 12px;
                 padding: 12px 8px;
                 margin: 0px 5px 0px 5px;
                 transition: all .5s;
-                background-color: #140f07;
-                border-radius: 10px;
+                background-color: #c2bdbdbe;
+                color: black;
+                border-top: 1px solid black;
             }
+
             .nav-bar-account li a:hover {
                 color: white;
             }
+
             .btn-menu {
                 display: none;
             }
+
             .menu-bootom {
-                border-top: solid 4px #140f07;
+                border-top: solid 4px #5832bea1;
             }
+
             .nav-bar-site {
                 flex-direction: row;
                 align-items: center;
@@ -326,20 +348,27 @@
                 z-index: initial;
                 margin-left: 8%;
             }
+
             .nav-bar-site li {
                 transition: all .5s;
                 border-bottom: none;
                 width: 120px;
             }
+
             .nav-bar-site li a {
+        
+                border-right:solid 2px #4f5d9c;
+                border-left:solid 2px #4f5d9c;
                 width: 100%;
                 font-size: 12px;
                 padding: 10px 0px;
                 margin: 0px 5px;
                 transition: all .5s;
             }
+
             .nav-bar-site li a:hover {
                 border-color: white;
+                background-color: #4f5d9c;
                 color: white;
             }
         }
