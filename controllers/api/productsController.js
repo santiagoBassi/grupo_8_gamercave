@@ -72,11 +72,17 @@ const controlador = {
 
                         res.json(response)
                     })
-                    .catch(err=>{
-                        res.send('Esto es un error')
-                    })
+
 
             })
+    },
+    detail: (req, res) => {
+        Product.findByPk(req.params.id, {
+            include: ['category', 'characteristics', 'images']
+        })
+        .then(product => {
+            res.json(product)
+        })
     }
 };
 module.exports = controlador;
