@@ -36,11 +36,13 @@ const routsUsers = require('./routers/users.js');
 const routsProducts = require('./routers/products.js');
 const routsAdmin = require('./routers/admin.js');
 const apiRoutsUsers = require('./routers/api/users.js');
+const apiRoutsProducts = require('./routers/api/products.js');
 
 app.use('/', routsMain);
 app.use('/users', routsUsers);
 app.use('/products', routsProducts);
 app.use('/admin', routsAdmin);
 app.use('/api/users', apiRoutsUsers);
+app.use('/api/products', apiRoutsProducts);
 
 app.listen(3030, () => console.log('Servidor corriendo en el puerto 3030'));

@@ -4,7 +4,6 @@
   "emmet.syntaxProfiles": {
     "javascript": "html"
   },
-
   "emmet.includeLanguages": {
     "javascript": "html",
     "ejs": "html"
