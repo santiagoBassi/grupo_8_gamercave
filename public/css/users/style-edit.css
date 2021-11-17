@@ -8,7 +8,7 @@ html {
     min-height: 100vh;
 }
 
-.img-user {
+.img-user {                     
     border: solid 1px #4b5985;
     justify-content: center;
     width: 200px;
@@ -40,8 +40,7 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 10px 25px;
-    background-color: #959595;
-    
+    background-color: #a9a0c1;
     box-shadow: 5px 5px 15px #0E0B16;
 }
 
@@ -65,19 +64,21 @@ main {
 }
 
 .form div label {
-    color: #5832be;
+    font-variant: petite-caps;
     padding-bottom: 8px;
     margin-bottom: 20px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
+    color: black;
 }
 
 .input {
     width: 100%;
     padding: 10px;
-    border: solid 1px #4f5d9c;
-    border-radius: 5px;
-    background-color: #7f7f7f32;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: #7c68bbc4;
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
@@ -138,14 +139,14 @@ main {
     padding: 14px 24px;
     border-radius: 5px;
     border: 2px solid #4b5985;
-    background-color: #E5E5E5;
+    background-color: #fbffeef1;
     color: #0E0B16;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
 }
 
 .boton:hover {
-    background-color: #4b5985;
+    background-color: #7c68bbc4;
     color: #E5E5E5;
     transition-duration: 1s;
 }

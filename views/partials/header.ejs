@@ -17,11 +17,11 @@
 
                 <div class="container-btn-user">
                     <button class="btn-user">
-                        <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='35'
-                                style='border-radius: 100%;' alt="hola"> <i class="fas fa-angle-down"></i>
+                        <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='30'
+                                style='border-radius: 100%; border: none;' alt="hola"> <i class="fas fa-angle-down"></i>
                     </button>
 
-                    <ul class="ul-user">
+                    <ul class="ul-user" >
                         <li>
                             <a href="/users/<%= locals.user.id %>/edit">Editar Perfil</a>
                         </li>
@@ -33,9 +33,6 @@
                         </li>
                     </ul>
                 </div>
-
-
-
 
 
                 <% } else { %>
@@ -53,7 +50,7 @@
 
     <nav class="menu-bootom">
         <ul class="nav-bar-site" id="otro-modo2">
-            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="/products">Productos</a></li>
             <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
 
@@ -70,6 +67,12 @@
 
 
     <style>
+        button img {
+            border: solid 1px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
         header {
             width: 100vw;
             position: fixed;
@@ -150,6 +153,7 @@
         }
 
         .nav-bar-account li {
+
             width: 100%;
             text-align: center;
             border-bottom: solid 3px #4f5d9c;
@@ -168,7 +172,7 @@
 
         .nav-bar-account li a:hover {
             color: #4f5d9c;
-            transition-duration: 0.5s;
+            transition-duration: 1.0s;
         }
 
         .nav-bar-account li a i {
@@ -180,47 +184,17 @@
         }
 
         .btn-user {
+            border-radius: 5px;
             display: flex;
-            border-radius: 1px;
-            background-color: #9da7d4ca;
+            border: none;
+            background-color: #1d1d1d;
             justify-content: center;
             align-items: center;
             padding: 5px 12px;
-            font-size: 19px;
+            color: white;
+            font-size: 12px;
         }
 
-        .ul-user {
-            width: max-content;
-            position: absolute;
-            list-style-type: none;
-            right: 0px;
-            background-color: rgba(177, 173, 173, 0.527);
-            padding: 20px;
-            display: none;
-            border-top: solid 2px;
-            border-bottom: solid 2px;
-        }
-
-        .ul-user :hover {
-            background-color: #4f5d9c;
-            transition-duration: 0.5s;
-        }
-
-        .ul-user-show {
-            display: initial;
-        }
-
-        .ul-user li {
-            width: 100px;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .ul-user li a {
-            width: 100%;
-            margin: 0px;
-            padding: 0px;
-        }
 
         .btn-menu {
             justify-content: center;
@@ -229,11 +203,12 @@
             color: #E5E5E5;
             font-size: 20px;
             width: 20%;
+
         }
 
         .menu-bootom {
             background-color: #acafb7;
-            border: solid 2px #5832bea1;
+
         }
 
         .nav-bar-site {
@@ -285,6 +260,43 @@
         }
 
         @media (min-width: 769px) {
+
+
+            .ul-user {
+                width: max-content;
+                position: absolute;
+                list-style-type: none;
+                right: 0px;
+                background-color: #877e7ecc;
+                padding: 20px;
+                display: none;
+                border-top: solid 1px;
+                border-bottom: solid 1px;
+            }
+
+            .ul-user :hover {
+                background-color: #7c68bbc4;
+                transition-duration: 0.5s;
+                border: none;
+                overflow: hidden;
+            }
+
+            .ul-user-show {
+                display: initial;
+            }
+
+            .ul-user li {
+                width: 100px;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .ul-user li a {
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+
             .menu-top {
                 justify-content: space-between;
                 padding-left: 25px;
@@ -327,6 +339,7 @@
 
             .nav-bar-account li a:hover {
                 color: white;
+                border: none;
             }
 
             .btn-menu {
@@ -334,7 +347,9 @@
             }
 
             .menu-bootom {
-                border-top: solid 4px #5832bea1;
+                border-top: solid 3px #000000;
+                display: flex;
+                justify-content: center;
             }
 
             .nav-bar-site {
@@ -356,9 +371,9 @@
             }
 
             .nav-bar-site li a {
-        
-                border-right:solid 2px #4f5d9c;
-                border-left:solid 2px #4f5d9c;
+
+                display: flex;
+                justify-content: center;
                 width: 100%;
                 font-size: 12px;
                 padding: 10px 0px;
@@ -384,5 +399,9 @@
         btnUser.addEventListener('click', () => {
             ulUser.classList.toggle('ul-user-show');
         })
+
+    
     </script>
+
+
 </header>
