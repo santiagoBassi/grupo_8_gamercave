@@ -38,7 +38,6 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'product_id'
         })
         Product.hasMany(models.Image, {
-            as: 'images',
             foreignKey: 'product_id'
         })
         Product.belongsToMany(models.Invoice, {
@@ -49,7 +48,6 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         })
         Product.hasMany(models.Cart, {
-            as: 'cart',
             foreignKey: 'product_id'
         })
     }
