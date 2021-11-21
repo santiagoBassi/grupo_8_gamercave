@@ -17,7 +17,12 @@ html {
 }
 
 body {
-    background-color: #fefaff;
+    background: #E6DADA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
+
 }
 
 main {
@@ -198,6 +203,7 @@ main {
     .contenedor-envio-pago {
         flex-direction: row;
     }
+
     .container-productos-banner {
         margin-top: 0px;
     }
@@ -207,6 +213,7 @@ main {
     .container-slider {
         width: 90%;
     }
+
     .publicidades {
         margin-top: 80px;
     }

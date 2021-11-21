@@ -21,7 +21,7 @@
                                 style='border-radius: 100%; border: none;' alt="hola"> <i class="fas fa-angle-down"></i>
                     </button>
 
-                    <ul class="ul-user" >
+                    <ul class="ul-user">
                         <li>
                             <a href="/users/<%= locals.user.id %>/edit">Editar Perfil</a>
                         </li>
@@ -183,7 +183,12 @@
             position: relative;
         }
 
-        .btn-user {
+      
+      
+
+        .btn-user {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
+         .btn-user {
+           
             border-radius: 5px;
             display: flex;
             border: none;
@@ -193,8 +198,23 @@
             padding: 5px 12px;
             color: white;
             font-size: 12px;
-        }
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+           
+          }
 
+          .btn-user:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+          }
+         
 
         .btn-menu {
             justify-content: center;
@@ -233,6 +253,7 @@
         }
 
         .nav-bar-site li a {
+            align-items: center;
             text-decoration: none;
             display: block;
             font-family: 'Noto Sans', sans-serif;
@@ -243,6 +264,7 @@
         }
 
         .nav-bar-site li a:hover {
+            
             color: #4f5d9c;
             transition-duration: 0.5s;
         }
@@ -371,7 +393,7 @@
             }
 
             .nav-bar-site li a {
-
+                align-items: center;
                 display: flex;
                 justify-content: center;
                 width: 100%;
@@ -400,7 +422,7 @@
             ulUser.classList.toggle('ul-user-show');
         })
 
-    
+
     </script>
 
 

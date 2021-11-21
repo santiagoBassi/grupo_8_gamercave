@@ -11,6 +11,7 @@
     <%- include('../partials/header') -%>
 
         <main>
+
             <% if (products != '') { %>
                 <% products.forEach(product => { %>
                     <%- include('../partials/itemCart.ejs', {product: product}) -%>
@@ -19,37 +20,38 @@
                 <h3 class="vacio">No hay productos en el carrito</h3>
             <% } %> 
              
+                                    <div class="container-envio-pago">
 
-                        <div class="container-envio-pago">
+                                        <div class="container-opciones-compra">
+                                            <div>
+                                                <label for="">Tipo de Envio:</label><br>
+                                                <select name="envio" id="" class="field">
+                                                    <option value="correo">Retiro al correo</option>
+                                                    <option value="domicilio">Envio a domicilio</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
-                            <div class="container-opciones-compra">
-                                <div>
-                                    <label for="">Tipo de Envio:</label><br>
-                                    <select name="envio" id="" class="field">
-                            <option value="correo">Retiro al correo</option>
-                            <option value="domicilio">Envio a domicilio</option>
-                        </select>
-                                </div>
-                            </div>
+                                        <div class="container-opciones-compra">
 
-                            <div class="container-opciones-compra">
+                                            <div>
+                                                <label for="">Metodo de pago:</label><br>
+                                                <select name="pago" id="" class="field">
+                                                    <option value="transferencia">Transferencia bancaria</option>
+                                                    <option value="tarjeta">Tarjeta de Credito/Debito</option>
+                                                    <option value="mercado">Mercado Pago</option>
+                                                    <option value="bitcoin">Bitcoin</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr style="color: #000000;width: 60%;background-color: #000000;height: 3px;"><br>
 
-                                <div>
-                                    <label for="">Metodo de pago:</label><br>
-                                    <select name="pago" id="" class="field">
-                            <option value="transferencia">Transferencia bancaria</option>
-                            <option value="tarjeta">Tarjeta de Credito/Debito</option>
-                            <option value="mercado">Mercado Pago</option>
-                            <option value="bitcoin">Bitcoin</option>
-                        </select>
-                                </div>
-                            </div><br>
-
-                            <h4>Precio total:</h4><br>
-                            <div class="container-btn-comprar">
-                                <button type="submit" type="button" class="btn-comprar">Comprar</button>
-                            </div>
-                        </div>
+                                        <h4>Precio total:</h4><br>
+                                        <hr>
+                                        <div class="container-btn-comprar">
+                                            <button type="submit" type="button" class="btn-comprar">Comprar</button>
+                                        </div>
+                                    </div>
 
         </main>
 
