@@ -4,7 +4,7 @@
     padding: 0px;
 }
 
-body {}
+
 
 main {
     margin-top: 110px;
@@ -90,7 +90,7 @@ hr {
 .btn-comprar {
     padding: 14px 24px;
     border-radius: 5px;
-    border: 2px solid #4b5985;
+    border: 1px solid #131212b4;
     background: #7f7f7f6c;
     color: #0E0B16;
     font-family: 'Noto Sans', sans-serif;
@@ -187,13 +187,14 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
     margin: auto;
     width: 90%;
     max-width: 400px;
     margin-top: 15px;
     background-color: #e5e5e5de;
-    border: solid 2px #4b5985;
+    box-shadow: 7px 7px 11px 0px rgb(10 10 10 / 68%);
+    border: solid 1px #18171759;
+   
 }
 
 option {
@@ -218,17 +219,17 @@ select:hover {
 
 .container-opciones-compra {
     font-weight: 500;
-    background-color: #7f7f7f6c;
+    background-color: #b6adad6c;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
-    border: solid 2px #4b5985;
-    border-radius: 10px;
+    border: solid 1px #000000b6;   
     margin-top: 6px;
     margin-bottom: 3px;
     padding: 10px;
     width: 60%;
+    box-shadow: 5px 5px 10px #0E0B16;
 }
 
 .container-opciones {
