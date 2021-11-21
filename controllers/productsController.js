@@ -34,25 +34,23 @@ const controlador = {
 
     },
     cart: (req, res) => {
-        //models.products.findAll({
-        //    include: [
-        //      {model: models.comments, include: [models.comments.users] }
-        //    ]
-        //  }) 
-        Cart.findAll({
-            where: {
-                user_id: req.session.user.id
-            },
+ 
+        Product.findAll({
             include: [
                 {
-                    model: Product,
-                    include: [{model: Image}]
-                }
-            ]
+                    model:Image,
+                    as:'images'
+                },
+                {
+                    model: Cart,
+                    as: 'cart',
+                    where: {
+                        user_id: req.session.user.id
+                    },
+                }]
         })
             .then((products) => {
-                return res.send(products)
-                //return res.render('./products/productCart', { products });
+                return res.render('./products/productCart', { products });
             })
 
     },

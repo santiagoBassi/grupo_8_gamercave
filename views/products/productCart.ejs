@@ -13,7 +13,7 @@
         <main>
             <% if (products != '') { %>
                 <% products.forEach(product => { %>
-                    <%- include('../partials/itemCart.ejs', {product: product.products}) -%>
+                    <%- include('../partials/itemCart.ejs', {product: product}) -%>
                 <% }) %>
             <% } else { %>
                 <h3 class="vacio">No hay productos en el carrito</h3>
