@@ -34,16 +34,25 @@ const controlador = {
 
     },
     cart: (req, res) => {
-
+        //models.products.findAll({
+        //    include: [
+        //      {model: models.comments, include: [models.comments.users] }
+        //    ]
+        //  }) 
         Cart.findAll({
-                include: ['products']
-            }, {
-                where: {
-                    user_id: req.session.user.id
+            where: {
+                user_id: req.session.user.id
+            },
+            include: [
+                {
+                    model: Product,
+                    include: [{model: Image}]
                 }
-            })
+            ]
+        })
             .then((products) => {
-                return res.render('./products/productCart', { products });
+                return res.send(products)
+                //return res.render('./products/productCart', { products });
             })
 
     },
@@ -59,16 +68,16 @@ const controlador = {
                 res.send(err)
             })
     },
-    deleteToCart:(req,res) => {
+    deleteToCart: (req, res) => {
         Cart.destroy({
-            where:{
+            where: {
                 user_id: req.session.user.id,
                 product_id: req.params.id
             }
         })
-        .then(()=>{
-            return res.redirect('/products/cart')
-        })
+            .then(() => {
+                return res.redirect('/products/cart')
+            })
     },
     search: (req, res) => {
         Product.findAll({
