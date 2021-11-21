@@ -39,6 +39,7 @@ main {
 
 .slider {
     overflow: hidden;
+    border: solid 4px #171f35;
 }
 
 .slides {
@@ -58,7 +59,7 @@ main {
 .slide img {
     width: 100%;
     border-radius: 10px;
-    border: solid 4px #171f35;
+    
 }
 
 .nav-manual {
@@ -108,7 +109,7 @@ main {
     background-color: white;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
-    margin: 50px auto 20px;
+    margin: 80px auto 20px;
     width: max-content;
     max-width: 90%;
     border-radius: 10px;
@@ -204,7 +205,7 @@ main {
 
 @media (min-width: 1280px) {
     .container-slider {
-        width: 60%;
+        width: 90%;
     }
     .publicidades {
         margin-top: 80px;
