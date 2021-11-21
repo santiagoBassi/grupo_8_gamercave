@@ -13,8 +13,6 @@
 
         <ul class="nav-bar-account" id="otro-modo">
             <% if(locals.user) { %>
-
-
                 <div class="container-btn-user">
                     <button class="btn-user">
                         <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='30'
@@ -153,7 +151,6 @@
         }
 
         .nav-bar-account li {
-
             width: 100%;
             text-align: center;
             border-bottom: solid 3px #4f5d9c;
@@ -165,7 +162,7 @@
             display: block;
             font-family: 'Noto Sans', sans-serif;
             font-size: 20px;
-            color: rgb(148, 30, 168);
+            color: white;
             padding: 30px;
             transition: color 0.5s;
         }
@@ -183,38 +180,27 @@
             position: relative;
         }
 
-      
-      
-
-        .btn-user {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
-         .btn-user {
-           
-            border-radius: 5px;
-            display: flex;
-            border: none;
-            background-color: #1d1d1d;
+        .btn-user {
+            display: none;
             justify-content: center;
             align-items: center;
-            padding: 5px 12px;
+            border: none;
+            background-color: #1d1d1d;
+            padding: 12px 16px;
             color: white;
             font-size: 12px;
-            text-align: center;
             text-transform: uppercase;
             transition: 0.5s;
-            background-size: 200% auto;
-            color: white;            
-            box-shadow: 0 0 20px #eee;
-            border-radius: 10px;
-           
-          }
+        }
 
-          .btn-user:hover {
-            background-position: right center; /* change the direction of the change here */
+        .btn-user:hover {
+            background-position: right center;
+            /* change the direction of the change here */
             color: #fff;
             text-decoration: none;
             cursor: pointer;
-          }
-         
+        }
+
 
         .btn-menu {
             justify-content: center;
@@ -237,7 +223,7 @@
             flex-direction: column;
             position: fixed;
             width: 100vw;
-            background-color: #6b6665e8;
+            background-color: #120907e8;
             top: -100vh;
             text-align: center;
             transition: all 0.4s;
@@ -264,7 +250,7 @@
         }
 
         .nav-bar-site li a:hover {
-            
+
             color: #4f5d9c;
             transition-duration: 0.5s;
         }
@@ -277,23 +263,29 @@
             top: 318px;
         }
 
+        .showAdmin {
+            top: 404px;
+        }
+
         .show2 {
             top: 60px;
         }
 
         @media (min-width: 769px) {
 
+            .btn-user {
+                display: flex;
+            }
 
             .ul-user {
                 width: max-content;
                 position: absolute;
                 list-style-type: none;
                 right: 0px;
-                background-color: #877e7ecc;
-                padding: 20px;
                 display: none;
-                border-top: solid 1px;
-                border-bottom: solid 1px;
+                background-color: black;
+                
+                border-left: solid 5px #7b68bb;
             }
 
             .ul-user :hover {
@@ -304,18 +296,24 @@
             }
 
             .ul-user-show {
-                display: initial;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .ul-user li {
                 width: 100px;
                 margin: 0px;
                 padding: 0px;
+                display: flex;
+                justify-content: center;
+                
             }
 
             .ul-user li a {
                 width: 100%;
-                margin: 0px;
+                margin:auto;
                 padding: 0px;
             }
 
@@ -354,8 +352,8 @@
                 padding: 12px 8px;
                 margin: 0px 5px 0px 5px;
                 transition: all .5s;
-                background-color: #c2bdbdbe;
-                color: black;
+                background-color: #000;
+                color: white;
                 border-top: 1px solid black;
             }
 
@@ -412,8 +410,19 @@
     </style>
     <script>
         function showmenu() {
-            document.getElementById('otro-modo').classList.toggle('show');
-            document.getElementById('otro-modo2').classList.toggle('show2');
+            let navBarSite = document.querySelector('#otro-modo2');
+            let navBarAccount = document.querySelector('#otro-modo');
+
+            navBarSite.classList.toggle('show2');
+
+            let countLiNavBarSite = navBarSite.getElementsByTagName('li').length;
+
+            if (countLiNavBarSite === 4) {
+                navBarAccount.classList.toggle('showAdmin');
+            } else {
+                navBarAccount.classList.toggle('show');
+            }
+
         }
         const btnUser = document.querySelector(".btn-user");
         const ulUser = document.querySelector(".ul-user")
