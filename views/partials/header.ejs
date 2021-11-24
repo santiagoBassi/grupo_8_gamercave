@@ -48,9 +48,9 @@
 
     <nav class="menu-bootom">
         <ul class="nav-bar-site" id="otro-modo2">
-            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="/"><i class="icono-nav-bar fas fa-home"></i>Home</a></li>
             <li><a href="/products">Productos</a></li>
-            <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i> Carrito</a></li>
+            <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i>Carrito</a></li>
 
             <% if (locals.user.rol_id==1) { %>
                 <li><a href="/admin">Administrar</a></li>
@@ -174,6 +174,9 @@
 
         .nav-bar-account li a i {
             color: white;
+        }
+        .icono-nav-bar{
+            margin-right: 3px;
         }
 
         .container-btn-user {
