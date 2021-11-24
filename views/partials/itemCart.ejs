@@ -11,20 +11,24 @@
         </div>
         <div class="container-cantidad-precio">
             <form class="container-cantidad">
-                <div class="btn-aumen-decre" id="decrease<%= product.id %>" onclick="decreaseValue('<%= product.id %>');updatePrice('price<%= product.id %>','<%= product.id %>')"
+                <div class="btn-aumen-decre" id="decrease<%= product.id %>"
+                    onclick="decreaseValue('<%= product.id %>');updatePrice('price<%= product.id %>','<%= product.id %>')"
                     value="Decrease Value">
                     -
                 </div>
-                <input type="number" id="<%= product.id %>" value="1" />
-                <div class="btn-aumen-decre" id="increase<%= product.id %>" onclick="increaseValue('<%= product.id %>');updatePrice('price<%= product.id %>','<%= product.id %>')"
+                <input type="number" name="price" id="<%= product.id %>" value="1" />
+                <div class="btn-aumen-decre" id="increase<%= product.id %>"
+                    onclick="increaseValue('<%= product.id %>');updatePrice('price<%= product.id %>','<%= product.id %>')"
                     value="Increase Value">
                     +
                 </div>
             </form>
             <div class="container-precio-porducto">
-                <p style="display: none;" id="priceInitial<%= product.id %>"><%= product.price %></p>
-                <p id="price<%= product.id %>">
-                    $ <%= product.price %>
+                <p style="display: none;" id="priceInitial<%= product.id %>">
+                    <%= product.price %>
+                </p>
+                <p class="precio-para-sumar" id="price<%= product.id %>">
+                    $<%= product.price %>
                 </p>
             </div>
         </div>
