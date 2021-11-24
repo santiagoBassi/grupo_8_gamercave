@@ -16,7 +16,7 @@
                 <div class="container-btn-user">
                     <button class="btn-user">
                         <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='30'
-                                style='border-radius: 100%; border: none;' alt="hola"> <i class="fas fa-angle-down"></i>
+                                style='border-radius: 100%; border: none; border: 1px solid snow;' alt="hola"> <i class="fas fa-angle-down"></i>
                     </button>
 
                     <ul class="ul-user">
@@ -186,10 +186,9 @@
             align-items: center;
             border: none;
             background-color: #1d1d1d;
-            padding: 12px 16px;
+            padding: 5px 10px;
             color: white;
             font-size: 12px;
-            text-transform: uppercase;
             transition: 0.5s;
         }
 
@@ -260,11 +259,11 @@
         }
 
         .show {
-            top: 318px;
+            top: 330px;
         }
 
         .showAdmin {
-            top: 404px;
+            top: 422px;
         }
 
         .show2 {
@@ -284,12 +283,11 @@
                 right: 0px;
                 display: none;
                 background-color: black;
-                
-                border-left: solid 5px #7b68bb;
+                border-left: solid 5px #9c9999;
             }
 
             .ul-user :hover {
-                background-color: #7c68bbc4;
+               
                 transition-duration: 0.5s;
                 border: none;
                 overflow: hidden;
@@ -358,7 +356,7 @@
             }
 
             .nav-bar-account li a:hover {
-                color: white;
+                color: rgb(163, 63, 189);
                 border: none;
             }
 
@@ -403,8 +401,7 @@
 
             .nav-bar-site li a:hover {
                 border-color: white;
-                background-color: #4f5d9c;
-                color: white;
+                color: rgb(0, 0, 0);
             }
         }
     </style>
