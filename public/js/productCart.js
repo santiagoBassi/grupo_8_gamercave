@@ -14,3 +14,12 @@ function decreaseValue(id) {
     document.getElementById(id).value = value;
 }
 
+function updatePrice(id, idCant) {
+    let priceInitial =document.getElementById(`priceInitial${idCant}`).innerHTML;
+    let price = document.getElementById(id);
+    let cant = document.getElementById(idCant).value
+    let newPrice = Number(priceInitial) * Number(cant);
+
+    price.innerText =`$ ${newPrice}` 
+   
+}
