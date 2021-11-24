@@ -34,12 +34,12 @@ const controlador = {
 
     },
     cart: (req, res) => {
- 
+
         Product.findAll({
             include: [
                 {
-                    model:Image,
-                    as:'images'
+                    model: Image,
+                    as: 'images'
                 },
                 {
                     model: Cart,
@@ -79,18 +79,29 @@ const controlador = {
     },
     search: (req, res) => {
         Product.findAll({
-            include: ['images']
-        }, {
             where: {
                 name: {
-                    [Op.substring]: `${req.query.product}`
+                    [Op.substring]: req.query.product
                 }
-
-            }
+            },
+            include: ['category', 'characteristics', 'images']
         })
             .then(products => {
-
-                return res.render('./products/results', { products });
+                return res.render('./products/products', { products });
+            })
+    },
+    filterByPrice: (req, res) => {
+        Product.findAll({
+            where: {
+                price: {
+                    [Op.gte]: req.query.min,
+                    [Op.lte]: req.query.max
+                }
+            },
+            include: ['category', 'characteristics', 'images']
+        })
+            .then((products) => {
+                return res.render('./products/products', { products });
             })
     }
 };

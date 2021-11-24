@@ -17,6 +17,8 @@ router.get('/detail/:id', productsControllers.productDetail);
 
 router.get('/search', productsControllers.search);
 
+router.get('/filterByPrice', productsControllers.filterByPrice)
+
 router.get('/addToCart/:id', loggedInMiddlware, productsControllers.addToCart);
 
 router.get('/deleteToCart/:id', loggedInMiddlware, productsControllers.deleteToCart);

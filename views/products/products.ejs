@@ -19,15 +19,15 @@
                     <div class="tab-content">
 
                         <p> Precio:</p>
-                        <form action="" method="GE ">
+                        <form action="/products/filterByPrice" method="get">
                             <div>
-                                <label for="max"></label>
-                                <input id="max" type="number" placeholder="Valor Maximo">
+                                <label for="max">Máximo:</label>
+                                <input id="max" name="max" type="number" placeholder="Valor Maximo">
                             </div>
                             
                             <div>
-                                <label for="min"></label>
-                                <input id="min" type="number" placeholder="Valor Minimo">
+                                <label for="min">Mínimo:</label>
+                                <input id="min" name="min" type="number" placeholder="Valor Minimo">
                             </div>
                             
                         <ul class="pepe">
@@ -48,7 +48,7 @@
                             </li>
                         </ul>
                         <div class="boton-filtrar">
-                            Filtrar</button>
+                            <button>Filtrar</button>
                         </div>
                     </form>
                     </div>
