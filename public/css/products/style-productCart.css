@@ -3,7 +3,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+p{
+    font-family: 'Noto Sans', sans-serif
+}
 
 body {
     background-color: #36188E;
@@ -56,7 +58,6 @@ hr {
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     position: relative;
     padding: 5px;
     margin-bottom: 5px;
@@ -91,10 +92,10 @@ hr {
 }
 
 .btn-comprar {
+    margin-top: 15px;
     padding: 14px 24px;
-
-    border: 1px solid #131212b4;
-    background: #ffffffe0;
+    border: 4px solid #7b50f0ad;
+    background: #ffffff41;
     color: #0E0B16;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
@@ -102,7 +103,7 @@ hr {
 }
 
 .btn-comprar:hover {
-    background-color: #4b5985;
+    background-color: #7b50f0ad;
     color: #E5E5E5;
 }
 
@@ -114,6 +115,15 @@ hr {
     padding: 5px;
     height: 100%;
 }
+
+.container-precio-final {
+    margin-top: 20px;
+    font-weight: 600;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+
 
 .container-precio-porducto {
     font-weight: 600;
@@ -185,27 +195,24 @@ input[type=number]::-webkit-outer-spin-button {
 
 .btn-aumen-decre:hover {
     width: 100%;
-    background-color: #4b5985;
+    background-color: #7b50f0ad;
     color: #E5E5E5;
 }
 
 .container-envio-pago {
     padding: 10px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin: auto;
-    width: 90%;
+    width: 78%;
     margin-top: 15px;
     background-color: #e5e5e5de;
-    box-shadow: 7px 7px 11px 0px rgb(10 10 10 / 68%);
+    box-shadow: 7px 7px 11px 0px rgb(10 10 10 / 21%);
     border: solid 1px #18171759;
     text-align: center;
-    right: 58px;
     position: relative;
     margin-bottom: 5px;
-
 
 }
 
@@ -225,14 +232,14 @@ select {
 }
 
 select:hover {
-    background-color: #4b5985;
-    color: #E5E5E5;
+    background-color: #c4bdc6;
+    color: #000000;
 }
 
 .container-opciones-compra {
     font-weight: 500;
     background-color: #b6adad6c;
-    display: flex;
+    margin-left: 15px;
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
@@ -240,8 +247,8 @@ select:hover {
     margin-top: 6px;
     margin-bottom: 3px;
     padding: 10px;
-    width: 60%;
-    box-shadow: 5px 5px 10px #0E0B16;
+    width: 53%;
+    box-shadow: 5px 5px 10px #0e0b1629;
 }
 
 .container-opciones {
@@ -260,6 +267,8 @@ select:hover {
 }
 
 @media (max-width: 520px) {
+
+
     .container-precio-porducto {
         font-weight: 600;
         width: 100%;
@@ -301,7 +310,7 @@ select:hover {
 
     .btn-aumen-decre:hover {
         width: 5px;
-        background-color: #4b5985;
+        background-color: #7b50f0ad;
         color: #E5E5E5;
     }
 
@@ -321,10 +330,59 @@ select:hover {
     }
 }
 
-@media (min-width: 769px) {
-    .container-producto-carrito {
-        justify-content: space-between;
+@media (max-width: 769px) {
+
+
+    .btn-comprar {
+        justify-content: center;
+        margin-top: 15px;
+        padding: 14px 24px;
+        border: 4px solid #7b50f0ad;
+        background: #ffffff41;
+        color: #0E0B16;
+        font-family: 'Noto Sans', sans-serif;
+        font-weight: 700;
+        transition: all .5s;
     }
+    
+
+    .container-opciones-compra {
+        display: flex;
+        font-weight: 500;
+        background-color: #b6adad6c;
+        margin-left: 15px;
+        flex-direction: column;
+        text-align: center;
+        justify-content:center;
+        border: solid 1px #000000b6;
+        margin-top: 6px;
+        margin-bottom: 3px;
+        padding: 10px;
+        width: 200px;
+        box-shadow: 5px 5px 10px #0e0b1629;
+    }
+
+
+    .container-envio-pago {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: auto;
+        width: 300px;
+        margin-top: 15px;
+        background-color: #e5e5e5de;
+        box-shadow: 7px 7px 11px 0px rgb(10 10 10 / 20%);
+        border: solid 1px #18171759;
+        text-align: center;
+        position: relative;
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 769px) {
+
 
     .container-info-producto {
         flex-direction: row;

@@ -38,6 +38,8 @@ const routsAdmin = require('./routers/admin.js');
 const apiRoutsUsers = require('./routers/api/users.js');
 const apiRoutsProducts = require('./routers/api/products.js');
 
+
+
 app.use('/', routsMain);
 app.use('/users', routsUsers);
 app.use('/products', routsProducts);
