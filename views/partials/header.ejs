@@ -1,8 +1,7 @@
 <header>
     <nav class="menu-top">
         <div class="container-logo">
-            <a href="/"><img src="/images/logos/logoGamerCaveLetrasOscuras.png" alt="Logo de Gamer Cave"
-                    class="logo"></a>
+            <a href="/"><img src="/images/logos/logoGamerCave.png" alt="Logo de Gamer Cave" class="logo"></a>
         </div>
         <div class="container-search">
             <form action="/products/search" method="GET" class="container-input-i">
@@ -16,7 +15,8 @@
                 <div class="container-btn-user">
                     <button class="btn-user">
                         <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='30'
-                                style='border-radius: 100%; border: none; border: 1px solid snow;' alt="hola"> <i class="fas fa-angle-down"></i>
+                                style='border-radius: 100%; border: none; border: 1px solid snow;' alt="hola"> <i
+                                class="fas fa-angle-down"></i>
                     </button>
 
                     <ul class="ul-user">
@@ -37,7 +37,7 @@
                     <!--Cuando no estoy logueado debería ver esto-->
 
                     <li><a href="/users/login"><i class="icono-nav-bar fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
-                    <li><a href="/users/register"><i class="icono-nav-bar far fa-address-card"></i> Registrarse</a></li>
+                    <li><a href="/users/register"><i class="icono-nav-bar far fa-address-card"> </i>Registrarse</a></li>
 
                     <%}%>
         </ul>
@@ -49,7 +49,7 @@
     <nav class="menu-bootom">
         <ul class="nav-bar-site" id="otro-modo2">
             <li><a href="/"><i class="icono-nav-bar fas fa-home"></i>Home</a></li>
-            <li><a href="/products">Productos</a></li>
+            <li><a href="/products"><i class="icono-nav-bar fa fa-laptop" aria-hidden="true"></i>Productos</a></li>
             <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i>Carrito</a></li>
 
             <% if (locals.user.rol_id==1) { %>
@@ -168,14 +168,15 @@
         }
 
         .nav-bar-account li a:hover {
-            color: #4f5d9c;
+            color: #2d1f58;
             transition-duration: 1.0s;
         }
 
         .nav-bar-account li a i {
             color: white;
         }
-        .icono-nav-bar{
+
+        .icono-nav-bar {
             margin-right: 3px;
         }
 
@@ -290,7 +291,7 @@
             }
 
             .ul-user :hover {
-               
+
                 transition-duration: 0.5s;
                 border: none;
                 overflow: hidden;
@@ -309,12 +310,12 @@
                 padding: 0px;
                 display: flex;
                 justify-content: center;
-                
+
             }
 
             .ul-user li a {
                 width: 100%;
-                margin:auto;
+                margin: auto;
                 padding: 0px;
             }
 
@@ -353,9 +354,8 @@
                 padding: 12px 8px;
                 margin: 0px 5px 0px 5px;
                 transition: all .5s;
-                background-color: #000;
                 color: white;
-                border-top: 1px solid black;
+              
             }
 
             .nav-bar-account li a:hover {
@@ -404,7 +404,7 @@
 
             .nav-bar-site li a:hover {
                 border-color: white;
-                color: rgb(0, 0, 0);
+                color:  rgb(163, 63, 189);
             }
         }
     </style>

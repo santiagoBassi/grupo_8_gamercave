@@ -14,43 +14,24 @@
             <aside>
 
                 <div class="tab">
-                    <input id="tab-1" class="checkbox-filter" type="checkbox">
-                    <label class="title-filter" for="tab-1">Filtrar por:</label>
                     <div class="tab-content">
 
-                        <p> Precio:</p>
                         <form action="/products/filterByPrice" method="get">
+
                             <div>
-                                <label for="max">Máximo:</label>
-                                <input id="max" name="max" type="number" placeholder="Valor Maximo">
-                            </div>
-                            
+                                <label for="min">Precio minimo:</label>
+                                <input class="input" type="number" id="min" name="min" placeholder="Precio minimo"
+                                    required>
+                            </div><br>
                             <div>
-                                <label for="min">Mínimo:</label>
-                                <input id="min" name="min" type="number" placeholder="Valor Minimo">
-                            </div>
-                            
-                        <ul class="pepe">
-                            <li><a href="#">Filtrar por categorias:</a>
-                                <ul class="lista-categorias">
-                                    <li><a href="#">Procesadores</a></li>
-                                    <li><a href="#">Discos Rigidos</a></li>
-                                    <li><a href="#">Auriculares</a></li>
-                                    <li><a href="#">Mouses</a></li>
-                                    <li><a href="#">Teclados</a></li>
-                                    <li><a href="#">Memorias Ram</a></li>
-                                    <li><a href="#">Monitores</a></li>
-                                    <li><a href="#">Coolers</a></li>
-                                    <li><a href="#">Fuentes</a></li>
-                                    <li><a href="#">Mothers</a></li>
-                                    <li><a href="#">Placa de video</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="boton-filtrar">
-                            <button class="button">Filtrar</button>
-                        </div>
-                    </form>
+                                <label for="max">Precio maximo:</label>
+                                <input class="input" type="number" id="max" name="max" placeholder="Precio maximo"
+                                    required>
+                            </div><br>
+                            <button class="boton" type="submit">Filtrar</button>
+
+
+                        </form>
                     </div>
                 </div>
 
