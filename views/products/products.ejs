@@ -4,7 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/products/style-products.css">
-        <script src="/js/product.js"></script>
+        <script src="/js/product.js" defer></script>
 </head>
 
 <body>
@@ -12,46 +12,30 @@
         <main>
 
             <aside>
-
-                <div class="tab">
-                    <div class="tab-content">
-
-                        <form action="/products/filterByPrice" method="get">
-
-                            <div>
-                                <label for="min">Precio minimo:</label>
-                                <input class="input" type="number" id="min" name="min" placeholder="Precio minimo"
-                                    required>
-                            </div><br>
-                            <div>
-                                <label for="max">Precio maximo:</label>
-                                <input class="input" type="number" id="max" name="max" placeholder="Precio maximo"
-                                    required>
-                            </div><br>
-                            <button class="boton" type="submit">Filtrar</button>
-
-
-                        </form>
-                    </div>
+                <div class="container-btn-filter">
+                    <span class="btn-filter" onclick="showFilter()">Filtrar</span>
                 </div>
+                <form id="form" class="form" action="/products/filterByPrice" method="get">
+                    <div>
+                        <label for="min">Precio minimo:</label>
+                        <input class="input" type="number" id="min" name="min" placeholder="Precio minimo" required>
+                    </div><br>
+                    <div>
+                        <label for="max">Precio maximo:</label>
+                        <input class="input" type="number" id="max" name="max" placeholder="Precio maximo" required>
+                    </div><br>
+                    <button class="boton" type="submit">Filtrar</button>
+                </form>
+            </aside>
 
+            <section class="container-productos">
+                <h4 class="titulares-productos">Productos</h4>
+                <div class="container-all-articles ">
+                    <% products.forEach(function(product) {%>
+                        <%- include('../partials/productItem', {id: product.id, name: product.name, price: product.price,discount:product.discount, img1: product.images[2].name}) -%>
+                    <% }) %>
                 </div>
-                </div>
-
-                <section class="container-productos">
-                    <h4 class="titulares-productos">Productos</h4>
-                    <div class="container-all-articles ">
-                        <% products.forEach(function(product) {%>
-                            <%- include('../partials/productItem', {id: product.id, name: product.name, price:
-                                product.price,discount:product.discount, img1: product.images[2].name}) -%>
-                                <% }) %>
-                    </div>
-
-                    </div>
-
-                </section>
-
-                </div>
+            </section>
 
         </main>
 
