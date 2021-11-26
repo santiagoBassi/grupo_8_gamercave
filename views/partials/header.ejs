@@ -11,6 +11,11 @@
         </div>
 
         <ul class="nav-bar-account" id="otro-modo">
+            <li class="soloMovil"><a href="/"><i class="icono-nav-bar fas fa-home"></i>Home</a></li>
+            <li class="soloMovil"><a href="/products"><i class="icono-nav-bar fa fa-laptop"
+                        aria-hidden="true"></i>Productos</a></li>
+            <li class="soloMovil"><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i>Carrito</a>
+            </li>
             <% if(locals.user) { %>
                 <div class="container-btn-user">
                     <button class="btn-user">
@@ -48,12 +53,14 @@
 
     <nav class="menu-bootom">
         <ul class="nav-bar-site" id="otro-modo2">
-            <li><a href="/"><i class="icono-nav-bar fas fa-home"></i>Home</a></li>
-            <li><a href="/products"><i class="icono-nav-bar fa fa-laptop" aria-hidden="true"></i>Productos</a></li>
-            <li><a href="/products/cart"><i class="icono-nav-bar fas fa-shopping-cart"></i>Carrito</a></li>
+            <li class="soloDesktop"><a href="/"><i class="icono-nav-bar fas fa-home"></i>Home</a></li>
+            <li class="soloDesktop"><a href="/products"><i class="icono-nav-bar fa fa-laptop"
+                        aria-hidden="true"></i>Productos</a></li>
+            <li class="soloDesktop"><a href="/products/cart"><i
+                        class="icono-nav-bar fas fa-shopping-cart"></i>Carrito</a></li>
 
             <% if (locals.user.rol_id==1) { %>
-                <li><a href="/admin">Administrar</a></li>
+                <li class="soloDesktop"><a href="/admin">Administrar</a></li>
                 <% } %>
 
         </ul>
@@ -263,18 +270,24 @@
         }
 
         .show {
-            top: 330px;
-        }
-
-        .showAdmin {
-            top: 422px;
-        }
-
-        .show2 {
             top: 60px;
         }
 
+
+        .soloMovil {}
+
+        .soloDesktop {
+            display: none;
+        }
+
         @media (min-width: 769px) {
+            .soloDesktop {
+                display: initial;
+            }
+
+            .soloMovil {
+                display: none;
+            }
 
             .btn-user {
                 display: flex;
@@ -355,7 +368,7 @@
                 margin: 0px 5px 0px 5px;
                 transition: all .5s;
                 color: white;
-              
+
             }
 
             .nav-bar-account li a:hover {
@@ -404,24 +417,16 @@
 
             .nav-bar-site li a:hover {
                 border-color: white;
-                color:  rgb(163, 63, 189);
+                color: rgb(163, 63, 189);
             }
         }
     </style>
     <script>
         function showmenu() {
-            let navBarSite = document.querySelector('#otro-modo2');
             let navBarAccount = document.querySelector('#otro-modo');
 
-            navBarSite.classList.toggle('show2');
+            navBarAccount.classList.toggle('show');
 
-            let countLiNavBarSite = navBarSite.getElementsByTagName('li').length;
-
-            if (countLiNavBarSite === 4) {
-                navBarAccount.classList.toggle('showAdmin');
-            } else {
-                navBarAccount.classList.toggle('show');
-            }
 
         }
         const btnUser = document.querySelector(".btn-user");
