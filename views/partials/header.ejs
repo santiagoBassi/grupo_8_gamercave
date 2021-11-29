@@ -18,6 +18,7 @@
             </li>
             <% if(locals.user) { %>
                 <div class="container-btn-user">
+
                     <button class="btn-user">
                         <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='30'
                                 style='border-radius: 100%; border: none; border: 1px solid snow;' alt="hola"> <i
@@ -192,6 +193,7 @@
         }
 
         .btn-user {
+
             display: none;
             justify-content: center;
             align-items: center;
@@ -274,7 +276,7 @@
         }
 
 
-        .soloMovil {}
+  
 
         .soloDesktop {
             display: none;
