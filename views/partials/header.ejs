@@ -13,6 +13,7 @@
         <ul class="nav-bar-account" id="otro-modo">
             <% if(locals.user) { %>
                 <div class="container-btn-user">
+
                     <button class="btn-user">
                         <%= locals.user.name %><img src="/images/users/<%= locals.user.image %>" width='30'
                                 style='border-radius: 100%; border: none; border: 1px solid snow;' alt="hola"> <i
@@ -185,6 +186,7 @@
         }
 
         .btn-user {
+
             display: none;
             justify-content: center;
             align-items: center;
@@ -355,7 +357,7 @@
                 margin: 0px 5px 0px 5px;
                 transition: all .5s;
                 color: white;
-              
+
             }
 
             .nav-bar-account li a:hover {
@@ -404,7 +406,7 @@
 
             .nav-bar-site li a:hover {
                 border-color: white;
-                color:  rgb(163, 63, 189);
+                color: rgb(163, 63, 189);
             }
         }
     </style>
