@@ -139,7 +139,7 @@ hr {
 .container-precio-porducto {
     font-weight: 600;
     width: 100%;
-    font-size: 30px;
+    font-size: 10px;
     text-align: center;
 }
 
@@ -351,8 +351,9 @@ select:hover {
 
 
 @media (max-width: 769px) {
+    
 
-
+    
     .btn-comprar {
         justify-content: center;
         margin-top: 15px;
@@ -420,12 +421,4 @@ select:hover {
     }
 
 
-    @media (min-width: 769px) {
-
-
-        .container-info-producto {
-            flex-direction: row;
-            width: 100%;
-        }
-    }
 }
