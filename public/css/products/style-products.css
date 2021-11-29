@@ -23,11 +23,30 @@
      margin: auto;
      margin-top: 110px;
      width: 95%;
+     display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
  }
 
+ aside {
+     width: 90%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .container-btn-filter {
+     width: 100%;
+     max-width: 360px;
+     background-color: white;
+     display: flex;
+     justify-content: center;
+ }
+ .btn-filter {
+   padding: 14px 18px;
+}
 
  .container-form {
      display: flex;
@@ -35,23 +54,27 @@
      align-items: center;
  }
 
- form {
-     margin-left: 10px;
-     width: 90%;
+ .form {
+     width: 100%;
      max-width: 360px;
      display: flex;
      flex-direction: column;
      align-items: center;
      padding: 10px 25px;
      background-color: #e5e5e5d7;
-     border-radius: 10px;
+     border-radius: 3px;
+     display: none;
  }
 
- form div {
+ .showForm {
+     display: flex;
+ }
+
+ .form div {
      width: 100%;
  }
 
- form h4 {
+ .form h4 {
      color: #0E0B16;
      font-size: 24px;
      font-family: 'Noto Sans', sans-serif;
@@ -66,7 +89,7 @@
      margin-bottom: 20px;
  }
 
- form div label {
+ .form div label {
      color: #0E0B16;
      padding-bottom: 8px;
      margin-bottom: 20px;
@@ -92,8 +115,8 @@
 
  .boton {
      padding: 14px 24px;
-     border-radius: 5px;
-     border: 2px solid #4b5985;
+
+     border: 2px solid #331983;
      background-color: #E5E5E5;
      color: #0E0B16;
      font-family: 'Noto Sans', sans-serif;
@@ -101,166 +124,11 @@
  }
 
  .boton:hover {
-     background-color: #4b5985;
+     background-color: #331983;
      color: #E5E5E5;
      transition-duration: 1s;
  }
 
-
- textarea {
-     text-align: center;
-     width: 100%;
-     border: none;
-     border-radius: 4px;
-     background-color: #f1f1f1;
-     box-sizing: border-box;
-     border: 2px solid #ccc;
-     border-radius: 4px;
-     background-color: #f8f8f8;
-     font-size: 16px;
-     resize: none;
- }
-
- #max {
-     text-align: center;
-     width: 100%;
-     border: none;
-     border-radius: 4px;
-     background-color: #f1f1f1;
-     box-sizing: border-box;
-     border: 2px solid #ccc;
-     border-radius: 4px;
-     font-size: 16px;
-     resize: none;
-     width: 100%;
-     margin-top: 10px;
-     margin-bottom: 10px;
-
- }
-
- #min {
-     text-align: center;
-     width: 100%;
-     border: none;
-     border-radius: 4px;
-     background-color: #f1f1f1;
-     box-sizing: border-box;
-     border: 2px solid #ccc;
-     border-radius: 4px;
-     font-size: 16px;
-     resize: none;
-     width: 100%;
- }
-
- .tab {
-
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
-     position: relative;
-     width: 80%;
- }
-
- .checkbox-filter {
-     display: none;
- }
-
- .tab-content div {
-     padding-left: 10px;
- }
-
- .tab-content {
-     font-family: 'Noto Sans', sans-serif;
-     background-color: #e5e5e5d7;
- }
-
- .title-filter {
-     height: 100%;
-     text-align: center;
-     display: block;
-     margin-top: 10px;
-     padding: 10px;
-     margin-left: 1px;
-     color: #ffffff;
-     border-right: solid 3px #55669c;
-     border-top: solid 3px #55669c;
-     background: rgb(104 78 184);
-     font-family: 'Noto Sans', sans-serif;
- }
-
- .tab .tab-content {
-     border-top-style: hidden;
-     color: #0E0B16;
-     overflow: visible;
-     margin-top: 90px;
-     margin-left: 1px;
-     transition: none;
-     max-height: none;
-     width: auto;
-     padding-left: 0;
-
-
- }
-
- .tab .tab-content p {
-     padding: 10px;
- }
-
- .tab .tab-content h4 {
-     padding-left: 10px;
- }
-
- .lista-categorias li {
-     padding-left: 10px;
- }
-
- .checkbox-filter:checked~.tab-content {
-     max-height: 100vh;
- }
-
- .title-filter::after {
-     content: "\25b6";
-     position: absolute;
-     right: 10px;
-     top: 10px;
-     display: block;
-     transition: all 0.4s;
- }
-
- .checkbox-filter:checked~label::after {
-     transform: rotate(90deg);
- }
-
- .lista-categorias {
-     list-style: none;
-     padding-bottom: 15px;
- }
-
- .lista-categorias li a {
-     text-decoration: none;
-     color: #0E0B16;
- }
-
- .button {
-     padding: 14px 24px;
-     color: #0E0B16;
-     font-family: 'Roboto', sans-serif;
-     transition: all 1s;
-     cursor: pointer;
-     font-weight: 800;
-     text-decoration: none;
-     text-align: center;
-     align-items: center;
- }
-
- .boton-filtrar {
-     padding: 14px 24px;
-     color: #0E0B16;
-     font-family: 'Roboto', sans-serif;
-     font-weight: 800;
-     text-decoration: none;
-     text-align: center;
- }
 
 
 
@@ -293,88 +161,25 @@
      margin: auto;
  }
 
- @media (min-width: 769px) {
+ @media (min-width: 870px) {
 
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+        
+    }
+    aside {
+        width: 213px;
+        margin-top: 190px;
+    }
+    .container-btn-filter{
+        display: none;
+    }
+    .form{
+        display: flex;
+    }
 
+  
 
-     form {
-         max-width: 500px;
-         width: 80%;
-     }
-
-     form h4 {
-         font-size: 28px;
-     }
-
-     aside {
-         display: flex;
-         flex-direction: row;
-     }
-
-     .tab {
-         max-width: 200px;
-         max-height: 50px;
-         margin-top: 100px;
-     }
-
-     .title-filter::after {
-         padding-top: 13px;
-         content: none;
-     }
-
-     .tab .tab-content {
-         border-top-style: hidden;
-         color: #0E0B16;
-         overflow: visible;
-         transition: none;
-         max-height: none;
-         width: auto;
-         padding-left: 0;
-         background-color: #e5e5e5
-     }
  }
-
- ul.pepe {
-     margin: 10px auto;
-     padding: 0;
-     list-style: none;
-     width: 100%;
-     font-size: 18px;
- }
-
- ul.pepe li {
-     list-style: none;
- }
-
- ul.pepe li a {
-     display: block;
-     padding: 10px 10px 10px 14px;
-     background: #402690c9;
-     color: #fff;
-     border-top: 1 px solid #666;
-     text-decoration: none;
-     box-sizing: border-box;
- }
-
- ul.pepe li ul {
-     max-height: 0;
-     margin: 0;
-     padding: 0;
-     list-style: none;
-     overflow: hidden;
-     transition: .3s all ease-in;
- }
-
- ul.pepe li:hover ul {
-     max-height: 600px;
-     transition: .3s all ease-in;
- }
-
- ul.pepe li a:hover {
-     background: #666;
-     color: #fff;
- }
-
- /*aca*/
-
 
