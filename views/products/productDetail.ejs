@@ -14,14 +14,20 @@
             <div class="product-img">
                 <div class="container-images-product">
                     <article class="articulo">
-                        <img src="/images/products/<%- images.img1 -%>" id="img1" alt="Imagen grande" class="img-grande mostrar">
-                        <img src="/images/products/<%- images.img2 -%>" id="img2" alt="Imagen grande" class="img-grande">
-                        <img src="/images/products/<%- images.img3 -%>" id="img3" alt="Imagen grande" class="img-grande">
+                        <img src="/images/products/<%- images.img1 -%>" id="img1" alt="Imagen grande"
+                            class="img-grande mostrar">
+                        <img src="/images/products/<%- images.img2 -%>" id="img2" alt="Imagen grande"
+                            class="img-grande">
+                        <img src="/images/products/<%- images.img3 -%>" id="img3" alt="Imagen grande"
+                            class="img-grande">
                     </article>
                     <div class="display-lateral">
-                        <img src="/images/products/<%-images.img1 -%>" onclick="showImg(1)" alt="Imagen chica" class="img-reducida">
-                        <img src="/images/products/<%-images.img2 -%>" onclick="showImg(2)" alt="Imagen chica" class="img-reducida">
-                        <img src="/images/products/<%-images.img3 -%>" onclick="showImg(3)" alt="Imagen chica" class="img-reducida">
+                        <img src="/images/products/<%-images.img1 -%>" onclick="showImg(1)" alt="Imagen chica"
+                            class="img-reducida">
+                        <img src="/images/products/<%-images.img2 -%>" onclick="showImg(2)" alt="Imagen chica"
+                            class="img-reducida">
+                        <img src="/images/products/<%-images.img3 -%>" onclick="showImg(3)" alt="Imagen chica"
+                            class="img-reducida">
                     </div>
                 </div>
                 <div class="todo">
@@ -36,14 +42,16 @@
                         <div class="texto">Hay Stock/Envió gratis/Garantía de 6 meses</div><br>
                         <div class="texto">
                             Hasta 6 Cuotas sin interes</div><br>
-                        <span class="span-price"><div class="text-price">
-                            $ <%= product.price %>
-                        </div></span>
+                        <span class="span-price">
+                            <div class="text-price">
+                                $ <%= product.price %>
+                            </div>
+                        </span>
 
                         <div class="span">
 
                             <a href="/products/addToCart/<%= product.id %>" class="boton-comprar">Comprar</a>
-                            <i class="fas fa-shopping-cart carrito"></i>
+
                         </div><br>
 
                     </div>
@@ -56,7 +64,7 @@
                 <input id="tab-1" type="checkbox">
                 <label for="tab-1">Caracteristicas Principales</label>
                 <div class="tab-content">
-                    <% product.characteristics.forEach(characteristic => { %>
+                    <% product.characteristics.forEach(characteristic=> { %>
                         <p>
                             <%= characteristic.name %> :
                                 <%= characteristic.value %>
