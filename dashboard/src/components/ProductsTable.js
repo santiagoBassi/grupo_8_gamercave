@@ -1,38 +1,57 @@
-function ProductsTable() {
-    return(
-        <div className="container-table">
-          <table className="table">
-            <tr>
-              <th>id</th>
-              <th>img</th>
-              <th>name</th>
-              <th>actions</th>
-            </tr>
+import { useState, useEffect } from 'react';
 
-            <tr>
+
+function ProductsTable() {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setProducts(data.products)
+      })
+  }, [])
+
+  return (
+    <div className="container-table">
+      <table className="table">
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>actions</th>
+        </tr>
+
+        {
+          products.map(product => {
+            return(<tr>
               <th>
-                2
+                {product.id}
               </th>
+              
               <th>
-                <img width="50px" src="/images/produ" alt="" />
-              </th>
-              <th>
-                mouse
+                {product.name}
               </th>
               <th>
                 <div className="container-delete">
-                  <form action="/admin/<%= product.id %>/delete?_method=DELETE" method="POST">
+                  <form action="http://localhost:3030/admin/{product.id}/delete?_method=DELETE" method="POST">
                     <button className="delete" type="submit">Borrar</button>
                   </form>
                 </div>
                 <div className="container-editar">
-                  <a href="/admin/<%= product.id %>/edit">Editar</a>
+                  {<a href="http://localhost:3030/admin/+{product.id}/edit">Editar</a>}
                 </div>
               </th>
             </tr>
-          </table>
-        </div>
-    )
+            )
+          })
+
+        }
+      </table>
+    </div>
+  )
 }
 
 export default ProductsTable;

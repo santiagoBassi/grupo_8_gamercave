@@ -55,19 +55,19 @@ const controlador = {
 
                         let response = {
                             count: products.length,
-                            countByCategory: {
-                                procesador: categories[0],
-                                discoRigido: categories[1],
-                                auricular: categories[2],
-                                mouse: categories[3],
-                                teclado: categories[4],
-                                memoriaRam: categories[5],
-                                monitor: categories[6],
-                                cooler: categories[7],
-                                fuente: categories[8],
-                                mother: categories[9],
-                                placaVideo: categories[10]
-                            },
+                            countByCategory: [
+                                {procesador: categories[0]},
+                                {discoRigido: categories[1]},
+                                {auricular: categories[2]},
+                                {mouse: categories[3]},
+                                {teclado: categories[4]},
+                                {memoriaRam: categories[5]},
+                                {monitor: categories[6]},
+                                {cooler: categories[7]},
+                                {fuente: categories[8]},
+                                {mother: categories[9]},
+                                {placaVideo: categories[10]}
+                            ],
                             products: productsWithUrl
                         }
 

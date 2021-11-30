@@ -125,21 +125,6 @@ const controlador = {
 
             })
 
-        /*let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
-        let products = JSON.parse(productsJSON);
-
-        products.forEach(product => {
-            if (product.id == req.params.id) {
-                let claves = Object.keys(product);
-                let characteristic = {};
-                for (let i = 8; i < claves.length; i++) {
-                    characteristic[claves[i]] = product[claves[i]];
-                }
-                return res.render('./admin/productEdit', { characteristic: characteristic, product: product });
-            }
-        });
-
-*/
     },
     productEditSave: (req, res) => {
         console.log('Llegue al controller');
@@ -253,6 +238,8 @@ const controlador = {
 
     },
     productDelete: (req, res) => {
+        res.send('borramos el producto')
+        /*
         Product.findByPk(req.params.id, {
                 include: ['category', 'characteristics', 'images']
             })
