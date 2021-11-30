@@ -11,38 +11,89 @@ body {
     background-size: cover;
 }
 
+.container-logo {
+    width: 140px;
+}
+
+.logo {
+    width: 100%;
+    padding: 10px;
+}
+
 .container-content {
     width: 90%;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 5px;
     margin-bottom: 200px;
 }
-.titulos{
+
+.titulos {
     font-size: 25px;
     text-align: center;
     color: white;
     margin-bottom: 10px;
 }
-.container-database{
+
+.container-database {
     background-color: white;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 20px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
 }
-.container-card{
+
+.container-card {
     background-color: rgb(0, 0, 0);
     padding: 20px 50px;
     color: white;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-name-count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
 
 }
+
+.container-name-count div {
+    padding: 5px;
+}
+
+.container-countByCategories{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.container-card-categories{
+    background-color: rgb(0, 0, 0);
+    padding: 20px 50px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .container-add-product {
     max-width: 1000px;
     margin: auto;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .container-add-product a {
@@ -89,6 +140,39 @@ body {
     background-color: #4b598586;
     padding: 2px 4px;
 }
-.container-last-product{
+
+.container-last-product {
     background-color: white;
+    margin-bottom: 60px;
 }
+
+@media (min-width: 769px) {
+    .container-database {
+        flex-direction: row;
+        max-width: 830px;
+    }
+    .container-card {
+        padding: 20px 25px;
+        margin-bottom: 0px;
+    }
+    .container-name-count{
+        padding-right: 50px;
+    }
+    
+    .container-countByCategories{
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        max-width: 700px;
+    }
+    .container-card-categories{
+        width: 200px;
+        padding: 20px 10px;
+    }
+}
+@media (min-width: 1280) {
+    .container-categories-lastProduct {
+        flex-direction: row;
+    }
+}
+

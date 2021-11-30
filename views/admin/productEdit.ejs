@@ -101,7 +101,7 @@
                 <div>
                     <label for="image">Imagenes del producto:</label>
                     <p class="textHelp">Si desea reemplazar las imagenes inserte las tres imagenes nuevas.</p>
-                    <input type="file" class="input" id="image" name="imagesProduct" multiple>
+                    <input type="file" class="input" id="image" name="imagesProduct" accept="image/*" multiple>
                     <span class="error">
                         <% if (locals.errors && locals.errors.imagesProduct) { %>
                             <%= locals.errors.imagesProduct.msg %> 

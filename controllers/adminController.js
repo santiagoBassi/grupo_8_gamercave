@@ -30,8 +30,6 @@ const controlador = {
         const resultValidation = validationResult(req)
 
         if (resultValidation.errors.length > 0) {
-            
-            console.log(req.body);
             Category.findAll()
             .then((categories => {
                 return res.render('./admin/productCreate', {

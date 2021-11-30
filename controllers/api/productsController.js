@@ -4,6 +4,7 @@ const Category = db.Category;
 
 const controlador = {
     list: (req, res) => {
+        console.log('Me llamaron');
         let procesador = Product.count({
             where: { category_id: 1 }
         });

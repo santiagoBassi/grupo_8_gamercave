@@ -11,6 +11,65 @@
 
     <%- include('../partials/header')%>
         <main class="container-content">
+            <h3 class="titulos">Resumen</h3>
+            <div class="container-database">
+                <div class="container-card">
+                    <div>Productos</div>
+                    <div>52</div>
+                </div>
+                <div class="container-card">
+                    <div>Categorias</div>
+                    <div>52</div>
+                </div>
+                <div class="container-card">
+                    <div>Usuarios</div>
+                    <div>52</div>
+                </div>
+            </div>
+
+            <h3 class="titulos">Cantidad de Productos Por Categoria</h3>
+            <div class="container-database">
+                <div class="container-card">
+                    <div>Productos</div>
+                    <div>52</div>
+                </div>
+                <div class="container-card">
+                    <div>Categorias</div>
+                    <div>52</div>
+                </div>
+                <div class="container-card">
+                    <div>Usuarios</div>
+                    <div>52</div>
+                </div>
+                <div class="container-card">
+                    <div>Productos</div>
+                    <div>52</div>
+                </div>
+                <div class="container-card">
+                    <div>Categorias</div>
+                    <div>52</div>
+                </div>
+                <div class="container-card">
+                    <div>Usuarios</div>
+                    <div>52</div>
+                </div>
+            </div>
+
+            <div class="container-last-product">
+                <h3>Ultimo producto Cargado</h3>
+                <hr>
+                <div>
+                    <div>Memoria Ram</div>
+                    <img src="/images/ram2.png" width="200" alt="images">
+                </div>
+
+            </div>
+
+
+
+
+            <hr style="margin-bottom: 30px;">
+
             <div class="container-add-product">
                 <a href="/admin/create">Nuevo Producto <i class="fas fa-plus"></i></a>
             </div>
@@ -23,7 +82,7 @@
                         <th>name</th>
                         <th>actions</th>
                     </tr>
-                    <% products.forEach((product) => { %>
+                    <% products.forEach((product)=> { %>
 
                         <tr>
 
