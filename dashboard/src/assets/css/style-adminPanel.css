@@ -142,8 +142,22 @@ body {
 }
 
 .container-last-product {
-    background-color: white;
-    margin-bottom: 60px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+    color: white;
+    font-size: larger;
+}
+.titulo-ultimo-producto{
+    font-size: 25px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
 }
 
 @media (min-width: 769px) {

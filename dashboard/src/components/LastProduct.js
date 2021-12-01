@@ -12,17 +12,18 @@ function LastProduct(props) {
         setProduct(data)
       })
   }, [])
-    return(
-        <div className="container-last-product">
-          <h3>Ultimo producto Cargado</h3>
-          <hr />
-          <div>
-            <div>{product.id}</div>
-            <div>{product.name}</div>
-            <div>{product.price}</div>
-          </div>
-        </div>
-    )
+  return (
+    <div className="container-last-product">
+      <h3 className= "titulo-ultimo-producto">Ultimo producto Cargado</h3>
+      <hr />
+      <div className= "container-card">
+        <div className= "container-name-count">Id: {product.id}</div>
+
+        <div>Nombre: {product.name}</div>
+        <div>Precio: ${product.price}</div>
+      </div>
+    </div>
+  )
 }
 
 export default LastProduct
