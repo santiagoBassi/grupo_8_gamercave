@@ -26,25 +26,26 @@ function ProductsTable() {
 
         {
           products.map(product => {
-            return(<tr>
-              <th>
-                {product.id}
-              </th>
-              
-              <th>
-                {product.name}
-              </th>
-              <th>
-                <div className="container-delete">
-                  <form action="http://localhost:3030/admin/{product.id}/delete?_method=DELETE" method="POST">
-                    <button className="delete" type="submit">Borrar</button>
-                  </form>
-                </div>
-                <div className="container-editar">
-                  {<a href="http://localhost:3030/admin/+{product.id}/edit">Editar</a>}
-                </div>
-              </th>
-            </tr>
+            return (
+              <tr>
+                <th>
+                  {product.id}
+                </th>
+
+                <th>
+                  {product.name}
+                </th>
+                <th>
+                  <div className="container-delete">
+                    <form action={`http://localhost:3030/admin/${product.id}/delete?_method=DELETE`} method="POST">
+                      <button className="delete" type="submit">Borrar</button>
+                    </form>
+                  </div>
+                  <div className="container-editar">
+                    {<a href={`http://localhost:3030/admin/${product.id}/edit`}>Editar</a>}
+                  </div>
+                </th>
+              </tr>
             )
           })
 
