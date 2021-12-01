@@ -18,6 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         primaryKey: false
     };
     const Cart = sequelize.define(alias, cols, config);
+    
     Cart.removeAttribute('id');
 
 

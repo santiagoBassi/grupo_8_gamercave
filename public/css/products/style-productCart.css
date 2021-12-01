@@ -288,7 +288,7 @@ select.field{
     border: solid 1px #18171759;
     text-align: center;
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 200px;
 }
 
 .container-opciones-compra {
@@ -431,7 +431,7 @@ select.field{
         box-shadow: 7px 7px 11px 0px rgb(10 10 10 / 21%);
         border: solid 1px #18171759;
         position: relative;
-        margin-bottom: 5px;
+        margin-bottom: 200px;
 
     }
 

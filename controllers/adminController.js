@@ -238,8 +238,7 @@ const controlador = {
 
     },
     productDelete: (req, res) => {
-        res.send('borramos el producto')
-        /*
+      
         Product.findByPk(req.params.id, {
                 include: ['category', 'characteristics', 'images']
             })
@@ -251,32 +250,12 @@ const controlador = {
 
                 Product.destroy({ where: { id: req.params.id } })
                     .then(() => {
-                        res.redirect('/')
+                        return res.redirect('/')
                     })
             })
 
 
-        /*
-
-        let productsJSON = fs.readFileSync('data/products.json', { encoding: 'utf-8' });
-        let products = JSON.parse(productsJSON);
-
-        let updatedProducts = products.filter(product => {
-            return product.id != req.params.id;
-        });
-
-        products.forEach(product => {
-            if (product.id == req.params.id) {
-                fs.unlinkSync(`./public/images/products/${product.img1}`);
-                fs.unlinkSync(`./public/images/products/${product.img2}`);
-                fs.unlinkSync(`./public/images/products/${product.img3}`);
-            }
-        })
-
-        let updatedProductsJSON = JSON.stringify(updatedProducts);
-
-        fs.writeFileSync('data/products.json', updatedProductsJSON);
-        return res.redirect('/products');*/
+        
     }
 };
 
