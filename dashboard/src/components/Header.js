@@ -3,10 +3,11 @@ function Header() {
     return (
         <header>
             <div className="container-logo">
-                <img className="logo" src={logo} alt="Log gamer cave"/>
+                <a href="http://localhost:3030">
+                    <img className="logo" src={logo} alt="Log gamer cave" />
+                </a>
             </div>
         </header>
     )
 }
-
 export default Header;

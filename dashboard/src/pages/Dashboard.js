@@ -5,6 +5,8 @@ import Abstract from "../components/Abstract";
 import CountByCategories from '../components/CountByCategories';
 import LastProduct from '../components/LastProduct';
 import ProductsTable from '../components/ProductsTable';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function Dashboard() {
   return (
@@ -16,10 +18,12 @@ function Dashboard() {
           <CountByCategories />
           <LastProduct />
         </div>
-        <div className="container-add-product">
-          <a href="http://localhost:3030/admin/create">Nuevo Producto <i className="fas fa-plus"></i></a>
+        <div className="container-table-add">
+          <div className="container-add-product">
+            <a href="http://localhost:3030/admin/create">Nuevo Producto <FontAwesomeIcon icon={faPlus} /> </a>
+          </div>
+          <ProductsTable />
         </div>
-        <ProductsTable />
       </main>
     </div>
   );

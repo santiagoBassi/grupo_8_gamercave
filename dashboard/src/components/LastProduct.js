@@ -4,7 +4,7 @@ function LastProduct(props) {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    fetch('/api/products/61')
+    fetch('/api/products/70')
       .then(response => {
         return response.json()
       })
@@ -17,8 +17,7 @@ function LastProduct(props) {
       <h3 className= "titulo-ultimo-producto">Ultimo producto Cargado</h3>
       <hr />
       <div className= "container-card">
-        <div className= "container-name-count">Id: {product.id}</div>
-
+        <div >Id: {product.id}</div>
         <div>Nombre: {product.name}</div>
         <div>Precio: ${product.price}</div>
       </div>
