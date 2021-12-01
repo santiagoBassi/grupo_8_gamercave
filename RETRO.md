@@ -109,3 +109,22 @@
 * Trabajar en archivos en conjunto
 
 
+# Retro N°7 1/12/21:
+
+
+### Cosas a comenzar a hacer:
+
+ * De momento no vemos ninguna actividad la cual comenzar a este punto del trabajo
+
+## Hacer más:
+
+* Subir a github con más frecuencia
+
+## Continuar haciendo:
+
+* Comunicación continua por zoom y slack
+
+## Hacer menos/ Dejar de hacer:
+
+* Trabajar en archivos en conjunto
+
